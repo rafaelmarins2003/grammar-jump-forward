@@ -1,0 +1,135 @@
+{
+  "_note": "Frozen raw inputs. Fetched with `hf download --revision <commit> --local-dir <path>` on 2026-09-10. Paths are relative to data/raw/. Only this file is tracked by git.",
+  "datasets": {
+    "bfcl": {
+      "hf_repo": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+      "repo_type": "dataset",
+      "revision": "61fc0608cfd831fcfbbaa676ebdfef0ed963eeda",
+      "role": "public tool-call schemas and calls (Gate 0, RQ3; third-party reproducible)",
+      "files": [
+        {"path": "datasets/bfcl/.gitattributes", "bytes": 2307, "sha256": "f4e703ea6e44bbebe53aceed2a89c11e40b88b7ae130c480c89860ab805ffc8f"},
+        {"path": "datasets/bfcl/BFCL_v3_chatable.json", "bytes": 24980, "sha256": "bb119651f897dceaba2936633a0048a2acdf040be5cf2fd26fcfea3a6d69031a"},
+        {"path": "datasets/bfcl/BFCL_v3_exec_multiple.json", "bytes": 82066, "sha256": "180ccd36814856574a2a488e026ace22ef2631fe17f404a8a4168ceffaab4cb6"},
+        {"path": "datasets/bfcl/BFCL_v3_exec_parallel.json", "bytes": 56281, "sha256": "67826cdd638e1416a3b9f0243872ce91b95f438b467faa3f8d9351e80d39153d"},
+        {"path": "datasets/bfcl/BFCL_v3_exec_parallel_multiple.json", "bytes": 73943, "sha256": "e3134c946b215d34a79dbe3eef0fbfe78f9e3a18e67e9a9adf891f01b2e7977d"},
+        {"path": "datasets/bfcl/BFCL_v3_exec_simple.json", "bytes": 87953, "sha256": "120eb383a8ec801b47e56d7337b61158944ae35b935c86e8d846948fa27215f6"},
+        {"path": "datasets/bfcl/BFCL_v3_irrelevance.json", "bytes": 160114, "sha256": "975f51c51f688649fd190078efd87081241e0a326f9114a2ea3c1ca2440d8690"},
+        {"path": "datasets/bfcl/BFCL_v3_java.json", "bytes": 85919, "sha256": "261d327d50c1bb505614dd5f75a29167d5bd9f938e5cefefef989c325cb67848"},
+        {"path": "datasets/bfcl/BFCL_v3_javascript.json", "bytes": 46713, "sha256": "b69b6a99548f72e151be7abed4beb0ed70873d3370d5b78feed75b66f33795d3"},
+        {"path": "datasets/bfcl/BFCL_v3_live_irrelevance.json", "bytes": 2202715, "sha256": "0d259e1c3ab6ba06c2a51911e2f49ecaa2eac3723a4a14f183a7687955e61338"},
+        {"path": "datasets/bfcl/BFCL_v3_live_multiple.json", "bytes": 3891342, "sha256": "af2520ac5bb0b05aa9b8abe14a79b87198e5a3137a707d4f5633c792330f0cee"},
+        {"path": "datasets/bfcl/BFCL_v3_live_parallel.json", "bytes": 15649, "sha256": "6c26e9fdc3350cf596e6d1ea9c179cbff834761bccf562f4141ed29a839ca421"},
+        {"path": "datasets/bfcl/BFCL_v3_live_parallel_multiple.json", "bytes": 82332, "sha256": "21d4b9319c1faac431e22757b367ea28917fe467364c3a4b17f16ec06d4f6e79"},
+        {"path": "datasets/bfcl/BFCL_v3_live_relevance.json", "bytes": 54134, "sha256": "294ef3f21909e6f84c735faf688f5cbd72226ad012b7ea53c1e177c40cbbf053"},
+        {"path": "datasets/bfcl/BFCL_v3_live_simple.json", "bytes": 260128, "sha256": "b398743e6c0dfd2a87cee97a3bc1b9b90b81edc228c3153a820a93b51186fc00"},
+        {"path": "datasets/bfcl/BFCL_v3_multi_turn_base.json", "bytes": 391058, "sha256": "edaea7666e0089062c30f3ac511914d5c27414dbe9b8214488191980d873b145"},
+        {"path": "datasets/bfcl/BFCL_v3_multi_turn_composite.json", "bytes": 404501, "sha256": "1fda0310e176317af7184132ff5fb5daa8ee7984b1cfbf69ce4bfb58c3151ae1"},
+        {"path": "datasets/bfcl/BFCL_v3_multi_turn_long_context.json", "bytes": 392651, "sha256": "a7c2b44cfe14e243e66acbb0737970f1085460fed5793bfa0137fb4782ff8fc4"},
+        {"path": "datasets/bfcl/BFCL_v3_multi_turn_miss_func.json", "bytes": 401840, "sha256": "e6cfbd225ac1182c82bfcd0a83410babd410a8cf2050942894017829e9a57e23"},
+        {"path": "datasets/bfcl/BFCL_v3_multi_turn_miss_param.json", "bytes": 403181, "sha256": "21a850b8bb0b41aba63e0bbcd9b4af6c7997144180eadd4bcdf4bdfd98077c1a"},
+        {"path": "datasets/bfcl/BFCL_v3_multiple.json", "bytes": 316583, "sha256": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a"},
+        {"path": "datasets/bfcl/BFCL_v3_parallel.json", "bytes": 172094, "sha256": "fad375d68295776efb63e5aa331dd884f8635e7bb50e05908113c74f14281c3c"},
+        {"path": "datasets/bfcl/BFCL_v3_parallel_multiple.json", "bytes": 347080, "sha256": "8863ea8433239f55c5f016154cf0830853c89f693c6ea270396a2fa121960579"},
+        {"path": "datasets/bfcl/BFCL_v3_rest.json", "bytes": 208186, "sha256": "b064f9eefc257dba383227177f570fd9038588dd058e5a9e869007f81d5cc5f2"},
+        {"path": "datasets/bfcl/BFCL_v3_simple.json", "bytes": 280474, "sha256": "fbc37b2ad252bf9af985582e0e07b456173fe627d957491472ea9cef5fb83158"},
+        {"path": "datasets/bfcl/BFCL_v3_sql.json", "bytes": 152641, "sha256": "2cf021e2e4f81f1097aab31763423b785b3aaa73df8203a4f4ae3900822b0d53"},
+        {"path": "datasets/bfcl/README.md", "bytes": 15282, "sha256": "22234ad32a0bb921809278d01ed65e932b4e611690dfa17d1e0eb6ba74ab4e27"},
+        {"path": "datasets/bfcl/eval.yaml", "bytes": 736, "sha256": "9ecc58567f275ca254542b4e888e25853df93d2d00b512213ec3f46fcba669b4"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/gorilla_file_system.json", "bytes": 13951, "sha256": "26c01bed25bf7affbc8d281cc8124ccdc220a64c374ac4a7a9181dea0a0468ee"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/math_api.json", "bytes": 9158, "sha256": "83fa31708c89442bdcf12ac4dfbe3be8663ec9183a1b1524a9fda98164bc7e0b"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/message_api.json", "bytes": 6097, "sha256": "2855068a0e77c4f1861fb2c1aa581590af85eb4b56994c6ebf79e30afb83be24"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/posting_api.json", "bytes": 10573, "sha256": "87f9fc404a06e4107d7c366f1399c596440e84c16cb119faf374b2f532d86e8b"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/ticket_api.json", "bytes": 6577, "sha256": "1d78a0bbc15ca2dca3a2228be690b8b929783b2715175cd05b80ee2106581897"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/trading_bot.json", "bytes": 14075, "sha256": "c04b85e9ea0795a0fea1e1c3608795aa720edde52539b2e71897aa207976a25f"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/travel_booking.json", "bytes": 15930, "sha256": "5247c1f4db044d4c18c30cc8e3a4e2a0c818aa122f4aae62f9b95d94dec065a3"},
+        {"path": "datasets/bfcl/multi_turn_func_doc/vehicle_control.json", "bytes": 17545, "sha256": "a0366b59ad6eabb10410eadf95aa5991262ad0bbc3f560ebba45d7fc3e4f2808"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_java.json", "bytes": 15707, "sha256": "692c16dac988f24f41e26591b7c7ad9596d0d7f05d3c94d15dbf7de3f48025e5"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_javascript.json", "bytes": 7529, "sha256": "0f5620f298eae6173f5f94d3006d068a2cce4cd7c960c2170d21904ce7b63790"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_live_multiple.json", "bytes": 199668, "sha256": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_live_parallel.json", "bytes": 4974, "sha256": "5e3d26c9103dd25912003d3c5f681f30efc6fd2b5f8ba474450f2df21fdf6fcb"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_live_parallel_multiple.json", "bytes": 7420, "sha256": "f5b5f360556c5feb51db46fb9f56ee4b304f4b45b161599bbb14161c98a2873f"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_live_simple.json", "bytes": 46971, "sha256": "4a1988780cdd8a723967587614cb84a9f53aa5d6fd37f83c78a0dd7acc2f3d15"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_multi_turn_base.json", "bytes": 80428, "sha256": "d03b360939e3ca7fe537016349f84868971340393c3d43c1dd9527b8e43102f2"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_multi_turn_composite.json", "bytes": 115938, "sha256": "c832f27baaa589b15e1612c7f48d6de169b9cee4cce7ec6c32e78f20c4be6f25"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_multi_turn_long_context.json", "bytes": 116024, "sha256": "07347ad66e4b304550b5f3b34e5b07864c0f1d738f8b59560fbd3c372255c504"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_multi_turn_miss_func.json", "bytes": 82136, "sha256": "9f5a0ebb3627062be8ecfc0ffa375b4ca3cf15d9a899f3bdedea9588aa5b80eb"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_multi_turn_miss_param.json", "bytes": 82360, "sha256": "494068e24f5e821818040662efcbb88b15d5e34b98f5d08c62806f1463523dad"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_multiple.json", "bytes": 32254, "sha256": "244e00ce9395df948bcafc7bee64e8f9c87ef70887587d83cae45b13699f3047"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_parallel.json", "bytes": 65905, "sha256": "3af54bf04e5b7640b03a9b6a82440f52474feb24b398f94435fd2b155c7727de"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_parallel_multiple.json", "bytes": 74601, "sha256": "df4d2c16238c1465dc04697c273cf3ab4a450075fcd274e3dc86ad5bf0049b75"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_simple.json", "bytes": 60809, "sha256": "2911a2bc00df82c4f999ffa64fedb0164cb88e96212ffa5972087eb91fd496ee"},
+        {"path": "datasets/bfcl/possible_answer/BFCL_v3_sql.json", "bytes": 20541, "sha256": "066ee73429e1d16e0a28ee7f9a7877f313892e94f6b68fb200b14253c8d7c154"}
+      ]
+    },
+    "hermes-fc-v1": {
+      "hf_repo": "NousResearch/hermes-function-calling-v1",
+      "repo_type": "dataset",
+      "revision": "dae3e1d28cfbcf4b915c04ea1e072030529b4bda",
+      "role": "realistic multi-turn tool-call conversations and JSON-mode traces (Gate 0, RQ3, workload 2)",
+      "files": [
+        {"path": "datasets/hermes-fc-v1/.gitattributes", "bytes": 2606, "sha256": "25e3f926abc29fe6ed43b9293ccc83cddf0c355d01b5c50f0fe91b9e810c0389"},
+        {"path": "datasets/hermes-fc-v1/README.md", "bytes": 37741, "sha256": "a01aa1fe59858148f87d0a584e69bd4e33a9a3c70a177fe1517cad57ead45ae5"},
+        {"path": "datasets/hermes-fc-v1/func-calling-singleturn.json", "bytes": 17793686, "sha256": "fb2df9fe3f295dfd65b223c2dbf04d6b90006357d737f8f8927749f0bea09527"},
+        {"path": "datasets/hermes-fc-v1/func-calling.json", "bytes": 20554130, "sha256": "769478035a886678d525d057ea66e3fd1e247f43e35c8d6d7cc866e080b6742b"},
+        {"path": "datasets/hermes-fc-v1/glaive-function-calling-5k.json", "bytes": 20416419, "sha256": "b98eb3f160359f27ad15018e974ce6db444f566eb5be4aa9e4aa690b34d50832"},
+        {"path": "datasets/hermes-fc-v1/json-mode-agentic.json", "bytes": 5019263, "sha256": "7343a1ce0b3c1e894978fc15bb79c695a925f835c91a81786bf59e7379eb5da2"},
+        {"path": "datasets/hermes-fc-v1/json-mode-singleturn.json", "bytes": 2953007, "sha256": "c07b20b7e88afc9cde0cf8c92e50ad150861ba2e35f4c82eb85999aba7182f4a"}
+      ]
+    }
+  },
+  "tokenizers": {
+    "qwen3": {
+      "hf_repo": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "files": [
+        {"path": "tokenizers/qwen3/config.json", "bytes": 728, "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30"},
+        {"path": "tokenizers/qwen3/generation_config.json", "bytes": 239, "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"},
+        {"path": "tokenizers/qwen3/tokenizer.json", "bytes": 11422654, "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"},
+        {"path": "tokenizers/qwen3/tokenizer_config.json", "bytes": 9732, "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"}
+      ]
+    },
+    "llama-3.1": {
+      "hf_repo": "unsloth/Llama-3.1-8B-Instruct",
+      "revision": "4699cc75b550f9c6f3173fb80f4703b62d946aa5",
+      "_note": "Ungated mirror of meta-llama/Llama-3.1-8B-Instruct",
+      "files": [
+        {"path": "tokenizers/llama-3.1/chat_template.jinja", "bytes": 4614, "sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65"},
+        {"path": "tokenizers/llama-3.1/config.json", "bytes": 896, "sha256": "ad98082c6bc4ea7078915219241814762be259de16d6ca5f170ba02820b3928b"},
+        {"path": "tokenizers/llama-3.1/generation_config.json", "bytes": 239, "sha256": "6d4f979915331212d7672c68b22a4ddad9e21ed8126cf2bd1ea6b2b88f595c1c"},
+        {"path": "tokenizers/llama-3.1/special_tokens_map.json", "bytes": 454, "sha256": "94e708c3f5e64acf85bbe5ad01467a1248faadb73e83b41793087ecced586e8f"},
+        {"path": "tokenizers/llama-3.1/tokenizer.json", "bytes": 17209920, "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"},
+        {"path": "tokenizers/llama-3.1/tokenizer_config.json", "bytes": 55492, "sha256": "671ecdff1a4241f7d3e0ad21d347ada7d90f673810906727c124972e3ce03465"}
+      ]
+    },
+    "mistral-v0.3": {
+      "hf_repo": "unsloth/mistral-7b-instruct-v0.3",
+      "revision": "60b99dcbc7f853b7cd18472a607e8d045b96f03e",
+      "_note": "Ungated mirror of mistralai/Mistral-7B-Instruct-v0.3; smallest vocabulary in the RQ2 set",
+      "files": [
+        {"path": "tokenizers/mistral-v0.3/config.json", "bytes": 724, "sha256": "9262d15f830e511429ccd175a71680e51c656ef3a4aa7460f3e9596508d32487"},
+        {"path": "tokenizers/mistral-v0.3/generation_config.json", "bytes": 157, "sha256": "1be59aba03aa1e31bef5bc190a3a2591ad1a754f96afcecc42bd342722447220"},
+        {"path": "tokenizers/mistral-v0.3/special_tokens_map.json", "bytes": 446, "sha256": "63b489faa6ae280faead386b49f5b0de0fb72d7401dea2e3ce169f26a0b8bc2d"},
+        {"path": "tokenizers/mistral-v0.3/tokenizer.json", "bytes": 1961548, "sha256": "60b945759e27a63c3c5c0ca675881f5a73b4aa38b5d1d6818570308d4f1a3c59"},
+        {"path": "tokenizers/mistral-v0.3/tokenizer.model", "bytes": 587404, "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"},
+        {"path": "tokenizers/mistral-v0.3/tokenizer.model.v3", "bytes": 587404, "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"},
+        {"path": "tokenizers/mistral-v0.3/tokenizer_config.json", "bytes": 140911, "sha256": "b0c776216a54c6d031866d1dff0b31715bd73f5ba87f8a30eb35e8c603dff95d"}
+      ]
+    },
+    "gemma-3": {
+      "hf_repo": "unsloth/gemma-3-4b-it",
+      "revision": "bf46152c47f5dd20b896357cb51abc4c03b8ee8c",
+      "_note": "Ungated mirror of google/gemma-3-4b-it; largest vocabulary in the RQ2 set",
+      "files": [
+        {"path": "tokenizers/gemma-3/added_tokens.json", "bytes": 35, "sha256": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946"},
+        {"path": "tokenizers/gemma-3/chat_template.jinja", "bytes": 1532, "sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4"},
+        {"path": "tokenizers/gemma-3/chat_template.json", "bytes": 1615, "sha256": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9"},
+        {"path": "tokenizers/gemma-3/config.json", "bytes": 1659, "sha256": "6bed1ab02267c629a6937cf021c0c7bee97b5e2131d5c262e338aeac794db4df"},
+        {"path": "tokenizers/gemma-3/generation_config.json", "bytes": 210, "sha256": "031fdd1faee68cf7e0cafd12203a08f51f86abd82877a401fc8dafad7b2f7b5c"},
+        {"path": "tokenizers/gemma-3/special_tokens_map.json", "bytes": 670, "sha256": "45a857d8a2495d0be30a5d2d6de03278195eb028b6e0b8efc248bfa697d65f05"},
+        {"path": "tokenizers/gemma-3/tokenizer.json", "bytes": 33384568, "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795"},
+        {"path": "tokenizers/gemma-3/tokenizer.model", "bytes": 4689074, "sha256": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c"},
+        {"path": "tokenizers/gemma-3/tokenizer_config.json", "bytes": 1158492, "sha256": "8925eabb556c1897ca1bed405f0612e735a56afcd4d77e76eb90fd771e706f9c"}
+      ]
+    }
+  }
+}

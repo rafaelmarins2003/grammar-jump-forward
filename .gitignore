@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Large or fetched artifacts: never in git, identified by revision/hash in manifests
+*.gguf
+*.safetensors
+*.kld
+data/*
+!data/raw/
+data/raw/*
+!data/raw/MANIFEST.json
+
+# Tooling caches
+.cache/
+compile_commands.json

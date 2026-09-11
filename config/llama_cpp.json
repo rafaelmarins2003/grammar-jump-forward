@@ -1,0 +1,59 @@
+{
+  "_note": "Frozen engine decisions. Changing base_commit invalidates every run recorded against the old one.",
+  "upstream": "https://github.com/ggml-org/llama.cpp",
+  "base_commit": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+  "base_build": "b10791",
+  "worktree": "~/llama.cpp-jf",
+  "branch": "grammar-jump-forward",
+  "reference_checkout": {
+    "path": "~/llama.cpp",
+    "_note": "Same commit, untouched. Shared with other projects. Use it as the no-patch baseline binary."
+  },
+  "llguidance": {
+    "version": "1.0.1",
+    "commit": "d795912fedc7d393de740177ea9ea761e7905774",
+    "source": "~/llama.cpp-jf/build/llguidance/source",
+    "c_header": "~/llama.cpp-jf/build/llguidance/source/parser/llguidance.h"
+  },
+  "toolchain": {
+    "_note": "rust, ninja, ccache pinned in mise.toml; compilers are system packages",
+    "rust": "1.98.1",
+    "ninja": "1.13.2",
+    "ccache": "4.14",
+    "cuda": "13.3",
+    "gcc": "16.2.1",
+    "cmake": "4.4.3"
+  },
+  "builds": {
+    "release": {
+      "dir": "~/llama.cpp-jf/build",
+      "purpose": "benchmarks and GPU runs",
+      "cmake_flags": [
+        "-G Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DGGML_CUDA=ON",
+        "-DCMAKE_CUDA_ARCHITECTURES=75",
+        "-DLLAMA_LLGUIDANCE=ON",
+        "-DLLAMA_OPENSSL=ON",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+        "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+        "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache",
+        "-DCMAKE_CUDA_COMPILER_LAUNCHER=ccache"
+      ]
+    },
+    "debug": {
+      "dir": "~/llama.cpp-jf/build-debug",
+      "purpose": "stepping through sampler / speculative / server control flow with gdb; CPU only",
+      "cmake_flags": [
+        "-G Ninja",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DGGML_CUDA=OFF",
+        "-DLLAMA_LLGUIDANCE=ON",
+        "-DLLAMA_OPENSSL=ON",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+        "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+        "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache"
+      ]
+    }
+  }
+}

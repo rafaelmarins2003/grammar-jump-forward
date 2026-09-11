@@ -1,0 +1,48 @@
+{
+  "_note": "Local GGUFs. sha256 and hf_commit come from the hf download metadata written at fetch time (2026-09-10). The source repo was not recorded at download time.",
+  "targets": {
+    "qwen3-8b-q4_k_m": {
+      "path": "~/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf",
+      "bytes": 5027783488,
+      "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+      "hf_commit": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "gguf_general_name": "Qwen3 8B Awq Compatible Instruct",
+      "tokenizer": "qwen3",
+      "role": "primary target (Gate 1, RQ1, RQ4)"
+    },
+    "qwen3-4b-q4_k_m": {
+      "path": "~/models/qwen3-4b-q4_k_m/Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497280256,
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "hf_commit": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+      "gguf_general_name": "Qwen3 4B Instruct Awq",
+      "tokenizer": "qwen3",
+      "role": "fast-iteration target during development"
+    }
+  },
+  "drafts": {
+    "qwen3-0.6b-q8_0": {
+      "path": "~/models/qwen3-0.6b-q8_0/Qwen3-0.6B-Q8_0.gguf",
+      "bytes": 639446688,
+      "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031",
+      "hf_commit": "23749fefcc72300e3a2ad315e1317431b06b590a",
+      "tokenizer": "qwen3",
+      "role": "RQ4 draft model for Qwen3 targets"
+    },
+    "qwen3-1.7b-q8_0": {
+      "path": "~/models/qwen3-1.7b-q8_0/Qwen3-1.7B-Q8_0.gguf",
+      "bytes": 1834426016,
+      "sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+      "hf_commit": "90862c4b9d2787eaed51d12237eafdfe7c5f6077",
+      "tokenizer": "qwen3",
+      "role": "RQ4 draft model for Qwen3 targets"
+    }
+  },
+  "tokenizers": {
+    "_note": "HF tokenizer files for offline Gate 0 / RQ2 analysis. Pinned in data/raw/MANIFEST.json. GGUFs for non-Qwen families are not downloaded yet.",
+    "qwen3": "data/raw/tokenizers/qwen3",
+    "llama-3.1": "data/raw/tokenizers/llama-3.1",
+    "mistral-v0.3": "data/raw/tokenizers/mistral-v0.3",
+    "gemma-3": "data/raw/tokenizers/gemma-3"
+  }
+}

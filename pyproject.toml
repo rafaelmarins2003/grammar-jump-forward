@@ -1,0 +1,57 @@
+[project]
+name = "grammar-jump-forward"
+version = "0.1.0"
+description = "Measurement harness for grammar jump-forward decoding of JSON tool calls in llama.cpp"
+readme = "README.md"
+authors = [
+    { name = "Rafael Marins Florenzano", email = "rafaelmarins2003@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "datasets>=5.0.1",
+    "httpx>=0.28.1",
+    "jsonschema>=4.26.0",
+    "llguidance==1.0.1",
+    "numpy>=2.5.3",
+    "scipy>=1.18.1",
+    "transformers>=5.17.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "jumpforward"
+
+[dependency-groups]
+dev = [
+    "deptry>=0.25.1",
+    "prek>=0.5.2",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.7",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "gpu: needs the GPU and a local GGUF",
+    "server: needs a running llama-server",
+    "engine: needs the patched build in ~/llama.cpp-jf",
+]
+
+[tool.coverage.run]
+source = ["jumpforward"]
+
+[tool.deptry]
+known_first_party = ["jumpforward"]
