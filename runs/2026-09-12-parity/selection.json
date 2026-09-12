@@ -1,0 +1,2822 @@
+[
+  {
+    "subset": "parallel",
+    "id": "parallel_191",
+    "call_index": 2,
+    "call": {
+      "name": "public_library.find_nearby",
+      "arguments": {
+        "location": "Chicago, IL",
+        "facilities": [
+          "Cafe",
+          "Reading Room"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_194",
+    "call_index": 0,
+    "call": {
+      "name": "get_museum_hours",
+      "arguments": {
+        "museum_name": "Metropolitan Museum of Art",
+        "day": "Saturday"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_233",
+    "call_index": 0,
+    "call": {
+      "name": "european_history.get_event_date",
+      "arguments": {
+        "event_name": "Treaty of Tordesillas",
+        "format": "YYYY"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_129",
+    "call_index": 0,
+    "call": {
+      "name": "create_histogram",
+      "arguments": {
+        "data": [
+          12,
+          15,
+          11,
+          14,
+          18,
+          19,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "bins": 5
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_112",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_probability",
+      "arguments": {
+        "total_outcomes": 52,
+        "favorable_outcomes": 4
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_198",
+    "call_index": 0,
+    "call": {
+      "name": "lawsuit_search",
+      "arguments": {
+        "entity": "Google",
+        "county": "Santa Clara",
+        "state": "California"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "fcc3b730-0876-446a-ab70-7b1f1c3313b7",
+    "call_index": 0,
+    "call": {
+      "name": "generate_personalized_recommendations",
+      "arguments": {
+        "user_id": "123456789",
+        "preferred_genres": [
+          "sci-fi",
+          "comedy"
+        ],
+        "viewing_history": [
+          "The Martian",
+          "Brooklyn Nine-Nine",
+          "Stranger Things",
+          "Rick and Morty"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_31",
+    "call_index": 1,
+    "call": {
+      "name": "history_fact.fetch",
+      "arguments": {
+        "event": "Magna Carta"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_146-95-3",
+    "call_index": 0,
+    "call": {
+      "name": "cmd_controller.execute",
+      "arguments": {
+        "command": "start https://huggingface.co"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_555-154-1",
+    "call_index": 0,
+    "call": {
+      "name": "RentalCars_3_GetCarsAvailable",
+      "arguments": {
+        "city": "Los Angeles, CA",
+        "start_date": "2023-04-14",
+        "pickup_time": "10:00",
+        "end_date": "2023-04-18",
+        "car_type": "Sedan"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_161-96-0",
+    "call_index": 0,
+    "call": {
+      "name": "get_items",
+      "arguments": {
+        "items": [
+          "Blue square",
+          "Red square",
+          "Green square",
+          "Yellow square",
+          "Superman logo",
+          "Iron Man logo",
+          "Hulk logo",
+          "Batman logo",
+          "Fist",
+          "Bat",
+          "Face mask",
+          "Outline"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_240-125-3",
+    "call_index": 0,
+    "call": {
+      "name": "play_spotify_song",
+      "arguments": {
+        "query": "Baby Shark"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_140",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_cagr",
+      "arguments": {
+        "initial_value": 2000,
+        "final_value": 3000,
+        "period_in_years": 4
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_189",
+    "call_index": 0,
+    "call": {
+      "name": "weather_forecast_detailed",
+      "arguments": {
+        "location": "New York",
+        "days": 3,
+        "details": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 6,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          56,
+          78,
+          90,
+          12,
+          34
+        ],
+        "order": "ascending"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_51",
+    "call_index": 0,
+    "call": {
+      "name": "dice_roll_probability",
+      "arguments": {
+        "desired_sum": 7,
+        "n_rolls": 2,
+        "sides_per_die": 6
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_31",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_final_velocity",
+      "arguments": {
+        "initial_velocity": 0,
+        "acceleration": 9.8,
+        "time": 5
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_35-11-1",
+    "call_index": 0,
+    "call": {
+      "name": "get_tesco_locations",
+      "arguments": {
+        "location": "Letterkenny, Ireland"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "61cbe959-26e5-4b6c-913f-5b2c9c44484e",
+    "call_index": 1,
+    "call": {
+      "name": "getThreeDayForecast",
+      "arguments": {
+        "location": "Yosemite National Park",
+        "units": "imperial"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_147-95-4",
+    "call_index": 0,
+    "call": {
+      "name": "cmd_controller.execute",
+      "arguments": {
+        "command": "taskkill /F /IM timer.exe"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_48",
+    "call_index": 0,
+    "call": {
+      "name": "library.find_nearby",
+      "arguments": {
+        "location": "New York City",
+        "preferences": [
+          "Pet-friendly",
+          "Disabled Access"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_117",
+    "call_index": 1,
+    "call": {
+      "name": "calculate_density",
+      "arguments": {
+        "country": "China",
+        "year": "2010",
+        "population": 1341000000.0,
+        "land_area": 9597000.0
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_159",
+    "call_index": 1,
+    "call": {
+      "name": "probability.dice_roll",
+      "arguments": {
+        "desired_number": 2,
+        "number_of_rolls": 2,
+        "die_sides": 6
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_797-175-3",
+    "call_index": 0,
+    "call": {
+      "name": "Weather_1_GetWeather",
+      "arguments": {
+        "city": "Phoenix, AZ",
+        "date": "2023-03-11"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_78-39-0",
+    "call_index": 0,
+    "call": {
+      "name": "send_email",
+      "arguments": {
+        "to_address": "andy@gorilla.ai",
+        "subject": "Sales Forecast Request",
+        "body": "where is the latest sales forecast spreadsheet?"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_84",
+    "call_index": 2,
+    "call": {
+      "name": "calculate_displacement",
+      "arguments": {
+        "initial_velocity": 25,
+        "time": 8,
+        "acceleration": 0
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_161",
+    "call_index": 1,
+    "call": {
+      "name": "calculate_binomial_probability",
+      "arguments": {
+        "number_of_trials": 15,
+        "number_of_successes": 10,
+        "probability_of_success": 0.6
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_62",
+    "call_index": 0,
+    "call": {
+      "name": "analyze_dna_sequence",
+      "arguments": {
+        "sequence": "AGTCGATCGAACGTACGTACG",
+        "reference_sequence": "AGTCCATCGAACGTACGTACG",
+        "mutation_type": "substitution"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_71",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_derivative",
+      "arguments": {
+        "function": "3x**3 - 2x**2 + 5x - 7",
+        "x_value": 4
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_37",
+    "call_index": 2,
+    "call": {
+      "name": "color_converter.get_color_info",
+      "arguments": {
+        "color_name": "maroon",
+        "conversion_type": [
+          "RGB",
+          "HEX"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_155",
+    "call_index": 1,
+    "call": {
+      "name": "run_linear_regression",
+      "arguments": {
+        "predictors": [
+          "Age",
+          "Income",
+          "Education"
+        ],
+        "target": "Spending Score",
+        "standardize": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_191",
+    "call_index": 1,
+    "call": {
+      "name": "public_library.find_nearby",
+      "arguments": {
+        "location": "Los Angeles, CA",
+        "facilities": [
+          "Wi-Fi",
+          "Children Section"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_49",
+    "call_index": 1,
+    "call": {
+      "name": "player_status.check",
+      "arguments": {
+        "team": "RocketLeague",
+        "player_id": 3142,
+        "season": 2018
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_540-152-2",
+    "call_index": 0,
+    "call": {
+      "name": "Homes_2_FindHomeByArea",
+      "arguments": {
+        "area": "Fremont, CA",
+        "intent": "rent",
+        "number_of_beds": 3,
+        "number_of_baths": 2,
+        "has_garage": true
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "3356f2ac-3860-485b-bf5f-8a7125212e96",
+    "call_index": 0,
+    "call": {
+      "name": "block_incoming_traffic",
+      "arguments": {
+        "firewall_id": "fw-12345",
+        "block_list": [
+          "198.51.100.1",
+          "198.51.100.2",
+          "198.51.100.3"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "0107e629-ab4e-4ae0-bab6-46f3d69c9994",
+    "call_index": 0,
+    "call": {
+      "name": "get_crypto_transactions",
+      "arguments": {
+        "cryptocurrencies": [
+          "BTC",
+          "ETH",
+          "XRP"
+        ],
+        "data_points": [
+          "transaction_id",
+          "amount",
+          "timestamp"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_385",
+    "call_index": 0,
+    "call": {
+      "name": "hotel_bookings.book_room",
+      "arguments": {
+        "location": "Los Angeles",
+        "room_type": "King Size",
+        "check_in_date": "15-10-2023",
+        "no_of_nights": 2
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_186",
+    "call_index": 0,
+    "call": {
+      "name": "find_recipe",
+      "arguments": {
+        "dietary_restrictions": "vegan",
+        "recipe_type": "dessert",
+        "time": 30
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_82-43-0",
+    "call_index": 0,
+    "call": {
+      "name": "sitefinity_create_contentitem",
+      "arguments": {
+        "ContentItem": "News",
+        "Title": "Julian is testing"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_172-99-6",
+    "call_index": 0,
+    "call": {
+      "name": "cmd_controller.execute",
+      "arguments": {
+        "command": "docker ps"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_280",
+    "call_index": 0,
+    "call": {
+      "name": "find_instrument",
+      "arguments": {
+        "budget": 1000,
+        "type": "acoustic"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "1991b039-52d1-45f4-8e80-c4724dcd90a2",
+    "call_index": 0,
+    "call": {
+      "name": "classify_financial_reviews",
+      "arguments": {
+        "reviews_json_path": "/data/reviews/financial_services_reviews.json",
+        "categories": [
+          "mortgages",
+          "personal loans",
+          "credit cards",
+          "investment accounts"
+        ],
+        "output_format": "json_schema"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_56-26-0",
+    "call_index": 0,
+    "call": {
+      "name": "todo_manager.handle_action",
+      "arguments": {
+        "type": "delete",
+        "content": "go to gym"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_125",
+    "call_index": 0,
+    "call": {
+      "name": "run_two_sample_ttest",
+      "arguments": {
+        "group1": [
+          3,
+          4,
+          5,
+          6,
+          4
+        ],
+        "group2": [
+          7,
+          8,
+          9,
+          8,
+          7
+        ],
+        "equal_variance": true
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_837-178-12",
+    "call_index": 0,
+    "call": {
+      "name": "Music_3_PlayMedia",
+      "arguments": {
+        "track": "popular song",
+        "artist": "Phan Dinh Tung",
+        "device": "Kitchen",
+        "album": "Hat Nhan"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_84",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_bmi",
+      "arguments": {
+        "weight": 85,
+        "height": 180,
+        "unit": "metric"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_105",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_magnetic_field",
+      "arguments": {
+        "current": 5,
+        "radius": 4
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_227-101-0",
+    "call_index": 0,
+    "call": {
+      "name": "project_api.ProjectApi.get_children_projects_by_tag",
+      "arguments": {
+        "tag": "environment",
+        "uuid": "123e4567-e89b-12d3-a456-426614174000"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_31",
+    "call_index": 0,
+    "call": {
+      "name": "history_fact.fetch",
+      "arguments": {
+        "event": "Treaty of Paris"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "3725d66e-4187-42e6-8142-5766e205747f",
+    "call_index": 0,
+    "call": {
+      "name": "set_function_ingress_settings",
+      "arguments": {
+        "function_name": "my-secure-function",
+        "ingress_settings": "ALLOW_INTERNAL_ONLY"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_54",
+    "call_index": 0,
+    "call": {
+      "name": "corporate_finance.dividend_data",
+      "arguments": {
+        "company": "Apple Inc",
+        "years": 5
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_11",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_triangle_area",
+      "arguments": {
+        "base": 10,
+        "height": 5
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_89-50-0",
+    "call_index": 0,
+    "call": {
+      "name": "interior_design_analysis.generate_report",
+      "arguments": {
+        "user_preferences": "{\"style\": \"modern\", \"color_scheme\": \"warm\", \"budget\": \"mid-range\"}",
+        "data_source": "internal_database",
+        "output_format": "DOCX",
+        "include_visuals": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_191",
+    "call_index": 0,
+    "call": {
+      "name": "public_library.find_nearby",
+      "arguments": {
+        "location": "New York, NY",
+        "facilities": [
+          "Reading Room",
+          "Fiction"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_102",
+    "call_index": 0,
+    "call": {
+      "name": "calc_absolute_pressure",
+      "arguments": {
+        "atm_pressure": 1.0,
+        "gauge_pressure": 2.5
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_66",
+    "call_index": 1,
+    "call": {
+      "name": "geometry.area_circle",
+      "arguments": {
+        "radius": 10,
+        "units": "meters"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "de713f49-102c-4136-80ab-a7fca54ccbb1",
+    "call_index": 1,
+    "call": {
+      "name": "index_documents",
+      "arguments": {
+        "case_id": "CASE-12345",
+        "documents": [
+          {
+            "title": "Complaint",
+            "type": "Legal Brief"
+          },
+          {
+            "title": "Defendant Memo",
+            "type": "Legal Brief"
+          },
+          {
+            "title": "Affidavit of Emma Johnson",
+            "type": "Witness Statement"
+          },
+          {
+            "title": "Affidavit of Liam Smith",
+            "type": "Witness Statement"
+          },
+          {
+            "title": "Court Injunction",
+            "type": "Court Order"
+          },
+          {
+            "title": "Photo Evidence",
+            "type": "Evidence Submission"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_366-134-11",
+    "call_index": 0,
+    "call": {
+      "name": "Movies_3_FindMovies",
+      "arguments": {
+        "directed_by": "Herbert Ross"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_117",
+    "call_index": 0,
+    "call": {
+      "name": "probability_of_event",
+      "arguments": {
+        "success_outcomes": 13,
+        "total_outcomes": 52,
+        "format_as_ratio": true
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_742-168-4",
+    "call_index": 0,
+    "call": {
+      "name": "Payment_1_MakePayment",
+      "arguments": {
+        "payment_method": "app balance",
+        "amount": 84.0,
+        "receiver": "Yumi",
+        "private_visibility": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_102",
+    "call_index": 1,
+    "call": {
+      "name": "calc_absolute_pressure",
+      "arguments": {
+        "atm_pressure": 0.85,
+        "gauge_pressure": 2.5
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_903-186-0",
+    "call_index": 0,
+    "call": {
+      "name": "Trains_1_FindTrains",
+      "arguments": {
+        "_from": "Phoenix, AZ",
+        "to": "Los Angeles, CA",
+        "date_of_journey": "04/25/2023"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "87d19890-4833-4fa3-9106-e81ecbcd3414",
+    "call_index": 1,
+    "call": {
+      "name": "calculate_optimal_routes",
+      "arguments": {
+        "assignments": "{\"assignments\":[]}",
+        "traffic_data": "{\"traffic_data\":[{\"Route\":\"A1 to B2\",\"Traffic Condition\":\"Heavy\",\"Delay (mins)\":15},{\"Route\":\"B2 to C3\",\"Traffic Condition\":\"Moderate\",\"Delay (mins)\":10},{\"Route\":\"C3 to D4\",\"Traffic Condition\":\"Light\",\"Delay (mins)\":5},{\"Route\":\"D4 to A1\",\"Traffic Condition\":\"Moderate\",\"Delay (mins)\":10}]}"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_245",
+    "call_index": 0,
+    "call": {
+      "name": "discoverer.get",
+      "arguments": {
+        "element_name": "'radium'",
+        "first": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 1,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          45,
+          12,
+          67,
+          21,
+          89
+        ],
+        "order": "descending"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_109-66-0",
+    "call_index": 0,
+    "call": {
+      "name": "record",
+      "arguments": {
+        "faq_auto_withdraw_start": [
+          "Can I schedule automatic withdrawals for different dates?"
+        ],
+        "payment_information_start": [
+          "How much do I owe on my home equity loan?"
+        ],
+        "pma_income_requirements_start": [
+          "Can I use bonuses or commissions as part of my income for a loan application?",
+          "Will my income be verified during the loan application process?",
+          "Is there a minimum income threshold for loan approval?"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_67",
+    "call_index": 0,
+    "call": {
+      "name": "translate",
+      "arguments": {
+        "text": "Hello, how are you?",
+        "source_language": "English",
+        "target_language": "French"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_146",
+    "call_index": 0,
+    "call": {
+      "name": "plot_sine_wave",
+      "arguments": {
+        "start_range": 0,
+        "end_range": 10,
+        "frequency": 5,
+        "amplitude": 2,
+        "phase_shift": 1
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_11",
+    "call_index": 0,
+    "call": {
+      "name": "math_roots.quadratic",
+      "arguments": {
+        "a": 5,
+        "b": 20,
+        "c": -25
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_109",
+    "call_index": 0,
+    "call": {
+      "name": "cellbio.get_proteins",
+      "arguments": {
+        "cell_compartment": "plasma membrane",
+        "include_description": false
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "646a26a2-a09c-4539-975b-9419d40633c0",
+    "call_index": 0,
+    "call": {
+      "name": "verify_compliance_status",
+      "arguments": {
+        "regulatory_documents": [
+          "ESMA Guidelines on Systems and Controls",
+          "MiFID II",
+          "CFTC Regulation AT"
+        ],
+        "compliance_checklist": [
+          "pre_trade_risk_controls",
+          "post_trade_measures",
+          "system_safeguards",
+          "source_code_repository_audit"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_439-143-0",
+    "call_index": 0,
+    "call": {
+      "name": "Trains_1_FindTrains",
+      "arguments": {
+        "_from": "Sacramento, CA",
+        "to": "Fresno, CA",
+        "date_of_journey": "2023-03-10"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_15-4-7",
+    "call_index": 0,
+    "call": {
+      "name": "HNA_NEWS.search",
+      "arguments": {
+        "keyword": "Son's latest goal",
+        "category": "Sports"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_128",
+    "call_index": 0,
+    "call": {
+      "name": "average_temperature",
+      "arguments": {
+        "location": "New York",
+        "days": 7,
+        "temp_unit": "Fahrenheit"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_84",
+    "call_index": 1,
+    "call": {
+      "name": "calculate_displacement",
+      "arguments": {
+        "initial_velocity": 20,
+        "time": 10,
+        "acceleration": 2.0
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_184",
+    "call_index": 1,
+    "call": {
+      "name": "algebra.quadratic_roots",
+      "arguments": {
+        "a": 5,
+        "b": -4,
+        "c": 1
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_158",
+    "call_index": 1,
+    "call": {
+      "name": "random.normalvariate",
+      "arguments": {
+        "mu": 10,
+        "sigma": 3
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_143",
+    "call_index": 1,
+    "call": {
+      "name": "calc_area_triangle",
+      "arguments": {
+        "base": 15,
+        "height": 7
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_226-118-0",
+    "call_index": 0,
+    "call": {
+      "name": "text_to_speech.convert",
+      "arguments": {
+        "text": "I am a pretty girl",
+        "language": "es-ES"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_280-128-3",
+    "call_index": 0,
+    "call": {
+      "name": "Restaurants_2_FindRestaurants",
+      "arguments": {
+        "category": "Coffeehouse",
+        "location": "New York, NY"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_129",
+    "call_index": 1,
+    "call": {
+      "name": "create_histogram",
+      "arguments": {
+        "data": [
+          32,
+          35,
+          31,
+          34,
+          38,
+          39,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "bins": 5
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_77",
+    "call_index": 0,
+    "call": {
+      "name": "math.hcf",
+      "arguments": {
+        "number1": 45,
+        "number2": 60
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_667-162-9",
+    "call_index": 0,
+    "call": {
+      "name": "Events_3_FindEvents",
+      "arguments": {
+        "event_type": "Theater",
+        "city": "New York, NY",
+        "date": "2023-03-05"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 5,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          23,
+          45,
+          67,
+          89,
+          12
+        ],
+        "order": "descending"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_154-95-11",
+    "call_index": 0,
+    "call": {
+      "name": "cmd_controller.execute",
+      "arguments": {
+        "command": "start https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_91",
+    "call_index": 0,
+    "call": {
+      "name": "get_restaurant",
+      "arguments": {
+        "cuisine": "sushi",
+        "location": "Boston",
+        "condition": "open on Sundays"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "b0daedc1-28ec-48d5-9178-e370d9337dc1",
+    "call_index": 0,
+    "call": {
+      "name": "evaluate_reinsurance_risk",
+      "arguments": {
+        "applicant_details": {
+          "company_name": "GlobalRisk Inc.",
+          "industry": "property insurance",
+          "coverage_amount": 100000000,
+          "coverage_type": "Property"
+        },
+        "historical_claims": "{\"claims\": [{\"year\": 2018, \"total_claims\": 25000000, \"paid_claims\": 20000000, \"outstanding_claims\": 5000000}, {\"year\": 2019, \"total_claims\": 30000000, \"paid_claims\": 22000000, \"outstanding_claims\": 8000000}, {\"year\": 2020, \"total_claims\": 45000000, \"paid_claims\": 30000000, \"outstanding_claims\": 15000000}, {\"year\": 2021, \"total_claims\": 35000000, \"paid_claims\": 25000000, \"outstanding_claims\": 10000000}, {\"year\": 2022, \"total_claims\": 50000000, \"paid_claims\": 40000000, \"outstanding_claims\": 10000000}]}"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "fcc3b730-0876-446a-ab70-7b1f1c3313b7",
+    "call_index": 1,
+    "call": {
+      "name": "update_user_preferences",
+      "arguments": {
+        "user_id": "123456789",
+        "new_preferences": {
+          "genres": [
+            "sci-fi",
+            "comedy"
+          ],
+          "recently_watched": [
+            "The Martian",
+            "Brooklyn Nine-Nine",
+            "Stranger Things",
+            "Rick and Morty"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_117",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_density",
+      "arguments": {
+        "country": "China",
+        "year": "2000",
+        "population": 1267000000.0,
+        "land_area": 9597000.0
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_323-132-13",
+    "call_index": 0,
+    "call": {
+      "name": "Movies_3_FindMovies",
+      "arguments": {
+        "directed_by": "Steven Spielberg",
+        "cast": "Josef Sommer"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "71327d89-2d45-4c33-ae28-03fdedcc6bb4",
+    "call_index": 0,
+    "call": {
+      "name": "schedule_meetings",
+      "arguments": {
+        "participants": [
+          "devteam@example.com",
+          "marketingteam@example.com",
+          "salesteam@example.com"
+        ],
+        "time_slots": [
+          "2023-04-10T09:00:00Z",
+          "2023-04-10T11:00:00Z",
+          "2023-04-11T14:00:00Z"
+        ],
+        "meeting_rooms": [
+          "Room 401",
+          "Room 402",
+          "Conference Hall A"
+        ],
+        "calendar_id": "company_calendar@example.com"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 0,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          45,
+          12,
+          67,
+          21,
+          89
+        ],
+        "order": "ascending"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_165-65-1",
+    "call_index": 0,
+    "call": {
+      "name": "get_adriel_list_projects",
+      "arguments": {
+        "user_id": 123,
+        "include_inactive": true
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_120-76-0",
+    "call_index": 0,
+    "call": {
+      "name": "weather.forecast",
+      "arguments": {
+        "location": "Paris, France",
+        "start_date": "2023-04-03",
+        "end_date": "2023-04-05"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "e5c558d0-82e0-489a-8d82-08df8be45517",
+    "call_index": 0,
+    "call": {
+      "name": "create_ticket_notification_integration",
+      "arguments": {
+        "customer_service_platform": "Zendesk",
+        "slack_channel": "#support-notifications"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_641-161-9",
+    "call_index": 0,
+    "call": {
+      "name": "Music_3_LookupMusic",
+      "arguments": {
+        "artist": "Jess Glynne",
+        "year": "2018"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_66-30-0",
+    "call_index": 0,
+    "call": {
+      "name": "inventory.restock_check",
+      "arguments": {
+        "item_ids": [
+          102,
+          103
+        ],
+        "threshold": 20
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_110",
+    "call_index": 0,
+    "call": {
+      "name": "cell_biology.function_lookup",
+      "arguments": {
+        "molecule": "ATP",
+        "organelle": "mitochondria",
+        "specific_function": true
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_10-3-6",
+    "call_index": 0,
+    "call": {
+      "name": "get_current_weather",
+      "arguments": {
+        "location": "Mariposa, CA",
+        "unit": "celsius"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_37",
+    "call_index": 0,
+    "call": {
+      "name": "kinematics.final_velocity",
+      "arguments": {
+        "initial_velocity": 40,
+        "time": 6,
+        "acceleration": -9.81
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_77",
+    "call_index": 2,
+    "call": {
+      "name": "math.hcf",
+      "arguments": {
+        "number1": 36,
+        "number2": 48
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "1991b039-52d1-45f4-8e80-c4724dcd90a2",
+    "call_index": 1,
+    "call": {
+      "name": "generate_financial_review_schema",
+      "arguments": {
+        "categories": [
+          "mortgages",
+          "personal loans",
+          "credit cards",
+          "investment accounts"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_161",
+    "call_index": 2,
+    "call": {
+      "name": "calculate_binomial_probability",
+      "arguments": {
+        "number_of_trials": 20,
+        "number_of_successes": 15,
+        "probability_of_success": 0.6
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_113",
+    "call_index": 0,
+    "call": {
+      "name": "diabetes_prediction",
+      "arguments": {
+        "weight": 180,
+        "height": 70,
+        "activity_level": "lightly active"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_37",
+    "call_index": 0,
+    "call": {
+      "name": "color_converter.get_color_info",
+      "arguments": {
+        "color_name": "navy",
+        "conversion_type": [
+          "RGB",
+          "HEX"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "369c896e-0cb8-406b-b8af-8759851d587b",
+    "call_index": 2,
+    "call": {
+      "name": "log_robot_actions",
+      "arguments": {
+        "robot_model": "XR-2000"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_69",
+    "call_index": 0,
+    "call": {
+      "name": "five_factor_model.analyse",
+      "arguments": {
+        "talkative": true,
+        "nervous": true,
+        "artistic_interests": false,
+        "lazy": true,
+        "forgiving": true
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_57-26-1",
+    "call_index": 0,
+    "call": {
+      "name": "todo_manager.handle_action",
+      "arguments": {
+        "type": "add",
+        "content": "go to sleep at 9 pm"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_143",
+    "call_index": 2,
+    "call": {
+      "name": "calc_area_triangle",
+      "arguments": {
+        "base": 20,
+        "height": 10
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_121-77-0",
+    "call_index": 0,
+    "call": {
+      "name": "generate_chart",
+      "arguments": {
+        "data_labels": [
+          "Software Engineer",
+          "Graphic Designer",
+          "Data Analyst",
+          "Sales Manager",
+          "Nurse"
+        ],
+        "data_values": [
+          90000,
+          50000,
+          70000,
+          60000,
+          80000
+        ]
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "4195cbf2-2257-4963-9fa0-1a5e55ea4a35",
+    "call_index": 0,
+    "call": {
+      "name": "design_quantum_circuit",
+      "arguments": {
+        "function_type": "periodic",
+        "fourier_components": 5,
+        "auxiliary_qubits": 2,
+        "control_operations": true,
+        "output_qubit": "qN",
+        "time_complexity": "polynomial"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_49",
+    "call_index": 2,
+    "call": {
+      "name": "player_status.check",
+      "arguments": {
+        "team": "RocketLeague",
+        "player_id": 3142,
+        "season": 2019
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "369c896e-0cb8-406b-b8af-8759851d587b",
+    "call_index": 1,
+    "call": {
+      "name": "update_inventory_count",
+      "arguments": {
+        "part_number": "PN-4520"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_113",
+    "call_index": 2,
+    "call": {
+      "name": "diabetes_prediction",
+      "arguments": {
+        "weight": 150,
+        "height": 72,
+        "activity_level": "moderately active"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_146",
+    "call_index": 1,
+    "call": {
+      "name": "plot_sine_wave",
+      "arguments": {
+        "start_range": 0,
+        "end_range": 20,
+        "frequency": 10,
+        "amplitude": 3,
+        "phase_shift": 2
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_37",
+    "call_index": 1,
+    "call": {
+      "name": "color_converter.get_color_info",
+      "arguments": {
+        "color_name": "purple",
+        "conversion_type": [
+          "RGB",
+          "HEX"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_71",
+    "call_index": 1,
+    "call": {
+      "name": "calculate_derivative",
+      "arguments": {
+        "function": "9x**2 - 4x + 5",
+        "x_value": 2
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_39",
+    "call_index": 0,
+    "call": {
+      "name": "ride_hailing.get_rides",
+      "arguments": {
+        "source": "New York",
+        "destination": "Philadelphia",
+        "max_cost": 50
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "61cbe959-26e5-4b6c-913f-5b2c9c44484e",
+    "call_index": 2,
+    "call": {
+      "name": "getWeatherAdvisories",
+      "arguments": {
+        "location": "Yosemite National Park"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 2,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          34,
+          78,
+          12,
+          56,
+          90
+        ],
+        "order": "ascending"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_159",
+    "call_index": 0,
+    "call": {
+      "name": "get_act_details",
+      "arguments": {
+        "act_name": "Criminal Law Amendment Act",
+        "amendment_year": 2013
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_42",
+    "call_index": 1,
+    "call": {
+      "name": "check_instrument_availability",
+      "arguments": {
+        "instrument": "Yamaha P125",
+        "city": "Madrid"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "369c896e-0cb8-406b-b8af-8759851d587b",
+    "call_index": 0,
+    "call": {
+      "name": "configure_robotic_sequence",
+      "arguments": {
+        "robot_model": "XR-2000",
+        "task_sequence": [
+          {
+            "action": "pick",
+            "location": "B1"
+          },
+          {
+            "action": "place",
+            "target": "C1"
+          },
+          {
+            "action": "weld",
+            "station": "S1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_34",
+    "call_index": 0,
+    "call": {
+      "name": "travel_itinerary_generator",
+      "arguments": {
+        "destination": "Tokyo",
+        "days": 7,
+        "daily_budget": 100,
+        "exploration_type": "nature"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_42",
+    "call_index": 0,
+    "call": {
+      "name": "check_instrument_availability",
+      "arguments": {
+        "instrument": "Yamaha P125",
+        "city": "Berlin"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_109-43-7",
+    "call_index": 0,
+    "call": {
+      "name": "list_servers",
+      "arguments": {
+        "type": "mtna"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_128",
+    "call_index": 1,
+    "call": {
+      "name": "average_temperature",
+      "arguments": {
+        "location": "Los Angeles",
+        "days": 7,
+        "temp_unit": "Celsius"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_154",
+    "call_index": 0,
+    "call": {
+      "name": "US_president.in_year",
+      "arguments": {
+        "year": 1861,
+        "full_name": true
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_958-204-0",
+    "call_index": 0,
+    "call": {
+      "name": "partner.sips",
+      "arguments": {
+        "status": "active"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_131",
+    "call_index": 0,
+    "call": {
+      "name": "map_routing.fastest_route",
+      "arguments": {
+        "start_location": "San Francisco",
+        "end_location": "Palo Alto",
+        "avoid_tolls": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_155",
+    "call_index": 0,
+    "call": {
+      "name": "run_linear_regression",
+      "arguments": {
+        "predictors": [
+          "Age",
+          "Income",
+          "Education"
+        ],
+        "target": "Spending Score",
+        "standardize": false
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_54",
+    "call_index": 1,
+    "call": {
+      "name": "whole_foods.order",
+      "arguments": {
+        "location": "uptown",
+        "items": [
+          "pepperoni pizza",
+          "chicken Caesar salad"
+        ],
+        "size": "large"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_113",
+    "call_index": 1,
+    "call": {
+      "name": "diabetes_prediction",
+      "arguments": {
+        "weight": 200,
+        "height": 65,
+        "activity_level": "very active"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_88",
+    "call_index": 0,
+    "call": {
+      "name": "video_games.get_player_count",
+      "arguments": {
+        "game_title": "World of Warcraft",
+        "year": 2020
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_243",
+    "call_index": 0,
+    "call": {
+      "name": "get_discoverer",
+      "arguments": {
+        "discovery": "neutron",
+        "detail": true
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_76",
+    "call_index": 0,
+    "call": {
+      "name": "sculpture.create_custom",
+      "arguments": {
+        "item": "horse",
+        "material": "Bronze"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_110",
+    "call_index": 1,
+    "call": {
+      "name": "cell_biology.function_lookup",
+      "arguments": {
+        "molecule": "DNA",
+        "organelle": "nucleus",
+        "specific_function": true
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_301",
+    "call_index": 0,
+    "call": {
+      "name": "get_third_chord",
+      "arguments": {
+        "key": "C",
+        "type": "major"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "24b4de96-700f-42e1-b42f-d7f3fb7c563b",
+    "call_index": 0,
+    "call": {
+      "name": "create_employee_profile",
+      "arguments": {
+        "employee_name": "James Ford",
+        "email": "james.ford@techfusion.com",
+        "department": "Development",
+        "position": "Software Engineer",
+        "start_date": "2023-05-15"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_122-78-0",
+    "call_index": 0,
+    "call": {
+      "name": "process_data",
+      "arguments": {
+        "image_path": "image.png",
+        "question": "generate with technically complex attention to detail a description of what you see",
+        "model": "vikhyatk/moondream2"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_1020-249-0",
+    "call_index": 0,
+    "call": {
+      "name": "delete_apdex_configuration",
+      "arguments": {
+        "id": "d0404"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_86",
+    "call_index": 0,
+    "call": {
+      "name": "BoardGameGeek.recommend",
+      "arguments": {
+        "numPlayers": 2,
+        "category": "strategy"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_165",
+    "call_index": 0,
+    "call": {
+      "name": "t_test",
+      "arguments": {
+        "dataset_A": [
+          12,
+          15,
+          18,
+          20,
+          22,
+          25,
+          28,
+          30,
+          32,
+          35
+        ],
+        "dataset_B": [
+          14,
+          17,
+          19,
+          21,
+          23,
+          26,
+          29,
+          31,
+          33,
+          36
+        ],
+        "alpha": 0.05
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_311",
+    "call_index": 0,
+    "call": {
+      "name": "sports_db.find_athlete",
+      "arguments": {
+        "name": "Lebron James",
+        "sport": "Basketball"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_215-117-7",
+    "call_index": 0,
+    "call": {
+      "name": "Movies_3_FindMovies",
+      "arguments": {
+        "genre": "Fantasy"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_32",
+    "call_index": 0,
+    "call": {
+      "name": "geometry.calculate_cone_volume",
+      "arguments": {
+        "radius": 4,
+        "height": 7
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_319",
+    "call_index": 0,
+    "call": {
+      "name": "sports_ranking",
+      "arguments": {
+        "team": "Manchester United",
+        "league": "Premier League"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "bb2d9bee-ad7c-4275-a689-64c35f88b860",
+    "call_index": 0,
+    "call": {
+      "name": "check_phone_call_availability",
+      "arguments": {}
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_77",
+    "call_index": 1,
+    "call": {
+      "name": "math.hcf",
+      "arguments": {
+        "number1": 90,
+        "number2": 120
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_62",
+    "call_index": 0,
+    "call": {
+      "name": "algebra.quadratic_roots",
+      "arguments": {
+        "a": 3,
+        "b": 4,
+        "c": 2
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_383",
+    "call_index": 0,
+    "call": {
+      "name": "book_room",
+      "arguments": {
+        "hotel_name": "The Plaza",
+        "room_type": "Single",
+        "num_nights": 2
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_133",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_mutual_fund_balance",
+      "arguments": {
+        "investment_amount": 50000,
+        "annual_yield": 0.05,
+        "years": 3
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_143",
+    "call_index": 0,
+    "call": {
+      "name": "calc_area_triangle",
+      "arguments": {
+        "base": 10,
+        "height": 5
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "0107e629-ab4e-4ae0-bab6-46f3d69c9994",
+    "call_index": 1,
+    "call": {
+      "name": "get_crypto_prices",
+      "arguments": {
+        "cryptocurrencies": [
+          "BTC",
+          "ETH",
+          "XRP"
+        ],
+        "data_points": [
+          "current_price",
+          "volume"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_197",
+    "call_index": 0,
+    "call": {
+      "name": "mutation_type.find",
+      "arguments": {
+        "snp_id": "rs6034464"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_305",
+    "call_index": 0,
+    "call": {
+      "name": "sports_stats.get_performance",
+      "arguments": {
+        "player_name": "Messi",
+        "tournament": "La Liga",
+        "season": "2020-2021",
+        "performance_indicator": [
+          "Goals Scored",
+          "Assists Made"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_1",
+    "call_index": 0,
+    "call": {
+      "name": "math.triangle_area_heron",
+      "arguments": {
+        "side1": 3,
+        "side2": 4,
+        "side3": 5
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_131",
+    "call_index": 1,
+    "call": {
+      "name": "map_routing.fastest_route",
+      "arguments": {
+        "start_location": "Palo Alto",
+        "end_location": "San Jose",
+        "avoid_tolls": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_62",
+    "call_index": 1,
+    "call": {
+      "name": "algebra.quadratic_roots",
+      "arguments": {
+        "a": 5,
+        "b": -7,
+        "c": 3
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_117-73-0",
+    "call_index": 0,
+    "call": {
+      "name": "reverse_input",
+      "arguments": {
+        "input_value": "say hi"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_50",
+    "call_index": 0,
+    "call": {
+      "name": "house_price_forecast",
+      "arguments": {
+        "location": "New York",
+        "months": 1,
+        "features": []
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_179",
+    "call_index": 0,
+    "call": {
+      "name": "get_stock_price",
+      "arguments": {
+        "company": "AAPL",
+        "days": 10,
+        "exchange": "NASDAQ"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 7,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          56,
+          78,
+          90,
+          12,
+          34
+        ],
+        "order": "descending"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_198",
+    "call_index": 1,
+    "call": {
+      "name": "lawsuit_search",
+      "arguments": {
+        "entity": "Facebook",
+        "county": "San Mateo",
+        "state": "California"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_54",
+    "call_index": 0,
+    "call": {
+      "name": "whole_foods.order",
+      "arguments": {
+        "location": "downtown",
+        "items": [
+          "pepperoni pizza",
+          "chicken Caesar salad"
+        ],
+        "size": "large"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_101",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_speed",
+      "arguments": {
+        "distance": 450,
+        "time": 20,
+        "to_unit": "km/h"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_279",
+    "call_index": 0,
+    "call": {
+      "name": "instrument_price.get",
+      "arguments": {
+        "brand": "Fender",
+        "model": "American Professional II Stratocaster",
+        "finish": "Rosewood"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_170",
+    "call_index": 0,
+    "call": {
+      "name": "soccer_stat.get_player_stats",
+      "arguments": {
+        "player_name": "Cristiano Ronaldo",
+        "season": "2019-2020",
+        "league": "all"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_102",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_displacement",
+      "arguments": {
+        "initial_velocity": 10,
+        "time": 5,
+        "acceleration": 9.8
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_168-99-2",
+    "call_index": 0,
+    "call": {
+      "name": "cmd_controller.execute",
+      "arguments": {
+        "command": "docker start"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 3,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          34,
+          78,
+          12,
+          56,
+          90
+        ],
+        "order": "descending"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_159",
+    "call_index": 2,
+    "call": {
+      "name": "probability.dice_roll",
+      "arguments": {
+        "desired_number": 7,
+        "number_of_rolls": 2,
+        "die_sides": 8
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_148",
+    "call_index": 0,
+    "call": {
+      "name": "get_stock_info",
+      "arguments": {
+        "company_name": "Apple Inc.",
+        "detail_level": "detailed",
+        "market": "NASDAQ"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_184",
+    "call_index": 0,
+    "call": {
+      "name": "lawsuit.check_case",
+      "arguments": {
+        "case_id": 1234,
+        "closed_status": true
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_159",
+    "call_index": 0,
+    "call": {
+      "name": "probability.dice_roll",
+      "arguments": {
+        "desired_number": 4,
+        "number_of_rolls": 3,
+        "die_sides": 6
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_137",
+    "call_index": 4,
+    "call": {
+      "name": "array_sort",
+      "arguments": {
+        "list": [
+          23,
+          45,
+          67,
+          89,
+          12
+        ],
+        "order": "ascending"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_86",
+    "call_index": 0,
+    "call": {
+      "name": "kinematics.final_velocity_from_distance",
+      "arguments": {
+        "acceleration": 5,
+        "distance": 100
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_191-115-1",
+    "call_index": 0,
+    "call": {
+      "name": "raptor.mpn.specs",
+      "arguments": {
+        "identifier": "3pak7"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "ac575a48-9134-4bd0-9da0-7f3d75b9c290",
+    "call_index": 0,
+    "call": {
+      "name": "send_chat_message",
+      "arguments": {
+        "user_id": "user123",
+        "recipient_id": "user456",
+        "message_content": "Hello, how are you?"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_66",
+    "call_index": 2,
+    "call": {
+      "name": "geometry.area_circle",
+      "arguments": {
+        "radius": 15,
+        "units": "meters"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_100",
+    "call_index": 0,
+    "call": {
+      "name": "math.hcf",
+      "arguments": {
+        "number1": 36,
+        "number2": 24
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_161",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_binomial_probability",
+      "arguments": {
+        "number_of_trials": 10,
+        "number_of_successes": 7,
+        "probability_of_success": 0.6
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_261-125-0",
+    "call_index": 0,
+    "call": {
+      "name": "rotateImageAction",
+      "arguments": {
+        "degrees": 30
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_221",
+    "call_index": 0,
+    "call": {
+      "name": "population_growth_estimate",
+      "arguments": {
+        "location": "London",
+        "years": 5
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_373",
+    "call_index": 0,
+    "call": {
+      "name": "walmart.purchase",
+      "arguments": {
+        "loc": "San Jose",
+        "product_list": [
+          "apples",
+          "rice",
+          "bottled water"
+        ],
+        "pack_size": [
+          1,
+          1,
+          12
+        ]
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "3725d66e-4187-42e6-8142-5766e205747f",
+    "call_index": 1,
+    "call": {
+      "name": "set_function_egress_settings",
+      "arguments": {
+        "function_name": "my-secure-function",
+        "vpc_connector_name": "my-vpc-connector",
+        "egress_settings": "ALL_TRAFFIC"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_176",
+    "call_index": 0,
+    "call": {
+      "name": "lawsuit_details.find",
+      "arguments": {
+        "company_name": "Apple Inc.",
+        "year": 2010,
+        "case_type": "Patent"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_7",
+    "call_index": 0,
+    "call": {
+      "name": "wildlife_population.assess_growth",
+      "arguments": {
+        "species": "deer",
+        "location": "Washington state",
+        "duration": 10
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_113",
+    "call_index": 3,
+    "call": {
+      "name": "diabetes_prediction",
+      "arguments": {
+        "weight": 220,
+        "height": 68,
+        "activity_level": "extra active"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_179",
+    "call_index": 1,
+    "call": {
+      "name": "get_stock_price",
+      "arguments": {
+        "company": "MSFT",
+        "days": 15,
+        "exchange": "NYSE"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_7",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_circumference",
+      "arguments": {
+        "radius": 4,
+        "unit": "inches"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "7e240f3d-e869-4c94-8b1c-a8269fa36a4a",
+    "call_index": 0,
+    "call": {
+      "name": "search_hotels",
+      "arguments": {
+        "destination": "Tokyo",
+        "sub_area": "Shinjuku",
+        "star_rating": 4,
+        "amenities": [
+          "free Wi-Fi",
+          "included breakfast"
+        ],
+        "price_range": {
+          "min": 0,
+          "max": 200
+        },
+        "stay_dates": {
+          "check_in": "2023-04-15",
+          "check_out": "2023-04-20"
+        }
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_88-49-0",
+    "call_index": 0,
+    "call": {
+      "name": "log_food",
+      "arguments": {
+        "food_name": "chai tea",
+        "portion_amount": 16.0,
+        "portion_unit": "ounces",
+        "meal_name": "snack"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_267-127-2",
+    "call_index": 0,
+    "call": {
+      "name": "Weather_1_GetWeather",
+      "arguments": {
+        "city": "Vancouver",
+        "date": "2023-04-04"
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_84",
+    "call_index": 0,
+    "call": {
+      "name": "calculate_displacement",
+      "arguments": {
+        "initial_velocity": 15,
+        "time": 7,
+        "acceleration": 3.5
+      }
+    }
+  },
+  {
+    "subset": "parallel",
+    "id": "parallel_131",
+    "call_index": 2,
+    "call": {
+      "name": "map_routing.fastest_route",
+      "arguments": {
+        "start_location": "San Jose",
+        "end_location": "San Francisco",
+        "avoid_tolls": true
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_199-116-7",
+    "call_index": 0,
+    "call": {
+      "name": "Weather_1_GetWeather",
+      "arguments": {
+        "city": "Marshall",
+        "date": "2023-03-05"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_403-139-7",
+    "call_index": 0,
+    "call": {
+      "name": "Events_3_FindEvents",
+      "arguments": {
+        "event_type": "Theater",
+        "city": "London, UK",
+        "date": "2023-04-05"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_25",
+    "call_index": 0,
+    "call": {
+      "name": "video_games.store_price",
+      "arguments": {
+        "game_title": "Assassins Creed Valhalla",
+        "platform": "PlayStation",
+        "region": "United States"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "87d19890-4833-4fa3-9106-e81ecbcd3414",
+    "call_index": 0,
+    "call": {
+      "name": "assign_service_requests",
+      "arguments": {
+        "service_requests": "{\"service_requests\":[{\"Request ID\":\"SR001\",\"Location\":\"1234 Elm St, A1\",\"Priority\":\"High\",\"Estimated Time (hrs)\":2},{\"Request ID\":\"SR002\",\"Location\":\"6789 Oak St, B2\",\"Priority\":\"Medium\",\"Estimated Time (hrs)\":1.5},{\"Request ID\":\"SR003\",\"Location\":\"1357 Pine St, C3\",\"Priority\":\"Low\",\"Estimated Time (hrs)\":1},{\"Request ID\":\"SR004\",\"Location\":\"2468 Maple St, D4\",\"Priority\":\"High\",\"Estimated Time (hrs)\":3}]}",
+        "engineers": "{\"engineers\":[{\"Engineer ID\":\"ENG1\",\"Current Location\":\"1234 Elm St, A1\",\"Skill Set\":[\"Electrical\",\"Plumbing\"],\"Availability (hrs)\":8},{\"Engineer ID\":\"ENG2\",\"Current Location\":\"6789 Oak St, B2\",\"Skill Set\":[\"HVAC\",\"Electrical\"],\"Availability (hrs)\":6},{\"Engineer ID\":\"ENG3\",\"Current Location\":\"1357 Pine St, C3\",\"Skill Set\":[\"Plumbing\",\"Carpentry\"],\"Availability (hrs)\":7},{\"Engineer ID\":\"ENG4\",\"Current Location\":\"2468 Maple St, D4\",\"Skill Set\":[\"Carpentry\",\"HVAC\"],\"Availability (hrs)\":8}]}"
+      }
+    }
+  }
+]

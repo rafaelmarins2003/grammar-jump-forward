@@ -1,0 +1,157 @@
+{
+  "created_at_utc": "2026-09-12T15:14:31.091521+00:00",
+  "command": [
+    "scripts/05_workload_cache.py",
+    "collect",
+    "--resume",
+    "--run",
+    "runs/2026-09-12-workload-cache"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-7.2.3-arch1-3-x86_64-with-glibc2.44",
+  "versions": {
+    "llguidance": "1.0.1",
+    "jsonschema": "4.26.0",
+    "transformers": "5.17.0",
+    "huggingface-hub": "1.31.0"
+  },
+  "git_head": "0499a9a587a799ddcbb40225ad921767e49e2621",
+  "git_status": "M .gitignore\n M README.md\n M docs/gate0-report.md\n M docs/notes/llguidance-ff-tokens.md\n M docs/phase0-plan.md\n M src/jumpforward/corpus.py\n?? docs/phase0-reproduction.md\n?? runs/2026-09-12-decision/\n?? runs/2026-09-12-full/\n?? runs/2026-09-12-generated/\n?? runs/2026-09-12-parity/\n?? runs/2026-09-12-pilot/\n?? runs/2026-09-12-workload-cache/\n?? scripts/02_tokenizer_parity.py\n?? scripts/03_generated_check.py\n?? scripts/04_gate0_report.py\n?? scripts/05_workload_cache.py\n?? src/jumpforward/cost.py\n?? src/jumpforward/generation.py\n?? src/jumpforward/parity.py\n?? src/jumpforward/phase0.py\n?? src/jumpforward/report.py\n?? src/jumpforward/spans.py\n?? src/jumpforward/workload.py\n?? tests/test_phase0.py\n?? tests/test_workload.py",
+  "git_diff_sha256": "22a6177036631993aca480c761a76639d2960627a943f691fcc91b3071b2dbd6",
+  "source_sha256": {
+    "scripts/01_phase0.py": "7dd48dfd0c905e276f106838910cfeea23c697f4dd09fb365aad4f799c2ee692",
+    "scripts/02_tokenizer_parity.py": "c15f43dab5728063dcc709220d2878d2927522c6abac65a037e9c3b9626e5561",
+    "scripts/03_generated_check.py": "3f2f2aeb1e49808cbbb8b4286e7e04e8d013ecca783aed2fb6a491e7db11898b",
+    "scripts/04_gate0_report.py": "d343fe2f64f24c7b49cb6ff85ad4d467858b03702836bfd32d5c87e235b7e9ca",
+    "scripts/05_workload_cache.py": "0abd9f97ad7e36e8b0b9381dd5fe98dba13b4ae8b4b98bf1040fee930cd3afba",
+    "src/jumpforward/__init__.py": "b7c4a2f6b9860657f6baaf6bc018e88d6410354b3683d2e342e5c9db5bd067ae",
+    "src/jumpforward/corpus.py": "a91c83c9a1a8a4ffc30f63dc60ff48b5d36ddd37fa03c1971370cb16aab09463",
+    "src/jumpforward/cost.py": "6d02a728880524b9c482a6caf53d21331a30d89472dc9a28f5b7a44fc2cab26f",
+    "src/jumpforward/generation.py": "d254a2e149d37dc1b7275edfb51d365e90d3f030d5b6ee4c1edc1a814ac05426",
+    "src/jumpforward/parity.py": "5a1a6e7b821b1716eca293e602e57e9fbda4e9d0841d0d06cc34c77efbbf75d3",
+    "src/jumpforward/phase0.py": "7bfe13e92c8c1ba7bf36522aa6a66ffedc7269bb8f089f10dffcd1a4f25465e4",
+    "src/jumpforward/report.py": "e29bdc61c912d8d1a7f74e894f6977d6d47f991d9caa20043cf17b08a4c3b208",
+    "src/jumpforward/spans.py": "63af943ed9fc887cc73d17e67bc020b03a892c184bf8d7de79a9fe4d7d9f3ecd",
+    "src/jumpforward/workload.py": "0d1867d0cee1b626974771602e464d3d7bf40b4227ddf54f2feea43322ce07ce"
+  },
+  "plan_sha256": "e9b78d6f2a63fc965f16b8572948ceeee26939164ffccd68f3dd971b144bc47b",
+  "engine_config": {
+    "_note": "Frozen engine decisions. Changing base_commit invalidates every run recorded against the old one.",
+    "upstream": "https://github.com/ggml-org/llama.cpp",
+    "base_commit": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+    "base_build": "b10791",
+    "worktree": "~/llama.cpp-jf",
+    "branch": "grammar-jump-forward",
+    "reference_checkout": {
+      "path": "~/llama.cpp",
+      "_note": "Same commit, untouched. Shared with other projects. Use it as the no-patch baseline binary."
+    },
+    "llguidance": {
+      "version": "1.0.1",
+      "commit": "d795912fedc7d393de740177ea9ea761e7905774",
+      "source": "~/llama.cpp-jf/build/llguidance/source",
+      "c_header": "~/llama.cpp-jf/build/llguidance/source/parser/llguidance.h"
+    },
+    "toolchain": {
+      "_note": "rust, ninja, ccache pinned in mise.toml; compilers are system packages",
+      "rust": "1.98.1",
+      "ninja": "1.13.2",
+      "ccache": "4.14",
+      "cuda": "13.3",
+      "gcc": "16.2.1",
+      "cmake": "4.4.3"
+    },
+    "builds": {
+      "release": {
+        "dir": "~/llama.cpp-jf/build",
+        "purpose": "benchmarks and GPU runs",
+        "cmake_flags": [
+          "-G Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DGGML_CUDA=ON",
+          "-DCMAKE_CUDA_ARCHITECTURES=75",
+          "-DLLAMA_LLGUIDANCE=ON",
+          "-DLLAMA_OPENSSL=ON",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CUDA_COMPILER_LAUNCHER=ccache"
+        ]
+      },
+      "debug": {
+        "dir": "~/llama.cpp-jf/build-debug",
+        "purpose": "stepping through sampler / speculative / server control flow with gdb; CPU only",
+        "cmake_flags": [
+          "-G Ninja",
+          "-DCMAKE_BUILD_TYPE=Debug",
+          "-DGGML_CUDA=OFF",
+          "-DLLAMA_LLGUIDANCE=ON",
+          "-DLLAMA_OPENSSL=ON",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache"
+        ]
+      }
+    }
+  },
+  "model_config": {
+    "path": "~/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf",
+    "bytes": 5027783488,
+    "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+    "hf_commit": "7c41481f57cb95916b40956ab2f0b139b296d974",
+    "gguf_general_name": "Qwen3 8B Awq Compatible Instruct",
+    "tokenizer": "qwen3",
+    "role": "primary target (Gate 1, RQ1, RQ4)"
+  },
+  "seed": "20260912",
+  "grammar_backend": "llguidance 1.0.1, default native forcing (PL)",
+  "scope": "offline reference call bodies, not model-generated server latency",
+  "server_command": [
+    "/home/rafaelmarins2003/llama.cpp-jf/build/bin/llama-server",
+    "-m",
+    "/home/rafaelmarins2003/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "40423",
+    "-ngl",
+    "99",
+    "-c",
+    "8192",
+    "-np",
+    "1",
+    "--reasoning",
+    "off",
+    "--no-warmup",
+    "-fa",
+    "on"
+  ],
+  "launched_command": [
+    "/usr/bin/setpriv",
+    "--pdeathsig",
+    "TERM",
+    "--",
+    "/home/rafaelmarins2003/llama.cpp-jf/build/bin/llama-server",
+    "-m",
+    "/home/rafaelmarins2003/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "40423",
+    "-ngl",
+    "99",
+    "-c",
+    "8192",
+    "-np",
+    "1",
+    "--reasoning",
+    "off",
+    "--no-warmup",
+    "-fa",
+    "on"
+  ],
+  "binary_sha256": "ce82709aa04307a6ce8e50d0af335e3d67bf27a6e5cddf72a8bfb197a0f89bc7",
+  "verified_model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "engine_head": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+  "engine_status": ""
+}

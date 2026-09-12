@@ -1,0 +1,4162 @@
+{
+  "G1/S1": {
+    "overall": {
+      "selected": 4004,
+      "complete": 3095,
+      "coverage": 0.772977022977023,
+      "forced_fraction": {
+        "n": 3095,
+        "p10": 0.2,
+        "median": 0.3055555555555556,
+        "p90": 0.42857142857142855,
+        "mean": 0.3084821770650072
+      },
+      "byte_fraction": {
+        "n": 3095,
+        "p10": 0.28794466403162056,
+        "median": 0.4411764705882353,
+        "p90": 0.6019982871824151,
+        "mean": 0.44146799374830226
+      },
+      "n_tokens": {
+        "n": 3095,
+        "p10": 18.0,
+        "median": 33.0,
+        "p90": 105.0,
+        "mean": 53.254927302100164
+      },
+      "span_length_call_weighted": {
+        "n": 25668,
+        "p10": 1.0,
+        "median": 1.0,
+        "p90": 3.0,
+        "mean": 1.71735234533271
+      },
+      "ff_ms": {
+        "n": 3095,
+        "p10": 0.17624940000000003,
+        "median": 0.40918,
+        "p90": 1.7452492,
+        "mean": 0.7365597327948303
+      },
+      "compile_ms": {
+        "n": 3095,
+        "p10": 0.5806246,
+        "median": 1.247907,
+        "p90": 3.9777278,
+        "mean": 1.8468602746365104
+      },
+      "cost": {
+        "1024": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.230695057132929,
+            "median": 1.3994091094850898,
+            "p90": 1.6587751415764571,
+            "mean": 1.4253542027085455
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.2031497984637387,
+            "median": 1.351282757788857,
+            "p90": 1.5536994198631815,
+            "mean": 1.3665632938217478
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.1018027135795752,
+            "median": 1.1597502488890405,
+            "p90": 1.281902500497215,
+            "mean": 1.1759835644203906
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.0915183092617147,
+            "median": 1.1405359456664361,
+            "p90": 1.242298723449181,
+            "mean": 1.1551486820132357
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.1089822267433331,
+            "median": 1.1722004573842795,
+            "p90": 1.3107631675477633,
+            "mean": 1.1917969391889536
+          }
+        },
+        "4096": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.2349501555099243,
+            "median": 1.4062834226490664,
+            "p90": 1.6751972110567512,
+            "mean": 1.4345165176656294
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.210963419334675,
+            "median": 1.3649700803905638,
+            "p90": 1.5804296161324292,
+            "mean": 1.3813912908435313
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.0376454409030207,
+            "median": 1.058013775917736,
+            "p90": 1.1360743033962732,
+            "mean": 1.0733913286275636
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.0348176324823548,
+            "median": 1.0531353041024818,
+            "p90": 1.1226291712392695,
+            "mean": 1.0662832285424506
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.0394674890928715,
+            "median": 1.0613407145222966,
+            "p90": 1.1455779638304373,
+            "mean": 1.0780672615616052
+          }
+        }
+      },
+      "errors": {
+        "no schema-valid alternative for 'conditions'": 3,
+        "no schema-valid alternative for 'update_info'": 2,
+        "reference tool 'find_closest' not in supplied tools": 1,
+        "no schema-valid alternative for 'area'": 1,
+        "no schema-valid alternative for 'budget'": 1,
+        "no schema-valid alternative for 'body'": 8,
+        "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'metrics'": 2,
+        "no schema-valid alternative for 'params'": 7,
+        "no schema-valid alternative for 'data'": 1,
+        "no schema-valid alternative for 'profile_data'": 1,
+        "answer alternatives for 'acc_routing_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'genre'": 4,
+        "no schema-valid alternative for 'is_unisex'": 1,
+        "no schema-valid alternative for 'in_unit_laundry'": 3,
+        "no schema-valid alternative for 'number_of_rooms'": 2,
+        "no schema-valid alternative for 'configurations'": 1,
+        "no schema-valid alternative for 'transaction_overview'": 1,
+        "reference arguments invalid": 1,
+        "no schema-valid alternative for 'customer_info'": 1,
+        "no schema-valid alternative for 'duration'": 1,
+        "no schema-valid alternative for 'items'": 2,
+        "no schema-valid alternative for 'new_preferences'": 2,
+        "no schema-valid alternative for 'ego_info'": 1,
+        "no schema-valid alternative for 'type'": 1,
+        "no schema-valid alternative for 'start_date'": 1,
+        "missing ground truth": 1,
+        "no schema-valid alternative for 'headers'": 1,
+        "Expecting value": 732,
+        "missing tools or ambiguous duplicate tool names": 61,
+        "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+        "Unknown format": 1,
+        "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+        "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+        "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+        "'https": 2,
+        "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+        "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+        "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+        "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+        "no JSON tool-call reference": 10,
+        "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+        "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+        "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+        "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+        "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+        "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+        "'http": 1,
+        "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+        "reference_token_not_allowed": 1,
+        "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+        "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+        "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+        "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+        "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+        "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+        "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+        "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+        "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+        "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+        "ff_reference_mismatch": 7,
+        "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+        "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+        "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+        "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+        "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+        "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+        "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+        "'C": 1
+      }
+    },
+    "subsets": {
+      "simple": {
+        "selected": 400,
+        "complete": 395,
+        "coverage": 0.9875,
+        "forced_fraction": {
+          "n": 395,
+          "p10": 0.2654901960784314,
+          "median": 0.3684210526315789,
+          "p90": 0.4583333333333333,
+          "mean": 0.3635041978742024
+        },
+        "byte_fraction": {
+          "n": 395,
+          "p10": 0.4131199558529351,
+          "median": 0.5205479452054794,
+          "p90": 0.674384494499738,
+          "mean": 0.5315422052476504
+        },
+        "n_tokens": {
+          "n": 395,
+          "p10": 19.0,
+          "median": 26.0,
+          "p90": 36.0,
+          "mean": 27.562025316455696
+        },
+        "span_length_call_weighted": {
+          "n": 2093,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 4.0,
+          "mean": 1.8236980410893455
+        },
+        "ff_ms": {
+          "n": 395,
+          "p10": 0.1732686,
+          "median": 0.260884,
+          "p90": 1.069548400000001,
+          "mean": 0.4295626607594937
+        },
+        "compile_ms": {
+          "n": 395,
+          "p10": 0.5078973999999999,
+          "median": 0.595246,
+          "p90": 2.1604276000000007,
+          "mean": 0.9461427924050633
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.3255135644677507,
+              "median": 1.5109279279138916,
+              "p90": 1.7304560058322225,
+              "mean": 1.5266235364325385
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.2898503318256491,
+              "median": 1.4468386473356813,
+              "p90": 1.6041186931393048,
+              "mean": 1.447064474619389
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.1242543589599372,
+              "median": 1.1682467583395666,
+              "p90": 1.2221203097685382,
+              "mean": 1.1718528230529361
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.1156414739999843,
+              "median": 1.1468706374766546,
+              "p90": 1.190866804971094,
+              "mean": 1.1515100187733547
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.1349292493803356,
+              "median": 1.1823193921221165,
+              "p90": 1.2451032790621905,
+              "mean": 1.188060164933079
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.3322878068570925,
+              "median": 1.521963864166982,
+              "p90": 1.7467691057757608,
+              "mean": 1.5385997978287476
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.299296132952655,
+              "median": 1.4705770995598102,
+              "p90": 1.6314232507964637,
+              "mean": 1.4669456852270548
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.043185158340596,
+              "median": 1.0584124316974883,
+              "p90": 1.0766251123772335,
+              "mean": 1.0599086967424205
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.0416024013601703,
+              "median": 1.0532912794480411,
+              "p90": 1.0682137781196197,
+              "mean": 1.054294875690564
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.046659245023026,
+              "median": 1.0620587540370612,
+              "p90": 1.0821783513721952,
+              "mean": 1.063961976780039
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'conditions'": 2,
+          "no schema-valid alternative for 'update_info'": 1,
+          "reference tool 'find_closest' not in supplied tools": 1,
+          "no schema-valid alternative for 'area'": 1
+        }
+      },
+      "multiple": {
+        "selected": 200,
+        "complete": 198,
+        "coverage": 0.99,
+        "forced_fraction": {
+          "n": 198,
+          "p10": 0.23470588235294118,
+          "median": 0.3333333333333333,
+          "p90": 0.4216599190283401,
+          "mean": 0.3289055017853539
+        },
+        "byte_fraction": {
+          "n": 198,
+          "p10": 0.370377358490566,
+          "median": 0.47395550732501357,
+          "p90": 0.6015151515151516,
+          "mean": 0.4780877448346906
+        },
+        "n_tokens": {
+          "n": 198,
+          "p10": 20.0,
+          "median": 26.0,
+          "p90": 33.30000000000001,
+          "mean": 26.848484848484848
+        },
+        "span_length_call_weighted": {
+          "n": 1075,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.5962790697674418
+        },
+        "ff_ms": {
+          "n": 198,
+          "p10": 0.1697031,
+          "median": 0.23242649999999998,
+          "p90": 1.0141546000000008,
+          "mean": 0.4209662272727273
+        },
+        "compile_ms": {
+          "n": 198,
+          "p10": 0.6689065,
+          "median": 0.8891560000000001,
+          "p90": 2.190156500000001,
+          "mean": 1.2023473282828283
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.2870193316984897,
+              "median": 1.4485882884282864,
+              "p90": 1.6574922317074314,
+              "mean": 1.4578222897767734
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.2541834096907751,
+              "median": 1.3865287578051477,
+              "p90": 1.5393872106708089,
+              "mean": 1.3970805919225493
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.1112578991721456,
+              "median": 1.1507647357102697,
+              "p90": 1.2040838810756698,
+              "mean": 1.1542171946922044
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.1024246739530752,
+              "median": 1.1339462926076938,
+              "p90": 1.1785703469801665,
+              "mean": 1.1375520195500886
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.1176194286560426,
+              "median": 1.1607250936719922,
+              "p90": 1.2211897931479205,
+              "mean": 1.1669248968750416
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.2918836093574262,
+              "median": 1.4580941515091794,
+              "p90": 1.6774605085115486,
+              "mean": 1.4677935554540524
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.2612296170625066,
+              "median": 1.399525332256014,
+              "p90": 1.5603761565782177,
+              "mean": 1.412835037909465
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.039378524602001,
+              "median": 1.0518963594237913,
+              "p90": 1.0706984535407287,
+              "mean": 1.0540972348816282
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.0375488434236275,
+              "median": 1.0470217492132918,
+              "p90": 1.0644702035980274,
+              "mean": 1.0493690501889974
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.040809702844452,
+              "median": 1.0547855675814635,
+              "p90": 1.0758495882675194,
+              "mean": 1.057219828282169
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'budget'": 1,
+          "no schema-valid alternative for 'conditions'": 1
+        }
+      },
+      "parallel": {
+        "selected": 200,
+        "complete": 199,
+        "coverage": 0.995,
+        "forced_fraction": {
+          "n": 199,
+          "p10": 0.25902031063321385,
+          "median": 0.358695652173913,
+          "p90": 0.45846994535519126,
+          "mean": 0.3526134601685779
+        },
+        "byte_fraction": {
+          "n": 199,
+          "p10": 0.40779780639008106,
+          "median": 0.5425101214574899,
+          "p90": 0.6666666666666666,
+          "mean": 0.5372184562730273
+        },
+        "n_tokens": {
+          "n": 199,
+          "p10": 42.0,
+          "median": 70.0,
+          "p90": 107.20000000000002,
+          "mean": 73.79396984924622
+        },
+        "span_length_call_weighted": {
+          "n": 2812,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 4.0,
+          "mean": 1.773470839260313
+        },
+        "ff_ms": {
+          "n": 199,
+          "p10": 0.36832940000000003,
+          "median": 0.802679,
+          "p90": 1.9796872000000012,
+          "mean": 1.0517318190954774
+        },
+        "compile_ms": {
+          "n": 199,
+          "p10": 1.0649878,
+          "median": 1.838796,
+          "p90": 4.464642,
+          "mean": 2.373608045226131
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.3148687682296791,
+              "median": 1.4995811368029521,
+              "p90": 1.7215121361519803,
+              "mean": 1.5043858598148034
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.2814213326654675,
+              "median": 1.4159300646924489,
+              "p90": 1.6098745113576318,
+              "mean": 1.431482990423498
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.1798802690954844,
+              "median": 1.2802905895146954,
+              "p90": 1.3771747390612707,
+              "mean": 1.2788244060608795
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.1688680190037504,
+              "median": 1.246800183399108,
+              "p90": 1.3169771090655624,
+              "mean": 1.244067025307634
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.1997462059730901,
+              "median": 1.3093738483898203,
+              "p90": 1.419955699128701,
+              "mean": 1.3079580146738783
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.320697398124946,
+              "median": 1.5112718505346865,
+              "p90": 1.741305276220219,
+              "mean": 1.515654496748012
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.2945747551634337,
+              "median": 1.4388372112391303,
+              "p90": 1.645254516768577,
+              "mean": 1.4500764526776104
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.0786865551533484,
+              "median": 1.126493004388896,
+              "p90": 1.1815476357052705,
+              "mean": 1.127490828112208
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.0730227536350756,
+              "median": 1.113564445019945,
+              "p90": 1.1558888538676977,
+              "mean": 1.1151714729870048
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.0847980538227215,
+              "median": 1.1333156622848501,
+              "p90": 1.19374117578779,
+              "mean": 1.1367199420419287
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'update_info'": 1
+        }
+      },
+      "live_simple": {
+        "selected": 258,
+        "complete": 238,
+        "coverage": 0.9224806201550387,
+        "forced_fraction": {
+          "n": 238,
+          "p10": 0.19175824175824177,
+          "median": 0.3157894736842105,
+          "p90": 0.46307692307692316,
+          "mean": 0.3177805668018093
+        },
+        "byte_fraction": {
+          "n": 238,
+          "p10": 0.2838071895424837,
+          "median": 0.4705719429441906,
+          "p90": 0.6172090112640801,
+          "mean": 0.4660969812248545
+        },
+        "n_tokens": {
+          "n": 238,
+          "p10": 15.0,
+          "median": 24.0,
+          "p90": 43.0,
+          "mean": 27.73109243697479
+        },
+        "span_length_call_weighted": {
+          "n": 1096,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.6906934306569343
+        },
+        "ff_ms": {
+          "n": 238,
+          "p10": 0.1503198,
+          "median": 0.2638625,
+          "p90": 1.1012351,
+          "mean": 0.42204990336134457
+        },
+        "compile_ms": {
+          "n": 238,
+          "p10": 0.49569599999999997,
+          "median": 0.6571715,
+          "p90": 2.7083844999999998,
+          "mean": 1.0452014537815126
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.2147384536386556,
+              "median": 1.4109252153481704,
+              "p90": 1.740655158945999,
+              "mean": 1.4452577909636493
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.194608210083989,
+              "median": 1.3719585051921883,
+              "p90": 1.6322743513594853,
+              "mean": 1.3928866777297635
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.0913668833957095,
+              "median": 1.1280796582283459,
+              "p90": 1.1900754228623696,
+              "mean": 1.1359445168183624
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.0854583898926409,
+              "median": 1.119561720277476,
+              "p90": 1.1659861901059725,
+              "mean": 1.1224776645805958
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.0981021359367231,
+              "median": 1.1431354035071366,
+              "p90": 1.2082732472325173,
+              "mean": 1.1482923996821048
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.2182582165956695,
+              "median": 1.4211797028742426,
+              "p90": 1.758845743605823,
+              "mean": 1.4556057482345484
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.200615998507833,
+              "median": 1.3890687186952262,
+              "p90": 1.6513939171235839,
+              "mean": 1.4082936681700826
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.0327539537951929,
+              "median": 1.0442739451878549,
+              "p90": 1.0664299609633314,
+              "mean": 1.0476705285511887
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.0313361003858534,
+              "median": 1.0416310801447075,
+              "p90": 1.059550874665732,
+              "mean": 1.0437807583713414
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.0338711623174246,
+              "median": 1.0476113199851942,
+              "p90": 1.0709685419407702,
+              "mean": 1.0507821884224975
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'body'": 8,
+          "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+          "no schema-valid alternative for 'metrics'": 1,
+          "no schema-valid alternative for 'params'": 7,
+          "no schema-valid alternative for 'data'": 1,
+          "no schema-valid alternative for 'profile_data'": 1,
+          "answer alternatives for 'acc_routing_start' are not a nonempty list": 1
+        }
+      },
+      "live_multiple": {
+        "selected": 1053,
+        "complete": 1028,
+        "coverage": 0.976258309591643,
+        "forced_fraction": {
+          "n": 1028,
+          "p10": 0.20735198438516592,
+          "median": 0.2857142857142857,
+          "p90": 0.42105263157894735,
+          "mean": 0.29974145063433505
+        },
+        "byte_fraction": {
+          "n": 1028,
+          "p10": 0.26706896551724135,
+          "median": 0.37962962962962965,
+          "p90": 0.5454727564102565,
+          "mean": 0.39726728347720897
+        },
+        "n_tokens": {
+          "n": 1028,
+          "p10": 16.0,
+          "median": 27.0,
+          "p90": 46.0,
+          "mean": 29.328793774319067
+        },
+        "span_length_call_weighted": {
+          "n": 5340,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.6102996254681647
+        },
+        "ff_ms": {
+          "n": 1028,
+          "p10": 0.1622878,
+          "median": 0.30724399999999996,
+          "p90": 1.1813036000000001,
+          "mean": 0.48356738910505837
+        },
+        "compile_ms": {
+          "n": 1028,
+          "p10": 0.7841214,
+          "median": 1.2906885,
+          "p90": 3.605379100000001,
+          "mean": 1.7506158754863812
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.2413828746918152,
+              "median": 1.3664375524604784,
+              "p90": 1.6359294335638352,
+              "mean": 1.410071518136612
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.2087293198367575,
+              "median": 1.324845818501227,
+              "p90": 1.5594649787102781,
+              "mean": 1.3589137556821855
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.0887370037628337,
+              "median": 1.1308768002278498,
+              "p90": 1.1941874993712491,
+              "mean": 1.1401163230142448
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.0817909348836903,
+              "median": 1.1206355725157164,
+              "p90": 1.1717812378320065,
+              "mean": 1.1258876883295632
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.093734966360093,
+              "median": 1.1403395077931753,
+              "p90": 1.2101835045658114,
+              "mean": 1.152294721386994
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.2462394078829118,
+              "median": 1.3741246877138282,
+              "p90": 1.65222854670094,
+              "mean": 1.4190952206540248
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.2179278262482127,
+              "median": 1.3383079729047576,
+              "p90": 1.58342044892994,
+              "mean": 1.372969716472399
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.0323880075206802,
+              "median": 1.0461824729221942,
+              "p90": 1.0773399236034469,
+              "mean": 1.0507276699664403
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.0300594964949545,
+              "median": 1.0430202681200504,
+              "p90": 1.0690515030936527,
+              "mean": 1.046542290754726
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.0335516744160917,
+              "median": 1.049287493280809,
+              "p90": 1.0827801054071247,
+              "mean": 1.0538960938817052
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'genre'": 4,
+          "no schema-valid alternative for 'is_unisex'": 1,
+          "no schema-valid alternative for 'in_unit_laundry'": 3,
+          "no schema-valid alternative for 'number_of_rooms'": 2,
+          "no schema-valid alternative for 'configurations'": 1,
+          "no schema-valid alternative for 'transaction_overview'": 1,
+          "reference arguments invalid": 1,
+          "no schema-valid alternative for 'customer_info'": 1,
+          "no schema-valid alternative for 'duration'": 1,
+          "no schema-valid alternative for 'items'": 2,
+          "no schema-valid alternative for 'new_preferences'": 2,
+          "no schema-valid alternative for 'ego_info'": 1,
+          "no schema-valid alternative for 'type'": 1,
+          "no schema-valid alternative for 'start_date'": 1,
+          "missing ground truth": 1,
+          "no schema-valid alternative for 'headers'": 1,
+          "no schema-valid alternative for 'metrics'": 1
+        }
+      },
+      "hermes": {
+        "selected": 1893,
+        "complete": 1037,
+        "coverage": 0.5478077126254622,
+        "forced_fraction": {
+          "n": 1037,
+          "p10": 0.16538601823708207,
+          "median": 0.2857142857142857,
+          "p90": 0.3888888888888889,
+          "mean": 0.2816864279439858
+        },
+        "byte_fraction": {
+          "n": 1037,
+          "p10": 0.2549216300940439,
+          "median": 0.4375,
+          "p90": 0.5477018633540373,
+          "mean": 0.41995619513643806
+        },
+        "n_tokens": {
+          "n": 1037,
+          "p10": 29.0,
+          "median": 70.0,
+          "p90": 176.79999999999995,
+          "mean": 93.71841851494696
+        },
+        "span_length_call_weighted": {
+          "n": 13252,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.7438122547539994
+        },
+        "ff_ms": {
+          "n": 1037,
+          "p10": 0.25352100000000005,
+          "median": 0.951015,
+          "p90": 2.4228446,
+          "mean": 1.176252675024108
+        },
+        "compile_ms": {
+          "n": 1037,
+          "p10": 0.701087,
+          "median": 1.945641,
+          "p90": 5.081632599999999,
+          "mean": 2.4913233452266152
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.1840601993777247,
+              "median": 1.366124909593098,
+              "p90": 1.5619281755486678,
+              "mean": 1.3759966114940818
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.1621970602826657,
+              "median": 1.3157906055134636,
+              "p90": 1.4734142775878123,
+              "mean": 1.3191566870470002
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.1064048131962387,
+              "median": 1.2066488601533165,
+              "p90": 1.3095851069282682,
+              "mean": 1.2067230765271109
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.0951412081134084,
+              "median": 1.1792118970862295,
+              "p90": 1.2639914177516138,
+              "mean": 1.1793364009020058
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.1143861967018736,
+              "median": 1.2223795257608194,
+              "p90": 1.3446190702717054,
+              "mean": 1.2248220081289432
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.1866686204751373,
+              "median": 1.3726641264182329,
+              "p90": 1.5732819725172358,
+              "mean": 1.3833937109815346
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.1669356263570723,
+              "median": 1.3273592039381474,
+              "p90": 1.4940833571888166,
+              "mean": 1.331792850866941
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.0461295893580205,
+              "median": 1.0954542930167928,
+              "p90": 1.1606544528610407,
+              "mean": 1.1001992951470376
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.041681893010618,
+              "median": 1.086074476596232,
+              "p90": 1.14172706993095,
+              "mean": 1.0894316547647436
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.0480558182843431,
+              "median": 1.1006861032029656,
+              "p90": 1.17064282953951,
+              "mean": 1.1063886729835026
+            }
+          }
+        },
+        "errors": {
+          "Expecting value": 732,
+          "missing tools or ambiguous duplicate tool names": 61,
+          "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+          "Unknown format": 1,
+          "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+          "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+          "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+          "'https": 2,
+          "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+          "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+          "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+          "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+          "no JSON tool-call reference": 10,
+          "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+          "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+          "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+          "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+          "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+          "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+          "'http": 1,
+          "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+          "reference_token_not_allowed": 1,
+          "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+          "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+          "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+          "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+          "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+          "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+          "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+          "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+          "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+          "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+          "ff_reference_mismatch": 7,
+          "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+          "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+          "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+          "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+          "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+          "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+          "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+          "'C": 1
+        }
+      }
+    }
+  },
+  "G1/S2": {
+    "overall": {
+      "selected": 4004,
+      "complete": 3095,
+      "coverage": 0.772977022977023,
+      "forced_fraction": {
+        "n": 3095,
+        "p10": 0.16298054105363077,
+        "median": 0.24358974358974358,
+        "p90": 0.3374811235276351,
+        "mean": 0.2482020436916355
+      },
+      "byte_fraction": {
+        "n": 3095,
+        "p10": 0.26947496947496946,
+        "median": 0.4143356643356643,
+        "p90": 0.5622933884297521,
+        "mean": 0.4137040725038409
+      },
+      "n_tokens": {
+        "n": 3095,
+        "p10": 23.0,
+        "median": 41.0,
+        "p90": 128.0,
+        "mean": 64.48012924071082
+      },
+      "span_length_call_weighted": {
+        "n": 25668,
+        "p10": 1.0,
+        "median": 1.0,
+        "p90": 3.0,
+        "mean": 1.7172744273024778
+      },
+      "ff_ms": {
+        "n": 3095,
+        "p10": 0.1718866,
+        "median": 0.410475,
+        "p90": 1.7451525999999995,
+        "mean": 0.7531392597738288
+      },
+      "compile_ms": {
+        "n": 3095,
+        "p10": 0.5656276,
+        "median": 1.232515,
+        "p90": 4.0215597999999995,
+        "mean": 1.8283142788368334
+      },
+      "cost": {
+        "1024": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.181516961957755,
+            "median": 1.2954450873647625,
+            "p90": 1.455746327879273,
+            "mean": 1.311946504054037
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.160704502487533,
+            "median": 1.26222491229206,
+            "p90": 1.3962236350107435,
+            "mean": 1.2721224869207017
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.0910597058480425,
+            "median": 1.1414554776687138,
+            "p90": 1.2331805840152734,
+            "mean": 1.1518993790221916
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.082030285839501,
+            "median": 1.1256318450645026,
+            "p90": 1.2012585610228492,
+            "mean": 1.134372135802692
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.096963365085468,
+            "median": 1.1528557516547593,
+            "p90": 1.257071151759067,
+            "mean": 1.165158747797612
+          }
+        },
+        "4096": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.184772445774008,
+            "median": 1.3014520390861088,
+            "p90": 1.4649399996738983,
+            "mean": 1.3180148607757953
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.1673444218250957,
+            "median": 1.2706534626410153,
+            "p90": 1.411525013440035,
+            "mean": 1.2822372996940217
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.0361690515548687,
+            "median": 1.0555035221216085,
+            "p90": 1.1232280407737807,
+            "mean": 1.0682905128330622
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.033179802720313,
+            "median": 1.0507806615458943,
+            "p90": 1.1102779760114696,
+            "mean": 1.0617362195737587
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.0379338230967738,
+            "median": 1.0588143578017994,
+            "p90": 1.1314563798960056,
+            "mean": 1.0726084304154588
+          }
+        }
+      },
+      "errors": {
+        "no schema-valid alternative for 'conditions'": 3,
+        "no schema-valid alternative for 'update_info'": 2,
+        "reference tool 'find_closest' not in supplied tools": 1,
+        "no schema-valid alternative for 'area'": 1,
+        "no schema-valid alternative for 'budget'": 1,
+        "no schema-valid alternative for 'body'": 8,
+        "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'metrics'": 2,
+        "no schema-valid alternative for 'params'": 7,
+        "no schema-valid alternative for 'data'": 1,
+        "no schema-valid alternative for 'profile_data'": 1,
+        "answer alternatives for 'acc_routing_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'genre'": 4,
+        "no schema-valid alternative for 'is_unisex'": 1,
+        "no schema-valid alternative for 'in_unit_laundry'": 3,
+        "no schema-valid alternative for 'number_of_rooms'": 2,
+        "no schema-valid alternative for 'configurations'": 1,
+        "no schema-valid alternative for 'transaction_overview'": 1,
+        "reference arguments invalid": 1,
+        "no schema-valid alternative for 'customer_info'": 1,
+        "no schema-valid alternative for 'duration'": 1,
+        "no schema-valid alternative for 'items'": 2,
+        "no schema-valid alternative for 'new_preferences'": 2,
+        "no schema-valid alternative for 'ego_info'": 1,
+        "no schema-valid alternative for 'type'": 1,
+        "no schema-valid alternative for 'start_date'": 1,
+        "missing ground truth": 1,
+        "no schema-valid alternative for 'headers'": 1,
+        "Expecting value": 732,
+        "missing tools or ambiguous duplicate tool names": 61,
+        "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+        "Unknown format": 1,
+        "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+        "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+        "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+        "'https": 2,
+        "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+        "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+        "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+        "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+        "no JSON tool-call reference": 10,
+        "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+        "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+        "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+        "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+        "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+        "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+        "'http": 1,
+        "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+        "reference_token_not_allowed": 1,
+        "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+        "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+        "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+        "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+        "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+        "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+        "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+        "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+        "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+        "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+        "ff_reference_mismatch": 7,
+        "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+        "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+        "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+        "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+        "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+        "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+        "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+        "'C": 1
+      }
+    },
+    "subsets": {
+      "simple": {
+        "selected": 400,
+        "complete": 395,
+        "coverage": 0.9875,
+        "forced_fraction": {
+          "n": 395,
+          "p10": 0.20542986425339366,
+          "median": 0.2857142857142857,
+          "p90": 0.36,
+          "mean": 0.2846464165370426
+        },
+        "byte_fraction": {
+          "n": 395,
+          "p10": 0.3778126635269492,
+          "median": 0.4810126582278481,
+          "p90": 0.6241857830642878,
+          "mean": 0.4938132659614593
+        },
+        "n_tokens": {
+          "n": 395,
+          "p10": 24.400000000000006,
+          "median": 34.0,
+          "p90": 46.0,
+          "mean": 35.10886075949367
+        },
+        "span_length_call_weighted": {
+          "n": 2093,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 4.0,
+          "mean": 1.8232202580028667
+        },
+        "ff_ms": {
+          "n": 395,
+          "p10": 0.1717212,
+          "median": 0.25728,
+          "p90": 1.0959348000000002,
+          "mean": 0.42788238734177214
+        },
+        "compile_ms": {
+          "n": 395,
+          "p10": 0.5055018,
+          "median": 0.584244,
+          "p90": 1.829582,
+          "mean": 0.8920357772151899
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.2387761337139895,
+              "median": 1.361608091109046,
+              "p90": 1.504064427690911,
+              "mean": 1.367238456249524
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.214790479725602,
+              "median": 1.3175651716851051,
+              "p90": 1.4209034879803557,
+              "mean": 1.3171015051812138
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.1100182273386396,
+              "median": 1.1464217023821892,
+              "p90": 1.1934893302139262,
+              "mean": 1.150431787173971
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.1020276628018728,
+              "median": 1.1298693956925767,
+              "p90": 1.167052316388504,
+              "mean": 1.132944190516242
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.1188878068425905,
+              "median": 1.1603880089064862,
+              "p90": 1.212510684477083,
+              "mean": 1.1643480398373092
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.2431406143193793,
+              "median": 1.3681452060057404,
+              "p90": 1.5135446243362127,
+              "mean": 1.3746335894079096
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.221391741213359,
+              "median": 1.3281209685689153,
+              "p90": 1.4386353193500163,
+              "mean": 1.3298187348994603
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.0411099148020788,
+              "median": 1.0560994265253871,
+              "p90": 1.0730801238729375,
+              "mean": 1.0570475495303526
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.0394882238857852,
+              "median": 1.0508076242981796,
+              "p90": 1.0653616001591018,
+              "mean": 1.0517220701738499
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.0442971083028931,
+              "median": 1.0595932328505637,
+              "p90": 1.0784191437357324,
+              "mean": 1.0608986726609164
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'conditions'": 2,
+          "no schema-valid alternative for 'update_info'": 1,
+          "reference tool 'find_closest' not in supplied tools": 1,
+          "no schema-valid alternative for 'area'": 1
+        }
+      },
+      "multiple": {
+        "selected": 200,
+        "complete": 198,
+        "coverage": 0.99,
+        "forced_fraction": {
+          "n": 198,
+          "p10": 0.18111888111888114,
+          "median": 0.25677655677655675,
+          "p90": 0.33619047619047626,
+          "mean": 0.2585119892772836
+        },
+        "byte_fraction": {
+          "n": 198,
+          "p10": 0.3410015290519878,
+          "median": 0.4394771894771895,
+          "p90": 0.5606410256410257,
+          "mean": 0.4444632327368154
+        },
+        "n_tokens": {
+          "n": 198,
+          "p10": 25.0,
+          "median": 33.0,
+          "p90": 43.0,
+          "mean": 34.14141414141414
+        },
+        "span_length_call_weighted": {
+          "n": 1075,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.5962790697674418
+        },
+        "ff_ms": {
+          "n": 198,
+          "p10": 0.169484,
+          "median": 0.244728,
+          "p90": 1.2971173,
+          "mean": 0.46706942929292933
+        },
+        "compile_ms": {
+          "n": 198,
+          "p10": 0.6575006999999999,
+          "median": 0.8527,
+          "p90": 2.3626541000000025,
+          "mean": 1.1962607171717172
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.2071476348141332,
+              "median": 1.3168599232452742,
+              "p90": 1.4584985735338107,
+              "mean": 1.3256469646897315
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.1867887598523723,
+              "median": 1.2776992332799344,
+              "p90": 1.3909031621352737,
+              "mean": 1.2858903868797322
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.096287564415043,
+              "median": 1.1315280602991757,
+              "p90": 1.1782596172122721,
+              "mean": 1.135596386444681
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.0906687271478903,
+              "median": 1.116488570991381,
+              "p90": 1.1568352368867072,
+              "mean": 1.1211133297340083
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.10275838162191,
+              "median": 1.1408912833144105,
+              "p90": 1.1931072684316166,
+              "mean": 1.1465906065870732
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.2107127213317428,
+              "median": 1.322080474007349,
+              "p90": 1.4698529999159367,
+              "mean": 1.3320326219641956
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.1924183117547758,
+              "median": 1.287139892284639,
+              "p90": 1.4044698095872203,
+              "mean": 1.2962745988562643
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.0379744192619162,
+              "median": 1.0497072492990585,
+              "p90": 1.066962522823794,
+              "mean": 1.0516060421795124
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.0359637295406892,
+              "median": 1.0446095854710213,
+              "p90": 1.0610896170864186,
+              "mean": 1.0470867385800138
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.0392095718678664,
+              "median": 1.0526233187904954,
+              "p90": 1.072357063336931,
+              "mean": 1.0545806781429419
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'budget'": 1,
+          "no schema-valid alternative for 'conditions'": 1
+        }
+      },
+      "parallel": {
+        "selected": 200,
+        "complete": 199,
+        "coverage": 0.995,
+        "forced_fraction": {
+          "n": 199,
+          "p10": 0.19943661971830987,
+          "median": 0.28205128205128205,
+          "p90": 0.35510635797391005,
+          "mean": 0.27588477317469007
+        },
+        "byte_fraction": {
+          "n": 199,
+          "p10": 0.37727684933281513,
+          "median": 0.50187265917603,
+          "p90": 0.6173170933797332,
+          "mean": 0.49807344268939463
+        },
+        "n_tokens": {
+          "n": 199,
+          "p10": 53.8,
+          "median": 89.0,
+          "p90": 138.40000000000003,
+          "mean": 94.29145728643216
+        },
+        "span_length_call_weighted": {
+          "n": 2812,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 4.0,
+          "mean": 1.773470839260313
+        },
+        "ff_ms": {
+          "n": 199,
+          "p10": 0.4535226,
+          "median": 0.952344,
+          "p90": 1.9972540000000003,
+          "mean": 1.159755783919598
+        },
+        "compile_ms": {
+          "n": 199,
+          "p10": 1.1542684,
+          "median": 2.039434,
+          "p90": 4.5633008,
+          "mean": 2.5508683869346735
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.2276564575666384,
+              "median": 1.3526617224633537,
+              "p90": 1.4914003615484868,
+              "mean": 1.3525533435537218
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.2086549051219828,
+              "median": 1.2999660402874085,
+              "p90": 1.4219537630098569,
+              "mean": 1.306132215879489
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.146420973876486,
+              "median": 1.2244434551995282,
+              "p90": 1.3033599396439552,
+              "mean": 1.225050563150874
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.139027465574441,
+              "median": 1.1958259328725733,
+              "p90": 1.2586887823548636,
+              "mean": 1.1979889137632473
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.161142714006702,
+              "median": 1.2457247520985015,
+              "p90": 1.333753487367343,
+              "mean": 1.2474313701809876
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.231635764742537,
+              "median": 1.358510060218067,
+              "p90": 1.5010991611721038,
+              "mean": 1.3595468250491087
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.214941348639206,
+              "median": 1.3150706912232273,
+              "p90": 1.440541349965066,
+              "mean": 1.3180835247103577
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.0717393299539513,
+              "median": 1.1131037756862228,
+              "p90": 1.1609344059021292,
+              "mean": 1.1146493202234693
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.0677048341872188,
+              "median": 1.1018784514708866,
+              "p90": 1.1383839299407816,
+              "mean": 1.1036541882570972
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.0776815500862105,
+              "median": 1.1208632764489699,
+              "p90": 1.1733299716536063,
+              "mean": 1.1228470757974665
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'update_info'": 1
+        }
+      },
+      "live_simple": {
+        "selected": 258,
+        "complete": 238,
+        "coverage": 0.9224806201550387,
+        "forced_fraction": {
+          "n": 238,
+          "p10": 0.15625,
+          "median": 0.2586618876941458,
+          "p90": 0.36252631578947375,
+          "mean": 0.2546658108378078
+        },
+        "byte_fraction": {
+          "n": 238,
+          "p10": 0.26434523809523813,
+          "median": 0.4437412095639943,
+          "p90": 0.5802868973676427,
+          "mean": 0.43712366046353557
+        },
+        "n_tokens": {
+          "n": 238,
+          "p10": 19.0,
+          "median": 29.0,
+          "p90": 53.0,
+          "mean": 33.89915966386555
+        },
+        "span_length_call_weighted": {
+          "n": 1096,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.6906934306569343
+        },
+        "ff_ms": {
+          "n": 238,
+          "p10": 0.1448334,
+          "median": 0.2552525,
+          "p90": 1.0870138000000005,
+          "mean": 0.40372552521008404
+        },
+        "compile_ms": {
+          "n": 238,
+          "p10": 0.49112730000000004,
+          "median": 0.6238904999999999,
+          "p90": 2.781183800000001,
+          "mean": 1.0488166176470588
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.1764233950659677,
+              "median": 1.3095026544412918,
+              "p90": 1.5069963467036298,
+              "mean": 1.3219233100078347
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.1598925637894943,
+              "median": 1.2772545242451678,
+              "p90": 1.432859182246119,
+              "mean": 1.2873601761291646
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.0836631049174805,
+              "median": 1.1171169219206454,
+              "p90": 1.1682734036312816,
+              "mean": 1.1217584470054427
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.075560528687594,
+              "median": 1.1067882084079121,
+              "p90": 1.1478721148812179,
+              "mean": 1.1099640488286522
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.0894789880208322,
+              "median": 1.1292844867806242,
+              "p90": 1.1825765685549434,
+              "mean": 1.1326344313138823
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.1792529664407643,
+              "median": 1.316869492392419,
+              "p90": 1.517886534206163,
+              "mean": 1.3285798423336015
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.1641224925604945,
+              "median": 1.2885591466176138,
+              "p90": 1.446302352597499,
+              "mean": 1.297598334603492
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.031530167091352,
+              "median": 1.0425718702947953,
+              "p90": 1.0640807240268575,
+              "mean": 1.0457551665358087
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.030097995255273,
+              "median": 1.0400713139341695,
+              "p90": 1.056298094560553,
+              "mean": 1.0420522633174978
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.0326110011808418,
+              "median": 1.0457445005125108,
+              "p90": 1.0680731557071286,
+              "mean": 1.04873443768586
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'body'": 8,
+          "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+          "no schema-valid alternative for 'metrics'": 1,
+          "no schema-valid alternative for 'params'": 7,
+          "no schema-valid alternative for 'data'": 1,
+          "no schema-valid alternative for 'profile_data'": 1,
+          "answer alternatives for 'acc_routing_start' are not a nonempty list": 1
+        }
+      },
+      "live_multiple": {
+        "selected": 1053,
+        "complete": 1028,
+        "coverage": 0.976258309591643,
+        "forced_fraction": {
+          "n": 1028,
+          "p10": 0.16666666666666666,
+          "median": 0.23145604395604397,
+          "p90": 0.34782608695652173,
+          "mean": 0.2435487319814864
+        },
+        "byte_fraction": {
+          "n": 1028,
+          "p10": 0.25,
+          "median": 0.354502688172043,
+          "p90": 0.5120481927710844,
+          "mean": 0.37257932408311756
+        },
+        "n_tokens": {
+          "n": 1028,
+          "p10": 20.0,
+          "median": 33.0,
+          "p90": 56.0,
+          "mean": 36.00875486381323
+        },
+        "span_length_call_weighted": {
+          "n": 5340,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.6101123595505618
+        },
+        "ff_ms": {
+          "n": 1028,
+          "p10": 0.1615819,
+          "median": 0.292105,
+          "p90": 1.1812074000000001,
+          "mean": 0.471762390077821
+        },
+        "compile_ms": {
+          "n": 1028,
+          "p10": 0.7719625999999999,
+          "median": 1.289714,
+          "p90": 3.539514900000001,
+          "mean": 1.7221981994163422
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.186113247409573,
+              "median": 1.2747474759686273,
+              "p90": 1.4730188206515233,
+              "mean": 1.3065988117441871
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.164643469530995,
+              "median": 1.2480199910211458,
+              "p90": 1.4075741139744142,
+              "mean": 1.2709162421423645
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.080690276619536,
+              "median": 1.117143825405043,
+              "p90": 1.1715967742045788,
+              "mean": 1.125166958745638
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.074337181344854,
+              "median": 1.107826290961253,
+              "p90": 1.152989530934542,
+              "mean": 1.1126446624273874
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.0853259783702969,
+              "median": 1.1252705832291654,
+              "p90": 1.1878408570699994,
+              "mean": 1.1358472635588948
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.1894709046378749,
+              "median": 1.2797311877553947,
+              "p90": 1.4839073729140624,
+              "mean": 1.3127495745529032
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.1710173462260756,
+              "median": 1.2552850551404595,
+              "p90": 1.4214184980359437,
+              "mean": 1.2807558252104785
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.0311412657474226,
+              "median": 1.044606166577121,
+              "p90": 1.0733578736165155,
+              "mean": 1.0485510077316635
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.0287230825406946,
+              "median": 1.041412299526036,
+              "p90": 1.0656365673413901,
+              "mean": 1.0445642246721192
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.0323996821008328,
+              "median": 1.0473305960688593,
+              "p90": 1.0800521952272044,
+              "mean": 1.0515714409753574
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'genre'": 4,
+          "no schema-valid alternative for 'is_unisex'": 1,
+          "no schema-valid alternative for 'in_unit_laundry'": 3,
+          "no schema-valid alternative for 'number_of_rooms'": 2,
+          "no schema-valid alternative for 'configurations'": 1,
+          "no schema-valid alternative for 'transaction_overview'": 1,
+          "reference arguments invalid": 1,
+          "no schema-valid alternative for 'customer_info'": 1,
+          "no schema-valid alternative for 'duration'": 1,
+          "no schema-valid alternative for 'items'": 2,
+          "no schema-valid alternative for 'new_preferences'": 2,
+          "no schema-valid alternative for 'ego_info'": 1,
+          "no schema-valid alternative for 'type'": 1,
+          "no schema-valid alternative for 'start_date'": 1,
+          "missing ground truth": 1,
+          "no schema-valid alternative for 'headers'": 1,
+          "no schema-valid alternative for 'metrics'": 1
+        }
+      },
+      "hermes": {
+        "selected": 1893,
+        "complete": 1037,
+        "coverage": 0.5478077126254622,
+        "forced_fraction": {
+          "n": 1037,
+          "p10": 0.1406018858336627,
+          "median": 0.23255813953488372,
+          "p90": 0.31606003752345213,
+          "mean": 0.2301687439715027
+        },
+        "byte_fraction": {
+          "n": 1037,
+          "p10": 0.24178678093754058,
+          "median": 0.41025641025641024,
+          "p90": 0.5139757085020242,
+          "mean": 0.39651933733825057
+        },
+        "n_tokens": {
+          "n": 1037,
+          "p10": 36.0,
+          "median": 86.0,
+          "p90": 209.39999999999998,
+          "mean": 110.98264223722276
+        },
+        "span_length_call_weighted": {
+          "n": 13252,
+          "p10": 1.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "mean": 1.7438122547539994
+        },
+        "ff_ms": {
+          "n": 1037,
+          "p10": 0.2426976,
+          "median": 0.984149,
+          "p90": 2.4026225999999995,
+          "mean": 1.2127511147540984
+        },
+        "compile_ms": {
+          "n": 1037,
+          "p10": 0.6622586,
+          "median": 1.915681,
+          "p90": 5.0187794,
+          "mean": 2.451068491803279
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.1530121461131744,
+              "median": 1.2792215519634973,
+              "p90": 1.4115412560734308,
+              "mean": 1.2834886202488296
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.1372432436933473,
+              "median": 1.241688594092783,
+              "p90": 1.3527747753769404,
+              "mean": 1.2435330531048168
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.0952139469081303,
+              "median": 1.1749256643292152,
+              "p90": 1.2561376888990945,
+              "mean": 1.1749515251485854
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.0857516894604222,
+              "median": 1.1530717958465933,
+              "p90": 1.2195882276048018,
+              "mean": 1.1523803426544095
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.1016565792662611,
+              "median": 1.1891565375647604,
+              "p90": 1.2842700596544643,
+              "mean": 1.18974646512668
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.1553169893567088,
+              "median": 1.2842949556606167,
+              "p90": 1.419497731390689,
+              "mean": 1.2885968021557348
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.1414043025082157,
+              "median": 1.2502481499545917,
+              "p90": 1.3661588478400712,
+              "mean": 1.2524972597153383
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.0440436662074308,
+              "median": 1.087711897752524,
+              "p90": 1.1426813578330184,
+              "mean": 1.0916026793579094
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.039942157490465,
+              "median": 1.0794551657144351,
+              "p90": 1.1262809406327596,
+              "mean": 1.081844322591711
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.0465499661306976,
+              "median": 1.0931538971052392,
+              "p90": 1.1525544996857955,
+              "mean": 1.0972037961300702
+            }
+          }
+        },
+        "errors": {
+          "Expecting value": 732,
+          "missing tools or ambiguous duplicate tool names": 61,
+          "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+          "Unknown format": 1,
+          "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+          "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+          "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+          "'https": 2,
+          "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+          "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+          "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+          "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+          "no JSON tool-call reference": 10,
+          "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+          "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+          "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+          "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+          "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+          "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+          "'http": 1,
+          "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+          "reference_token_not_allowed": 1,
+          "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+          "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+          "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+          "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+          "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+          "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+          "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+          "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+          "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+          "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+          "ff_reference_mismatch": 7,
+          "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+          "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+          "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+          "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+          "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+          "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+          "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+          "'C": 1
+        }
+      }
+    }
+  },
+  "G2/S1": {
+    "overall": {
+      "selected": 4004,
+      "complete": 3095,
+      "coverage": 0.772977022977023,
+      "forced_fraction": {
+        "n": 3095,
+        "p10": 0.28125,
+        "median": 0.42857142857142855,
+        "p90": 0.6111111111111112,
+        "mean": 0.4351305423101817
+      },
+      "byte_fraction": {
+        "n": 3095,
+        "p10": 0.3587468030690537,
+        "median": 0.5402298850574713,
+        "p90": 0.7415730337078652,
+        "mean": 0.5415324228086754
+      },
+      "n_tokens": {
+        "n": 3095,
+        "p10": 18.0,
+        "median": 33.0,
+        "p90": 105.0,
+        "mean": 53.254927302100164
+      },
+      "span_length_call_weighted": {
+        "n": 14946,
+        "p10": 1.0,
+        "median": 2.0,
+        "p90": 10.0,
+        "mean": 4.026629198447745
+      },
+      "ff_ms": {
+        "n": 3095,
+        "p10": 0.1325456,
+        "median": 0.350185,
+        "p90": 1.6515719999999996,
+        "mean": 0.6683633812600969
+      },
+      "compile_ms": {
+        "n": 3095,
+        "p10": 0.5602388,
+        "median": 1.197325,
+        "p90": 4.064066199999999,
+        "mean": 1.830657943457189
+      },
+      "cost": {
+        "1024": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.3089592991978019,
+            "median": 1.5624522168279766,
+            "p90": 2.058806451272882,
+            "mean": 1.6375265119806388
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.2683273681018459,
+            "median": 1.4854830886086785,
+            "p90": 1.9005602834313322,
+            "mean": 1.5418443317987847
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.135955063952833,
+            "median": 1.211324186461079,
+            "p90": 1.3686023404316507,
+            "mean": 1.2344369423856625
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.116781977263689,
+            "median": 1.1878632052586473,
+            "p90": 1.3260036258186259,
+            "mean": 1.2081285803341877
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.1722152689383882,
+            "median": 1.2606305144730399,
+            "p90": 1.4625283201805097,
+            "mean": 1.2908498101662194
+          }
+        },
+        "4096": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.3146638076601747,
+            "median": 1.5743745764534398,
+            "p90": 2.0815290697784943,
+            "mean": 1.6511859005900793
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.2792791564852088,
+            "median": 1.5064927514736066,
+            "p90": 1.9515390307382383,
+            "mean": 1.5662861642865509
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.0487618738898223,
+            "median": 1.0758770496237302,
+            "p90": 1.1732004507439506,
+            "mean": 1.093948865605113
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.043459075284659,
+            "median": 1.0699286171951246,
+            "p90": 1.1582072345193621,
+            "mean": 1.0859040611830384
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.0603930139489655,
+            "median": 1.0890265473198784,
+            "p90": 1.2062815957504271,
+            "mean": 1.111551466766927
+          }
+        }
+      },
+      "errors": {
+        "no schema-valid alternative for 'conditions'": 3,
+        "no schema-valid alternative for 'update_info'": 2,
+        "reference tool 'find_closest' not in supplied tools": 1,
+        "no schema-valid alternative for 'area'": 1,
+        "no schema-valid alternative for 'budget'": 1,
+        "no schema-valid alternative for 'body'": 8,
+        "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'metrics'": 2,
+        "no schema-valid alternative for 'params'": 7,
+        "no schema-valid alternative for 'data'": 1,
+        "no schema-valid alternative for 'profile_data'": 1,
+        "answer alternatives for 'acc_routing_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'genre'": 4,
+        "no schema-valid alternative for 'is_unisex'": 1,
+        "no schema-valid alternative for 'in_unit_laundry'": 3,
+        "no schema-valid alternative for 'number_of_rooms'": 2,
+        "no schema-valid alternative for 'configurations'": 1,
+        "no schema-valid alternative for 'transaction_overview'": 1,
+        "reference arguments invalid": 1,
+        "no schema-valid alternative for 'customer_info'": 1,
+        "no schema-valid alternative for 'duration'": 1,
+        "no schema-valid alternative for 'items'": 2,
+        "no schema-valid alternative for 'new_preferences'": 2,
+        "no schema-valid alternative for 'ego_info'": 1,
+        "no schema-valid alternative for 'type'": 1,
+        "no schema-valid alternative for 'start_date'": 1,
+        "missing ground truth": 1,
+        "no schema-valid alternative for 'headers'": 1,
+        "Expecting value": 732,
+        "missing tools or ambiguous duplicate tool names": 61,
+        "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+        "Unknown format": 1,
+        "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+        "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+        "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+        "'https": 2,
+        "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+        "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+        "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+        "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+        "no JSON tool-call reference": 10,
+        "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+        "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+        "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+        "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+        "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+        "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+        "'http": 1,
+        "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+        "reference_token_not_allowed": 1,
+        "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+        "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+        "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+        "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+        "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+        "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+        "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+        "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+        "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+        "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+        "ff_reference_mismatch": 7,
+        "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+        "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+        "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+        "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+        "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+        "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+        "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+        "'C": 1
+      }
+    },
+    "subsets": {
+      "simple": {
+        "selected": 400,
+        "complete": 395,
+        "coverage": 0.9875,
+        "forced_fraction": {
+          "n": 395,
+          "p10": 0.39684210526315794,
+          "median": 0.52,
+          "p90": 0.6470588235294118,
+          "mean": 0.5207609676011337
+        },
+        "byte_fraction": {
+          "n": 395,
+          "p10": 0.5232852774137178,
+          "median": 0.6440677966101694,
+          "p90": 0.809684019095249,
+          "mean": 0.6575500049318662
+        },
+        "n_tokens": {
+          "n": 395,
+          "p10": 19.0,
+          "median": 26.0,
+          "p90": 36.0,
+          "mean": 27.562025316455696
+        },
+        "span_length_call_weighted": {
+          "n": 910,
+          "p10": 1.0,
+          "median": 2.0,
+          "p90": 13.0,
+          "mean": 5.943956043956044
+        },
+        "ff_ms": {
+          "n": 395,
+          "p10": 0.1083798,
+          "median": 0.185958,
+          "p90": 0.8752602000000002,
+          "mean": 0.3350210481012658
+        },
+        "compile_ms": {
+          "n": 395,
+          "p10": 0.4983164,
+          "median": 0.581921,
+          "p90": 1.7313510000000036,
+          "mean": 0.8887377848101266
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.5006687004415848,
+              "median": 1.8289761626765382,
+              "p90": 2.27091605868358,
+              "mean": 1.8730460900534847
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.4496031409280576,
+              "median": 1.731149767670698,
+              "p90": 2.1161297961512573,
+              "mean": 1.7599648739912632
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.1863247381116826,
+              "median": 1.2382677322050886,
+              "p90": 1.302614476575537,
+              "mean": 1.2419177292812869
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.1707082434526817,
+              "median": 1.2189395862527483,
+              "p90": 1.2757822419294735,
+              "mean": 1.220850179510319
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.2297456230035484,
+              "median": 1.2865395157665558,
+              "p90": 1.3580090630058583,
+              "mean": 1.2904111384873904
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.5089448235278953,
+              "median": 1.841120068430236,
+              "p90": 2.2953870789578374,
+              "mean": 1.8886319332992971
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.4635862552811754,
+              "median": 1.7565175136432765,
+              "p90": 2.1539824739766864,
+              "mean": 1.789178488724396
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.0632073059490665,
+              "median": 1.0794386835927208,
+              "p90": 1.0994477352461234,
+              "mean": 1.080535168531807
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.0592935650309998,
+              "median": 1.0744236443996604,
+              "p90": 1.0919347215019648,
+              "mean": 1.075279807637557
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.0753301554245123,
+              "median": 1.0921829829720506,
+              "p90": 1.1126571274989918,
+              "mean": 1.0932238601708
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'conditions'": 2,
+          "no schema-valid alternative for 'update_info'": 1,
+          "reference tool 'find_closest' not in supplied tools": 1,
+          "no schema-valid alternative for 'area'": 1
+        }
+      },
+      "multiple": {
+        "selected": 200,
+        "complete": 198,
+        "coverage": 0.99,
+        "forced_fraction": {
+          "n": 198,
+          "p10": 0.3333333333333333,
+          "median": 0.45454545454545453,
+          "p90": 0.5789473684210527,
+          "mean": 0.4586993880354278
+        },
+        "byte_fraction": {
+          "n": 198,
+          "p10": 0.46023930050621265,
+          "median": 0.576370887337986,
+          "p90": 0.7157531194295901,
+          "mean": 0.5827952850394751
+        },
+        "n_tokens": {
+          "n": 198,
+          "p10": 20.0,
+          "median": 26.0,
+          "p90": 33.30000000000001,
+          "mean": 26.848484848484848
+        },
+        "span_length_call_weighted": {
+          "n": 653,
+          "p10": 1.0,
+          "median": 2.0,
+          "p90": 8.0,
+          "mean": 3.629402756508423
+        },
+        "ff_ms": {
+          "n": 198,
+          "p10": 0.13873670000000002,
+          "median": 0.197614,
+          "p90": 1.1264973000000003,
+          "mean": 0.40437954545454546
+        },
+        "compile_ms": {
+          "n": 198,
+          "p10": 0.6561121,
+          "median": 0.8614655,
+          "p90": 1.686900700000002,
+          "mean": 1.1468623535353535
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.3784304398843596,
+              "median": 1.621391911267954,
+              "p90": 1.9615151385482317,
+              "mean": 1.6492934629707587
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.323078395483443,
+              "median": 1.5410747432022527,
+              "p90": 1.794612337795819,
+              "mean": 1.5524628526965583
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.1452008243240455,
+              "median": 1.1928793761146652,
+              "p90": 1.2552446752410797,
+              "mean": 1.1982886669565007
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.1278859230180893,
+              "median": 1.1746624195855522,
+              "p90": 1.2243754473836068,
+              "mean": 1.1767371287360686
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.1865713387557872,
+              "median": 1.2451032790621905,
+              "p90": 1.3079413431393807,
+              "mean": 1.2472713653603769
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.3875517914937874,
+              "median": 1.6377687339564484,
+              "p90": 1.9804457235419006,
+              "mean": 1.6646711452089966
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.3357310550988328,
+              "median": 1.5641960050426258,
+              "p90": 1.8344811866935946,
+              "mean": 1.5784367121048783
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.0506390762502253,
+              "median": 1.065541434330727,
+              "p90": 1.085211822025909,
+              "mean": 1.0676726226771696
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.046867641668385,
+              "median": 1.06029423234473,
+              "p90": 1.0787345561434534,
+              "mean": 1.0620166009463103
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.0635134232747794,
+              "median": 1.0782100646637338,
+              "p90": 1.099334685399334,
+              "mean": 1.0808895847644466
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'budget'": 1,
+          "no schema-valid alternative for 'conditions'": 1
+        }
+      },
+      "parallel": {
+        "selected": 200,
+        "complete": 199,
+        "coverage": 0.995,
+        "forced_fraction": {
+          "n": 199,
+          "p10": 0.39046283309957924,
+          "median": 0.5070422535211268,
+          "p90": 0.6313632781717889,
+          "mean": 0.50803321253509
+        },
+        "byte_fraction": {
+          "n": 199,
+          "p10": 0.5155372279495991,
+          "median": 0.6805555555555556,
+          "p90": 0.8056045666839649,
+          "mean": 0.6654297230262913
+        },
+        "n_tokens": {
+          "n": 199,
+          "p10": 42.0,
+          "median": 70.0,
+          "p90": 107.20000000000002,
+          "mean": 73.79396984924622
+        },
+        "span_length_call_weighted": {
+          "n": 1206,
+          "p10": 1.0,
+          "median": 3.0,
+          "p90": 12.0,
+          "mean": 5.9212271973466
+        },
+        "ff_ms": {
+          "n": 199,
+          "p10": 0.2529378,
+          "median": 0.655794,
+          "p90": 1.8503816000000017,
+          "mean": 0.921718055276382
+        },
+        "compile_ms": {
+          "n": 199,
+          "p10": 1.0375382,
+          "median": 1.935585,
+          "p90": 4.6078090000000005,
+          "mean": 2.5373314723618092
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.4936306911780668,
+              "median": 1.7770775232072928,
+              "p90": 2.2234162734527643,
+              "mean": 1.8297864171316183
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.4469019201976647,
+              "median": 1.673406504454055,
+              "p90": 2.0838899945406997,
+              "mean": 1.7248416836648464
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.2790390788162314,
+              "median": 1.4113070696414842,
+              "p90": 1.5598053311236877,
+              "mean": 1.4119189747670318
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.2528966821269427,
+              "median": 1.3710708263620128,
+              "p90": 1.4945546964699956,
+              "mean": 1.3712707105636643
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.348436909229819,
+              "median": 1.509519172182531,
+              "p90": 1.6996425203342014,
+              "mean": 1.5125322908285281
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.5002313657008304,
+              "median": 1.793569967432477,
+              "p90": 2.2462249555271203,
+              "mean": 1.8445100792121465
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.462089064470443,
+              "median": 1.704671367406321,
+              "p90": 2.124869021002493,
+              "mean": 1.7523356705861959
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.1155684570190323,
+              "median": 1.1719398997128245,
+              "p90": 1.2431918531036659,
+              "mean": 1.1767202947490896
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.1086366527409193,
+              "median": 1.1616765689178445,
+              "p90": 1.2273444771038249,
+              "mean": 1.1641269956241096
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.1394776612315938,
+              "median": 1.2012276659969112,
+              "p90": 1.283983576413156,
+              "mean": 1.208658669642131
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'update_info'": 1
+        }
+      },
+      "live_simple": {
+        "selected": 258,
+        "complete": 238,
+        "coverage": 0.9224806201550387,
+        "forced_fraction": {
+          "n": 238,
+          "p10": 0.3037411526794742,
+          "median": 0.5,
+          "p90": 0.7142857142857143,
+          "mean": 0.49603698538276353
+        },
+        "byte_fraction": {
+          "n": 238,
+          "p10": 0.3666846555135816,
+          "median": 0.6149212233549584,
+          "p90": 0.8059701492537313,
+          "mean": 0.6035801037300845
+        },
+        "n_tokens": {
+          "n": 238,
+          "p10": 15.0,
+          "median": 24.0,
+          "p90": 43.0,
+          "mean": 27.73109243697479
+        },
+        "span_length_call_weighted": {
+          "n": 404,
+          "p10": 1.0,
+          "median": 9.0,
+          "p90": 12.0,
+          "mean": 6.977722772277228
+        },
+        "ff_ms": {
+          "n": 238,
+          "p10": 0.08425250000000001,
+          "median": 0.185987,
+          "p90": 0.9203636000000001,
+          "mean": 0.33809881932773106
+        },
+        "compile_ms": {
+          "n": 238,
+          "p10": 0.4790963,
+          "median": 0.6152489999999999,
+          "p90": 2.668345400000001,
+          "mean": 0.9595782100840337
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.3501059698476856,
+              "median": 1.6969179268711465,
+              "p90": 2.4509440366483157,
+              "mean": 1.830484080100374
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.3082376878380884,
+              "median": 1.615784029334472,
+              "p90": 2.212540419162199,
+              "mean": 1.7144304141150188
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.1384688771727733,
+              "median": 1.1956207481403567,
+              "p90": 1.2713914476621246,
+              "mean": 1.2013918323223587
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.131192698349942,
+              "median": 1.1807116616064504,
+              "p90": 1.248912205389551,
+              "mean": 1.183676408501388
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.1793725954408139,
+              "median": 1.2417256835239119,
+              "p90": 1.3280827696373594,
+              "mean": 1.248363189523175
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.3555643148649534,
+              "median": 1.7096367556469034,
+              "p90": 2.486223574995845,
+              "mean": 1.8486311800081594
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.3168171421136563,
+              "median": 1.6393983552597176,
+              "p90": 2.2666798821385115,
+              "mean": 1.74637575309644
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.0493735665288497,
+              "median": 1.0637613346445711,
+              "p90": 1.088662525179557,
+              "mean": 1.0672673541354565
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.0465078410093727,
+              "median": 1.0598191885923884,
+              "p90": 1.083009029382889,
+              "mean": 1.0627684233838572
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.0619312568846868,
+              "median": 1.0758495882675194,
+              "p90": 1.1012758778251979,
+              "mean": 1.0797481208524595
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'body'": 8,
+          "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+          "no schema-valid alternative for 'metrics'": 1,
+          "no schema-valid alternative for 'params'": 7,
+          "no schema-valid alternative for 'data'": 1,
+          "no schema-valid alternative for 'profile_data'": 1,
+          "answer alternatives for 'acc_routing_start' are not a nonempty list": 1
+        }
+      },
+      "live_multiple": {
+        "selected": 1053,
+        "complete": 1028,
+        "coverage": 0.976258309591643,
+        "forced_fraction": {
+          "n": 1028,
+          "p10": 0.29411764705882354,
+          "median": 0.4074074074074074,
+          "p90": 0.6,
+          "mean": 0.4242872742766977
+        },
+        "byte_fraction": {
+          "n": 1028,
+          "p10": 0.34423611111111113,
+          "median": 0.4764705882352941,
+          "p90": 0.6787037037037038,
+          "mean": 0.4974146519054684
+        },
+        "n_tokens": {
+          "n": 1028,
+          "p10": 16.0,
+          "median": 27.0,
+          "p90": 46.0,
+          "mean": 29.328793774319067
+        },
+        "span_length_call_weighted": {
+          "n": 3319,
+          "p10": 1.0,
+          "median": 2.0,
+          "p90": 7.0,
+          "mean": 3.586321181078638
+        },
+        "ff_ms": {
+          "n": 1028,
+          "p10": 0.1366566,
+          "median": 0.26215299999999997,
+          "p90": 1.2472299000000002,
+          "mean": 0.4658995204280156
+        },
+        "compile_ms": {
+          "n": 1028,
+          "p10": 0.7439659,
+          "median": 1.275303,
+          "p90": 3.7350048000000005,
+          "mean": 1.7368367159533074
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.3194304761517488,
+              "median": 1.5093045511810523,
+              "p90": 1.996367325469509,
+              "mean": 1.5866077335474915
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.2677913051868834,
+              "median": 1.4136816912871262,
+              "p90": 1.7850940564269622,
+              "mean": 1.4774554020393198
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.1248607108975996,
+              "median": 1.1741445977045455,
+              "p90": 1.2462689090273897,
+              "mean": 1.18181122187883
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.1054578808492614,
+              "median": 1.1456874396153056,
+              "p90": 1.2161984195941145,
+              "mean": 1.156048256035908
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.1593812793284048,
+              "median": 1.2133149459257417,
+              "p90": 1.3088668688602911,
+              "mean": 1.2266116102827875
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.323675253719788,
+              "median": 1.5185585694830843,
+              "p90": 2.019412106344901,
+              "mean": 1.6002519642433546
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.2798041006738925,
+              "median": 1.4326345832772078,
+              "p90": 1.8347420955576699,
+              "mean": 1.502907954283284
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.0430333614809553,
+              "median": 1.058336467367385,
+              "p90": 1.0922684837765053,
+              "mean": 1.063957833840546
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.037762831259059,
+              "median": 1.0518489528006496,
+              "p90": 1.082198563571324,
+              "mean": 1.0568890180887838
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.0533248514548867,
+              "median": 1.0709099869015775,
+              "p90": 1.1063649803523663,
+              "mean": 1.0764872461982038
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'genre'": 4,
+          "no schema-valid alternative for 'is_unisex'": 1,
+          "no schema-valid alternative for 'in_unit_laundry'": 3,
+          "no schema-valid alternative for 'number_of_rooms'": 2,
+          "no schema-valid alternative for 'configurations'": 1,
+          "no schema-valid alternative for 'transaction_overview'": 1,
+          "reference arguments invalid": 1,
+          "no schema-valid alternative for 'customer_info'": 1,
+          "no schema-valid alternative for 'duration'": 1,
+          "no schema-valid alternative for 'items'": 2,
+          "no schema-valid alternative for 'new_preferences'": 2,
+          "no schema-valid alternative for 'ego_info'": 1,
+          "no schema-valid alternative for 'type'": 1,
+          "no schema-valid alternative for 'start_date'": 1,
+          "missing ground truth": 1,
+          "no schema-valid alternative for 'headers'": 1,
+          "no schema-valid alternative for 'metrics'": 1
+        }
+      },
+      "hermes": {
+        "selected": 1893,
+        "complete": 1037,
+        "coverage": 0.5478077126254622,
+        "forced_fraction": {
+          "n": 1037,
+          "p10": 0.22139567019806541,
+          "median": 0.3870967741935484,
+          "p90": 0.533953488372093,
+          "mean": 0.3807938646523858
+        },
+        "byte_fraction": {
+          "n": 1037,
+          "p10": 0.2968308063866899,
+          "median": 0.5127388535031847,
+          "p90": 0.6537644787644787,
+          "mean": 0.4951806060541307
+        },
+        "n_tokens": {
+          "n": 1037,
+          "p10": 29.0,
+          "median": 70.0,
+          "p90": 176.79999999999995,
+          "mean": 93.71841851494696
+        },
+        "span_length_call_weighted": {
+          "n": 8454,
+          "p10": 1.0,
+          "median": 2.0,
+          "p90": 8.0,
+          "mean": 3.612491128459901
+        },
+        "ff_ms": {
+          "n": 1037,
+          "p10": 0.20602440000000002,
+          "median": 0.768983,
+          "p90": 2.3410045999999998,
+          "mean": 1.0736259228543876
+        },
+        "compile_ms": {
+          "n": 1037,
+          "p10": 0.6816684,
+          "median": 1.904533,
+          "p90": 4.9596355999999995,
+          "mean": 2.477318652844745
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.2261008422529767,
+              "median": 1.4886778248710866,
+              "p90": 1.8147760997132587,
+              "mean": 1.5148657523441063
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.2075334395337427,
+              "median": 1.4292880327182913,
+              "p90": 1.6889957452635607,
+              "mean": 1.4458364030392203
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.1339899570519887,
+              "median": 1.2605724451699827,
+              "p90": 1.4000086860977392,
+              "mean": 1.2641838084834447
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.1211576684993025,
+              "median": 1.2325542957028655,
+              "p90": 1.353549140752874,
+              "mean": 1.23520995169487
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.1701997597983873,
+              "median": 1.3211854508615293,
+              "p90": 1.500913309625844,
+              "mean": 1.3302284783688296
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.2309640618258504,
+              "median": 1.5001022105867108,
+              "p90": 1.8345339062959687,
+              "mean": 1.5262440849318852
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.2142334985865921,
+              "median": 1.446348505107581,
+              "p90": 1.7191169390059022,
+              "mean": 1.4648583430445037
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.0590180240712441,
+              "median": 1.1184967144690574,
+              "p90": 1.1980477188688485,
+              "mean": 1.1240458496241974
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.054179103959841,
+              "median": 1.108451288405823,
+              "p90": 1.181067783979357,
+              "mean": 1.113573954549155
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.0699184042753092,
+              "median": 1.141286027422353,
+              "p90": 1.2359551200354977,
+              "mean": 1.1478111957371167
+            }
+          }
+        },
+        "errors": {
+          "Expecting value": 732,
+          "missing tools or ambiguous duplicate tool names": 61,
+          "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+          "Unknown format": 1,
+          "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+          "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+          "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+          "'https": 2,
+          "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+          "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+          "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+          "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+          "no JSON tool-call reference": 10,
+          "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+          "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+          "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+          "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+          "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+          "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+          "'http": 1,
+          "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+          "reference_token_not_allowed": 1,
+          "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+          "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+          "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+          "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+          "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+          "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+          "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+          "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+          "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+          "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+          "ff_reference_mismatch": 7,
+          "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+          "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+          "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+          "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+          "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+          "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+          "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+          "'C": 1
+        }
+      }
+    }
+  },
+  "G2/S2": {
+    "overall": {
+      "selected": 4004,
+      "complete": 3095,
+      "coverage": 0.772977022977023,
+      "forced_fraction": {
+        "n": 3095,
+        "p10": 0.34810933295567204,
+        "median": 0.5142857142857142,
+        "p90": 0.6923076923076923,
+        "mean": 0.5136391485299641
+      },
+      "byte_fraction": {
+        "n": 3095,
+        "p10": 0.391304347826087,
+        "median": 0.5934065934065934,
+        "p90": 0.78125,
+        "mean": 0.5880208153660096
+      },
+      "n_tokens": {
+        "n": 3095,
+        "p10": 23.0,
+        "median": 41.0,
+        "p90": 128.0,
+        "mean": 64.48012924071082
+      },
+      "span_length_call_weighted": {
+        "n": 15077,
+        "p10": 3.0,
+        "median": 4.0,
+        "p90": 13.0,
+        "mean": 6.004443854878291
+      },
+      "ff_ms": {
+        "n": 3095,
+        "p10": 0.15783119999999998,
+        "median": 0.451337,
+        "p90": 1.8217704,
+        "mean": 0.7895489822294023
+      },
+      "compile_ms": {
+        "n": 3095,
+        "p10": 0.5567098,
+        "median": 1.227487,
+        "p90": 3.932503,
+        "mean": 1.8247828352180937
+      },
+      "cost": {
+        "1024": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.4304478669915952,
+            "median": 1.815180317718073,
+            "p90": 2.520496438599118,
+            "mean": 1.9150313190892294
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.3708306027887611,
+            "median": 1.6884577879315075,
+            "p90": 2.2645507654551076,
+            "mean": 1.7648696886516957
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.1973370960705523,
+            "median": 1.3192398986717122,
+            "p90": 1.5545803541025132,
+            "mean": 1.3496113281982807
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.176565706653863,
+            "median": 1.281399730030331,
+            "p90": 1.4725126559212045,
+            "mean": 1.3065336157169092
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.2405820133597292,
+            "median": 1.3801030526922495,
+            "p90": 1.6787435555982775,
+            "mean": 1.4226868465218627
+          }
+        },
+        "4096": {
+          "decode_optimistic": {
+            "n": 3095,
+            "p10": 1.4385447766237616,
+            "median": 1.8305836820990256,
+            "p90": 2.557025355272691,
+            "mean": 1.93406208840046
+          },
+          "decode_conservative": {
+            "n": 3095,
+            "p10": 1.3870209393795054,
+            "median": 1.7172143573963408,
+            "p90": 2.3273599894679453,
+            "mean": 1.800513245842832
+          },
+          "cold_optimistic": {
+            "n": 3095,
+            "p10": 1.072240291780287,
+            "median": 1.115409130310407,
+            "p90": 1.2656212813955448,
+            "mean": 1.1428445496152735
+          },
+          "cold_conservative": {
+            "n": 3095,
+            "p10": 1.0661664684851846,
+            "median": 1.1065588933981163,
+            "p90": 1.238325041919937,
+            "mean": 1.1295755323192347
+          },
+          "zero_cost_cold_ceiling": {
+            "n": 3095,
+            "p10": 1.0855128930345548,
+            "median": 1.1315582969762383,
+            "p90": 1.3105388922201464,
+            "mean": 1.165034514449436
+          }
+        }
+      },
+      "errors": {
+        "no schema-valid alternative for 'conditions'": 3,
+        "no schema-valid alternative for 'update_info'": 2,
+        "reference tool 'find_closest' not in supplied tools": 1,
+        "no schema-valid alternative for 'area'": 1,
+        "no schema-valid alternative for 'budget'": 1,
+        "no schema-valid alternative for 'body'": 8,
+        "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'metrics'": 2,
+        "no schema-valid alternative for 'params'": 7,
+        "no schema-valid alternative for 'data'": 1,
+        "no schema-valid alternative for 'profile_data'": 1,
+        "answer alternatives for 'acc_routing_start' are not a nonempty list": 1,
+        "no schema-valid alternative for 'genre'": 4,
+        "no schema-valid alternative for 'is_unisex'": 1,
+        "no schema-valid alternative for 'in_unit_laundry'": 3,
+        "no schema-valid alternative for 'number_of_rooms'": 2,
+        "no schema-valid alternative for 'configurations'": 1,
+        "no schema-valid alternative for 'transaction_overview'": 1,
+        "reference arguments invalid": 1,
+        "no schema-valid alternative for 'customer_info'": 1,
+        "no schema-valid alternative for 'duration'": 1,
+        "no schema-valid alternative for 'items'": 2,
+        "no schema-valid alternative for 'new_preferences'": 2,
+        "no schema-valid alternative for 'ego_info'": 1,
+        "no schema-valid alternative for 'type'": 1,
+        "no schema-valid alternative for 'start_date'": 1,
+        "missing ground truth": 1,
+        "no schema-valid alternative for 'headers'": 1,
+        "Expecting value": 732,
+        "missing tools or ambiguous duplicate tool names": 61,
+        "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+        "Unknown format": 1,
+        "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+        "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+        "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+        "'https": 2,
+        "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+        "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+        "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+        "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+        "no JSON tool-call reference": 10,
+        "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+        "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+        "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+        "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+        "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+        "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+        "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+        "'http": 1,
+        "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+        "reference_token_not_allowed": 1,
+        "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+        "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+        "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+        "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+        "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+        "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+        "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+        "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+        "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+        "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+        "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+        "ff_reference_mismatch": 7,
+        "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+        "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+        "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+        "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+        "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+        "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+        "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+        "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+        "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+        "'C": 1
+      }
+    },
+    "subsets": {
+      "simple": {
+        "selected": 400,
+        "complete": 395,
+        "coverage": 0.9875,
+        "forced_fraction": {
+          "n": 395,
+          "p10": 0.4666666666666667,
+          "median": 0.6,
+          "p90": 0.72,
+          "mean": 0.5941004254048567
+        },
+        "byte_fraction": {
+          "n": 395,
+          "p10": 0.555868544600939,
+          "median": 0.6885245901639344,
+          "p90": 0.866268656716418,
+          "mean": 0.7011258009388606
+        },
+        "n_tokens": {
+          "n": 395,
+          "p10": 24.400000000000006,
+          "median": 34.0,
+          "p90": 46.0,
+          "mean": 35.10886075949367
+        },
+        "span_length_call_weighted": {
+          "n": 915,
+          "p10": 3.0,
+          "median": 4.0,
+          "p90": 17.0,
+          "mean": 8.653551912568306
+        },
+        "ff_ms": {
+          "n": 395,
+          "p10": 0.130856,
+          "median": 0.258508,
+          "p90": 1.0619466,
+          "mean": 0.4200723518987342
+        },
+        "compile_ms": {
+          "n": 395,
+          "p10": 0.492591,
+          "median": 0.573179,
+          "p90": 1.9439638000000004,
+          "mean": 0.9320487164556962
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.6971415164618837,
+              "median": 2.1238657672259142,
+              "p90": 2.8307042655585843,
+              "mean": 2.2136134262828193
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.633967155061842,
+              "median": 1.977905986662545,
+              "p90": 2.5528503589181972,
+              "mean": 2.0487284515214546
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.278774885470576,
+              "median": 1.3501137418862172,
+              "p90": 1.4369856783767518,
+              "mean": 1.3535672872067657
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.2574771900408728,
+              "median": 1.3241868802596877,
+              "p90": 1.3903583598999967,
+              "mean": 1.3228749705623544
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.3274773284405548,
+              "median": 1.412743632209659,
+              "p90": 1.512625057035761,
+              "mean": 1.4159371755676193
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 395,
+              "p10": 1.709304586207514,
+              "median": 2.143649263493715,
+              "p90": 2.876860349011913,
+              "mean": 2.2360251491442966
+            },
+            "decode_conservative": {
+              "n": 395,
+              "p10": 1.6523288186591951,
+              "median": 2.0151163945715336,
+              "p90": 2.6212866697891,
+              "mean": 2.0909760436876272
+            },
+            "cold_optimistic": {
+              "n": 395,
+              "p10": 1.0960341346850089,
+              "median": 1.1180953513513832,
+              "p90": 1.1463204513247394,
+              "mean": 1.1197246722384102
+            },
+            "cold_conservative": {
+              "n": 395,
+              "p10": 1.0909039538187932,
+              "median": 1.1114332727130813,
+              "p90": 1.1353891516457102,
+              "mean": 1.1123048891915723
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 395,
+              "p10": 1.109571135162927,
+              "median": 1.1337803389050527,
+              "p90": 1.1643567027443906,
+              "mean": 1.1353778135386325
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'conditions'": 2,
+          "no schema-valid alternative for 'update_info'": 1,
+          "reference tool 'find_closest' not in supplied tools": 1,
+          "no schema-valid alternative for 'area'": 1
+        }
+      },
+      "multiple": {
+        "selected": 200,
+        "complete": 198,
+        "coverage": 0.99,
+        "forced_fraction": {
+          "n": 198,
+          "p10": 0.43084415584415586,
+          "median": 0.5526315789473685,
+          "p90": 0.6702380952380954,
+          "mean": 0.5495348184490403
+        },
+        "byte_fraction": {
+          "n": 198,
+          "p10": 0.5022875816993464,
+          "median": 0.6324982040229885,
+          "p90": 0.7704615384615385,
+          "mean": 0.6406499861988458
+        },
+        "n_tokens": {
+          "n": 198,
+          "p10": 25.0,
+          "median": 33.0,
+          "p90": 43.0,
+          "mean": 34.14141414141414
+        },
+        "span_length_call_weighted": {
+          "n": 659,
+          "p10": 3.0,
+          "median": 4.0,
+          "p90": 11.0,
+          "mean": 5.496206373292868
+        },
+        "ff_ms": {
+          "n": 198,
+          "p10": 0.1564404,
+          "median": 0.267382,
+          "p90": 1.1086178,
+          "mean": 0.4712212575757576
+        },
+        "compile_ms": {
+          "n": 198,
+          "p10": 0.6441745,
+          "median": 0.866239,
+          "p90": 1.9181992000000019,
+          "mean": 1.1684715151515153
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.5880198088541837,
+              "median": 1.9298313794082955,
+              "p90": 2.383884144655209,
+              "mean": 1.9667532269935906
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.50739107088387,
+              "median": 1.7640573235586459,
+              "p90": 2.134863495608729,
+              "mean": 1.798037890865242
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.2381303910628785,
+              "median": 1.3007101333133224,
+              "p90": 1.3780987274995637,
+              "mean": 1.3079221768289917
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.2108366752756718,
+              "median": 1.2665424577106856,
+              "p90": 1.3329295984496359,
+              "mean": 1.270407224652441
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.2895228951794824,
+              "median": 1.3675961028987969,
+              "p90": 1.4572948736668987,
+              "mean": 1.3717329043689817
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 198,
+              "p10": 1.5980222379533113,
+              "median": 1.9449647373113816,
+              "p90": 2.4231687968779774,
+              "mean": 1.9886562885536148
+            },
+            "decode_conservative": {
+              "n": 198,
+              "p10": 1.5266150097854987,
+              "median": 1.8040666006092403,
+              "p90": 2.1876473090641184,
+              "mean": 1.8377904871526014
+            },
+            "cold_optimistic": {
+              "n": 198,
+              "p10": 1.0851152407719022,
+              "median": 1.1035227816791235,
+              "p90": 1.131184355906062,
+              "mean": 1.106424133408719
+            },
+            "cold_conservative": {
+              "n": 198,
+              "p10": 1.077537204837413,
+              "median": 1.0936893096371891,
+              "p90": 1.1192737903773484,
+              "mean": 1.0968481680959665
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 198,
+              "p10": 1.0999840964779128,
+              "median": 1.1201079620121026,
+              "p90": 1.1506603108490245,
+              "mean": 1.1228712514868406
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'budget'": 1,
+          "no schema-valid alternative for 'conditions'": 1
+        }
+      },
+      "parallel": {
+        "selected": 200,
+        "complete": 199,
+        "coverage": 0.995,
+        "forced_fraction": {
+          "n": 199,
+          "p10": 0.4588719153936545,
+          "median": 0.5806451612903226,
+          "p90": 0.7194444444444446,
+          "mean": 0.5810708402106147
+        },
+        "byte_fraction": {
+          "n": 199,
+          "p10": 0.5549050211275648,
+          "median": 0.7211895910780669,
+          "p90": 0.8719457013574661,
+          "mean": 0.7082226979446798
+        },
+        "n_tokens": {
+          "n": 199,
+          "p10": 53.8,
+          "median": 89.0,
+          "p90": 138.40000000000003,
+          "mean": 94.29145728643216
+        },
+        "span_length_call_weighted": {
+          "n": 1213,
+          "p10": 3.0,
+          "median": 4.0,
+          "p90": 16.0,
+          "mean": 8.649629018961253
+        },
+        "ff_ms": {
+          "n": 199,
+          "p10": 0.3565378,
+          "median": 0.933535,
+          "p90": 1.9148626000000002,
+          "mean": 1.0767674874371858
+        },
+        "compile_ms": {
+          "n": 199,
+          "p10": 1.081502,
+          "median": 1.979997,
+          "p90": 4.554996400000002,
+          "mean": 2.4628005879396984
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.6729397606453769,
+              "median": 2.060868330260519,
+              "p90": 2.789228967922163,
+              "mean": 2.1552695510300706
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.6108534337794236,
+              "median": 1.9182686222968488,
+              "p90": 2.541087185344743,
+              "mean": 2.002402531605754
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.4073075876855499,
+              "median": 1.5811621238199431,
+              "p90": 1.7909241139596712,
+              "mean": 1.5923506202002347
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.3811404131256677,
+              "median": 1.517823451906535,
+              "p90": 1.703561593547387,
+              "mean": 1.5326517047127044
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.4913983172967942,
+              "median": 1.7038532121261274,
+              "p90": 1.984354777474072,
+              "mean": 1.7236390680010485
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 199,
+              "p10": 1.681095687019757,
+              "median": 2.07607963014498,
+              "p90": 2.8306019388842105,
+              "mean": 2.176450971229557
+            },
+            "decode_conservative": {
+              "n": 199,
+              "p10": 1.6249185712679362,
+              "median": 1.9501057198629312,
+              "p90": 2.604598644662622,
+              "mean": 2.0421887516398103
+            },
+            "cold_optimistic": {
+              "n": 199,
+              "p10": 1.172339355549153,
+              "median": 1.2500435489482187,
+              "p90": 1.3520110900185796,
+              "mean": 1.2604015288971953
+            },
+            "cold_conservative": {
+              "n": 199,
+              "p10": 1.1647224430044372,
+              "median": 1.233497941588482,
+              "p90": 1.3309247453869877,
+              "mean": 1.2423418713280818
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 199,
+              "p10": 1.1989693645153754,
+              "median": 1.2878441025516707,
+              "p90": 1.4128748185300783,
+              "mean": 1.300460595542696
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'update_info'": 1
+        }
+      },
+      "live_simple": {
+        "selected": 258,
+        "complete": 238,
+        "coverage": 0.9224806201550387,
+        "forced_fraction": {
+          "n": 238,
+          "p10": 0.3665154264972777,
+          "median": 0.5555555555555556,
+          "p90": 0.7777777777777778,
+          "mean": 0.5597937714962802
+        },
+        "byte_fraction": {
+          "n": 238,
+          "p10": 0.3773874419543711,
+          "median": 0.6488511488511488,
+          "p90": 0.834321719792439,
+          "mean": 0.6337741928416123
+        },
+        "n_tokens": {
+          "n": 238,
+          "p10": 19.0,
+          "median": 29.0,
+          "p90": 53.0,
+          "mean": 33.89915966386555
+        },
+        "span_length_call_weighted": {
+          "n": 411,
+          "p10": 2.0,
+          "median": 13.0,
+          "p90": 16.0,
+          "mean": 9.746958637469586
+        },
+        "ff_ms": {
+          "n": 238,
+          "p10": 0.0925051,
+          "median": 0.236283,
+          "p90": 1.1549798000000004,
+          "mean": 0.4181845882352941
+        },
+        "compile_ms": {
+          "n": 238,
+          "p10": 0.4829267,
+          "median": 0.632951,
+          "p90": 2.7454181,
+          "mean": 1.0740373067226892
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.4727493278250432,
+              "median": 1.9690660126688455,
+              "p90": 3.1512137614049776,
+              "mean": 2.1803265757412156
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.4208256052723172,
+              "median": 1.8742549374482114,
+              "p90": 2.828152156552397,
+              "mean": 2.0137613934642253
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.2029769023005246,
+              "median": 1.286810540583525,
+              "p90": 1.3888117528908213,
+              "mean": 1.2929391234304686
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.1910057568410977,
+              "median": 1.2646966585102908,
+              "p90": 1.3577546272505332,
+              "mean": 1.2682850927670408
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.2402295298378851,
+              "median": 1.3424737912533544,
+              "p90": 1.4503177122411108,
+              "mean": 1.3457581985927796
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 238,
+              "p10": 1.4784799655871772,
+              "median": 1.980774719997919,
+              "p90": 3.196573167851801,
+              "mean": 2.202643637767742
+            },
+            "decode_conservative": {
+              "n": 238,
+              "p10": 1.4332655898514968,
+              "median": 1.904388693676058,
+              "p90": 2.911272428659826,
+              "mean": 2.0558534969426354
+            },
+            "cold_optimistic": {
+              "n": 238,
+              "p10": 1.0749660618868573,
+              "median": 1.0910330952825578,
+              "p90": 1.1303708562280752,
+              "mean": 1.098820581047023
+            },
+            "cold_conservative": {
+              "n": 238,
+              "p10": 1.0712946468074045,
+              "median": 1.0871065181433,
+              "p90": 1.118065071543396,
+              "mean": 1.0927589928216725
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 238,
+              "p10": 1.086652883614191,
+              "median": 1.1034312567284355,
+              "p90": 1.14647675273786,
+              "mean": 1.1124164513567274
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'body'": 8,
+          "answer alternatives for 'auto_loan_payment_start' are not a nonempty list": 1,
+          "no schema-valid alternative for 'metrics'": 1,
+          "no schema-valid alternative for 'params'": 7,
+          "no schema-valid alternative for 'data'": 1,
+          "no schema-valid alternative for 'profile_data'": 1,
+          "answer alternatives for 'acc_routing_start' are not a nonempty list": 1
+        }
+      },
+      "live_multiple": {
+        "selected": 1053,
+        "complete": 1028,
+        "coverage": 0.976258309591643,
+        "forced_fraction": {
+          "n": 1028,
+          "p10": 0.3364864864864865,
+          "median": 0.47058823529411764,
+          "p90": 0.68,
+          "mean": 0.4928323914738946
+        },
+        "byte_fraction": {
+          "n": 1028,
+          "p10": 0.36958372123952654,
+          "median": 0.5283018867924528,
+          "p90": 0.7277349768875193,
+          "mean": 0.5406993533091173
+        },
+        "n_tokens": {
+          "n": 1028,
+          "p10": 20.0,
+          "median": 33.0,
+          "p90": 56.0,
+          "mean": 36.00875486381323
+        },
+        "span_length_call_weighted": {
+          "n": 3395,
+          "p10": 2.0,
+          "median": 4.0,
+          "p90": 9.0,
+          "mean": 5.051546391752577
+        },
+        "ff_ms": {
+          "n": 1028,
+          "p10": 0.15657179999999998,
+          "median": 0.34585,
+          "p90": 1.4683141000000004,
+          "mean": 0.5904824105058365
+        },
+        "compile_ms": {
+          "n": 1028,
+          "p10": 0.7794496000000001,
+          "median": 1.2622555,
+          "p90": 3.447084000000004,
+          "mean": 1.6667516303501946
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.3972515592872712,
+              "median": 1.685001342232126,
+              "p90": 2.392939424276778,
+              "mean": 1.8097234297087361
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.3464415187180079,
+              "median": 1.565414596229877,
+              "p90": 2.1123207856374004,
+              "mean": 1.6656670119755612
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.1711151848488737,
+              "median": 1.2512694485568125,
+              "p90": 1.3592543231827203,
+              "mean": 1.2603438587371656
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.1526619368712228,
+              "median": 1.2169188992215514,
+              "p90": 1.3089752209281713,
+              "mean": 1.2276238316119887
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.2135381878973104,
+              "median": 1.3025773507526888,
+              "p90": 1.4268821375652314,
+              "mean": 1.3175085187829163
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1028,
+              "p10": 1.404954162108687,
+              "median": 1.6975570013259267,
+              "p90": 2.4302114106438046,
+              "mean": 1.8290534506587153
+            },
+            "decode_conservative": {
+              "n": 1028,
+              "p10": 1.3591056513807926,
+              "median": 1.5893626223669126,
+              "p90": 2.188254932401288,
+              "mean": 1.6997748389317413
+            },
+            "cold_optimistic": {
+              "n": 1028,
+              "p10": 1.063712474974443,
+              "median": 1.0845653604086307,
+              "p90": 1.1377962990481783,
+              "mean": 1.0934241855558022
+            },
+            "cold_conservative": {
+              "n": 1028,
+              "p10": 1.0583594314773952,
+              "median": 1.078010665223209,
+              "p90": 1.123338150712378,
+              "mean": 1.0845473266941843
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1028,
+              "p10": 1.0764215073460424,
+              "median": 1.0992739816622086,
+              "p90": 1.1579720840284806,
+              "mean": 1.1090187431419838
+            }
+          }
+        },
+        "errors": {
+          "no schema-valid alternative for 'genre'": 4,
+          "no schema-valid alternative for 'is_unisex'": 1,
+          "no schema-valid alternative for 'in_unit_laundry'": 3,
+          "no schema-valid alternative for 'number_of_rooms'": 2,
+          "no schema-valid alternative for 'configurations'": 1,
+          "no schema-valid alternative for 'transaction_overview'": 1,
+          "reference arguments invalid": 1,
+          "no schema-valid alternative for 'customer_info'": 1,
+          "no schema-valid alternative for 'duration'": 1,
+          "no schema-valid alternative for 'items'": 2,
+          "no schema-valid alternative for 'new_preferences'": 2,
+          "no schema-valid alternative for 'ego_info'": 1,
+          "no schema-valid alternative for 'type'": 1,
+          "no schema-valid alternative for 'start_date'": 1,
+          "missing ground truth": 1,
+          "no schema-valid alternative for 'headers'": 1,
+          "no schema-valid alternative for 'metrics'": 1
+        }
+      },
+      "hermes": {
+        "selected": 1893,
+        "complete": 1037,
+        "coverage": 0.5478077126254622,
+        "forced_fraction": {
+          "n": 1037,
+          "p10": 0.30265151515151517,
+          "median": 0.4861111111111111,
+          "p90": 0.6276333789329686,
+          "mean": 0.47323036582374106
+        },
+        "byte_fraction": {
+          "n": 1037,
+          "p10": 0.3447390628469909,
+          "median": 0.5748031496062992,
+          "p90": 0.7112066947565543,
+          "mean": 0.5482329073582551
+        },
+        "n_tokens": {
+          "n": 1037,
+          "p10": 36.0,
+          "median": 86.0,
+          "p90": 209.39999999999998,
+          "mean": 110.98264223722276
+        },
+        "span_length_call_weighted": {
+          "n": 8484,
+          "p10": 3.0,
+          "median": 4.0,
+          "p90": 11.0,
+          "mean": 5.58003300330033
+        },
+        "ff_ms": {
+          "n": 1037,
+          "p10": 0.2272576,
+          "median": 0.951882,
+          "p90": 2.607037,
+          "mean": 1.2185179672131148
+        },
+        "compile_ms": {
+          "n": 1037,
+          "p10": 0.6563410000000001,
+          "median": 1.9174,
+          "p90": 5.057345799999999,
+          "mean": 2.496670588235294
+        },
+        "cost": {
+          "1024": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.3621323611653227,
+              "median": 1.7483156519721528,
+              "p90": 2.2144275788399175,
+              "mean": 1.7888287741877977
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.310248302357948,
+              "median": 1.616744087682965,
+              "p90": 1.976855395561847,
+              "mean": 1.6460496064511076
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.2137222486991102,
+              "median": 1.409439250213574,
+              "p90": 1.6029411131884423,
+              "mean": 1.4109822755417185
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.1906993776114665,
+              "median": 1.348018281261628,
+              "p90": 1.5146558181274081,
+              "mean": 1.3508181837772535
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.2554981886287762,
+              "median": 1.491688194973119,
+              "p90": 1.75151504744523,
+              "mean": 1.4991553591752842
+            }
+          },
+          "4096": {
+            "decode_optimistic": {
+              "n": 1037,
+              "p10": 1.3664551831467702,
+              "median": 1.7621130565726497,
+              "p90": 2.241192914545416,
+              "mean": 1.8045596993377504
+            },
+            "decode_conservative": {
+              "n": 1037,
+              "p10": 1.3236930939319402,
+              "median": 1.64573114600754,
+              "p90": 2.029195337676771,
+              "mean": 1.6776405148507596
+            },
+            "cold_optimistic": {
+              "n": 1037,
+              "p10": 1.0930179434907232,
+              "median": 1.186627348294621,
+              "p90": 1.3085231372834087,
+              "mean": 1.1951411685815574
+            },
+            "cold_conservative": {
+              "n": 1037,
+              "p10": 1.0854653367569094,
+              "median": 1.1666654860694163,
+              "p90": 1.2716647887546009,
+              "mean": 1.1738501248668185
+            },
+            "zero_cost_cold_ceiling": {
+              "n": 1037,
+              "p10": 1.1068388055828131,
+              "median": 1.21566609570939,
+              "p90": 1.3586987585153856,
+              "mean": 1.225999070581479
+            }
+          }
+        },
+        "errors": {
+          "Expecting value": 732,
+          "missing tools or ambiguous duplicate tool names": 61,
+          "'area (sq ft)' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['area_column']": 1,
+          "Unknown format": 1,
+          "'Project_Report.docx' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['document_name']": 1,
+          "'development' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['branch_name']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['category']": 3,
+          "'brand' is a required property\n\nFailed validating 'required' in schema['properties']['filters']": 1,
+          "'https": 2,
+          "'2023-04-09' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['start_date']": 1,
+          "'/Users/myusername/projects/my-application' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['project_path']": 1,
+          "'smartphone123' is not one of []\n\nFailed validating 'enum' in schema['properties']['smartphone_id']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['source']": 1,
+          "'colleague@example.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['recipient']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['model']": 1,
+          "no JSON tool-call reference": 10,
+          "'Oculus Rift' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['headset']": 1,
+          "'/Users/username/Desktop/ProjectX' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_path']": 1,
+          "'Sign Up' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['button_text']": 1,
+          "'JavaScript' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['language']": 1,
+          "'start/HelloWorldSwing.java' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['file_path']": 1,
+          "None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['date']": 1,
+          "'assignment_rules' is a required property\n\nFailed validating 'required' in schema['properties']['lead_criteria']": 1,
+          "'http": 1,
+          "'mygmailaccount@gmail.com' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['from_account']": 1,
+          "reference_token_not_allowed": 1,
+          "'Twitter' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['platform']": 1,
+          "'1Password' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['app_name']": 1,
+          "'path/to/subscriber_list.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['subscriber_list_csv']": 1,
+          "'event_type' is a required property\n\nFailed validating 'required' in schema['properties']['preferences']": 1,
+          "'average_ratings' is a required property\n\nFailed validating 'required' in schema['properties']['analysis_results']": 1,
+          "'Team Building' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'mobilenet_v2' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['cost_constraints']['properties']['max_cost']": 1,
+          "'Productivity' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['category']": 1,
+          "'Meeting Notes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'multiple petabytes' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['data_volume']": 1,
+          "'shipment_type' is a required property\n\nFailed validating 'required' in schema['properties']['shipment_details']": 1,
+          "'Chrome' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['browser']": 1,
+          "'12345' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['contact_id']": 1,
+          "ff_reference_mismatch": 7,
+          "'Meeting Summary' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['title']": 1,
+          "'en' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['source_language']": 2,
+          "'abc123' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['planner_id']": 1,
+          "'userB456' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['user_id']": 1,
+          "'/images/flower_images.csv' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['dataset']": 1,
+          "None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['include_memory_usage']": 1,
+          "'local' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['computerName']": 1,
+          "'fasterrcnn_resnet50_fpn' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['model_name']": 1,
+          "'beginner' is not one of [None]\n\nFailed validating 'enum' in schema['properties']['level']": 1,
+          "'C": 1
+        }
+      }
+    }
+  }
+}

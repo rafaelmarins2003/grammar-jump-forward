@@ -1,0 +1,156 @@
+{
+  "created_at_utc": "2026-09-12T14:46:18.870362+00:00",
+  "command": [
+    "scripts/01_phase0.py",
+    "measure",
+    "--run",
+    "runs/2026-09-12-full"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-7.2.3-arch1-3-x86_64-with-glibc2.44",
+  "versions": {
+    "llguidance": "1.0.1",
+    "jsonschema": "4.26.0",
+    "transformers": "5.17.0",
+    "huggingface-hub": "1.31.0"
+  },
+  "git_head": "0499a9a587a799ddcbb40225ad921767e49e2621",
+  "git_status": "M src/jumpforward/corpus.py\n?? runs/2026-09-12-full/\n?? runs/2026-09-12-pilot/\n?? src/jumpforward/cost.py\n?? src/jumpforward/phase0.py\n?? src/jumpforward/spans.py\n?? tests/test_phase0.py",
+  "git_diff_sha256": "6caae078734eefb08cd6ffd8ca6bd3f315ab1ad7396280dc810f73a183b14615",
+  "source_sha256": {
+    "scripts/01_phase0.py": "7dd48dfd0c905e276f106838910cfeea23c697f4dd09fb365aad4f799c2ee692",
+    "src/jumpforward/__init__.py": "b7c4a2f6b9860657f6baaf6bc018e88d6410354b3683d2e342e5c9db5bd067ae",
+    "src/jumpforward/corpus.py": "a91c83c9a1a8a4ffc30f63dc60ff48b5d36ddd37fa03c1971370cb16aab09463",
+    "src/jumpforward/cost.py": "6d02a728880524b9c482a6caf53d21331a30d89472dc9a28f5b7a44fc2cab26f",
+    "src/jumpforward/phase0.py": "2a2d0c366a1b4ee04289cfb8bb498f2cb845901137c1a19198c4173b79a55243",
+    "src/jumpforward/spans.py": "6499476190f19adf68ded136d494c8423553aa63f4db15ee8ebebdcb1b77055b"
+  },
+  "plan_sha256": "8cf9013c62244102d15912ae5f6a1cfb98d0f2898943cfc4fef381f8bb8969bc",
+  "engine_config": {
+    "_note": "Frozen engine decisions. Changing base_commit invalidates every run recorded against the old one.",
+    "upstream": "https://github.com/ggml-org/llama.cpp",
+    "base_commit": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+    "base_build": "b10791",
+    "worktree": "~/llama.cpp-jf",
+    "branch": "grammar-jump-forward",
+    "reference_checkout": {
+      "path": "~/llama.cpp",
+      "_note": "Same commit, untouched. Shared with other projects. Use it as the no-patch baseline binary."
+    },
+    "llguidance": {
+      "version": "1.0.1",
+      "commit": "d795912fedc7d393de740177ea9ea761e7905774",
+      "source": "~/llama.cpp-jf/build/llguidance/source",
+      "c_header": "~/llama.cpp-jf/build/llguidance/source/parser/llguidance.h"
+    },
+    "toolchain": {
+      "_note": "rust, ninja, ccache pinned in mise.toml; compilers are system packages",
+      "rust": "1.98.1",
+      "ninja": "1.13.2",
+      "ccache": "4.14",
+      "cuda": "13.3",
+      "gcc": "16.2.1",
+      "cmake": "4.4.3"
+    },
+    "builds": {
+      "release": {
+        "dir": "~/llama.cpp-jf/build",
+        "purpose": "benchmarks and GPU runs",
+        "cmake_flags": [
+          "-G Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DGGML_CUDA=ON",
+          "-DCMAKE_CUDA_ARCHITECTURES=75",
+          "-DLLAMA_LLGUIDANCE=ON",
+          "-DLLAMA_OPENSSL=ON",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CUDA_COMPILER_LAUNCHER=ccache"
+        ]
+      },
+      "debug": {
+        "dir": "~/llama.cpp-jf/build-debug",
+        "purpose": "stepping through sampler / speculative / server control flow with gdb; CPU only",
+        "cmake_flags": [
+          "-G Ninja",
+          "-DCMAKE_BUILD_TYPE=Debug",
+          "-DGGML_CUDA=OFF",
+          "-DLLAMA_LLGUIDANCE=ON",
+          "-DLLAMA_OPENSSL=ON",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache"
+        ]
+      }
+    }
+  },
+  "model_config": {
+    "path": "~/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf",
+    "bytes": 5027783488,
+    "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+    "hf_commit": "7c41481f57cb95916b40956ab2f0b139b296d974",
+    "gguf_general_name": "Qwen3 8B Awq Compatible Instruct",
+    "tokenizer": "qwen3",
+    "role": "primary target (Gate 1, RQ1, RQ4)"
+  },
+  "seed": "20260912",
+  "grammar_backend": "llguidance 1.0.1, default native forcing (PL)",
+  "scope": "offline reference call bodies, not model-generated server latency",
+  "checked_sha256": {
+    "datasets/bfcl/BFCL_v3_live_multiple.json": "af2520ac5bb0b05aa9b8abe14a79b87198e5a3137a707d4f5633c792330f0cee",
+    "datasets/bfcl/BFCL_v3_live_simple.json": "b398743e6c0dfd2a87cee97a3bc1b9b90b81edc228c3153a820a93b51186fc00",
+    "datasets/bfcl/BFCL_v3_multiple.json": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+    "datasets/bfcl/BFCL_v3_parallel.json": "fad375d68295776efb63e5aa331dd884f8635e7bb50e05908113c74f14281c3c",
+    "datasets/bfcl/BFCL_v3_simple.json": "fbc37b2ad252bf9af985582e0e07b456173fe627d957491472ea9cef5fb83158",
+    "datasets/bfcl/possible_answer/BFCL_v3_live_multiple.json": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084",
+    "datasets/bfcl/possible_answer/BFCL_v3_live_simple.json": "4a1988780cdd8a723967587614cb84a9f53aa5d6fd37f83c78a0dd7acc2f3d15",
+    "datasets/bfcl/possible_answer/BFCL_v3_multiple.json": "244e00ce9395df948bcafc7bee64e8f9c87ef70887587d83cae45b13699f3047",
+    "datasets/bfcl/possible_answer/BFCL_v3_parallel.json": "3af54bf04e5b7640b03a9b6a82440f52474feb24b398f94435fd2b155c7727de",
+    "datasets/bfcl/possible_answer/BFCL_v3_simple.json": "2911a2bc00df82c4f999ffa64fedb0164cb88e96212ffa5972087eb91fd496ee",
+    "datasets/hermes-fc-v1/func-calling-singleturn.json": "fb2df9fe3f295dfd65b223c2dbf04d6b90006357d737f8f8927749f0bea09527",
+    "tokenizers/qwen3/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "raw_manifest_sha256": "df5dc0c5c33bc8509abbf05a0ae5be3b28d65791269fe044a653d3fafd24b669",
+  "tokenizer": {
+    "hf_repo": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "files": [
+      {
+        "path": "tokenizers/qwen3/config.json",
+        "bytes": 728,
+        "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30"
+      },
+      {
+        "path": "tokenizers/qwen3/generation_config.json",
+        "bytes": 239,
+        "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+      },
+      {
+        "path": "tokenizers/qwen3/tokenizer.json",
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "path": "tokenizers/qwen3/tokenizer_config.json",
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+      }
+    ]
+  },
+  "cases_sha256": "a304377847f62bc74b49259e71f1b35c189c03cf60ce755f56f9be1a6fce6124",
+  "curve_path": "/home/rafaelmarins2003/scripts/grammar-jump-forward/runs/2026-09-12-pass-cost/summary.json",
+  "curve_sha256": "bf332362b396f474084d7618f98f55a69a68ea450fb4ebf3239c95a1d5863592",
+  "eos_token": 151645,
+  "vocab_size": 151669,
+  "tokenizer_is_canonical": true,
+  "variants": [
+    "G1",
+    "G2"
+  ],
+  "serializations": [
+    "S1",
+    "S2"
+  ],
+  "endpoint": "process every body token for termination logits; exclude EOS ID"
+}

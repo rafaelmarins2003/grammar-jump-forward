@@ -75,3 +75,16 @@ therefore do not measure savings across a trigger. A dynamic trigger check remai
 
 Decision from source audit: use PL as the initial candidate and separate batching from policy
 changes. No Gate 0 decision follows from this audit alone.
+
+## Experimental follow-up — 2026-09-12
+
+The [Gate 0 report](../gate0-report.md) now records strict PL replay with sequential-mask agreement,
+literal/Unicode/lazy-lexeme characterization, and GGUF/HF body-token parity. The lazy test keeps
+unconstrained text free until the terminator is consumed; this is not a test of real server chat
+triggers. A naive empty-matching lazy lexeme was rejected during instrument development and was
+replaced with a terminator-bearing lexeme as prescribed in llguidance `docs/syntax.md`.
+
+The generated-output check replays raw sampled IDs. Its noncanonical whole-text segmentations
+reinforce why a completed response must not be silently re-tokenized to measure the execution.
+`no_forcing` was characterized as a different mask policy, not evaluated for task quality.
+Real batching, numerical divergence, KV bookkeeping and native GBNF compatibility remain untested.

@@ -1,17 +1,21 @@
 # Grammar Jump-Forward Decoding for llama.cpp
 
-When llama.cpp generates a JSON tool call under a grammar, most output tokens (braces, quotes,
-keys, colons) are fixed by the grammar before the model runs, yet each one still costs a full
-forward pass. This project measures how much of that work can be skipped by injecting grammar-forced
-spans as one batch through llama.cpp's speculative decoding framework, and whether forcing a
-tokenization degrades the values the model writes next.
+When llama.cpp generates a JSON tool call under a grammar, some output tokens are already fixed
+by the grammar but still processed one at a time. This project measures how much latency could be
+saved by processing native llguidance forced spans in batches. Injected tokens still require model
+and KV-cache computation; batching and changing the tokenization policy are separate interventions.
 
 Proposal: [`docs/proposal.md`](docs/proposal.md). Phase 0 plan and Gate 0 definition:
 [`docs/phase0-plan.md`](docs/phase0-plan.md).
 
-**Status:** Phase 0. Source/prior-art audit and synthetic GPU pass-cost curve completed;
-forced-token fractions and tool-call evaluation remain pending. No project code yet.
-Preliminary evidence and outstanding work: [`docs/gate0-report.md`](docs/gate0-report.md).
+**Status:** Phase 0 investigation completed with a **retarget** recommendation, not an engine go.
+The reference corpus, native tokenizer parity, GPU cost curve and a small generated-output check
+support a narrower engineering study; they do not establish the original end-to-end speedup claim.
+Results and next decision: [`docs/gate0-report.md`](docs/gate0-report.md).
+Reproduction commands and limitations: [`docs/phase0-reproduction.md`](docs/phase0-reproduction.md).
+Follow-up with measured cache-prefix costs and output-length sensitivity:
+[`docs/retarget-report.md`](docs/retarget-report.md). Cache helps, but does not yet justify the
+original performance target against compact JSON; an application workload is still needed.
 
 ## Layout
 

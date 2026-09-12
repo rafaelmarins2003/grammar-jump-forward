@@ -1,0 +1,8 @@
+{
+  "n_calls": 200,
+  "n_serializations": 400,
+  "mismatches": 0,
+  "scope": "call-body IDs only; does not prove equality of whole matcher vocabularies",
+  "cases_sha256": "ca5095d6713198107be6c08504cb2baec38578a7f0e093837356bd227770f2c9",
+  "parity_sha256": "ac1fcc28b591792b1d6a5b2c34c7a728197a23f596e0d5dd5c806a122e14c49b"
+}

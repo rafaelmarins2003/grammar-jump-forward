@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "report_matches_generated_artifact": true,
+  "report_input_hashes_verified": 8,
+  "lossless_archives_verified": [
+    {
+      "path": "runs/2026-09-12-pilot/cases.jsonl.gz",
+      "sha256": "0a4e6768e4cb21c2878f136b11756dba7e51a3826338e1b2ef853fe242f175ff",
+      "expanded_sha256": "ca5095d6713198107be6c08504cb2baec38578a7f0e093837356bd227770f2c9"
+    },
+    {
+      "path": "runs/2026-09-12-pilot/traces.jsonl.gz",
+      "sha256": "248433a5591c14fd0ef95dfc7e980881aff046571fdeb3d3894b35ba53fbe910",
+      "expanded_sha256": "e5339d18fd3e0c42ff394d5136455e21c9c7eae41bcff989087521987f1a0cb1"
+    },
+    {
+      "path": "runs/2026-09-12-pilot/questions.json.gz",
+      "sha256": "829ac1f5349675f105e97fb93dc29c5207397f341ad445f2d14766451f9f9eaa",
+      "expanded_sha256": "a9cf83803b5b710acf130e705247244937b5bb7b182406a10c11163022f28fc4"
+    },
+    {
+      "path": "runs/2026-09-12-full/cases.jsonl.gz",
+      "sha256": "b6d6d9074452e6dd09a557019f355b704a19950852af19aa1dec06cc0d90e705",
+      "expanded_sha256": "a304377847f62bc74b49259e71f1b35c189c03cf60ce755f56f9be1a6fce6124"
+    },
+    {
+      "path": "runs/2026-09-12-full/traces.jsonl.gz",
+      "sha256": "63fff14b416b58e84a238594c0937f992e5cc10fde960b6502f622a85250a26e",
+      "expanded_sha256": "fe89a86596762028f5dbba46ea3d555d14c60a00102c958f3891d4eac831c0b2"
+    },
+    {
+      "path": "runs/2026-09-12-full/questions.json.gz",
+      "sha256": "4d80c96526d5e9cc5f266315e17d2627517079e2c447200a2cdf567174e3b645",
+      "expanded_sha256": "5d4cef5ecdd34e16033d107f7a1f2b47bf0311cbec4cbb24c84ede885402964a"
+    }
+  ],
+  "pytest": {
+    "tests": 17,
+    "failures": 0
+  },
+  "ruff_check": "passed",
+  "ruff_format_check": "passed",
+  "git_diff_check": "passed",
+  "engine_worktrees": "both clean",
+  "owned_servers": "stopped"
+}

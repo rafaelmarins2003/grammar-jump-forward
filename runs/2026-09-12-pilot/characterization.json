@@ -1,0 +1,108 @@
+[
+  {
+    "case": "literal",
+    "status": "ok",
+    "text": "abcdefghijk",
+    "tokens": [
+      56747,
+      18750
+    ],
+    "forced": [
+      true,
+      true
+    ],
+    "spans": [
+      {
+        "start": 0,
+        "length": 2,
+        "bytes": 11,
+        "available_forced_bytes": 11
+      }
+    ],
+    "n_tokens": 2,
+    "n_forced": 2,
+    "n_bytes": 11,
+    "n_injected_bytes": 11,
+    "forced_fraction": 1.0,
+    "injected_byte_fraction": 1.0,
+    "compile_ns": 1114473,
+    "ff_ns": 172264,
+    "bulk_consume_ns": 27424,
+    "singleton_agreement": true,
+    "warnings": []
+  },
+  {
+    "case": "unicode",
+    "status": "ok",
+    "text": "ação🦙",
+    "tokens": [
+      12967,
+      149955
+    ],
+    "forced": [
+      true,
+      true
+    ],
+    "spans": [
+      {
+        "start": 0,
+        "length": 2,
+        "bytes": 10,
+        "available_forced_bytes": 10
+      }
+    ],
+    "n_tokens": 2,
+    "n_forced": 2,
+    "n_bytes": 10,
+    "n_injected_bytes": 10,
+    "forced_fraction": 1.0,
+    "injected_byte_fraction": 1.0,
+    "compile_ns": 2060645,
+    "ff_ns": 133458,
+    "bulk_consume_ns": 3515,
+    "singleton_agreement": true,
+    "warnings": []
+  },
+  {
+    "case": "lazy_trigger",
+    "status": "ok",
+    "text": "explanation<tool>abcdefghijk",
+    "tokens": [
+      327,
+      35890,
+      27,
+      14172,
+      29,
+      56747,
+      18750
+    ],
+    "forced": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "spans": [
+      {
+        "start": 5,
+        "length": 2,
+        "bytes": 11,
+        "available_forced_bytes": 11
+      }
+    ],
+    "n_tokens": 7,
+    "n_forced": 2,
+    "n_bytes": 28,
+    "n_injected_bytes": 11,
+    "forced_fraction": 0.2857142857142857,
+    "injected_byte_fraction": 0.39285714285714285,
+    "compile_ns": 903016,
+    "ff_ns": 96975,
+    "bulk_consume_ns": 4142,
+    "singleton_agreement": true,
+    "warnings": []
+  }
+]

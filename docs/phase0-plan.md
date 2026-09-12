@@ -214,3 +214,67 @@ Cost accounting processes every body token once (including the last token to obt
 logits), combining a pending free token with following forced tokens into batches of at most 32.
 An initial forced prefix is charged as a separate batch rather than treated as free prompt work.
 End-to-end proxies add the measured fixed-depth prefill; they are not observed request latencies.
+
+### 2026-09-12 — Exploratory generated-output check
+
+Registered after the reference pilot and while the full reference replay is running, before any
+model-generated output in this investigation. The pilot suggests that fixed whitespace has the
+strongest decode-only opportunity but falls short of the cold-prompt end-to-end target.
+Run a bounded instrument check, not a confirmatory quality experiment: take the first five adapted,
+single-call records in the frozen pilot order from each of `simple`, `multiple`, `live_simple`,
+`live_multiple` and `hermes`. Exclude the parallel subset because the present body-only grammar does
+not model call cardinality. Record all selected IDs before generation, do not replace failures.
+
+Generate one body per question under G1 and G2/S2, using all candidate tools, identical messages,
+temperature zero, seed 20260912, thinking off, no draft, 512-token limit, prompt cache disabled,
+one slot, and alternating arm order by question. Use the unmodified llguidance-enabled engine.
+Record raw token IDs and replay those IDs (not re-tokenized output) for span measurement. Independently
+validate JSON/schema and byte roundtrip. Report paired parsed-output differences and agreement with
+the chosen reference realization only as descriptive checks; this is not official BFCL accuracy,
+not a non-inferiority test and not a jump-forward latency benchmark. Do not execute any tools.
+G1/G2 latency differences are not attributed to batching, which is absent from both arms.
+
+### 2026-09-12 — Retargeting: observed prompts and cache sensitivity
+
+Authorized by the continuation after the retarget decision. This is exploratory follow-up after
+reference and generated-output results were observed; the original thresholds are unchanged.
+There are no application/deployment logs in scope. Use every question from the recorded generated
+cohort, preserving its selection, and label it a benchmark-prompt proxy rather than real traffic.
+
+Measure request-prefix overhead on the unmodified engine using each recorded G2 prompt and grammar,
+one predicted token, three repetitions and three conditions: cold (`cache_prompt=false`), warm
+system/tool prefix, and exact full-prompt repeat. Rotate condition order by question/repetition.
+Prime warm conditions explicitly; retain those preparation requests/costs separately, do not present
+them as free or as evidence of a production hit rate. For the tool-prefix condition, use the exact
+common token-ID prefix ending before the first user message; record token IDs and observed reused
+tokens. Use `timings.cache_n`, not the top-level `tokens_cached` (slot occupancy after generation).
+Keep temperature zero, thinking off, one slot, no draft, and run this short prefix-only GPU assay
+alone. No full answers, engine changes or external tool execution are needed.
+
+Derive distributions of measured prompt tokens, generated body tokens, observed cold request times,
+and probe-prefix latency. Use the existing 1024-depth cost curve as an explicitly approximate
+model-processing anchor for the short recorded prompts; retain per-question depth-range flags.
+Do not call a projection a measured jump-forward speedup. Two sensitivity models are reported:
+model-only body cost and a residual-preserving model that adds the nonnegative difference between
+the recorded full decode time and synthetic sequential body cost to both hypothetical arms.
+Negative residuals invalidate that calibration rather than being silently clamped. This residual
+is a mixed timing discrepancy, not a measured attribution to sampling/grammar overhead.
+
+For baseline body cost B, batched cost J and target s, the maximum shared overhead compatible with
+the target is (B - s*J)/(s - 1). Given measured cold/hit overhead P/H and a hypothetical hit rate h,
+shared overhead is (1-h)*P + h*H; keep hit rate distinct from the fraction of cached tokens. Preserve
+impossible cases, include both ideal and residual-preserving assumptions, and distinguish a median
+of per-question ratios from a ratio of total request costs. Report fixed hit-rate scenarios 0, 50,
+90 and 100 percent; do not fit a hit rate to declare a pass.
+
+Use all complete reference questions to report same-format and common-compact-baseline sensitivity,
+plus output-length strata 1–32, 33–64, 65–128, 129–256 and above 256 body tokens. Longer outputs are
+not assumed to retain short-output forced fractions. Compact serialization is a post-hoc latency
+sensitivity, not a quality-tested generated arm. The existing retarget decision remains in force:
+neither warm-cache projections nor this prefix-only measurement authorize engine C++ work.
+
+Collection interruption handling: keep every completely flushed trial, recreate the warm prefix
+for each missing trial, and resume the same question/repetition/condition grid without replacement.
+Record the prior trial-file hash and a new server manifest for every continuation. Duplicate trial
+keys or changed source/selection are errors. A killed controller must not leave its owned server
+running; on this Linux host the launcher now sets a parent-death termination signal.

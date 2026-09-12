@@ -66,7 +66,9 @@ def schema_order(value, schema):
         keys = [key for key in properties if key in value]
         keys.extend(key for key in value if key not in properties)
         return {
-            key: schema_order(value[key], properties.get(key, schema.get("additionalProperties", {})))
+            key: schema_order(
+                value[key], properties.get(key, schema.get("additionalProperties", {}))
+            )
             for key in keys
         }
     if isinstance(value, list):
@@ -99,7 +101,9 @@ def adapt_bfcl_arguments(alternatives: dict, schema: dict, choices: list) -> dic
     for name, values in alternatives.items():
         if not isinstance(values, list) or not values:
             raise CorpusError(f"answer alternatives for {name!r} are not a nonempty list")
-        validator = Draft202012Validator(properties.get(name, schema.get("additionalProperties", {})))
+        validator = Draft202012Validator(
+            properties.get(name, schema.get("additionalProperties", {}))
+        )
         for i, value in enumerate(values):
             if value == "" and name not in required:
                 choices.append({"argument": name, "alternative_index": i, "omitted": True})
@@ -122,11 +126,13 @@ def adapt_record(subset: str, record: dict, answer: dict | None) -> dict:
     tools = []
     for raw in raw_tools:
         raw = raw.get("function", raw)
-        tools.append({
-            "name": raw["name"],
-            "description": raw.get("description", ""),
-            "parameters": normalize_schema(raw["parameters"], changes, raw["name"]),
-        })
+        tools.append(
+            {
+                "name": raw["name"],
+                "description": raw.get("description", ""),
+                "parameters": normalize_schema(raw["parameters"], changes, raw["name"]),
+            }
+        )
     by_name = {tool["name"]: tool for tool in tools}
     if not tools or len(by_name) != len(tools):
         raise CorpusError("missing tools or ambiguous duplicate tool names")
@@ -156,20 +162,29 @@ def adapt_record(subset: str, record: dict, answer: dict | None) -> dict:
                     raise CorpusError("invalid Hermes tool-call envelope")
                 schema = by_name[call["name"]]["parameters"]
                 Draft202012Validator(schema).validate(call["arguments"])
-                calls.append({"name": call["name"], "arguments": schema_order(call["arguments"], schema)})
+                calls.append(
+                    {"name": call["name"], "arguments": schema_order(call["arguments"], schema)}
+                )
         if not calls:
             raise CorpusError("no JSON tool-call reference")
         messages = [
             {"role": "user", "content": turn["value"]}
-            for turn in record["conversations"] if turn["from"] == "human"
+            for turn in record["conversations"]
+            if turn["from"] == "human"
         ]
     union = tool_union(tools)
     for call in calls:
         Draft202012Validator(union).validate(call)
     return {
-        "subset": subset, "id": record["id"], "status": "ok", "tools": tools,
-        "schema": union, "calls": calls, "messages": messages,
-        "normalizations": changes, "reference_choices": choices,
+        "subset": subset,
+        "id": record["id"],
+        "status": "ok",
+        "tools": tools,
+        "schema": union,
+        "calls": calls,
+        "messages": messages,
+        "normalizations": changes,
+        "reference_choices": choices,
     }
 
 
@@ -177,7 +192,9 @@ def select_records(root: Path, full: bool = False) -> list[tuple[str, dict, dict
     selected = []
     for subset in (*BFCL_SUBSETS, "hermes"):
         if subset == "hermes":
-            records = json.loads((root / "datasets/hermes-fc-v1/func-calling-singleturn.json").read_text())
+            records = json.loads(
+                (root / "datasets/hermes-fc-v1/func-calling-singleturn.json").read_text()
+            )
             answers = {}
             size = 50
         else:

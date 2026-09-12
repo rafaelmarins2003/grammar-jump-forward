@@ -1,0 +1,108 @@
+[
+  {
+    "case": "literal",
+    "status": "ok",
+    "text": "abcdefghijk",
+    "tokens": [
+      56747,
+      18750
+    ],
+    "forced": [
+      true,
+      true
+    ],
+    "spans": [
+      {
+        "start": 0,
+        "length": 2,
+        "bytes": 11,
+        "available_forced_bytes": 11
+      }
+    ],
+    "n_tokens": 2,
+    "n_forced": 2,
+    "n_bytes": 11,
+    "n_injected_bytes": 11,
+    "forced_fraction": 1.0,
+    "injected_byte_fraction": 1.0,
+    "compile_ns": 721816,
+    "ff_ns": 33554,
+    "bulk_consume_ns": 2157,
+    "singleton_agreement": true,
+    "warnings": []
+  },
+  {
+    "case": "unicode",
+    "status": "ok",
+    "text": "ação🦙",
+    "tokens": [
+      12967,
+      149955
+    ],
+    "forced": [
+      true,
+      true
+    ],
+    "spans": [
+      {
+        "start": 0,
+        "length": 2,
+        "bytes": 10,
+        "available_forced_bytes": 10
+      }
+    ],
+    "n_tokens": 2,
+    "n_forced": 2,
+    "n_bytes": 10,
+    "n_injected_bytes": 10,
+    "forced_fraction": 1.0,
+    "injected_byte_fraction": 1.0,
+    "compile_ns": 637888,
+    "ff_ns": 30152,
+    "bulk_consume_ns": 1936,
+    "singleton_agreement": true,
+    "warnings": []
+  },
+  {
+    "case": "lazy_trigger",
+    "status": "ok",
+    "text": "explanation<tool>abcdefghijk",
+    "tokens": [
+      327,
+      35890,
+      27,
+      14172,
+      29,
+      56747,
+      18750
+    ],
+    "forced": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "spans": [
+      {
+        "start": 5,
+        "length": 2,
+        "bytes": 11,
+        "available_forced_bytes": 11
+      }
+    ],
+    "n_tokens": 7,
+    "n_forced": 2,
+    "n_bytes": 28,
+    "n_injected_bytes": 11,
+    "forced_fraction": 0.2857142857142857,
+    "injected_byte_fraction": 0.39285714285714285,
+    "compile_ns": 749032,
+    "ff_ns": 162346,
+    "bulk_consume_ns": 3544,
+    "singleton_agreement": true,
+    "warnings": []
+  }
+]

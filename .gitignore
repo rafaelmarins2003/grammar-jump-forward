@@ -18,3 +18,9 @@ data/raw/*
 # Tooling caches
 .cache/
 compile_commands.json
+
+# Large expanded measurement artifacts: retain deterministic .gz archives alongside them.
+runs/*/cases.jsonl
+runs/*/traces.jsonl
+runs/*/questions.json
+runs/*/frontier.json

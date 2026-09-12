@@ -1,0 +1,166 @@
+{
+  "n_questions": 25,
+  "n_outputs": 50,
+  "arms": {
+    "G1": {
+      "selected": 25,
+      "replay_ok": 25,
+      "json_schema_valid": 25,
+      "chosen_reference_equal": 19,
+      "noncanonical_tokenizations": 1,
+      "forced_fraction": {
+        "n": 25,
+        "p10": 0.1454931071049841,
+        "median": 0.22727272727272727,
+        "p90": 0.32857142857142857,
+        "mean": 0.23432465576038541
+      },
+      "errors": []
+    },
+    "G2": {
+      "selected": 25,
+      "replay_ok": 25,
+      "json_schema_valid": 25,
+      "chosen_reference_equal": 19,
+      "noncanonical_tokenizations": 1,
+      "forced_fraction": {
+        "n": 25,
+        "p10": 0.30262148337595907,
+        "median": 0.5217391304347826,
+        "p90": 0.7006628787878788,
+        "mean": 0.501500228130296
+      },
+      "errors": []
+    }
+  },
+  "valid_pairs": 25,
+  "parsed_output_differences": 0,
+  "pairs": [
+    {
+      "subset": "simple",
+      "id": "simple_31",
+      "parsed_equal": true
+    },
+    {
+      "subset": "simple",
+      "id": "simple_311",
+      "parsed_equal": true
+    },
+    {
+      "subset": "simple",
+      "id": "simple_305",
+      "parsed_equal": true
+    },
+    {
+      "subset": "simple",
+      "id": "simple_84",
+      "parsed_equal": true
+    },
+    {
+      "subset": "simple",
+      "id": "simple_221",
+      "parsed_equal": true
+    },
+    {
+      "subset": "multiple",
+      "id": "multiple_39",
+      "parsed_equal": true
+    },
+    {
+      "subset": "multiple",
+      "id": "multiple_81",
+      "parsed_equal": true
+    },
+    {
+      "subset": "multiple",
+      "id": "multiple_7",
+      "parsed_equal": true
+    },
+    {
+      "subset": "multiple",
+      "id": "multiple_76",
+      "parsed_equal": true
+    },
+    {
+      "subset": "multiple",
+      "id": "multiple_48",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_simple",
+      "id": "live_simple_161-96-0",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_simple",
+      "id": "live_simple_65-29-5",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_simple",
+      "id": "live_simple_82-43-0",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_simple",
+      "id": "live_simple_154-95-11",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_simple",
+      "id": "live_simple_172-99-6",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_multiple",
+      "id": "live_multiple_62-24-0",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_multiple",
+      "id": "live_multiple_366-134-11",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_multiple",
+      "id": "live_multiple_858-180-6",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_multiple",
+      "id": "live_multiple_903-186-0",
+      "parsed_equal": true
+    },
+    {
+      "subset": "live_multiple",
+      "id": "live_multiple_227-101-0",
+      "parsed_equal": true
+    },
+    {
+      "subset": "hermes",
+      "id": "ac575a48-9134-4bd0-9da0-7f3d75b9c290",
+      "parsed_equal": true
+    },
+    {
+      "subset": "hermes",
+      "id": "4195cbf2-2257-4963-9fa0-1a5e55ea4a35",
+      "parsed_equal": true
+    },
+    {
+      "subset": "hermes",
+      "id": "646a26a2-a09c-4539-975b-9419d40633c0",
+      "parsed_equal": true
+    },
+    {
+      "subset": "hermes",
+      "id": "71327d89-2d45-4c33-ae28-03fdedcc6bb4",
+      "parsed_equal": true
+    },
+    {
+      "subset": "hermes",
+      "id": "b0daedc1-28ec-48d5-9178-e370d9337dc1",
+      "parsed_equal": true
+    }
+  ],
+  "outputs_sha256": "6d3e39951a0215bee3fe155f2c122d3f3103371ed1e925e101fb7daaadee5562"
+}
