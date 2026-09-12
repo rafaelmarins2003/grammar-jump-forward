@@ -1,0 +1,13 @@
+diff --git c/parser/src/ffi.rs w/parser/src/ffi.rs
+index 89b8ad4..15328c3 100644
+--- c/parser/src/ffi.rs
++++ w/parser/src/ffi.rs
+@@ -1254,7 +1254,7 @@ pub unsafe extern "C" fn llg_matcher_compute_ff_tokens(
+         let v = v.as_slice();
+         let len = std::cmp::min(v.len(), output_len);
+         unsafe {
+-            std::ptr::copy_nonoverlapping(v.as_ptr(), output, v.len());
++            std::ptr::copy_nonoverlapping(v.as_ptr(), output, len);
+         }
+         Ok(len as i32)
+     })

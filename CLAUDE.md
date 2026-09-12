@@ -2,6 +2,14 @@
 
 ## Session exception — 2026-09-12
 
+After reviewing the measured baseline screen and the proposed bounded prototype, Rafael said
+"Certo, então faça". This authorizes the assistant to implement and test the minimal experimental
+C++ grammar proposer in the private llama.cpp-jf worktree, plus the Python evaluation and reports.
+The prospective protocol is `docs/prototype-plan.md`. This is an experiment-only go, not a claim
+that the original Gate 0 passed. No commit, push, PR or production integration is authorized.
+This explicit exception supersedes the earlier code-writing and engine-gate restrictions only
+for that bounded experiment.
+
 Rafael explicitly authorized the assistant to create the Phase 0 Python measurement scripts and
 their validation tests in the project-review conversation. This exception covers the feasibility
 investigation and its reports. It does not authorize engine C++ changes before Gate 0.

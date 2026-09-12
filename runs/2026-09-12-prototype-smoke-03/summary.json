@@ -1,0 +1,11 @@
+{
+  "errors": [],
+  "off_differences": [],
+  "on_parsed_differences": [
+    "optional",
+    "json_schema_default"
+  ],
+  "drafted": 477,
+  "accepted": 477,
+  "instrument_pass": true
+}

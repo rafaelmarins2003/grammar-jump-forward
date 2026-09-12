@@ -1,0 +1,16 @@
+{
+  "errors": [
+    {
+      "arm": "on",
+      "id": "native",
+      "error": "unsupported grammar unexpectedly drafted"
+    }
+  ],
+  "off_differences": [],
+  "on_parsed_differences": [
+    "optional"
+  ],
+  "drafted": 477,
+  "accepted": 477,
+  "instrument_pass": false
+}

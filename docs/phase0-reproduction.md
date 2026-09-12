@@ -90,3 +90,46 @@ The full-cohort `frontier.json` is also archived with `gzip -kn` and ignored in 
 The published [retargeting report](retarget-report.md) distinguishes actual cache-prefix timings,
 model-only estimates, residual-preserving sensitivity, ideal zero-prefix limits, and output-length
 strata. The original Gate 0 report and its input hashes are preserved, not silently reinterpreted.
+
+## General-scope existing-baseline screen
+
+This bounded GPU assay reuses the frozen generated cohort with every candidate tool. It compares
+native JSON-Schema/GBNF, compact/spaced llguidance, small-model speculation and n-gram speculation.
+There is no jump-forward arm. Run strategies sequentially on the otherwise idle GPU:
+
+```bash
+.venv/bin/python scripts/07_general_baselines.py prepare --run runs/my-baselines
+.venv/bin/python scripts/07_general_baselines.py collect --strategy none --run runs/my-baselines
+.venv/bin/python scripts/07_general_baselines.py collect --strategy draft-simple --run runs/my-baselines
+.venv/bin/python scripts/07_general_baselines.py collect --strategy ngram-simple --run runs/my-baselines
+.venv/bin/python scripts/07_general_baselines.py report --run runs/my-baselines
+.venv/bin/python scripts/07_general_baselines.py audit --run runs/my-baselines
+```
+
+The default input is the dated generated cohort and its adapted pilot cases. `--generated` and
+`--cases` may point to corresponding locally restored inputs. `prepare` verifies the generated
+output hash and freezes the exact prompts/schemas before collection. All models are local and
+hash-verified; no downloads, remote model calls or tool execution occur. The hf-cli skill was used
+only to verify the already-pinned local tokenizer against its recorded Hub revision.
+
+If interrupted, add `--resume` to the same `collect` command and strategy. Existing flushed trials
+are preserved, failed trials are not replaced, and continuation metadata is recorded. Do not resume
+completed arms. `report` verifies complete expected trial keys and hashes, retains failures and
+writes `summary.json`, `baseline-report.md` and `report-manifest.json` exclusively.
+`audit` independently checks UTF-8 and token-byte roundtrip, removing only a terminal EOS, and
+revalidates every parsed output against its frozen schema. It writes `byte-audit.json` without
+modifying completed measurements. The dated report's "Body tokens" column counts generated tokens
+including EOS; this is a label clarification, not a change to latency measurements or ratios.
+
+The report distinguishes parsed-answer changes from timing changes and includes an equal-output
+sensitivity. Short single-call cases, two repetitions and fixed strategy time blocks make this
+an exploratory screen, not proof of generality, losslessness or quality non-inferiority.
+The [current decision boundary](general-scope-decision.md) supersedes requiring an application niche,
+without revising historical results or authorizing engine C++ work.
+
+## Authorized minimal engine experiment
+
+The later explicit user authorization is recorded in `prototype-plan.md` and the operating manual.
+Use [prototype-reproduction.md](prototype-reproduction.md) for the engine diff, mandatory dependency
+safety fix, development checks, frozen evaluation and go/stop rule. This new experiment does not
+retroactively pass the original Phase 0 gate.

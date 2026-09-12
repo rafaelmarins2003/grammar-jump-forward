@@ -1,0 +1,257 @@
+[
+  {
+    "pid": 54080,
+    "vram_mib": 5894,
+    "rss_kib": 828952
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5898,
+    "rss_kib": 933576
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5898,
+    "rss_kib": 969592
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5900,
+    "rss_kib": 1003324
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5900,
+    "rss_kib": 1048692
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5900,
+    "rss_kib": 1083404
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1116572
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1167708
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1227912
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1285664
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1340392
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1392960
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1444088
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1477792
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1541016
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1580768
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1610168
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1667448
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1787240
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 1973028
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 2153188
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5902,
+    "rss_kib": 2290148
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2340268
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2426532
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2492492
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2579476
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2579476
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2663712
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2685184
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2665712
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2702048
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2615528
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2572608
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2567920
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2634468
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2697224
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2725276
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2714880
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2691600
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2721188
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2704144
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2702896
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2700736
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2697904
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2695648
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2704720
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2722788
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2721268
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2710864
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2722660
+  },
+  {
+    "pid": 54080,
+    "vram_mib": 5904,
+    "rss_kib": 2720356
+  }
+]

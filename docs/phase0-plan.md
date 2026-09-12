@@ -278,3 +278,49 @@ for each missing trial, and resume the same question/repetition/condition grid w
 Record the prior trial-file hash and a new server manifest for every continuation. Duplicate trial
 keys or changed source/selection are errors. A killed controller must not leave its owned server
 running; on this Linux host the launcher now sets a parent-death termination signal.
+
+### 2026-09-12 — General-scope baseline audit
+
+The user explicitly retained a general tool-calling scope and rejected requiring an application
+niche. An application trace is no longer a prerequisite for investigation. Historical retarget
+reports remain unchanged evidence, not the current direction. The user considers a real gain near
+1.4x potentially worthwhile; no prior projection is reclassified as measured and the original
+1.5x gate is not retrospectively declared passed.
+
+Before further projections or engine implementation, measure existing alternatives on the same
+frozen generated cohort: all 25 single-call questions from five benchmark subsets, including every
+candidate tool. This is an exploratory baseline screen, not proof of generality or non-inferiority.
+Native JSON-Schema/GBNF generation with no speculation is a separate stock baseline. Compare
+llguidance fixed compact (G2/S1) and spaced (G2/S2) grammars with no speculation, `draft-simple`
+(pinned Qwen3-0.6B Q8_0, all draft layers on GPU, max draft 3, p-min 0.75), and `ngram-simple`
+(max draft 8). These are fixed untuned configurations, not an exhaustive best-baseline search.
+
+Use two repetitions, temperature zero, thinking off, one slot, cache_prompt=false in every measured
+request and n_predict=512. Rotate grammar order by question/repetition; reverse question order on
+the second repetition. Strategy runs are separate processes and may have time-block confounding,
+which must be reported. Warm up each process outside timing. Log exact requests/responses, raw IDs,
+wall/prefill/decode times, speculative counters, and observed process VRAM/RSS snapshots. Preserve
+all failures and resume only missing flushed trial keys. No synthetic acceptance is permitted.
+Do not execute tools or download further models. Use the unmodified pinned engine.
+
+Validate JSON and supplied schema independently. Compare parsed outputs against the same-format
+no-speculation arm, as well as the chosen reference realization, without calling either official
+BFCL accuracy. Report parsed differences and length changes alongside timing; faster but different
+answers do not establish a lossless speedup. Pair by question after within-question repetition
+medians. Bootstrap those question-level ratios with 5000 resamples and the fixed seed; intervals
+describe this small cohort and do not remove configuration/time-block or selection bias.
+
+The earlier ~1.4x numbers compare hypothetical PL batching against the same-format llguidance
+baseline with equal cache conditions and no draft; they are not improvements over an unconstrained
+model, native GBNF, or the best existing speculative strategy. Keep those distinctions in the report.
+This screen cannot pass a measured jump-forward gate: it identifies the comparison a bounded actual
+prototype must beat. Do not require a niche, retune thresholds after results, or expand into a full
+speculative-strategy search to rescue the proposal. Engine C++ still requires an explicit go.
+
+### 2026-09-12 — Explicit experimental engine go
+
+After the existing-baseline results, Rafael authorized the proposed minimal prototype with
+"Certo, então faça". The new prospective experiment is registered in `prototype-plan.md`, with
+a fixed practical target, disjoint generated holdout, quality-preservation criterion and effort
+limit. Only this experimental C++/Python work is authorized. The original Gate 0 results and
+threshold are historical and unchanged; this is not a retroactive pass or production go.

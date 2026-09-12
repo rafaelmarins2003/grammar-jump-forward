@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "probe_trials": 225,
+  "preserved_before_resume": 167,
+  "complete_grid": true,
+  "source_hashes_verified": 5,
+  "published_report_matches_generated": true,
+  "original_gate0_report_unchanged": true,
+  "archives": [
+    {
+      "path": "runs/2026-09-12-workload-cache/questions.json.gz",
+      "sha256": "0cc7cacf46928b380e6d71d184c3c4d03a29911e1d4d9370166f28482f43d8cd",
+      "expanded_sha256": "1c20fcddb09184f02d7bc536c7273cbd80a0d70b5d2122a72b5cdc5a4812f4c9"
+    },
+    {
+      "path": "runs/2026-09-12-frontier/frontier.json.gz",
+      "sha256": "27dc1d583a422989c09158be7182f22bc67d438e06c093448b552f0650951704",
+      "expanded_sha256": "bc8225d7c89f4df6221c38ca5383780c96846b45bd946f385afcf1f9b0b0e193"
+    },
+    {
+      "path": "runs/2026-09-12-frontier-final/frontier.json.gz",
+      "sha256": "27dc1d583a422989c09158be7182f22bc67d438e06c093448b552f0650951704",
+      "expanded_sha256": "bc8225d7c89f4df6221c38ca5383780c96846b45bd946f385afcf1f9b0b0e193"
+    }
+  ],
+  "pytest": {
+    "tests": "39",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "ruff_check": "passed",
+  "ruff_format": "passed",
+  "diff_check": "passed"
+}

@@ -1,0 +1,2323 @@
+[
+  {
+    "subset": "simple",
+    "id": "simple_31",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"calculate_final_velocity\", \"description\": \"Calculate the final velocity of an object under constant acceleration, knowing its initial velocity, acceleration, and time of acceleration.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"initial_velocity\": {\"type\": \"integer\", \"description\": \"The initial velocity of the object.\"}, \"acceleration\": {\"type\": \"number\", \"description\": \"The acceleration of the object.\"}, \"time\": {\"type\": \"integer\", \"description\": \"The time of acceleration.\"}}, \"required\": [\"initial_velocity\", \"acceleration\", \"time\"]}}]<|im_end|>\n<|im_start|>user\nCalculate the final velocity of an object, knowing that it started from rest, accelerated at a rate of 9.8 m/s^2 for a duration of 5 seconds.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "calculate_final_velocity"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "initial_velocity": {
+                  "type": "integer",
+                  "description": "The initial velocity of the object."
+                },
+                "acceleration": {
+                  "type": "number",
+                  "description": "The acceleration of the object."
+                },
+                "time": {
+                  "type": "integer",
+                  "description": "The time of acceleration."
+                }
+              },
+              "required": [
+                "initial_velocity",
+                "acceleration",
+                "time"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "calculate_final_velocity",
+      "arguments": {
+        "initial_velocity": 0,
+        "acceleration": 9.8,
+        "time": 5
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_311",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"sports_db.find_athlete\", \"description\": \"Find the profile information of a sports athlete based on their full name.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"name\": {\"type\": \"string\", \"description\": \"The full name of the athlete.\"}, \"team\": {\"type\": \"string\", \"description\": \"The team the athlete belongs to. Default to all teams if not specified.\"}, \"sport\": {\"type\": \"string\", \"description\": \"The sport that athlete plays.\", \"enum\": [\"Basketball\", \"Baseball\", \"Football\", \"Soccer\"]}}, \"required\": [\"name\", \"sport\"]}}]<|im_end|>\n<|im_start|>user\nFind me the detailed profile of basketball player Lebron James<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "sports_db.find_athlete"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The full name of the athlete."
+                },
+                "team": {
+                  "type": "string",
+                  "description": "The team the athlete belongs to. Default to all teams if not specified."
+                },
+                "sport": {
+                  "type": "string",
+                  "description": "The sport that athlete plays.",
+                  "enum": [
+                    "Basketball",
+                    "Baseball",
+                    "Football",
+                    "Soccer"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "sport"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "sports_db.find_athlete",
+      "arguments": {
+        "name": "Lebron James",
+        "sport": "Basketball"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_305",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"sports_stats.get_performance\", \"description\": \"Compute the performance score of a soccer player given his game stats for a specific tournament in a season.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"player_name\": {\"type\": \"string\", \"description\": \"Name of the player.\"}, \"tournament\": {\"type\": \"string\", \"description\": \"Name of the soccer tournament.\"}, \"season\": {\"type\": \"string\", \"description\": \"Specific season in format 'YYYY-YYYY'.\"}, \"performance_indicator\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"enum\": [\"Goals Scored\", \"Assists Made\", \"Saves Made\", \"Cards Received\"]}, \"description\": \"Array of performance indicators. Use as much as possible. Default to use all if not specified.\"}}, \"required\": [\"player_name\", \"tournament\", \"season\"]}}]<|im_end|>\n<|im_start|>user\nCalculate the overall goal and assist of soccer player Messi in La Liga 2020-2021 season<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "sports_stats.get_performance"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "player_name": {
+                  "type": "string",
+                  "description": "Name of the player."
+                },
+                "tournament": {
+                  "type": "string",
+                  "description": "Name of the soccer tournament."
+                },
+                "season": {
+                  "type": "string",
+                  "description": "Specific season in format 'YYYY-YYYY'."
+                },
+                "performance_indicator": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Goals Scored",
+                      "Assists Made",
+                      "Saves Made",
+                      "Cards Received"
+                    ]
+                  },
+                  "description": "Array of performance indicators. Use as much as possible. Default to use all if not specified."
+                }
+              },
+              "required": [
+                "player_name",
+                "tournament",
+                "season"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "sports_stats.get_performance",
+      "arguments": {
+        "player_name": "Messi",
+        "tournament": "La Liga",
+        "season": "2020-2021",
+        "performance_indicator": [
+          "Goals Scored",
+          "Assists Made"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_84",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"calculate_bmi\", \"description\": \"Calculate the Body Mass Index (BMI) of a person.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"weight\": {\"type\": \"integer\", \"description\": \"Weight of the person in kilograms.\"}, \"height\": {\"type\": \"integer\", \"description\": \"Height of the person in centimeters.\"}, \"unit\": {\"type\": \"string\", \"description\": \"Optional parameter to choose between 'imperial' and 'metric' systems. Default is 'metric'.\"}}, \"required\": [\"weight\", \"height\"]}}]<|im_end|>\n<|im_start|>user\nCalculate the Body Mass Index (BMI) of a person with a weight of 85 kilograms and height of 180 cm.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "calculate_bmi"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "weight": {
+                  "type": "integer",
+                  "description": "Weight of the person in kilograms."
+                },
+                "height": {
+                  "type": "integer",
+                  "description": "Height of the person in centimeters."
+                },
+                "unit": {
+                  "type": "string",
+                  "description": "Optional parameter to choose between 'imperial' and 'metric' systems. Default is 'metric'."
+                }
+              },
+              "required": [
+                "weight",
+                "height"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "calculate_bmi",
+      "arguments": {
+        "weight": 85,
+        "height": 180,
+        "unit": "metric"
+      }
+    }
+  },
+  {
+    "subset": "simple",
+    "id": "simple_221",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"population_growth_estimate\", \"description\": \"Estimate the future population growth of a specific location over a specified time period.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\", \"description\": \"The city that you want to estimate the population growth for.\"}, \"years\": {\"type\": \"integer\", \"description\": \"Number of years into the future for the estimate.\"}, \"rate\": {\"type\": \"number\", \"description\": \"Expected annual growth rate in percentage. Default is 1.2.\"}}, \"required\": [\"location\", \"years\"]}}]<|im_end|>\n<|im_start|>user\nWhat will be the population growth in London over the next five years?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "population_growth_estimate"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "description": "The city that you want to estimate the population growth for."
+                },
+                "years": {
+                  "type": "integer",
+                  "description": "Number of years into the future for the estimate."
+                },
+                "rate": {
+                  "type": "number",
+                  "description": "Expected annual growth rate in percentage. Default is 1.2."
+                }
+              },
+              "required": [
+                "location",
+                "years"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "population_growth_estimate",
+      "arguments": {
+        "location": "London",
+        "years": 5
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_39",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"grocery_delivery.order\", \"description\": \"Order grocery items from a specific location with optional delivery price limit\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\", \"description\": \"The location of the grocery store\"}, \"items\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"List of items to order\"}, \"max_delivery_cost\": {\"type\": \"number\", \"description\": \"The maximum delivery cost. It is optional. Default 1000000\"}}, \"required\": [\"location\", \"items\"]}}, {\"name\": \"ride_hailing.get_rides\", \"description\": \"Find ride from source to destination with an optional cost limit\", \"parameters\": {\"type\": \"object\", \"properties\": {\"source\": {\"type\": \"string\", \"description\": \"The starting point of the journey\"}, \"destination\": {\"type\": \"string\", \"description\": \"The endpoint of the journey\"}, \"max_cost\": {\"type\": \"integer\", \"description\": \"The maximum cost of the ride. It is optional. Default is 1000000\"}}, \"required\": [\"source\", \"destination\"]}}]<|im_end|>\n<|im_start|>user\nFind a ride from New York to Philadelphia with maximum cost of $50<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "grocery_delivery.order"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "description": "The location of the grocery store"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "List of items to order"
+                },
+                "max_delivery_cost": {
+                  "type": "number",
+                  "description": "The maximum delivery cost. It is optional. Default 1000000"
+                }
+              },
+              "required": [
+                "location",
+                "items"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "ride_hailing.get_rides"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "description": "The starting point of the journey"
+                },
+                "destination": {
+                  "type": "string",
+                  "description": "The endpoint of the journey"
+                },
+                "max_cost": {
+                  "type": "integer",
+                  "description": "The maximum cost of the ride. It is optional. Default is 1000000"
+                }
+              },
+              "required": [
+                "source",
+                "destination"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "ride_hailing.get_rides",
+      "arguments": {
+        "source": "New York",
+        "destination": "Philadelphia",
+        "max_cost": 50
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_81",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"concert.book_ticket\", \"description\": \"Book a ticket for a concert at a specific location with various add-ons like backstage pass.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"artist\": {\"type\": \"string\", \"description\": \"Name of the artist for the concert.\"}, \"location\": {\"type\": \"string\", \"description\": \"City where the concert will take place.\"}, \"add_ons\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"enum\": [\"Backstage Pass\", \"VIP Seating\", \"Parking Pass\"]}, \"description\": \"Add-ons for the concert. Default empty array\"}}, \"required\": [\"artist\", \"location\"]}}, {\"name\": \"festival.book_ticket\", \"description\": \"Book a ticket for a festival at a specific location with various add-ons like camping access.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"festival\": {\"type\": \"string\", \"description\": \"Name of the festival.\"}, \"location\": {\"type\": \"string\", \"description\": \"City where the festival will take place.\"}, \"add_ons\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"enum\": [\"Camping Pass\", \"VIP Seating\", \"Parking Pass\"]}, \"description\": \"Add-ons for the festival. Default empty array\"}}, \"required\": [\"festival\", \"location\"]}}]<|im_end|>\n<|im_start|>user\nBook a ticket for the upcoming Eminem concert in New York City, I would like to get the one with backstage access.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "concert.book_ticket"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "artist": {
+                  "type": "string",
+                  "description": "Name of the artist for the concert."
+                },
+                "location": {
+                  "type": "string",
+                  "description": "City where the concert will take place."
+                },
+                "add_ons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Backstage Pass",
+                      "VIP Seating",
+                      "Parking Pass"
+                    ]
+                  },
+                  "description": "Add-ons for the concert. Default empty array"
+                }
+              },
+              "required": [
+                "artist",
+                "location"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "festival.book_ticket"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "festival": {
+                  "type": "string",
+                  "description": "Name of the festival."
+                },
+                "location": {
+                  "type": "string",
+                  "description": "City where the festival will take place."
+                },
+                "add_ons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Camping Pass",
+                      "VIP Seating",
+                      "Parking Pass"
+                    ]
+                  },
+                  "description": "Add-ons for the festival. Default empty array"
+                }
+              },
+              "required": [
+                "festival",
+                "location"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "concert.book_ticket",
+      "arguments": {
+        "artist": "Eminem",
+        "location": "New York City",
+        "add_ons": [
+          "Backstage Pass"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_7",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"wildlife_population.assess_growth\", \"description\": \"Assesses the population growth of a specific species in a specified location over a period.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"species\": {\"type\": \"string\", \"description\": \"The species for which the growth is to be calculated.\"}, \"location\": {\"type\": \"string\", \"description\": \"The area where the species is present.\"}, \"duration\": {\"type\": \"integer\", \"description\": \"The time period for which the population growth should be calculated in years.\"}}, \"required\": [\"species\", \"location\", \"duration\"]}}, {\"name\": \"ecological_impact.analyze\", \"description\": \"Analyzes the impact of a species on a particular ecosystem.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"species\": {\"type\": \"string\", \"description\": \"The species whose impact is to be calculated.\"}, \"ecosystem\": {\"type\": \"string\", \"description\": \"The ecosystem being affected.\"}, \"location\": {\"type\": \"string\", \"description\": \"The area where the impact is analyzed.\"}, \"timeframe\": {\"type\": \"integer\", \"description\": \"The time period for which the impact analysis should be carried out in years.\", \"default\": 5}}, \"required\": [\"species\", \"ecosystem\", \"location\"]}}]<|im_end|>\n<|im_start|>user\nHow to assess the population growth in deer and their impact on woodland in Washington state over the past decade?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "wildlife_population.assess_growth"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "species": {
+                  "type": "string",
+                  "description": "The species for which the growth is to be calculated."
+                },
+                "location": {
+                  "type": "string",
+                  "description": "The area where the species is present."
+                },
+                "duration": {
+                  "type": "integer",
+                  "description": "The time period for which the population growth should be calculated in years."
+                }
+              },
+              "required": [
+                "species",
+                "location",
+                "duration"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "ecological_impact.analyze"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "species": {
+                  "type": "string",
+                  "description": "The species whose impact is to be calculated."
+                },
+                "ecosystem": {
+                  "type": "string",
+                  "description": "The ecosystem being affected."
+                },
+                "location": {
+                  "type": "string",
+                  "description": "The area where the impact is analyzed."
+                },
+                "timeframe": {
+                  "type": "integer",
+                  "description": "The time period for which the impact analysis should be carried out in years.",
+                  "default": 5
+                }
+              },
+              "required": [
+                "species",
+                "ecosystem",
+                "location"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "wildlife_population.assess_growth",
+      "arguments": {
+        "species": "deer",
+        "location": "Washington state",
+        "duration": 10
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_76",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"painting.create_custom\", \"description\": \"Order a custom painting with your preferred color.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"subject\": {\"type\": \"string\", \"description\": \"The subject of the painting, e.g. horse\"}, \"color\": {\"type\": \"string\", \"enum\": [\"Red\", \"Blue\", \"Green\", \"Yellow\", \"Black\"], \"description\": \"Preferred main color for the painting.\"}, \"size\": {\"type\": \"integer\", \"description\": \"The desired size for the painting in inches. This parameter is optional. Default 12\"}}, \"required\": [\"subject\", \"color\"]}}, {\"name\": \"sculpture.create_custom\", \"description\": \"Order a custom sculpture with your preferred material.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"item\": {\"type\": \"string\", \"description\": \"The subject of the sculpture, e.g. horse\"}, \"material\": {\"type\": \"string\", \"enum\": [\"Bronze\", \"Marble\", \"Terracotta\", \"Wood\", \"Stone\"], \"description\": \"Preferred material for the sculpture.\"}, \"size\": {\"type\": \"integer\", \"description\": \"The desired size for the sculpture in inches. This parameter is optional. Default 12\"}}, \"required\": [\"item\", \"material\"]}}]<|im_end|>\n<|im_start|>user\nI want to order a custom bronze sculpture of a horse. What material options are available?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "painting.create_custom"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "subject": {
+                  "type": "string",
+                  "description": "The subject of the painting, e.g. horse"
+                },
+                "color": {
+                  "type": "string",
+                  "enum": [
+                    "Red",
+                    "Blue",
+                    "Green",
+                    "Yellow",
+                    "Black"
+                  ],
+                  "description": "Preferred main color for the painting."
+                },
+                "size": {
+                  "type": "integer",
+                  "description": "The desired size for the painting in inches. This parameter is optional. Default 12"
+                }
+              },
+              "required": [
+                "subject",
+                "color"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "sculpture.create_custom"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "type": "string",
+                  "description": "The subject of the sculpture, e.g. horse"
+                },
+                "material": {
+                  "type": "string",
+                  "enum": [
+                    "Bronze",
+                    "Marble",
+                    "Terracotta",
+                    "Wood",
+                    "Stone"
+                  ],
+                  "description": "Preferred material for the sculpture."
+                },
+                "size": {
+                  "type": "integer",
+                  "description": "The desired size for the sculpture in inches. This parameter is optional. Default 12"
+                }
+              },
+              "required": [
+                "item",
+                "material"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "sculpture.create_custom",
+      "arguments": {
+        "item": "horse",
+        "material": "Bronze"
+      }
+    }
+  },
+  {
+    "subset": "multiple",
+    "id": "multiple_48",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"store.find_nearby\", \"description\": \"Locate nearby stores based on specific preferences such as being pet-friendly and having disabled access facilities.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\", \"description\": \"The city, for example, New York City, NY\"}, \"preferences\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"enum\": [\"Pet-friendly\", \"Disabled Access\", \"24 hours\", \"Cafe Inside\"]}, \"description\": \"Your preferences for the store.\"}}, \"required\": [\"location\", \"preferences\"]}}, {\"name\": \"library.find_nearby\", \"description\": \"Locate nearby libraries based on specific preferences such as being pet-friendly and having disabled access facilities.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\", \"description\": \"The city, for example, New York City, NY\"}, \"preferences\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"enum\": [\"Pet-friendly\", \"Disabled Access\", \"24 hours\", \"Cafe Inside\"]}, \"description\": \"Your preferences for the library.\"}}, \"required\": [\"location\", \"preferences\"]}}]<|im_end|>\n<|im_start|>user\nFind me a pet-friendly library with facilities for disabled people in New York City.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "store.find_nearby"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "description": "The city, for example, New York City, NY"
+                },
+                "preferences": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Pet-friendly",
+                      "Disabled Access",
+                      "24 hours",
+                      "Cafe Inside"
+                    ]
+                  },
+                  "description": "Your preferences for the store."
+                }
+              },
+              "required": [
+                "location",
+                "preferences"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "library.find_nearby"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "description": "The city, for example, New York City, NY"
+                },
+                "preferences": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Pet-friendly",
+                      "Disabled Access",
+                      "24 hours",
+                      "Cafe Inside"
+                    ]
+                  },
+                  "description": "Your preferences for the library."
+                }
+              },
+              "required": [
+                "location",
+                "preferences"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "library.find_nearby",
+      "arguments": {
+        "location": "New York City",
+        "preferences": [
+          "Pet-friendly",
+          "Disabled Access"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_161-96-0",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"get_items\", \"description\": \"Retrieve a list of items that are analyzed for copyright detection purposes.\", \"parameters\": {\"type\": \"object\", \"required\": [\"items\"], \"properties\": {\"items\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"A list of item descriptors to be analyzed, such as 'yellow logo', 'signature tune', 'unique font'.\"}}}}]<|im_end|>\n<|im_start|>user\n{\n    \"response\": \" The image contains four logos of superheroes from DC Comics and Marvel Comics. They are Superman, Iron Man, Hulk, and Batman. The logos are all in different colors and shapes. Superman's logo is a red and yellow \\\"S\\\" on a blue background. Iron Man's logo is a red and yellow circle with a black face mask. Hulk's logo is a green fist with a black outline. Batman's logo is a black bat on a yellow background.\\n\\nHere is a list of objects that could contain copyrighted material:\\n\\n* Blue square\\n* Red square\\n* Green square\\n* Yellow square\\n* Superman logo\\n* Iron Man logo\\n* Hulk logo\\n* Batman logo\\n* Fist\\n* Bat\\n* Face mask\\n* Outline\"\n}\n<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "get_items"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "items"
+              ],
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "A list of item descriptors to be analyzed, such as 'yellow logo', 'signature tune', 'unique font'."
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "get_items",
+      "arguments": {
+        "items": [
+          "Blue square",
+          "Red square",
+          "Green square",
+          "Yellow square",
+          "Superman logo",
+          "Iron Man logo",
+          "Hulk logo",
+          "Batman logo",
+          "Fist",
+          "Bat",
+          "Face mask",
+          "Outline"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_65-29-5",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"todo\", \"description\": \"Manages a todo list by allowing the user to add, delete, or mark tasks as completed.\", \"parameters\": {\"type\": \"object\", \"required\": [\"type\", \"content\"], \"properties\": {\"type\": {\"type\": \"string\", \"description\": \"The type of action to be performed on the todo list. 'add' to add a new task, 'delete' to remove an existing task, or 'complete' to mark a task as completed.\", \"enum\": [\"add\", \"delete\", \"complete\"]}, \"content\": {\"type\": \"string\", \"description\": \"The content or description of the task for the specified action.\"}}}}]<|im_end|>\n<|im_start|>user\nI need to add 'Hi charlie' to my list of tasks.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "todo"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "type",
+                "content"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "The type of action to be performed on the todo list. 'add' to add a new task, 'delete' to remove an existing task, or 'complete' to mark a task as completed.",
+                  "enum": [
+                    "add",
+                    "delete",
+                    "complete"
+                  ]
+                },
+                "content": {
+                  "type": "string",
+                  "description": "The content or description of the task for the specified action."
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "todo",
+      "arguments": {
+        "type": "add",
+        "content": "Hi charlie"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_82-43-0",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"sitefinity_create_contentitem\", \"description\": \"Creates a new content item in Sitefinity CMS with specified metadata for SEO optimization and URL naming.\", \"parameters\": {\"type\": \"object\", \"required\": [\"ContentItem\", \"Title\"], \"properties\": {\"ContentItem\": {\"type\": \"string\", \"description\": \"The type of content item to create in Sitefinity CMS. Refer to Sitefinity documentation for supported types.\", \"enum\": [\"News\", \"BlogPost\", \"Event\", \"Product\"]}, \"Title\": {\"type\": \"string\", \"description\": \"The title or name of the content item.\"}, \"Content\": {\"type\": \"string\", \"description\": \"The detailed content or description of the content item. Defaults to the title if not provided.\", \"default\": null}, \"MetaTitle\": {\"type\": \"string\", \"description\": \"The HTML meta title of the content item for SEO purposes. Defaults to the title if not provided.\", \"default\": null}, \"MetaDescription\": {\"type\": \"string\", \"description\": \"The HTML meta description of the content item for SEO purposes. Defaults to the title if not provided.\", \"default\": null}, \"UrlName\": {\"type\": \"string\", \"description\": \"The URL-friendly name of the content item. This name will be used in the web address of the content item.\", \"default\": null}}}}]<|im_end|>\n<|im_start|>user\nI need to add a news article titled 'Julian is testing' to our Sitefinity CMS. Could you help with that?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "sitefinity_create_contentitem"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "ContentItem",
+                "Title"
+              ],
+              "properties": {
+                "ContentItem": {
+                  "type": "string",
+                  "description": "The type of content item to create in Sitefinity CMS. Refer to Sitefinity documentation for supported types.",
+                  "enum": [
+                    "News",
+                    "BlogPost",
+                    "Event",
+                    "Product"
+                  ]
+                },
+                "Title": {
+                  "type": "string",
+                  "description": "The title or name of the content item."
+                },
+                "Content": {
+                  "type": "string",
+                  "description": "The detailed content or description of the content item. Defaults to the title if not provided.",
+                  "default": null
+                },
+                "MetaTitle": {
+                  "type": "string",
+                  "description": "The HTML meta title of the content item for SEO purposes. Defaults to the title if not provided.",
+                  "default": null
+                },
+                "MetaDescription": {
+                  "type": "string",
+                  "description": "The HTML meta description of the content item for SEO purposes. Defaults to the title if not provided.",
+                  "default": null
+                },
+                "UrlName": {
+                  "type": "string",
+                  "description": "The URL-friendly name of the content item. This name will be used in the web address of the content item.",
+                  "default": null
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "sitefinity_create_contentitem",
+      "arguments": {
+        "ContentItem": "News",
+        "Title": "Julian is testing"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_154-95-11",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"cmd_controller.execute\", \"description\": \"Executes a system-level command using os.system() on Windows operating systems. It can execute single or multiple commands chained with '&&'.\", \"parameters\": {\"type\": \"object\", \"required\": [\"command\"], \"properties\": {\"command\": {\"type\": \"string\", \"description\": \"The system command to be executed. To execute multiple commands, separate them with '&&'. For example, 'dir && echo done'.\"}, \"unit\": {\"type\": \"string\", \"description\": \"The unit of measurement for the command execution time, such as 'seconds' or 'milliseconds'\", \"enum\": [\"seconds\", \"milliseconds\"], \"default\": \"N/A\"}}}}]<|im_end|>\n<|im_start|>user\nopen youtube and play rickroll using the command start https://www.youtube.com/watch?v=dQw4w9WgXcQ<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "cmd_controller.execute"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "command"
+              ],
+              "properties": {
+                "command": {
+                  "type": "string",
+                  "description": "The system command to be executed. To execute multiple commands, separate them with '&&'. For example, 'dir && echo done'."
+                },
+                "unit": {
+                  "type": "string",
+                  "description": "The unit of measurement for the command execution time, such as 'seconds' or 'milliseconds'",
+                  "enum": [
+                    "seconds",
+                    "milliseconds"
+                  ],
+                  "default": "N/A"
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "cmd_controller.execute",
+      "arguments": {
+        "command": "start https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_172-99-6",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"cmd_controller.execute\", \"description\": \"Executes a given command using the os.system() function specifically for Windows operating systems. For multiple commands, separate them with '&&'. For complex tasks, create and run a .bat file.\", \"parameters\": {\"type\": \"object\", \"required\": [\"command\"], \"properties\": {\"command\": {\"type\": \"string\", \"description\": \"The Windows command line instruction(s) to be executed. Use '&&' between commands for multiple instructions. For complex sequences, encapsulate the logic within a .bat file and provide the execution command here.\"}}}}]<|im_end|>\n<|im_start|>user\ncheck weather docker is running using docker ps<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "cmd_controller.execute"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "command"
+              ],
+              "properties": {
+                "command": {
+                  "type": "string",
+                  "description": "The Windows command line instruction(s) to be executed. Use '&&' between commands for multiple instructions. For complex sequences, encapsulate the logic within a .bat file and provide the execution command here."
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "cmd_controller.execute",
+      "arguments": {
+        "command": "docker ps"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_62-24-0",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"todo.list_action\", \"description\": \"A function to manage a todo list, including adding new items, deleting existing items, or marking items as completed.\", \"parameters\": {\"type\": \"object\", \"required\": [\"type\", \"content\"], \"properties\": {\"type\": {\"type\": \"string\", \"description\": \"The action to perform on the todo list. Possible actions are 'add' to add a new item, 'delete' to remove an item, and 'complete' to mark an item as completed.\", \"enum\": [\"add\", \"delete\", \"complete\"]}, \"content\": {\"type\": \"string\", \"description\": \"The content or description of the todo item that is subject to the action specified by the 'type' parameter.\"}}}}, {\"name\": \"todoIdx\", \"description\": \"Provides functionality for managing a todo list, including the ability to delete an item or mark an item as complete based on its index in the list.\", \"parameters\": {\"type\": \"object\", \"required\": [\"type\", \"index\"], \"properties\": {\"type\": {\"type\": \"string\", \"description\": \"The operation to perform on the todo item. 'delete' will remove the item from the list, while 'complete' will mark the item as completed.\", \"enum\": [\"delete\", \"complete\"]}, \"index\": {\"type\": \"integer\", \"description\": \"The zero-based index of the todo item in the list that the specified operation should be applied to.\"}}}}]<|im_end|>\n<|im_start|>user\nRemove the second item from my todo list.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "todo.list_action"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "type",
+                "content"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "The action to perform on the todo list. Possible actions are 'add' to add a new item, 'delete' to remove an item, and 'complete' to mark an item as completed.",
+                  "enum": [
+                    "add",
+                    "delete",
+                    "complete"
+                  ]
+                },
+                "content": {
+                  "type": "string",
+                  "description": "The content or description of the todo item that is subject to the action specified by the 'type' parameter."
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "todoIdx"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "type",
+                "index"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "The operation to perform on the todo item. 'delete' will remove the item from the list, while 'complete' will mark the item as completed.",
+                  "enum": [
+                    "delete",
+                    "complete"
+                  ]
+                },
+                "index": {
+                  "type": "integer",
+                  "description": "The zero-based index of the todo item in the list that the specified operation should be applied to."
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "todoIdx",
+      "arguments": {
+        "type": "delete",
+        "index": 1
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_366-134-11",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"Movies_3_FindMovies\", \"description\": \"Search for movies based on specific criteria such as director, genre, and cast.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"directed_by\": {\"type\": \"string\", \"description\": \"The director of the movie. Use 'dontcare' if the director is not a search criterion.\", \"default\": \"dontcare\"}, \"genre\": {\"type\": \"string\", \"description\": \"The genre of the movie. Use 'dontcare' if the genre is not a search criterion.\", \"enum\": [\"Offbeat\", \"Fantasy\", \"World\", \"Mystery\", \"Thriller\", \"Comedy\", \"Comedy-drama\", \"Horror\", \"Animation\", \"Sci-fi\", \"Cult\", \"Drama\", \"Anime\", \"Family\", \"Action\", \"dontcare\"], \"default\": \"dontcare\"}, \"cast\": {\"type\": \"string\", \"description\": \"The lead actor in the movie. Use 'dontcare' if the cast is not a search criterion.\", \"default\": \"dontcare\"}}, \"required\": []}}, {\"name\": \"Music_3_PlayMedia\", \"description\": \"Plays the selected music track on the specified device.\", \"parameters\": {\"type\": \"object\", \"required\": [\"track\"], \"properties\": {\"track\": {\"type\": \"string\", \"description\": \"The title of the song to be played.\"}, \"artist\": {\"type\": \"string\", \"description\": \"The name of the artist performing the song.\", \"default\": \"Any Artist\"}, \"device\": {\"type\": \"string\", \"description\": \"The device where the music will be played. Choose from a list of available players.\", \"enum\": [\"Living room\", \"Kitchen\", \"Patio\"], \"default\": \"Living room\"}, \"album\": {\"type\": \"string\", \"description\": \"The name of the album that the song belongs to.\", \"default\": \"Any Album\"}}}}, {\"name\": \"Music_3_LookupMusic\", \"description\": \"Discover songs that match your music preferences, such as artist, album, genre, and release year.\", \"parameters\": {\"type\": \"object\", \"required\": [], \"properties\": {\"artist\": {\"type\": \"string\", \"description\": \"The name of the performer or band. Use 'dontcare' to ignore this filter.\", \"default\": \"dontcare\"}, \"album\": {\"type\": \"string\", \"description\": \"The name of the album containing the song. Use 'dontcare' to ignore this filter.\", \"default\": \"dontcare\"}, \"genre\": {\"type\": \"string\", \"description\": \"The musical style or category of the song. Use 'dontcare' for no preference.\", \"enum\": [\"Reggae\", \"Holiday\", \"Electropop\", \"Pop\", \"Asia\", \"House\", \"Electronica\", \"Funk\", \"Rock\", \"Metal\", \"Dubstep\", \"Country\", \"dontcare\"], \"default\": \"dontcare\"}, \"year\": {\"type\": \"string\", \"description\": \"The year the song was released. Format: 'YYYY'. Use 'dontcare' to ignore this filter.\", \"enum\": [\"2010\", \"2011\", \"2012\", \"2013\", \"2014\", \"2015\", \"2016\", \"2017\", \"2018\", \"2019\", \"dontcare\"], \"default\": \"dontcare\"}}}}]<|im_end|>\n<|im_start|>user\nFind me a list of movies directed by Herbert Ross?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Movies_3_FindMovies"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "directed_by": {
+                  "type": "string",
+                  "description": "The director of the movie. Use 'dontcare' if the director is not a search criterion.",
+                  "default": "dontcare"
+                },
+                "genre": {
+                  "type": "string",
+                  "description": "The genre of the movie. Use 'dontcare' if the genre is not a search criterion.",
+                  "enum": [
+                    "Offbeat",
+                    "Fantasy",
+                    "World",
+                    "Mystery",
+                    "Thriller",
+                    "Comedy",
+                    "Comedy-drama",
+                    "Horror",
+                    "Animation",
+                    "Sci-fi",
+                    "Cult",
+                    "Drama",
+                    "Anime",
+                    "Family",
+                    "Action",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                },
+                "cast": {
+                  "type": "string",
+                  "description": "The lead actor in the movie. Use 'dontcare' if the cast is not a search criterion.",
+                  "default": "dontcare"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Music_3_PlayMedia"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "track"
+              ],
+              "properties": {
+                "track": {
+                  "type": "string",
+                  "description": "The title of the song to be played."
+                },
+                "artist": {
+                  "type": "string",
+                  "description": "The name of the artist performing the song.",
+                  "default": "Any Artist"
+                },
+                "device": {
+                  "type": "string",
+                  "description": "The device where the music will be played. Choose from a list of available players.",
+                  "enum": [
+                    "Living room",
+                    "Kitchen",
+                    "Patio"
+                  ],
+                  "default": "Living room"
+                },
+                "album": {
+                  "type": "string",
+                  "description": "The name of the album that the song belongs to.",
+                  "default": "Any Album"
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Music_3_LookupMusic"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "artist": {
+                  "type": "string",
+                  "description": "The name of the performer or band. Use 'dontcare' to ignore this filter.",
+                  "default": "dontcare"
+                },
+                "album": {
+                  "type": "string",
+                  "description": "The name of the album containing the song. Use 'dontcare' to ignore this filter.",
+                  "default": "dontcare"
+                },
+                "genre": {
+                  "type": "string",
+                  "description": "The musical style or category of the song. Use 'dontcare' for no preference.",
+                  "enum": [
+                    "Reggae",
+                    "Holiday",
+                    "Electropop",
+                    "Pop",
+                    "Asia",
+                    "House",
+                    "Electronica",
+                    "Funk",
+                    "Rock",
+                    "Metal",
+                    "Dubstep",
+                    "Country",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                },
+                "year": {
+                  "type": "string",
+                  "description": "The year the song was released. Format: 'YYYY'. Use 'dontcare' to ignore this filter.",
+                  "enum": [
+                    "2010",
+                    "2011",
+                    "2012",
+                    "2013",
+                    "2014",
+                    "2015",
+                    "2016",
+                    "2017",
+                    "2018",
+                    "2019",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "Movies_3_FindMovies",
+      "arguments": {
+        "directed_by": "Herbert Ross"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_858-180-6",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"Buses_3_FindBus\", \"description\": \"Search for a bus itinerary between two cities on a specified date. The search can be filtered based on the number of passengers and the bus route category.\", \"parameters\": {\"type\": \"object\", \"required\": [\"from_city\", \"to_city\", \"departure_date\"], \"properties\": {\"from_city\": {\"type\": \"string\", \"description\": \"The city of departure, formatted as 'City, State' (e.g., 'San Francisco, CA').\"}, \"to_city\": {\"type\": \"string\", \"description\": \"The destination city, formatted as 'City, State' (e.g., 'Los Angeles, CA').\"}, \"departure_date\": {\"type\": \"string\", \"description\": \"The date of departure, formatted as 'MM/DD/YYYY' (e.g., '04/25/2023').\"}, \"num_passengers\": {\"type\": \"integer\", \"description\": \"The number of passengers for which to book the trip. Must be an integer from 1 to 5.\", \"enum\": [1, 2, 3, 4, 5], \"default\": 1}, \"category\": {\"type\": \"string\", \"description\": \"The type of bus route, indicating the number of stops.\", \"enum\": [\"direct\", \"one-stop\"], \"default\": \"direct\"}}}}, {\"name\": \"Buses_3_BuyBusTicket\", \"description\": \"This function processes the purchase of bus tickets from a specified departure city to a destination city on a given date and time, for a certain number of passengers with an option to include additional luggage.\", \"parameters\": {\"type\": \"object\", \"required\": [\"from_city\", \"to_city\", \"departure_date\", \"departure_time\"], \"properties\": {\"from_city\": {\"type\": \"string\", \"description\": \"The city where the journey will start, in the format of 'City, State', such as 'Berkeley, CA' and 'New York, NY'.\"}, \"to_city\": {\"type\": \"string\", \"description\": \"The destination city for the trip, in the format of 'City, State', such as 'Los Angeles, CA' and 'Chicago, IL'.\"}, \"departure_date\": {\"type\": \"string\", \"description\": \"The date of departure, in the format of 'YYYY-MM-DD', such as '2023-04-15'.\"}, \"departure_time\": {\"type\": \"string\", \"description\": \"The time of departure in 24-hour format, such as '14:00' for 2 PM.\"}, \"num_passengers\": {\"type\": \"integer\", \"description\": \"The number of passengers for whom the tickets are to be purchased.\", \"enum\": [1, 2, 3, 4, 5], \"default\": 1}, \"additional_luggage\": {\"type\": \"boolean\", \"description\": \"Indicator of whether additional luggage will be carried on the bus.\", \"default\": false}}}}, {\"name\": \"Hotels_4_ReserveHotel\", \"description\": \"Reserves rooms at a specified hotel for given dates.\", \"parameters\": {\"type\": \"object\", \"required\": [\"place_name\", \"check_in_date\", \"stay_length\", \"location\"], \"properties\": {\"place_name\": {\"type\": \"string\", \"description\": \"The name of the hotel or accommodation.\"}, \"check_in_date\": {\"type\": \"string\", \"description\": \"The start date for the reservation in the format 'YYYY-MM-DD'.\"}, \"stay_length\": {\"type\": \"integer\", \"description\": \"The length of the stay in number of days.\"}, \"location\": {\"type\": \"string\", \"description\": \"The location of the hotel, in the format of 'City, State', such as 'New York, NY'.\"}, \"number_of_rooms\": {\"type\": \"string\", \"description\": \"The number of rooms to reserve.\", \"enum\": [\"1\", \"2\", \"3\", \"dontcare\"], \"default\": \"dontcare\"}}}}, {\"name\": \"Hotels_4_SearchHotel\", \"description\": \"Search for hotels and accommodations within a specified location and filter by preferences such as star rating, smoking policy, and number of rooms.\", \"parameters\": {\"type\": \"object\", \"required\": [\"location\"], \"properties\": {\"location\": {\"type\": \"string\", \"description\": \"The city or town where the accommodation is sought, in the format of 'City, State' or 'City, Country' if the city does not locate in the United States, such as 'New York, NY' or 'Paris, FR'.\"}, \"star_rating\": {\"type\": \"string\", \"description\": \"The desired star rating for the accommodation. Select 'dontcare' if no specific rating is required.\", \"enum\": [\"1\", \"2\", \"3\", \"4\", \"5\", \"dontcare\"], \"default\": \"dontcare\"}, \"smoking_allowed\": {\"type\": \"boolean\", \"description\": \"Indicates whether smoking is permitted inside the accommodation.\", \"default\": false}, \"number_of_rooms\": {\"type\": \"integer\", \"description\": \"The number of rooms required for the reservation. Choose a positive integer value, or select 'dontcare' to indicate no preference.\", \"default\": 1}}}}]<|im_end|>\n<|im_start|>user\nMy family of four is planning a trip from San Francisco to Los Angeles on May 15th. We're looking to depart around 2 PM. Could we also add an extra luggage for each person?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Buses_3_FindBus"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "from_city",
+                "to_city",
+                "departure_date"
+              ],
+              "properties": {
+                "from_city": {
+                  "type": "string",
+                  "description": "The city of departure, formatted as 'City, State' (e.g., 'San Francisco, CA')."
+                },
+                "to_city": {
+                  "type": "string",
+                  "description": "The destination city, formatted as 'City, State' (e.g., 'Los Angeles, CA')."
+                },
+                "departure_date": {
+                  "type": "string",
+                  "description": "The date of departure, formatted as 'MM/DD/YYYY' (e.g., '04/25/2023')."
+                },
+                "num_passengers": {
+                  "type": "integer",
+                  "description": "The number of passengers for which to book the trip. Must be an integer from 1 to 5.",
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ],
+                  "default": 1
+                },
+                "category": {
+                  "type": "string",
+                  "description": "The type of bus route, indicating the number of stops.",
+                  "enum": [
+                    "direct",
+                    "one-stop"
+                  ],
+                  "default": "direct"
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Buses_3_BuyBusTicket"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "from_city",
+                "to_city",
+                "departure_date",
+                "departure_time"
+              ],
+              "properties": {
+                "from_city": {
+                  "type": "string",
+                  "description": "The city where the journey will start, in the format of 'City, State', such as 'Berkeley, CA' and 'New York, NY'."
+                },
+                "to_city": {
+                  "type": "string",
+                  "description": "The destination city for the trip, in the format of 'City, State', such as 'Los Angeles, CA' and 'Chicago, IL'."
+                },
+                "departure_date": {
+                  "type": "string",
+                  "description": "The date of departure, in the format of 'YYYY-MM-DD', such as '2023-04-15'."
+                },
+                "departure_time": {
+                  "type": "string",
+                  "description": "The time of departure in 24-hour format, such as '14:00' for 2 PM."
+                },
+                "num_passengers": {
+                  "type": "integer",
+                  "description": "The number of passengers for whom the tickets are to be purchased.",
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ],
+                  "default": 1
+                },
+                "additional_luggage": {
+                  "type": "boolean",
+                  "description": "Indicator of whether additional luggage will be carried on the bus.",
+                  "default": false
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Hotels_4_ReserveHotel"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "place_name",
+                "check_in_date",
+                "stay_length",
+                "location"
+              ],
+              "properties": {
+                "place_name": {
+                  "type": "string",
+                  "description": "The name of the hotel or accommodation."
+                },
+                "check_in_date": {
+                  "type": "string",
+                  "description": "The start date for the reservation in the format 'YYYY-MM-DD'."
+                },
+                "stay_length": {
+                  "type": "integer",
+                  "description": "The length of the stay in number of days."
+                },
+                "location": {
+                  "type": "string",
+                  "description": "The location of the hotel, in the format of 'City, State', such as 'New York, NY'."
+                },
+                "number_of_rooms": {
+                  "type": "string",
+                  "description": "The number of rooms to reserve.",
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Hotels_4_SearchHotel"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "location"
+              ],
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "description": "The city or town where the accommodation is sought, in the format of 'City, State' or 'City, Country' if the city does not locate in the United States, such as 'New York, NY' or 'Paris, FR'."
+                },
+                "star_rating": {
+                  "type": "string",
+                  "description": "The desired star rating for the accommodation. Select 'dontcare' if no specific rating is required.",
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                },
+                "smoking_allowed": {
+                  "type": "boolean",
+                  "description": "Indicates whether smoking is permitted inside the accommodation.",
+                  "default": false
+                },
+                "number_of_rooms": {
+                  "type": "integer",
+                  "description": "The number of rooms required for the reservation. Choose a positive integer value, or select 'dontcare' to indicate no preference.",
+                  "default": 1
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "Buses_3_BuyBusTicket",
+      "arguments": {
+        "from_city": "San Francisco, CA",
+        "to_city": "Los Angeles, CA",
+        "departure_date": "2023-05-15",
+        "departure_time": "14:00",
+        "num_passengers": 4,
+        "additional_luggage": true
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_903-186-0",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"Hotels_2_BookHouse\", \"description\": \"Reserve the specified house for a set duration based on the number of adults and the check-in and check-out dates provided.\", \"parameters\": {\"type\": \"object\", \"required\": [\"where_to\", \"check_in_date\", \"check_out_date\"], \"properties\": {\"where_to\": {\"type\": \"string\", \"description\": \"The location of the house to be booked, in the format of 'City, State', such as 'Berkeley, CA' or 'New York, NY'.\"}, \"number_of_adults\": {\"type\": \"integer\", \"description\": \"The number of adults included in the reservation. Select 'dontcare' for no preference.\", \"enum\": [\"1\", \"2\", \"3\", \"4\", \"5\", \"dontcare\"], \"default\": \"dontcare\"}, \"check_in_date\": {\"type\": \"string\", \"description\": \"The start date for the reservation in the format 'YYYY-MM-DD'.\"}, \"check_out_date\": {\"type\": \"string\", \"description\": \"The end date for the reservation in the format 'YYYY-MM-DD'.\"}}}}, {\"name\": \"Hotels_2_SearchHouse\", \"description\": \"Search for a house at a specified location with filter options for laundry service, the number of adults, and rating.\", \"parameters\": {\"type\": \"object\", \"required\": [\"where_to\"], \"properties\": {\"where_to\": {\"type\": \"string\", \"description\": \"The location of the house in the format of 'City, State', such as 'Berkeley, CA' or 'New York, NY'.\"}, \"has_laundry_service\": {\"type\": \"string\", \"description\": \"Indicates if the house must have a laundry service available.\", \"enum\": [\"True\", \"False\", \"dontcare\"], \"default\": \"dontcare\"}, \"number_of_adults\": {\"type\": \"integer\", \"description\": \"The number of adults for the reservation. Use 'dontcare' to indicate no preference.\", \"enum\": [\"1\", \"2\", \"3\", \"4\", \"5\", \"dontcare\"], \"default\": \"dontcare\"}, \"rating\": {\"type\": \"number\", \"description\": \"The minimum review rating of the house from 1.0 to 5.0, with 5 being the highest. Use 'dontcare' to indicate no preference.\", \"default\": \"dontcare\"}}}}, {\"name\": \"Trains_1_GetTrainTickets\", \"description\": \"Reserves tickets for a train journey between specified cities on a given date and time, with options for the number of adults, trip protection, and fare class.\", \"parameters\": {\"type\": \"object\", \"required\": [\"_from\", \"to\", \"date_of_journey\", \"journey_start_time\", \"number_of_adults\", \"trip_protection\"], \"properties\": {\"_from\": {\"type\": \"string\", \"description\": \"The starting city for the train journey, in the format 'City, State', such as 'Berkeley, CA' or 'New York, NY'.\"}, \"to\": {\"type\": \"string\", \"description\": \"The destination city for the train journey, in the format 'City, State', such as 'Berkeley, CA' or 'New York, NY'.\"}, \"date_of_journey\": {\"type\": \"string\", \"description\": \"The date of the train journey, in the format 'YYYY-MM-DD'.\"}, \"journey_start_time\": {\"type\": \"string\", \"description\": \"The start time of the train journey, in 24-hour format 'HH:MM'.\"}, \"number_of_adults\": {\"type\": \"integer\", \"description\": \"The number of adults to reserve train tickets for.\"}, \"trip_protection\": {\"type\": \"boolean\", \"description\": \"Indicates whether to add trip protection to the reservation for an additional fee.\"}, \"_class\": {\"type\": \"string\", \"description\": \"The fare class for the train reservation.\", \"enum\": [\"Value\", \"Flexible\", \"Business\"], \"default\": \"Value\"}}}}, {\"name\": \"Trains_1_FindTrains\", \"description\": \"Find trains to a given destination city, providing information about available train services for the specified journey.\", \"parameters\": {\"type\": \"object\", \"required\": [\"_from\", \"to\", \"date_of_journey\"], \"properties\": {\"_from\": {\"type\": \"string\", \"description\": \"The name of the starting city for the train journey, such as 'New York, NY'.\"}, \"to\": {\"type\": \"string\", \"description\": \"The name of the destination city for the train journey, such as 'Los Angeles, CA'.\"}, \"date_of_journey\": {\"type\": \"string\", \"description\": \"The date of the train journey in the format 'MM/DD/YYYY'.\"}, \"_class\": {\"type\": \"string\", \"description\": \"The fare class for the train reservation.\", \"enum\": [\"Value\", \"Flexible\", \"Business\"], \"default\": \"Value\"}, \"number_of_adults\": {\"type\": \"integer\", \"description\": \"The number of adults to reserve train tickets for. Must be an integer between 1 and 5.\", \"default\": 1}}}}]<|im_end|>\n<|im_start|>user\nFind me trains departing from Phoenix, AZ to Los Angeles on April 25, 2023?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Hotels_2_BookHouse"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "where_to",
+                "check_in_date",
+                "check_out_date"
+              ],
+              "properties": {
+                "where_to": {
+                  "type": "string",
+                  "description": "The location of the house to be booked, in the format of 'City, State', such as 'Berkeley, CA' or 'New York, NY'."
+                },
+                "number_of_adults": {
+                  "type": "integer",
+                  "description": "The number of adults included in the reservation. Select 'dontcare' for no preference.",
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                },
+                "check_in_date": {
+                  "type": "string",
+                  "description": "The start date for the reservation in the format 'YYYY-MM-DD'."
+                },
+                "check_out_date": {
+                  "type": "string",
+                  "description": "The end date for the reservation in the format 'YYYY-MM-DD'."
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Hotels_2_SearchHouse"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "where_to"
+              ],
+              "properties": {
+                "where_to": {
+                  "type": "string",
+                  "description": "The location of the house in the format of 'City, State', such as 'Berkeley, CA' or 'New York, NY'."
+                },
+                "has_laundry_service": {
+                  "type": "string",
+                  "description": "Indicates if the house must have a laundry service available.",
+                  "enum": [
+                    "True",
+                    "False",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                },
+                "number_of_adults": {
+                  "type": "integer",
+                  "description": "The number of adults for the reservation. Use 'dontcare' to indicate no preference.",
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "dontcare"
+                  ],
+                  "default": "dontcare"
+                },
+                "rating": {
+                  "type": "number",
+                  "description": "The minimum review rating of the house from 1.0 to 5.0, with 5 being the highest. Use 'dontcare' to indicate no preference.",
+                  "default": "dontcare"
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Trains_1_GetTrainTickets"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "_from",
+                "to",
+                "date_of_journey",
+                "journey_start_time",
+                "number_of_adults",
+                "trip_protection"
+              ],
+              "properties": {
+                "_from": {
+                  "type": "string",
+                  "description": "The starting city for the train journey, in the format 'City, State', such as 'Berkeley, CA' or 'New York, NY'."
+                },
+                "to": {
+                  "type": "string",
+                  "description": "The destination city for the train journey, in the format 'City, State', such as 'Berkeley, CA' or 'New York, NY'."
+                },
+                "date_of_journey": {
+                  "type": "string",
+                  "description": "The date of the train journey, in the format 'YYYY-MM-DD'."
+                },
+                "journey_start_time": {
+                  "type": "string",
+                  "description": "The start time of the train journey, in 24-hour format 'HH:MM'."
+                },
+                "number_of_adults": {
+                  "type": "integer",
+                  "description": "The number of adults to reserve train tickets for."
+                },
+                "trip_protection": {
+                  "type": "boolean",
+                  "description": "Indicates whether to add trip protection to the reservation for an additional fee."
+                },
+                "_class": {
+                  "type": "string",
+                  "description": "The fare class for the train reservation.",
+                  "enum": [
+                    "Value",
+                    "Flexible",
+                    "Business"
+                  ],
+                  "default": "Value"
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "Trains_1_FindTrains"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "_from",
+                "to",
+                "date_of_journey"
+              ],
+              "properties": {
+                "_from": {
+                  "type": "string",
+                  "description": "The name of the starting city for the train journey, such as 'New York, NY'."
+                },
+                "to": {
+                  "type": "string",
+                  "description": "The name of the destination city for the train journey, such as 'Los Angeles, CA'."
+                },
+                "date_of_journey": {
+                  "type": "string",
+                  "description": "The date of the train journey in the format 'MM/DD/YYYY'."
+                },
+                "_class": {
+                  "type": "string",
+                  "description": "The fare class for the train reservation.",
+                  "enum": [
+                    "Value",
+                    "Flexible",
+                    "Business"
+                  ],
+                  "default": "Value"
+                },
+                "number_of_adults": {
+                  "type": "integer",
+                  "description": "The number of adults to reserve train tickets for. Must be an integer between 1 and 5.",
+                  "default": 1
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "Trains_1_FindTrains",
+      "arguments": {
+        "_from": "Phoenix, AZ",
+        "to": "Los Angeles, CA",
+        "date_of_journey": "04/25/2023"
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_227-101-0",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"project_api.ProjectApi.get_children_projects_by_tag\", \"description\": \"Retrieves a list of all child projects associated with a specific tag within a parent project.\", \"parameters\": {\"type\": \"object\", \"required\": [\"tag\", \"uuid\"], \"properties\": {\"tag\": {\"type\": \"string\", \"description\": \"The unique identifier used to filter child projects within the parent project.\"}, \"uuid\": {\"type\": \"string\", \"description\": \"The universally unique identifier (UUID) of the parent project from which to retrieve child projects.\"}, \"excludeInactive\": {\"type\": \"boolean\", \"description\": \"Determines whether to exclude inactive child projects from the results.\", \"default\": false}}}}, {\"name\": \"project_api.ProjectApi.get_projects_by_tag\", \"description\": \"Returns a list of all projects associated with a specified tag, with options to exclude inactive projects and children projects.\", \"parameters\": {\"type\": \"object\", \"required\": [\"tag\"], \"properties\": {\"tag\": {\"type\": \"string\", \"description\": \"The tag used to filter projects.\"}, \"excludeInactive\": {\"type\": \"boolean\", \"description\": \"If set to true, inactive projects will not be included in the results.\", \"default\": false}, \"onlyRoot\": {\"type\": \"boolean\", \"description\": \"If set to true, only root projects without children will be included in the results.\", \"default\": false}}}}, {\"name\": \"project_api.ProjectApi.get_children_projects\", \"description\": \"Retrieve a list of all child projects associated with a given parent project, with an option to exclude inactive projects.\", \"parameters\": {\"type\": \"object\", \"required\": [\"uuid\"], \"properties\": {\"uuid\": {\"type\": \"string\", \"description\": \"The unique identifier (UUID) of the parent project for which child projects are to be retrieved.\"}, \"excludeInactive\": {\"type\": \"boolean\", \"description\": \"When set to true, inactive child projects will not be included in the response.\", \"default\": false}}}}, {\"name\": \"project_api.ProjectApi.get_children_projects_by_classifier\", \"description\": \"This function retrieves a list of child projects associated with a given project UUID, filtered by a specified classifier. Optionally, inactive projects can be excluded from the results.\", \"parameters\": {\"type\": \"object\", \"required\": [\"classifier\", \"uuid\"], \"properties\": {\"classifier\": {\"type\": \"string\", \"description\": \"The classifier used to filter child projects. This could be a category or type of project, such as 'infrastructure' or 'research'.\"}, \"uuid\": {\"type\": \"string\", \"description\": \"The unique identifier of the parent project in UUID format, from which the children projects are derived.\"}, \"excludeInactive\": {\"type\": \"boolean\", \"description\": \"A flag to determine whether inactive child projects should be excluded from the list. By default, all child projects are included.\", \"default\": false}}}}, {\"name\": \"project_api.ProjectApi.get_projects\", \"description\": \"Retrieve a list of all projects from the database. Allows filtering by project name and controlling whether inactive or child projects are included in the results.\", \"parameters\": {\"type\": \"object\", \"required\": [\"excludeInactive\", \"onlyRoot\"], \"properties\": {\"name\": {\"type\": \"string\", \"description\": \"The name of the project to filter the query results. If left empty, all projects will be returned.\", \"default\": \"\"}, \"excludeInactive\": {\"type\": \"boolean\", \"description\": \"If true, inactive projects will not be included in the result set.\"}, \"onlyRoot\": {\"type\": \"boolean\", \"description\": \"If true, only root projects will be returned, excluding any child projects.\"}}}}]<|im_end|>\n<|im_start|>user\nretrieve the child projects associated with the tag 'environment' for the parent project with UUID '123e4567-e89b-12d3-a456-426614174000'?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "project_api.ProjectApi.get_children_projects_by_tag"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "tag",
+                "uuid"
+              ],
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "description": "The unique identifier used to filter child projects within the parent project."
+                },
+                "uuid": {
+                  "type": "string",
+                  "description": "The universally unique identifier (UUID) of the parent project from which to retrieve child projects."
+                },
+                "excludeInactive": {
+                  "type": "boolean",
+                  "description": "Determines whether to exclude inactive child projects from the results.",
+                  "default": false
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "project_api.ProjectApi.get_projects_by_tag"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "tag"
+              ],
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "description": "The tag used to filter projects."
+                },
+                "excludeInactive": {
+                  "type": "boolean",
+                  "description": "If set to true, inactive projects will not be included in the results.",
+                  "default": false
+                },
+                "onlyRoot": {
+                  "type": "boolean",
+                  "description": "If set to true, only root projects without children will be included in the results.",
+                  "default": false
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "project_api.ProjectApi.get_children_projects"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "uuid"
+              ],
+              "properties": {
+                "uuid": {
+                  "type": "string",
+                  "description": "The unique identifier (UUID) of the parent project for which child projects are to be retrieved."
+                },
+                "excludeInactive": {
+                  "type": "boolean",
+                  "description": "When set to true, inactive child projects will not be included in the response.",
+                  "default": false
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "project_api.ProjectApi.get_children_projects_by_classifier"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "classifier",
+                "uuid"
+              ],
+              "properties": {
+                "classifier": {
+                  "type": "string",
+                  "description": "The classifier used to filter child projects. This could be a category or type of project, such as 'infrastructure' or 'research'."
+                },
+                "uuid": {
+                  "type": "string",
+                  "description": "The unique identifier of the parent project in UUID format, from which the children projects are derived."
+                },
+                "excludeInactive": {
+                  "type": "boolean",
+                  "description": "A flag to determine whether inactive child projects should be excluded from the list. By default, all child projects are included.",
+                  "default": false
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "project_api.ProjectApi.get_projects"
+            },
+            "arguments": {
+              "type": "object",
+              "required": [
+                "excludeInactive",
+                "onlyRoot"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The name of the project to filter the query results. If left empty, all projects will be returned.",
+                  "default": ""
+                },
+                "excludeInactive": {
+                  "type": "boolean",
+                  "description": "If true, inactive projects will not be included in the result set."
+                },
+                "onlyRoot": {
+                  "type": "boolean",
+                  "description": "If true, only root projects will be returned, excluding any child projects."
+                }
+              }
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "project_api.ProjectApi.get_children_projects_by_tag",
+      "arguments": {
+        "tag": "environment",
+        "uuid": "123e4567-e89b-12d3-a456-426614174000"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "ac575a48-9134-4bd0-9da0-7f3d75b9c290",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"send_chat_message\", \"description\": \"Sends a chat message from one user to another in real-time using a POST request.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"user_id\": {\"type\": \"string\", \"description\": \"The unique identifier for the user sending the message.\"}, \"recipient_id\": {\"type\": \"string\", \"description\": \"The unique identifier for the recipient of the message.\"}, \"message_content\": {\"type\": \"string\", \"description\": \"The content of the chat message to be sent.\"}}, \"required\": [\"user_id\", \"recipient_id\", \"message_content\"]}}]<|im_end|>\n<|im_start|>user\nI am currently integrating a chat feature into our application that allows two users to communicate with each other in real-time. The chat messages need to be exchanged via a POST request to the server's API, ensuring rapid delivery to maintain a seamless user experience. For example, I'd like to send a message from one user with the ID 'user123' to another user with the ID 'user456'. The content of this message is \"Hello, how are you?\". Could you assist me by calling the required function to transmit this message in real-time using the provided user IDs and message content?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "send_chat_message"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "user_id": {
+                  "type": "string",
+                  "description": "The unique identifier for the user sending the message."
+                },
+                "recipient_id": {
+                  "type": "string",
+                  "description": "The unique identifier for the recipient of the message."
+                },
+                "message_content": {
+                  "type": "string",
+                  "description": "The content of the chat message to be sent."
+                }
+              },
+              "required": [
+                "user_id",
+                "recipient_id",
+                "message_content"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "send_chat_message",
+      "arguments": {
+        "user_id": "user123",
+        "recipient_id": "user456",
+        "message_content": "Hello, how are you?"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "4195cbf2-2257-4963-9fa0-1a5e55ea4a35",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"design_quantum_circuit\", \"description\": \"Generates a quantum circuit to estimate arbitrary finite continuous periodic 1D functions based on Fourier expansion.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"function_type\": {\"type\": \"string\", \"description\": \"Type of the function to simulate with the quantum circuit.\"}, \"fourier_components\": {\"type\": \"integer\", \"description\": \"Number of qubits to store the information on the different Fourier components.\"}, \"auxiliary_qubits\": {\"type\": \"integer\", \"description\": \"Number of auxiliary qubits for control operations.\"}, \"control_operations\": {\"type\": \"boolean\", \"description\": \"Indicates if control operations are included in the circuit.\"}, \"output_qubit\": {\"type\": \"string\", \"description\": \"Identifier of the qubit where the output will be measured.\"}, \"time_complexity\": {\"type\": \"string\", \"description\": \"Desired time complexity of the computation.\", \"enum\": [\"polynomial\", \"exponential\"]}}, \"required\": [\"function_type\", \"fourier_components\", \"auxiliary_qubits\", \"control_operations\", \"output_qubit\", \"time_complexity\"]}}]<|im_end|>\n<|im_start|>user\nI'm conducting a research project where I aim to simulate one-dimensional periodic functions within a quantum system through Fourier expansion techniques. For this purpose, I need to design quantum circuits that are capable of estimating the output of these functions. The circuits must have the capacity to store information on various Fourier components, therefore requiring a certain number of qubits dedicated to this task. In addition, the design needs to incorporate auxiliary qubits for the execution of control operations. The output of these functions will be measured on a specific qubit, which I have designated as the output qubit. Furthermore, I am looking for a computational approach that ensures a polynomial time complexity for an efficient simulation process.\n\nBased on these project requirements, could you assist me by initializing the function to design quantum circuits with the following specifications? The circuit should simulate a one-dimensional periodic function with 5 qubits allocated for the Fourier components and 2 auxiliary qubits for control. Control operations should be included, and the output should be measured on qubit 'qN'. Additionally, the design should be ensured to operate within a polynomial time complexity to achieve the desired speedup in simulation.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "design_quantum_circuit"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "function_type": {
+                  "type": "string",
+                  "description": "Type of the function to simulate with the quantum circuit."
+                },
+                "fourier_components": {
+                  "type": "integer",
+                  "description": "Number of qubits to store the information on the different Fourier components."
+                },
+                "auxiliary_qubits": {
+                  "type": "integer",
+                  "description": "Number of auxiliary qubits for control operations."
+                },
+                "control_operations": {
+                  "type": "boolean",
+                  "description": "Indicates if control operations are included in the circuit."
+                },
+                "output_qubit": {
+                  "type": "string",
+                  "description": "Identifier of the qubit where the output will be measured."
+                },
+                "time_complexity": {
+                  "type": "string",
+                  "description": "Desired time complexity of the computation.",
+                  "enum": [
+                    "polynomial",
+                    "exponential"
+                  ]
+                }
+              },
+              "required": [
+                "function_type",
+                "fourier_components",
+                "auxiliary_qubits",
+                "control_operations",
+                "output_qubit",
+                "time_complexity"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "design_quantum_circuit",
+      "arguments": {
+        "function_type": "periodic",
+        "fourier_components": 5,
+        "auxiliary_qubits": 2,
+        "control_operations": true,
+        "output_qubit": "qN",
+        "time_complexity": "polynomial"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "646a26a2-a09c-4539-975b-9419d40633c0",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"verify_compliance_status\", \"description\": \"Verifies the compliance status of algorithmic trading systems against specified regulatory documents and compliance areas.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"regulatory_documents\": {\"type\": \"array\", \"description\": \"List of regulatory documents to check compliance against.\", \"items\": {\"type\": \"string\"}}, \"compliance_checklist\": {\"type\": \"array\", \"description\": \"List of compliance areas to be verified.\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"regulatory_documents\", \"compliance_checklist\"]}}]<|im_end|>\n<|im_start|>user\nTo ensure our financial institution's algorithmic trading systems comply with current regulations, I would like to initiate a verification process against the recent frameworks for algorithmic trading regulation. Specifically, we need to assess our systems against the \"ESMA Guidelines on Systems and Controls in an Automated Trading Environment,\" \"MiFID II,\" and the \"CFTC Regulation AT.\" This check should cover our pre-trade risk controls, post-trade measures, system safeguards, and ensure our source code repository meets the auditability criteria as mandated. \n\nPlease use the following regulatory documents and compliance checklist to evaluate our status:\n- Regulatory documents: [\"ESMA Guidelines on Systems and Controls,\" \"MiFID II,\" \"CFTC Regulation AT\"]\n- Compliance checklist: [\"pre_trade_risk_controls,\" \"post_trade_measures,\" \"system_safeguards,\" \"source_code_repository_audit\"]\n\nI request that you call the compliance verification function with these parameters to determine our adherence to these documents and generate a detailed report on our compliance status.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "verify_compliance_status"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "regulatory_documents": {
+                  "type": "array",
+                  "description": "List of regulatory documents to check compliance against.",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "compliance_checklist": {
+                  "type": "array",
+                  "description": "List of compliance areas to be verified.",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "regulatory_documents",
+                "compliance_checklist"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "verify_compliance_status",
+      "arguments": {
+        "regulatory_documents": [
+          "ESMA Guidelines on Systems and Controls",
+          "MiFID II",
+          "CFTC Regulation AT"
+        ],
+        "compliance_checklist": [
+          "pre_trade_risk_controls",
+          "post_trade_measures",
+          "system_safeguards",
+          "source_code_repository_audit"
+        ]
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "71327d89-2d45-4c33-ae28-03fdedcc6bb4",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"schedule_meetings\", \"description\": \"Schedule a series of meetings in the calendar application, ensuring no conflicts, and send out invites to participants.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"participants\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"List of email addresses of the meeting participants.\"}, \"time_slots\": {\"type\": \"array\", \"items\": {\"type\": \"string\", \"format\": \"date-time\"}, \"description\": \"List of preferred time slots for the meetings in ISO 8601 format.\"}, \"meeting_rooms\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"List of available meeting rooms.\"}, \"calendar_id\": {\"type\": \"string\", \"description\": \"The identifier for the company's calendar where the meetings will be scheduled.\"}}, \"required\": [\"participants\", \"time_slots\", \"meeting_rooms\", \"calendar_id\"]}}]<|im_end|>\n<|im_start|>user\nI am in charge of coordinating a series of important team meetings for our upcoming project launch, which involves various departments within our company. I have carefully selected a list of email addresses for the participants from the development, marketing, and sales teams. For the meetings, I've chosen the following preferred time slots: the 10th of April at 9:00 AM, the same day at 11:00 AM, and the 11th of April at 2:00 PM (all times in UTC). We have access to several meeting rooms—specifically Room 401, Room 402, and the large Conference Hall A. I need to schedule these meetings in our company calendar, identified by 'company_calendar@example.com', ensuring there are no scheduling conflicts. Additionally, I want to make sure that all the participants receive invites for the specified time slots and that we have reserved the rooms mentioned.\n\nCould you please call the necessary function to schedule these meetings, avoiding any conflicts in the calendar, booking the rooms, and sending out the invites to the participants?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "schedule_meetings"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "participants": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "List of email addresses of the meeting participants."
+                },
+                "time_slots": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "description": "List of preferred time slots for the meetings in ISO 8601 format."
+                },
+                "meeting_rooms": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "List of available meeting rooms."
+                },
+                "calendar_id": {
+                  "type": "string",
+                  "description": "The identifier for the company's calendar where the meetings will be scheduled."
+                }
+              },
+              "required": [
+                "participants",
+                "time_slots",
+                "meeting_rooms",
+                "calendar_id"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "schedule_meetings",
+      "arguments": {
+        "participants": [
+          "devteam@example.com",
+          "marketingteam@example.com",
+          "salesteam@example.com"
+        ],
+        "time_slots": [
+          "2023-04-10T09:00:00Z",
+          "2023-04-10T11:00:00Z",
+          "2023-04-11T14:00:00Z"
+        ],
+        "meeting_rooms": [
+          "Room 401",
+          "Room 402",
+          "Conference Hall A"
+        ],
+        "calendar_id": "company_calendar@example.com"
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "b0daedc1-28ec-48d5-9178-e370d9337dc1",
+    "prompt": "<|im_start|>system\nSelect the appropriate function and arguments to answer the user's request. Return exactly one JSON object with keys \"name\" and \"arguments\". Do not include commentary or XML tags. Available functions:\n[{\"name\": \"evaluate_reinsurance_risk\", \"description\": \"Evaluates the risk associated with a new reinsurance application and suggests a premium.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"applicant_details\": {\"type\": \"object\", \"description\": \"Details of the applicant company applying for reinsurance coverage.\", \"properties\": {\"company_name\": {\"type\": \"string\", \"description\": \"The name of the applicant company.\"}, \"industry\": {\"type\": \"string\", \"description\": \"The industry in which the applicant company operates.\"}, \"coverage_amount\": {\"type\": \"number\", \"description\": \"The amount of coverage the applicant company is seeking.\"}, \"coverage_type\": {\"type\": \"string\", \"description\": \"The type of coverage the applicant company is seeking.\"}}, \"required\": [\"company_name\", \"industry\", \"coverage_amount\", \"coverage_type\"]}, \"historical_claims\": {\"type\": \"string\", \"description\": \"A JSON file containing historical claims data relevant to the applicant.\"}}, \"required\": [\"applicant_details\", \"historical_claims\"]}}, {\"name\": \"record_reinsurance_contract\", \"description\": \"Records the details of an accepted reinsurance contract into the system.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"applicant_company\": {\"type\": \"string\", \"description\": \"The name of the applicant company.\"}, \"risk_score\": {\"type\": \"number\", \"description\": \"The risk score assigned to the applicant company.\"}, \"coverage_type\": {\"type\": \"string\", \"description\": \"The type of coverage provided by the reinsurance contract.\"}, \"coverage_amount\": {\"type\": \"number\", \"description\": \"The amount of coverage provided by the reinsurance contract.\"}, \"premium\": {\"type\": \"number\", \"description\": \"The premium amount for the reinsurance contract.\"}}, \"required\": [\"applicant_company\", \"risk_score\", \"coverage_type\", \"coverage_amount\", \"premium\"]}}]<|im_end|>\n<|im_start|>user\nI would like to manage the underwriting processes for a new reinsurance application we've received from a client. GlobalRisk Inc., a company operating within the property insurance industry, is seeking reinsurance coverage. They have requested a coverage amount of $100,000,000 for Property type coverage. Included with their application is their historical claims data, which I've compiled into a JSON file, structured with relevant claim details for the past five years.\n\nCan you please use the evaluate reinsurance risk function to assess the risk associated with GlobalRisk Inc.'s reinsurance application? Once evaluated, if the risk is acceptable, I need to proceed with the recording of the reinsurance contract details into our system using the record reinsurance contract function.\n\nBelow is the JSON file containing the historical claims data for GlobalRisk Inc.:\n\n```json\n{\n    \"claims\": [\n        {\"year\": 2018, \"total_claims\": 25000000, \"paid_claims\": 20000000, \"outstanding_claims\": 5000000},\n        {\"year\": 2019, \"total_claims\": 30000000, \"paid_claims\": 22000000, \"outstanding_claims\": 8000000},\n        {\"year\": 2020, \"total_claims\": 45000000, \"paid_claims\": 30000000, \"outstanding_claims\": 15000000},\n        {\"year\": 2021, \"total_claims\": 35000000, \"paid_claims\": 25000000, \"outstanding_claims\": 10000000},\n        {\"year\": 2022, \"total_claims\": 50000000, \"paid_claims\": 40000000, \"outstanding_claims\": 10000000}\n    ]\n}\n```\n\nGiven this data, please analyze the risk and suggest a suitable premium for their coverage request. If the risk score is within our acceptable range, record the contract details as per the application information provided above.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "schema": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "evaluate_reinsurance_risk"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "applicant_details": {
+                  "type": "object",
+                  "description": "Details of the applicant company applying for reinsurance coverage.",
+                  "properties": {
+                    "company_name": {
+                      "type": "string",
+                      "description": "The name of the applicant company."
+                    },
+                    "industry": {
+                      "type": "string",
+                      "description": "The industry in which the applicant company operates."
+                    },
+                    "coverage_amount": {
+                      "type": "number",
+                      "description": "The amount of coverage the applicant company is seeking."
+                    },
+                    "coverage_type": {
+                      "type": "string",
+                      "description": "The type of coverage the applicant company is seeking."
+                    }
+                  },
+                  "required": [
+                    "company_name",
+                    "industry",
+                    "coverage_amount",
+                    "coverage_type"
+                  ]
+                },
+                "historical_claims": {
+                  "type": "string",
+                  "description": "A JSON file containing historical claims data relevant to the applicant."
+                }
+              },
+              "required": [
+                "applicant_details",
+                "historical_claims"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": "record_reinsurance_contract"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "applicant_company": {
+                  "type": "string",
+                  "description": "The name of the applicant company."
+                },
+                "risk_score": {
+                  "type": "number",
+                  "description": "The risk score assigned to the applicant company."
+                },
+                "coverage_type": {
+                  "type": "string",
+                  "description": "The type of coverage provided by the reinsurance contract."
+                },
+                "coverage_amount": {
+                  "type": "number",
+                  "description": "The amount of coverage provided by the reinsurance contract."
+                },
+                "premium": {
+                  "type": "number",
+                  "description": "The premium amount for the reinsurance contract."
+                }
+              },
+              "required": [
+                "applicant_company",
+                "risk_score",
+                "coverage_type",
+                "coverage_amount",
+                "premium"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reference": {
+      "name": "evaluate_reinsurance_risk",
+      "arguments": {
+        "applicant_details": {
+          "company_name": "GlobalRisk Inc.",
+          "industry": "property insurance",
+          "coverage_amount": 100000000,
+          "coverage_type": "Property"
+        },
+        "historical_claims": "{\"claims\": [{\"year\": 2018, \"total_claims\": 25000000, \"paid_claims\": 20000000, \"outstanding_claims\": 5000000}, {\"year\": 2019, \"total_claims\": 30000000, \"paid_claims\": 22000000, \"outstanding_claims\": 8000000}, {\"year\": 2020, \"total_claims\": 45000000, \"paid_claims\": 30000000, \"outstanding_claims\": 15000000}, {\"year\": 2021, \"total_claims\": 35000000, \"paid_claims\": 25000000, \"outstanding_claims\": 10000000}, {\"year\": 2022, \"total_claims\": 50000000, \"paid_claims\": 40000000, \"outstanding_claims\": 10000000}]}"
+      }
+    }
+  }
+]

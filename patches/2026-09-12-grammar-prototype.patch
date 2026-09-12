@@ -1,0 +1,339 @@
+diff --git c/common/common.h w/common/common.h
+index 63d0badd0..7fa3834cd 100644
+--- c/common/common.h
++++ w/common/common.h
+@@ -180,6 +180,7 @@ enum common_speculative_type {
+     COMMON_SPECULATIVE_TYPE_NGRAM_MAP_K4V, // self-speculative decoding with n-gram keys and 4 m-gram values
+     COMMON_SPECULATIVE_TYPE_NGRAM_MOD,
+     COMMON_SPECULATIVE_TYPE_NGRAM_CACHE,   // self-speculative decoding with 3-level n-gram cache
++    COMMON_SPECULATIVE_TYPE_GRAMMAR,       // native llguidance forced tokens
+     COMMON_SPECULATIVE_TYPE_COUNT          // number of types, unknown type
+ };
+ 
+diff --git c/common/llguidance.cpp w/common/llguidance.cpp
+index 500bb0914..f033930d5 100644
+--- c/common/llguidance.cpp
++++ w/common/llguidance.cpp
+@@ -120,6 +120,37 @@ static llama_sampler_i llama_sampler_llg_i = {
+     /* .copy_state        = */ NULL,
+ };
+ 
++llama_tokens llama_sampler_llg_ff_tokens(llama_sampler * smpl, int32_t n_max) {
++    if (!smpl || smpl->iface != &llama_sampler_llg_i || n_max <= 0) {
++        return {};
++    }
++
++    auto * ctx = (llama_sampler_llg *) smpl->ctx;
++    if (!ctx->grammar) {
++        return {};
++    }
++
++    std::vector<uint32_t> tokens(n_max);
++    const int32_t n = llg_matcher_compute_ff_tokens(ctx->grammar, tokens.data(), tokens.size());
++    const char * error = llg_matcher_get_error(ctx->grammar);
++    if (n < 0 || error) {
++        throw std::runtime_error(error ? error : "llguidance fast-forward failed");
++    }
++
++    llama_tokens result;
++    result.reserve(n);
++    for (int32_t i = 0; i < n; ++i) {
++        if (tokens[i] >= (uint32_t) llama_vocab_n_tokens(ctx->vocab)) {
++            throw std::runtime_error("llguidance returned an invalid token ID");
++        }
++        if (llama_vocab_is_eog(ctx->vocab, tokens[i])) {
++            break;
++        }
++        result.push_back(tokens[i]);
++    }
++    return result;
++}
++
+ static size_t llama_sampler_llg_tokenize_fn(const void * user_data, const uint8_t * bytes, size_t bytes_len,
+                                             uint32_t * output_tokens, size_t output_tokens_len) {
+     const llama_vocab * vocab = (const llama_vocab *) user_data;
+@@ -252,6 +283,10 @@ llama_sampler * llama_sampler_init_llg(const llama_vocab * vocab, const char * g
+ 
+ #else
+ 
++llama_tokens llama_sampler_llg_ff_tokens(llama_sampler *, int32_t) {
++    return {};
++}
++
+ llama_sampler * llama_sampler_init_llg(const llama_vocab *, const char *, const char *) {
+     LOG_WRN("llguidance (cmake -DLLAMA_LLGUIDANCE=ON) is not enabled");
+     return nullptr;
+diff --git c/common/sampling.cpp w/common/sampling.cpp
+index 06dea1e1c..d37990a02 100644
+--- c/common/sampling.cpp
++++ w/common/sampling.cpp
+@@ -464,6 +464,13 @@ static bool grammar_should_apply(struct common_sampler * gsmpl) {
+     return true;
+ }
+ 
++llama_tokens common_sampler_ff_tokens(common_sampler * gsmpl, int32_t n_max) {
++    if (!gsmpl || gsmpl->rbudget || !grammar_should_apply(gsmpl)) {
++        return {};
++    }
++    return llama_sampler_llg_ff_tokens(gsmpl->grmr, n_max);
++}
++
+ void common_sampler_accept(struct common_sampler * gsmpl, llama_token token, bool is_generated) {
+     if (!gsmpl) {
+         return;
+diff --git c/common/sampling.h w/common/sampling.h
+index ced3c8364..cf91d1c50 100644
+--- c/common/sampling.h
++++ w/common/sampling.h
+@@ -118,6 +118,9 @@ std::vector<enum common_sampler_type> common_sampler_types_from_chars(const std:
+ llama_sampler * llama_sampler_init_llg(const llama_vocab * vocab,
+                 const char * grammar_kind, const char * grammar_data);
+ 
++llama_tokens llama_sampler_llg_ff_tokens(llama_sampler * smpl, int32_t n_max);
++llama_tokens common_sampler_ff_tokens(common_sampler * gsmpl, int32_t n_max);
++
+ struct common_sampler_deleter {
+     void operator()(common_sampler * s) { common_sampler_free(s); }
+ };
+diff --git c/common/speculative.cpp w/common/speculative.cpp
+index 851a47b9a..0d7a6abed 100644
+--- c/common/speculative.cpp
++++ w/common/speculative.cpp
+@@ -32,6 +32,7 @@
+ 
+ const std::map<std::string, common_speculative_type> common_speculative_type_from_name_map = {
+     {"none",          COMMON_SPECULATIVE_TYPE_NONE},
++    {"grammar",       COMMON_SPECULATIVE_TYPE_GRAMMAR},
+     {"draft-simple",  COMMON_SPECULATIVE_TYPE_DRAFT_SIMPLE},
+     {"draft-eagle3",  COMMON_SPECULATIVE_TYPE_DRAFT_EAGLE3},
+     {"draft-mtp",     COMMON_SPECULATIVE_TYPE_DRAFT_MTP},
+@@ -176,6 +177,27 @@ struct common_speculative_impl {
+     virtual void set_state(llama_seq_id /*seq_id*/, const std::vector<uint8_t> & /*data*/) {}
+ };
+ 
++struct common_speculative_impl_grammar : public common_speculative_impl {
++    common_speculative_impl_grammar(const common_params_speculative & params, uint32_t n_seq)
++        : common_speculative_impl(COMMON_SPECULATIVE_TYPE_GRAMMAR, n_seq, std::max(0, params.draft.n_max)) {}
++
++    void begin(llama_seq_id, const llama_tokens &) override {}
++
++    bool process(const llama_batch &) override { return true; }
++
++    void draft(common_speculative_draft_params_vec & dparams) override {
++        for (auto & dp : dparams) {
++            if (dp.drafting) {
++                const int32_t limit = dp.n_max < 0 ? n_max : std::min(n_max, dp.n_max);
++                // The sampler has already accepted id_last.
++                *dp.result = common_sampler_ff_tokens(dp.sampler, limit);
++            }
++        }
++    }
++
++    void accept(llama_seq_id, uint16_t, bool) override {}
++};
++
+ struct common_speculative_impl_draft_simple : public common_speculative_impl {
+     common_params_speculative_draft params;
+ 
+@@ -2250,6 +2272,7 @@ std::string common_speculative_type_to_str(common_speculative_type type) {
+         case COMMON_SPECULATIVE_TYPE_NGRAM_MAP_K4V: return "ngram-map-k4v";
+         case COMMON_SPECULATIVE_TYPE_NGRAM_MOD:     return "ngram-mod";
+         case COMMON_SPECULATIVE_TYPE_NGRAM_CACHE:   return "ngram-cache";
++        case COMMON_SPECULATIVE_TYPE_GRAMMAR:       return "grammar";
+         default:                                    return "unknown";
+     }
+ }
+@@ -2331,6 +2354,7 @@ int32_t common_speculative_n_max(const common_params_speculative * spec) {
+ 
+     for (const auto type : spec->types) {
+         switch (type) {
++            case COMMON_SPECULATIVE_TYPE_GRAMMAR:
+             case COMMON_SPECULATIVE_TYPE_DRAFT_SIMPLE:
+             case COMMON_SPECULATIVE_TYPE_DRAFT_EAGLE3:
+             case COMMON_SPECULATIVE_TYPE_DRAFT_MTP:
+@@ -2612,10 +2636,11 @@ common_speculative * common_speculative_init(common_params_speculative & params,
+         };
+ 
+         // when adding a new type - update here the logic above
+-        static_assert(COMMON_SPECULATIVE_TYPE_COUNT == 11);
++        static_assert(COMMON_SPECULATIVE_TYPE_COUNT == 12);
+ 
+         // this list here defines the priority of the speculators
+         // the one with highest priority are listed first
++        add_config_if_enabled(COMMON_SPECULATIVE_TYPE_GRAMMAR);
+         add_config_if_enabled(COMMON_SPECULATIVE_TYPE_NGRAM_SIMPLE);
+         add_config_if_enabled(COMMON_SPECULATIVE_TYPE_NGRAM_MAP_K);
+         add_config_if_enabled(COMMON_SPECULATIVE_TYPE_NGRAM_MAP_K4V);
+@@ -2635,6 +2660,10 @@ common_speculative * common_speculative_init(common_params_speculative & params,
+         switch (config.type) {
+             case COMMON_SPECULATIVE_TYPE_NONE:
+                 break;
++            case COMMON_SPECULATIVE_TYPE_GRAMMAR: {
++                impls.push_back(std::make_unique<common_speculative_impl_grammar>(config.params, n_seq));
++                break;
++            }
+             case COMMON_SPECULATIVE_TYPE_DRAFT_SIMPLE: {
+                 impls.push_back(std::make_unique<common_speculative_impl_draft_simple>(config.params, n_seq));
+                 break;
+diff --git c/common/speculative.h w/common/speculative.h
+index 22505891f..979a34598 100644
+--- c/common/speculative.h
++++ w/common/speculative.h
+@@ -4,6 +4,7 @@
+ #include "common.h"
+ 
+ struct common_speculative;
++struct common_sampler;
+ 
+ // comma separated list the provided types
+ std::string common_speculative_type_name_str(const std::vector<enum common_speculative_type> & types);
+@@ -69,6 +70,8 @@ struct common_speculative_draft_params {
+ 
+     // the generated draft from the last _draft() call
+     llama_tokens * result;
++
++    common_sampler * sampler = nullptr;
+ };
+ 
+ common_speculative_draft_params & common_speculative_get_draft_params(common_speculative * spec, llama_seq_id seq_id);
+diff --git c/tests/CMakeLists.txt w/tests/CMakeLists.txt
+index c46377c76..165a5f036 100644
+--- c/tests/CMakeLists.txt
++++ w/tests/CMakeLists.txt
+@@ -146,6 +146,7 @@ endif()
+ 
+ if (LLAMA_LLGUIDANCE)
+     llama_build_and_test(test-grammar-llguidance.cpp ARGS ${PROJECT_SOURCE_DIR}/models/ggml-vocab-llama-bpe.gguf)
++    target_include_directories(test-grammar-llguidance PRIVATE ${CMAKE_BINARY_DIR}/llguidance/source/target/release)
+ endif ()
+ 
+ llama_build(test-recurrent-state-rollback.cpp)
+diff --git c/tests/test-grammar-llguidance.cpp w/tests/test-grammar-llguidance.cpp
+index 34746c200..b9add7c62 100644
+--- c/tests/test-grammar-llguidance.cpp
++++ w/tests/test-grammar-llguidance.cpp
+@@ -3,13 +3,91 @@
+ #endif
+ 
+ #include "sampling.h"
++#include "llguidance.h"
+ 
++#include <array>
+ #include <cassert>
++#include <cmath>
+ #include <string>
+ #include <vector>
+ 
+ static const llama_vocab * vocab;
+ 
++static void test_ff_output_bound() {
++    const uint32_t lengths[] = { 1, 1, 2 };
++    const uint8_t bytes[] = { 'a', 'b', 0xff, 'e' };
++    LlgTokenizerInit tinit = {};
++    tinit.vocab_size = 3;
++    tinit.tok_eos = 2;
++    tinit.token_lens = lengths;
++    tinit.token_bytes = bytes;
++    tinit.tokenize_fn = [](const void *, const uint8_t * input, size_t length, uint32_t * output, size_t capacity) {
++        for (size_t i = 0; i < std::min(length, capacity); ++i) {
++            output[i] = input[i] == 'a' ? 0 : 1;
++        }
++        return length;
++    };
++    char error[512] = {};
++    auto * tokenizer = llg_new_tokenizer(&tinit, error, sizeof(error));
++    assert(tokenizer);
++    LlgConstraintInit cinit;
++    llg_constraint_init_set_defaults(&cinit, tokenizer);
++    auto * matcher = llg_new_matcher(&cinit, "regex", "abababababababab");
++    assert(!llg_matcher_get_error(matcher));
++
++    std::array<uint32_t, 64> output;
++    output.fill(0xdeadbeef);
++    assert(llg_matcher_compute_ff_tokens(matcher, output.data(), output.size()) > 1);
++    output.fill(0xdeadbeef);
++    assert(llg_matcher_compute_ff_tokens(matcher, output.data(), 1) == 1);
++    assert(output[0] == 0);
++    for (size_t i = 1; i < output.size(); ++i) {
++        assert(output[i] == 0xdeadbeef);
++    }
++    output.fill(0xdeadbeef);
++    assert(llg_matcher_compute_ff_tokens(matcher, output.data(), 0) == 0);
++    assert(output[0] == 0xdeadbeef);
++    llg_free_matcher(matcher);
++    llg_free_tokenizer(tokenizer);
++}
++
++static void test_ff_sampler() {
++    auto * grammar = llama_sampler_init_llg(vocab, "regex", "The quick brown fox jumps over the lazy dog");
++    const auto forced = llama_sampler_llg_ff_tokens(grammar, 32);
++    assert(forced.size() > 1);
++    assert(llama_sampler_llg_ff_tokens(grammar, 1) == llama_tokens{forced[0]});
++    assert(llama_sampler_llg_ff_tokens(grammar, 0).empty());
++    assert(llama_sampler_llg_ff_tokens(grammar, 32) == forced);
++    auto * copy = llama_sampler_clone(grammar);
++    std::vector<llama_token_data> cur(llama_vocab_n_tokens(vocab));
++    for (const auto token : forced) {
++        for (size_t i = 0; i < cur.size(); ++i) {
++            cur[i] = { (llama_token) i, 0.0f, 0.0f };
++        }
++        auto candidates = llama_token_data_array{cur.data(), cur.size(), -1, false};
++        llama_sampler_apply(copy, &candidates);
++        size_t allowed = 0;
++        for (const auto & candidate : cur) {
++            allowed += std::isfinite(candidate.logit);
++        }
++        assert(allowed == 1 && std::isfinite(cur[token].logit));
++        llama_sampler_accept(copy, token);
++    }
++    assert(llama_sampler_llg_ff_tokens(grammar, 32) == forced);
++    llama_sampler_reset(copy);
++    assert(llama_sampler_llg_ff_tokens(copy, 32) == forced);
++    llama_sampler_free(copy);
++    llama_sampler_free(grammar);
++
++    auto * free_grammar = llama_sampler_init_llg(vocab, "regex", "[a-z]+");
++    assert(llama_sampler_llg_ff_tokens(free_grammar, 32).empty());
++    llama_sampler_free(free_grammar);
++    auto * native = llama_sampler_init_grammar(vocab, "root ::= \"abc\"", "root");
++    assert(llama_sampler_llg_ff_tokens(native, 32).empty());
++    llama_sampler_free(native);
++    assert(common_sampler_ff_tokens(nullptr, 32).empty());
++}
++
+ static bool match_string(const std::string & input, llama_sampler * grammar) {
+     llama_sampler_reset(grammar);
+     auto tokens = common_tokenize(vocab, input, false, false);
+@@ -1188,6 +1266,8 @@ int main(int argc, const char ** argv) {
+ 
+     vocab = llama_model_get_vocab(model);
+ 
++    test_ff_output_bound();
++    test_ff_sampler();
+     test_simple_grammar();
+     test_complex_grammar();
+     test_special_chars();
+diff --git c/tools/server/server-common.cpp w/tools/server/server-common.cpp
+index 2ac98b6fd..ebb93a94f 100644
+--- c/tools/server/server-common.cpp
++++ w/tools/server/server-common.cpp
+@@ -82,6 +82,7 @@ json server_slot_stats::to_json() const {
+     if (n_draft_tokens > 0) {
+         base["draft_n"]          = n_draft_tokens;
+         base["draft_n_accepted"] = n_draft_accepted;
++        base["draft_verification_steps"] = n_draft_verif_steps;
+     }
+ 
+     return base;
+diff --git c/tools/server/server-context.cpp w/tools/server/server-context.cpp
+index f78cfb36d..870dc0943 100644
+--- c/tools/server/server-context.cpp
++++ w/tools/server/server-context.cpp
+@@ -3016,6 +3016,7 @@ private:
+                             /* .id_last  = */ slot.sampled,
+                             /* .prompt   = */ &slot.spec_prompt,
+                             /* .result   = */ &slot.spec_draft,
++                            /* .sampler  = */ slot.smpl.get(),
+                         };
+ 
+                         drafting.push_back(&slot);

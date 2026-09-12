@@ -1,0 +1,110 @@
+{
+  "created_at_utc": "2026-09-12T15:39:43.907762+00:00",
+  "command": [
+    "scripts/07_general_baselines.py",
+    "prepare",
+    "--run",
+    "runs/2026-09-12-general-baselines"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-7.2.3-arch1-3-x86_64-with-glibc2.44",
+  "versions": {
+    "llguidance": "1.0.1",
+    "jsonschema": "4.26.0",
+    "transformers": "5.17.0",
+    "huggingface-hub": "1.31.0"
+  },
+  "git_head": "0499a9a587a799ddcbb40225ad921767e49e2621",
+  "git_status": "M  .gitignore\nM  README.md\nM  docs/gate0-report.md\nM  docs/notes/llguidance-ff-tokens.md\nMM docs/phase0-plan.md\nA  docs/phase0-reproduction.md\nA  docs/retarget-report.md\nA  runs/2026-09-12-decision/gate0-report.md\nA  runs/2026-09-12-decision/manifest.json\nA  runs/2026-09-12-decision/tests.xml\nA  runs/2026-09-12-decision/validation.json\nA  runs/2026-09-12-frontier-final/frontier.json.gz\nA  runs/2026-09-12-frontier-final/manifest.json\nA  runs/2026-09-12-frontier-final/retarget-report.md\nA  runs/2026-09-12-frontier-final/tests.xml\nA  runs/2026-09-12-frontier/frontier.json.gz\nA  runs/2026-09-12-frontier/manifest.json\nA  runs/2026-09-12-frontier/retarget-report.md\nA  runs/2026-09-12-full/adaptation-summary.json\nA  runs/2026-09-12-full/cases.jsonl.gz\nA  runs/2026-09-12-full/characterization.json\nA  runs/2026-09-12-full/measure-manifest.json\nA  runs/2026-09-12-full/measurement-complete.json\nA  runs/2026-09-12-full/prepare-manifest.json\nA  runs/2026-09-12-full/questions.json.gz\nA  runs/2026-09-12-full/report-manifest.json\nA  runs/2026-09-12-full/selection.json\nA  runs/2026-09-12-full/summary.json\nA  runs/2026-09-12-full/traces.jsonl.gz\nA  runs/2026-09-12-generated/manifest.json\nA  runs/2026-09-12-generated/outputs.jsonl\nA  runs/2026-09-12-generated/selection.json\nA  runs/2026-09-12-generated/server-manifest.json\nA  runs/2026-09-12-generated/server.log\nA  runs/2026-09-12-generated/summary.json\nA  runs/2026-09-12-parity/parity.jsonl\nA  runs/2026-09-12-parity/selection.json\nA  runs/2026-09-12-parity/server-manifest.json\nA  runs/2026-09-12-parity/server.log\nA  runs/2026-09-12-parity/summary.json\nA  runs/2026-09-12-pilot/adaptation-summary.json\nA  runs/2026-09-12-pilot/cases.jsonl.gz\nA  runs/2026-09-12-pilot/characterization.json\nA  runs/2026-09-12-pilot/measure-manifest.json\nA  runs/2026-09-12-pilot/measurement-complete.json\nA  runs/2026-09-12-pilot/prepare-manifest.json\nA  runs/2026-09-12-pilot/questions.json.gz\nA  runs/2026-09-12-pilot/report-manifest.json\nA  runs/2026-09-12-pilot/selection.json\nA  runs/2026-09-12-pilot/summary.json\nA  runs/2026-09-12-pilot/traces.jsonl.gz\nA  runs/2026-09-12-workload-cache/analysis-manifest.json\nA  runs/2026-09-12-workload-cache/collect-manifest.json\nA  runs/2026-09-12-workload-cache/collection-complete.json\nA  runs/2026-09-12-workload-cache/continuation-01/resume-manifest.json\nA  runs/2026-09-12-workload-cache/continuation-01/server-manifest.json\nA  runs/2026-09-12-workload-cache/continuation-01/server.log\nA  runs/2026-09-12-workload-cache/continuation-01/warmup.json\nA  runs/2026-09-12-workload-cache/probes.jsonl\nA  runs/2026-09-12-workload-cache/questions.json.gz\nA  runs/2026-09-12-workload-cache/selection.json\nA  runs/2026-09-12-workload-cache/server-manifest.json\nA  runs/2026-09-12-workload-cache/server.log\nA  runs/2026-09-12-workload-cache/summary.json\nA  runs/2026-09-12-workload-cache/warmup.json\nA  scripts/02_tokenizer_parity.py\nA  scripts/03_generated_check.py\nA  scripts/04_gate0_report.py\nA  scripts/05_workload_cache.py\nA  scripts/06_retarget_frontier.py\nM  src/jumpforward/corpus.py\nA  src/jumpforward/cost.py\nA  src/jumpforward/frontier.py\nA  src/jumpforward/generation.py\nAM src/jumpforward/parity.py\nA  src/jumpforward/phase0.py\nA  src/jumpforward/report.py\nA  src/jumpforward/spans.py\nA  src/jumpforward/workload.py\nA  tests/test_phase0.py\nA  tests/test_workload.py\n?? runs/2026-09-12-frontier-final/validation.json\n?? runs/2026-09-12-general-baselines/\n?? scripts/07_general_baselines.py\n?? src/jumpforward/baselines.py\n?? tests/test_baselines.py",
+  "git_diff_sha256": "ee10d3e094a6273476febe359b5ff4647e6585a331c46054286631b1bc389ad6",
+  "source_sha256": {
+    "/home/rafaelmarins2003/scripts/grammar-jump-forward/runs/2026-09-12-generated/outputs.jsonl": "6d3e39951a0215bee3fe155f2c122d3f3103371ed1e925e101fb7daaadee5562",
+    "/home/rafaelmarins2003/scripts/grammar-jump-forward/runs/2026-09-12-pilot/cases.jsonl": "ca5095d6713198107be6c08504cb2baec38578a7f0e093837356bd227770f2c9"
+  },
+  "plan_sha256": "6cd167b623aa253c1b65f89792d20ea91a200f1a687bf5d8d68b7d44067dab27",
+  "engine_config": {
+    "_note": "Frozen engine decisions. Changing base_commit invalidates every run recorded against the old one.",
+    "upstream": "https://github.com/ggml-org/llama.cpp",
+    "base_commit": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+    "base_build": "b10791",
+    "worktree": "~/llama.cpp-jf",
+    "branch": "grammar-jump-forward",
+    "reference_checkout": {
+      "path": "~/llama.cpp",
+      "_note": "Same commit, untouched. Shared with other projects. Use it as the no-patch baseline binary."
+    },
+    "llguidance": {
+      "version": "1.0.1",
+      "commit": "d795912fedc7d393de740177ea9ea761e7905774",
+      "source": "~/llama.cpp-jf/build/llguidance/source",
+      "c_header": "~/llama.cpp-jf/build/llguidance/source/parser/llguidance.h"
+    },
+    "toolchain": {
+      "_note": "rust, ninja, ccache pinned in mise.toml; compilers are system packages",
+      "rust": "1.98.1",
+      "ninja": "1.13.2",
+      "ccache": "4.14",
+      "cuda": "13.3",
+      "gcc": "16.2.1",
+      "cmake": "4.4.3"
+    },
+    "builds": {
+      "release": {
+        "dir": "~/llama.cpp-jf/build",
+        "purpose": "benchmarks and GPU runs",
+        "cmake_flags": [
+          "-G Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DGGML_CUDA=ON",
+          "-DCMAKE_CUDA_ARCHITECTURES=75",
+          "-DLLAMA_LLGUIDANCE=ON",
+          "-DLLAMA_OPENSSL=ON",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CUDA_COMPILER_LAUNCHER=ccache"
+        ]
+      },
+      "debug": {
+        "dir": "~/llama.cpp-jf/build-debug",
+        "purpose": "stepping through sampler / speculative / server control flow with gdb; CPU only",
+        "cmake_flags": [
+          "-G Ninja",
+          "-DCMAKE_BUILD_TYPE=Debug",
+          "-DGGML_CUDA=OFF",
+          "-DLLAMA_LLGUIDANCE=ON",
+          "-DLLAMA_OPENSSL=ON",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DCMAKE_C_COMPILER_LAUNCHER=ccache",
+          "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache"
+        ]
+      }
+    }
+  },
+  "model_config": {
+    "path": "~/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf",
+    "bytes": 5027783488,
+    "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+    "hf_commit": "7c41481f57cb95916b40956ab2f0b139b296d974",
+    "gguf_general_name": "Qwen3 8B Awq Compatible Instruct",
+    "tokenizer": "qwen3",
+    "role": "primary target (Gate 1, RQ1, RQ4)"
+  },
+  "seed": "20260912",
+  "grammar_backend": "llguidance 1.0.1, default native forcing (PL)",
+  "scope": "general-scope exploratory baseline screen; no jump-forward arm",
+  "inputs_sha256": "9b92c0e0b29af32dbf19516942c7dca055020fa71d0a2458d3ea5f4e4dc1b19c",
+  "strategies": [
+    "none",
+    "draft-simple",
+    "ngram-simple"
+  ],
+  "repetitions": 2,
+  "bootstrap_resamples": 5000,
+  "cache_prompt": false,
+  "strategy_order": [
+    "none",
+    "draft-simple",
+    "ngram-simple"
+  ]
+}

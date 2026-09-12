@@ -1,0 +1,350 @@
+{
+  "selected": 200,
+  "requests": 800,
+  "complete_pairs": 198,
+  "failures": [
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_983-215-7"
+      ],
+      "strategy": "none",
+      "repetition": 0,
+      "error": "generation limit or truncation"
+    },
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_983-215-7"
+      ],
+      "strategy": "grammar",
+      "repetition": 0,
+      "error": "generation limit or truncation"
+    },
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_983-215-7"
+      ],
+      "strategy": "grammar",
+      "repetition": 1,
+      "error": "generation limit or truncation"
+    },
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_983-215-7"
+      ],
+      "strategy": "none",
+      "repetition": 1,
+      "error": "generation limit or truncation"
+    },
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_568-155-8"
+      ],
+      "strategy": "none",
+      "repetition": 0,
+      "error": "generation limit or truncation"
+    },
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_568-155-8"
+      ],
+      "strategy": "grammar",
+      "repetition": 0,
+      "error": "generation limit or truncation"
+    },
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_568-155-8"
+      ],
+      "strategy": "grammar",
+      "repetition": 1,
+      "error": "generation limit or truncation"
+    },
+    {
+      "key": [
+        "live_multiple",
+        "live_multiple_568-155-8"
+      ],
+      "strategy": "none",
+      "repetition": 1,
+      "error": "generation limit or truncation"
+    }
+  ],
+  "arms": {
+    "none": {
+      "wall_ms": {
+        "n": 198,
+        "p10": 474.1106417502124,
+        "median": 717.769329749899,
+        "p90": 1466.0995929002638,
+        "mean": 919.7467299545357
+      },
+      "decode_ms": {
+        "n": 198,
+        "p10": 278.8007,
+        "median": 446.68025,
+        "p90": 782.2606500000004,
+        "mean": 583.8422601010101
+      },
+      "prefill_ms": {
+        "n": 198,
+        "p10": 99.30640000000001,
+        "median": 186.4425,
+        "p90": 447.54365000000007,
+        "mean": 234.85962626262625
+      },
+      "generated_tokens": {
+        "n": 198,
+        "p10": 19.0,
+        "median": 29.5,
+        "p90": 54.0,
+        "mean": 39.65151515151515
+      },
+      "timed_requests_including_failures": 400,
+      "pooled_p95_wall_ms": 1854.316644549726,
+      "drafted": 0,
+      "accepted": 0,
+      "acceptance": null,
+      "verification_steps": 0,
+      "generation_batches_counter_derived": 23494,
+      "chosen_reference_equal": 123,
+      "observed_vram_mib": 5904
+    },
+    "grammar": {
+      "wall_ms": {
+        "n": 198,
+        "p10": 309.19975040051213,
+        "median": 526.0932747505649,
+        "p90": 1186.7067102501103,
+        "mean": 703.2272350606532
+      },
+      "decode_ms": {
+        "n": 198,
+        "p10": 147.78055,
+        "median": 272.668,
+        "p90": 602.1257000000002,
+        "mean": 394.648202020202
+      },
+      "prefill_ms": {
+        "n": 198,
+        "p10": 95.89205,
+        "median": 183.83275,
+        "p90": 434.4578,
+        "mean": 227.7874924242424
+      },
+      "generated_tokens": {
+        "n": 198,
+        "p10": 19.0,
+        "median": 30.0,
+        "p90": 54.900000000000034,
+        "mean": 39.97979797979798
+      },
+      "timed_requests_including_failures": 400,
+      "pooled_p95_wall_ms": 1588.0652244490193,
+      "drafted": 5408,
+      "accepted": 5408,
+      "acceptance": 1.0,
+      "verification_steps": 1500,
+      "generation_batches_counter_derived": 18216,
+      "chosen_reference_equal": 123,
+      "observed_vram_mib": 5904
+    }
+  },
+  "wall_speedup": {
+    "n": 198,
+    "median": 1.3580887025507873,
+    "ci95": [
+      1.3313747522067356,
+      1.3963446304614497
+    ]
+  },
+  "decode_speedup": {
+    "n": 198,
+    "median": 1.6581454794666626,
+    "ci95": [
+      1.6017345513261103,
+      1.6956135159973593
+    ]
+  },
+  "subsets": {
+    "simple": {
+      "wall_speedup": {
+        "n": 40,
+        "median": 1.5539351575852034,
+        "ci95": [
+          1.5096545076735008,
+          1.6410329196634978
+        ]
+      },
+      "decode_speedup": {
+        "n": 40,
+        "median": 1.85399509046412,
+        "ci95": [
+          1.7961356928324883,
+          1.9418915943449035
+        ]
+      }
+    },
+    "multiple": {
+      "wall_speedup": {
+        "n": 40,
+        "median": 1.3537338874894327,
+        "ci95": [
+          1.3287024806008112,
+          1.364320747686199
+        ]
+      },
+      "decode_speedup": {
+        "n": 40,
+        "median": 1.619534675497269,
+        "ci95": [
+          1.5368766699894563,
+          1.6841547392909557
+        ]
+      }
+    },
+    "live_simple": {
+      "wall_speedup": {
+        "n": 40,
+        "median": 1.4836026627129875,
+        "ci95": [
+          1.4455971528073304,
+          1.5600540999057357
+        ]
+      },
+      "decode_speedup": {
+        "n": 40,
+        "median": 1.7738708826171554,
+        "ci95": [
+          1.6751605294261,
+          1.9436609625179915
+        ]
+      }
+    },
+    "live_multiple": {
+      "wall_speedup": {
+        "n": 38,
+        "median": 1.287482561980994,
+        "ci95": [
+          1.2574615406840175,
+          1.3131176664433064
+        ]
+      },
+      "decode_speedup": {
+        "n": 38,
+        "median": 1.6193272389512645,
+        "ci95": [
+          1.529643131699367,
+          1.67329842831576
+        ]
+      }
+    },
+    "hermes": {
+      "wall_speedup": {
+        "n": 40,
+        "median": 1.232437595440342,
+        "ci95": [
+          1.1595268094844442,
+          1.2991380943865085
+        ]
+      },
+      "decode_speedup": {
+        "n": 40,
+        "median": 1.431568756142898,
+        "ci95": [
+          1.2605374482790879,
+          1.4694900368080557
+        ]
+      }
+    }
+  },
+  "quality": {
+    "potential_regression_questions": 4,
+    "one_sided_95_upper": 0.04563081717964962,
+    "parsed_changed": 4,
+    "unstable": 0,
+    "same_parsed_changed_bytes": 0,
+    "same_bytes_changed_tokens": 1,
+    "divergent_ids": [
+      {
+        "subset": "multiple",
+        "id": "multiple_175",
+        "parsed_changed": true,
+        "unstable": false,
+        "bytes_changed": true,
+        "tokens_changed": true
+      },
+      {
+        "subset": "live_simple",
+        "id": "live_simple_237-125-0",
+        "parsed_changed": true,
+        "unstable": false,
+        "bytes_changed": true,
+        "tokens_changed": true
+      },
+      {
+        "subset": "live_multiple",
+        "id": "live_multiple_221-95-0",
+        "parsed_changed": true,
+        "unstable": false,
+        "bytes_changed": true,
+        "tokens_changed": true
+      },
+      {
+        "subset": "live_multiple",
+        "id": "live_multiple_749-169-4",
+        "parsed_changed": false,
+        "unstable": false,
+        "bytes_changed": false,
+        "tokens_changed": true
+      },
+      {
+        "subset": "hermes",
+        "id": "f595b8d5-531a-4699-85bc-02620d4e1de8",
+        "parsed_changed": true,
+        "unstable": false,
+        "bytes_changed": true,
+        "tokens_changed": true
+      }
+    ]
+  },
+  "failure_questions": {
+    "both_arms": [
+      [
+        "live_multiple",
+        "live_multiple_568-155-8"
+      ],
+      [
+        "live_multiple",
+        "live_multiple_983-215-7"
+      ]
+    ],
+    "baseline_only": [],
+    "candidate_only": []
+  },
+  "p95_latency_ratio": 0.8564153426097519,
+  "criteria": {
+    "complete_no_failures": false,
+    "median_at_least_1_4": false,
+    "ci_lower_above_1": true,
+    "all_subsets_at_least_1": true,
+    "p95_at_most_1_10": true,
+    "quality_upper_below_2_percent": false,
+    "actual_grammar_drafts": true
+  },
+  "decision": "stop",
+  "condition": "cold",
+  "selection_by_subset": {
+    "simple": 40,
+    "multiple": 40,
+    "live_simple": 40,
+    "live_multiple": 40,
+    "hermes": 40
+  }
+}

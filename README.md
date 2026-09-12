@@ -8,14 +8,28 @@ and KV-cache computation; batching and changing the tokenization policy are sepa
 Proposal: [`docs/proposal.md`](docs/proposal.md). Phase 0 plan and Gate 0 definition:
 [`docs/phase0-plan.md`](docs/phase0-plan.md).
 
-**Status:** Phase 0 investigation completed with a **retarget** recommendation, not an engine go.
-The reference corpus, native tokenizer parity, GPU cost curve and a small generated-output check
-support a narrower engineering study; they do not establish the original end-to-end speedup claim.
-Results and next decision: [`docs/gate0-report.md`](docs/gate0-report.md).
+**Status: STOP for further general-scope investment under the registered experiment.**
+The authorized default-off C++ prototype was measured on 200 frozen questions / 800 requests.
+Its paired end-to-end speedup is **1.358x [1.331, 1.396]**, against identical compact llguidance
+without batching, below the prospective 1.4x target. Decode alone improves 1.658x. Four of 198
+complete questions change parsed output; the preservation criterion also fails. The same two
+questions hit the generation limit in both arms, not a new batching-only failure.
+Measured [prototype report](runs/2026-09-12-prototype/cold-report.md),
+[decision](docs/general-scope-decision.md) and [reproduction](docs/prototype-reproduction.md).
+No warm-cache rescue or niche retargeting was run. This is a bounded result on one model/GPU,
+not proof that every future implementation must fail. The original Gate 0 remains unpassed.
+
+The earlier approximate 1.4x was only a projection. The prior
+[existing-baseline screen](runs/2026-09-12-general-baselines/baseline-report.md) compares stock
+JSON Schema, compact/spaced llguidance, a small draft model and n-gram speculation.
+Read the [baseline metadata corrections](docs/notes/baseline-audit-corrections.md) with that report:
+its stock request used default-schema llguidance, not native GBNF, and its n-gram cap label was wrong.
 Reproduction commands and limitations: [`docs/phase0-reproduction.md`](docs/phase0-reproduction.md).
-Follow-up with measured cache-prefix costs and output-length sensitivity:
-[`docs/retarget-report.md`](docs/retarget-report.md). Cache helps, but does not yet justify the
-original performance target against compact JSON; an application workload is still needed.
+
+Historical evidence: [`docs/gate0-report.md`](docs/gate0-report.md) and
+[`docs/retarget-report.md`](docs/retarget-report.md). Their results and original gate remain unchanged;
+their recommendation to require an application niche is superseded by the user's general-scope
+direction. The new measured decision closes this bounded general-scope feasibility round.
 
 ## Layout
 

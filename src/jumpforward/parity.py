@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 import shutil
 import socket
 import subprocess
@@ -27,14 +28,35 @@ def file_hash(path: Path) -> str:
     return sha.hexdigest()
 
 
+def assert_gpu_idle():
+    active = subprocess.check_output(
+        [
+            "nvidia-smi",
+            "--query-compute-apps=pid,process_name,used_memory",
+            "--format=csv,noheader",
+        ],
+        text=True,
+    ).strip()
+    if active:
+        raise RuntimeError(f"GPU has existing compute processes; refusing to start: {active}")
+
+
 @contextmanager
-def owned_server(run: Path, gpu: bool = False):
+def owned_server(
+    run: Path, gpu: bool = False, speculation: str = "none", build_dir: Path | None = None
+):
+    if speculation not in ("none", "draft-simple", "ngram-simple", "grammar"):
+        raise ValueError("unsupported fixed speculation configuration")
+    if gpu:
+        assert_gpu_idle()
     config = json.loads((ROOT / "config/models.json").read_text())["targets"]["qwen3-8b-q4_k_m"]
     model = Path(config["path"]).expanduser()
     actual_hash = file_hash(model)
     if actual_hash != config["sha256"]:
         raise ValueError("GGUF content does not match the pinned model")
-    binary = Path.home() / "llama.cpp-jf/build/bin/llama-server"
+    engine = Path.home() / "llama.cpp-jf"
+    build_dir = build_dir or engine / "build"
+    binary = build_dir / "bin/llama-server"
     with socket.socket() as sock:
         sock.bind(("127.0.0.1", 0))
         port = sock.getsockname()[1]
@@ -57,7 +79,33 @@ def owned_server(run: Path, gpu: bool = False):
         "--no-warmup",
         "-fa",
         "on",
+        "--spec-type",
+        speculation,
     ]
+    draft_identity = None
+    if speculation == "draft-simple":
+        draft_identity = json.loads((ROOT / "config/models.json").read_text())["drafts"][
+            "qwen3-0.6b-q8_0"
+        ]
+        draft_path = Path(draft_identity["path"]).expanduser()
+        if file_hash(draft_path) != draft_identity["sha256"]:
+            raise ValueError("draft GGUF does not match its pinned hash")
+        command.extend(
+            [
+                "-md",
+                str(draft_path),
+                "-ngld",
+                "99" if gpu else "0",
+                "--spec-draft-n-max",
+                "3",
+                "--spec-draft-p-min",
+                "0.75",
+            ]
+        )
+    elif speculation == "ngram-simple":
+        command.extend(["--spec-draft-n-max", "8"])
+    elif speculation == "grammar":
+        command.extend(["--spec-draft-n-max", "32"])
     # Linux: stop the owned server even if Python is interrupted before finally runs.
     # setpriv is used only to set the parent-death signal, not to change privileges.
     launcher = shutil.which("setpriv") if sys.platform == "linux" else None
@@ -69,17 +117,38 @@ def owned_server(run: Path, gpu: bool = False):
             "server_command": command,
             "launched_command": launched_command,
             "binary_sha256": file_hash(binary),
+            "runtime_libraries_sha256": {
+                p.name: file_hash(p)
+                for p in sorted(binary.parent.glob("*.so*"))
+                if not p.is_symlink()
+            },
             "verified_model_sha256": actual_hash,
+            "verified_draft": draft_identity,
             "engine_head": subprocess.check_output(
-                ["git", "-C", str(binary.parents[2]), "rev-parse", "HEAD"], text=True
+                ["git", "-C", str(engine), "rev-parse", "HEAD"], text=True
             ).strip(),
             "engine_status": subprocess.check_output(
-                ["git", "-C", str(binary.parents[2]), "status", "--short"], text=True
+                ["git", "-C", str(engine), "status", "--short"], text=True
             ).strip(),
+            "engine_diff_sha256": digest(
+                subprocess.check_output(["git", "-C", str(engine), "diff", "HEAD"])
+            ),
+            "runtime_directory": str(build_dir),
+            "scope": "owned local server; exact request selects grammar and cache conditions",
         },
     )
     with (run / "server.log").open("x") as log:
-        process = subprocess.Popen(launched_command, stdout=log, stderr=subprocess.STDOUT)
+        environment = os.environ.copy()
+        existing_library_path = environment.get("LD_LIBRARY_PATH", "")
+        environment["LD_LIBRARY_PATH"] = str(binary.parent) + (
+            ":" + existing_library_path if existing_library_path else ""
+        )
+        if gpu:
+            assert_gpu_idle()
+        process = subprocess.Popen(
+            launched_command, stdout=log, stderr=subprocess.STDOUT, env=environment
+        )
+        write_json(run / "server-process.json", {"pid": process.pid})
         try:
             with httpx.Client(base_url=f"http://127.0.0.1:{port}", timeout=180) as client:
                 deadline = time.monotonic() + 180
