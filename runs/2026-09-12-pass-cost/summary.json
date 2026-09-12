@@ -1,0 +1,125 @@
+{
+  "run_id": "2026-09-12-pass-cost",
+  "status": "completed",
+  "finished_at_utc": "2026-09-12T03:49:54Z",
+  "kind": "synthetic_microbenchmark",
+  "source_files": [
+    "batch-cost.jsonl",
+    "prefill.jsonl"
+  ],
+  "batch_cost": [
+    {
+      "depth": 1024,
+      "batch": 1,
+      "mean_ms": 11.580261,
+      "sd_ms": 1.473433,
+      "samples": 5,
+      "cost_relative_to_one": 1
+    },
+    {
+      "depth": 1024,
+      "batch": 2,
+      "mean_ms": 12.162433,
+      "sd_ms": 1.175554,
+      "samples": 5,
+      "cost_relative_to_one": 1.0502727874613533
+    },
+    {
+      "depth": 1024,
+      "batch": 4,
+      "mean_ms": 16.364087,
+      "sd_ms": 1.832701,
+      "samples": 5,
+      "cost_relative_to_one": 1.4131017426982
+    },
+    {
+      "depth": 1024,
+      "batch": 8,
+      "mean_ms": 26.719697,
+      "sd_ms": 1.640515,
+      "samples": 5,
+      "cost_relative_to_one": 2.307348426775528
+    },
+    {
+      "depth": 1024,
+      "batch": 16,
+      "mean_ms": 19.826388,
+      "sd_ms": 1.560684,
+      "samples": 5,
+      "cost_relative_to_one": 1.7120847276240148
+    },
+    {
+      "depth": 1024,
+      "batch": 32,
+      "mean_ms": 24.231567,
+      "sd_ms": 2.07134,
+      "samples": 5,
+      "cost_relative_to_one": 2.0924888480492796
+    },
+    {
+      "depth": 4096,
+      "batch": 1,
+      "mean_ms": 12.588542,
+      "sd_ms": 1.251633,
+      "samples": 5,
+      "cost_relative_to_one": 1
+    },
+    {
+      "depth": 4096,
+      "batch": 2,
+      "mean_ms": 13.015996,
+      "sd_ms": 1.090665,
+      "samples": 5,
+      "cost_relative_to_one": 1.033955798852639
+    },
+    {
+      "depth": 4096,
+      "batch": 4,
+      "mean_ms": 17.16821,
+      "sd_ms": 1.754281,
+      "samples": 5,
+      "cost_relative_to_one": 1.3637965381535049
+    },
+    {
+      "depth": 4096,
+      "batch": 8,
+      "mean_ms": 26.816279,
+      "sd_ms": 1.757222,
+      "samples": 5,
+      "cost_relative_to_one": 2.1302132526546758
+    },
+    {
+      "depth": 4096,
+      "batch": 16,
+      "mean_ms": 20.532292,
+      "sd_ms": 1.686818,
+      "samples": 5,
+      "cost_relative_to_one": 1.6310301860215424
+    },
+    {
+      "depth": 4096,
+      "batch": 32,
+      "mean_ms": 25.985416,
+      "sd_ms": 1.533601,
+      "samples": 5,
+      "cost_relative_to_one": 2.064211725233947
+    }
+  ],
+  "prefill": [
+    {
+      "tokens": 1024,
+      "mean_ms": 392.328132,
+      "sd_ms": 0.754293,
+      "samples": 5
+    },
+    {
+      "tokens": 4096,
+      "mean_ms": 1674.576437,
+      "sd_ms": 6.288633,
+      "samples": 5
+    }
+  ],
+  "tool_call_speedup": null,
+  "forced_fraction": null,
+  "gate0": "incomplete"
+}

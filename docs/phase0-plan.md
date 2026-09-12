@@ -104,3 +104,113 @@ jump-forward's marginal gain over draft speculation is mostly the draft's own co
 
 `docs/gate0-report.md`, generated from `runs/` manifests (no hand-typed numbers), ending with one of:
 **go**, **go with whitespace-canonical grammar**, **retarget**, **abandon**.
+
+## Amendments
+
+### 2026-09-12 — PL-first feasibility investigation
+
+Authorized in the project review conversation. Registered after source/literature inspection and
+inspection of raw record formats, before collecting forced-fraction or pass-cost measurements.
+This amendment narrows the initial investigation; it does not declare that Gate 0 has passed.
+
+**Primary hypothesis.** Batching the tokens already forced by llguidance's native policy (PL)
+can reduce tool-call latency relative to the same llguidance grammar and policy processed one
+token at a time. A different tokenization policy and a different whitespace grammar are separate
+interventions. P1/P2/P3, other tokenizer families and composition with a draft are deferred until
+the primary feasibility result justifies them. G3 remains a separately labelled compatibility
+check, not a substitute for the same-backend baseline.
+
+**Prior-art corrections.** See `notes/llguidance-ff-tokens.md` and `notes/prior-art.md`.
+llguidance can force its canonical token through a singleton mask even when the engine does not
+batch tokens. Therefore default llguidance versus PL batching does not isolate the quality effect
+of canonical tokenization. General grammar validity does not imply target-token agreement for
+P1/P2/P3. The broad claim that tokenization-induced quality changes have never been measured is
+withdrawn; the original proposal is retained as a historical draft.
+
+**Pilot selection.** Primary tokenizer: the pinned Qwen3 tokenizer. Select 30 questions from each
+of BFCL `simple`, `multiple`, `parallel`, `live_simple`, `live_multiple`, plus 50 Hermes single-turn
+records. Rank records within each subset by SHA-256 of `20260912:<subset>:<id>` and take the first
+records. Freeze selected IDs before measuring. Keep all calls belonging to each selected question.
+Do not replace invalid/unsupported records with easier ones. Report their IDs and reasons, and
+report coverage against the full selection. A pilot is an instrument/feasibility check; it is not
+the original full-corpus Gate 0 result.
+
+**Reference adaptation.** Each JSON call body has `name` and `arguments`. The grammar includes
+every candidate tool supplied with that question; it must not select the correct tool in advance
+or turn observed argument values into constants. Parallel-call bodies are analysed individually
+and aggregated by question; wrappers, triggers and number-of-calls decisions are excluded from
+this body-only metric and must be included in later generation measurements. Normalize documented
+schema type aliases explicitly and record the normalization. BFCL answer alternatives are not
+themselves argument values: choose a deterministic schema-valid reference realization, record
+the choice, and report ambiguous/unrepresentable references instead of silently repairing them.
+Hermes references must parse as JSON and validate against their supplied tool schema.
+
+**Offline measurements.** Evaluate S1 and S2 with G1 and matching G2. Report forced-token fraction,
+forced byte coverage, lengths of consecutive injectable spans, tokenization mismatches, and CPU
+extraction cost. Consume non-overlapping spans; do not count the same continuation repeatedly.
+Distinguish reference token IDs from any policy-generated IDs. Never consume a token outside
+the mask to make a reference fit. Report the exact treatment of a mismatch and its effect on
+coverage. Validate the reconstructed bytes independently. Aggregate by question and by subset;
+do not let parallel calls silently increase a question's statistical weight.
+
+**Pass-cost measurement.** The pinned `llama-bench` supports `-d/--n-depth`; its depth prefill or
+restoration happens before the timed interval. Use the reference binary, target Qwen3-8B Q4_K_M,
+all layers on GPU, `-fa on`, depths 1024 and 4096, batches 1, 2, 4, 8, 16 and 32, five repetitions,
+and JSONL output including raw samples. Measure prompt processing at depth zero separately.
+These are synthetic token microbenchmarks, not measured tool-call latency. Record the command,
+engine revision, model identity, device, build settings, input hashes and run status. Do not run
+two GPU measurements concurrently.
+
+**Cost accounting.** For a run of L forced tokens, group it with the preceding pending token
+where the engine can do so; cap a submitted batch at 32 total tokens. Charge for processing every
+injected token, modelled batch boundaries and measured CPU extraction. Do not count a free token
+both as a saved pass and as a bonus sample. State endpoint assumptions explicitly. Report an
+optimistic hardware estimate and a conservative estimate using the next measured batch size,
+with detection overhead. Include prefill for end-to-end estimates; prompt-cache assumptions
+must be explicit. A synthetic estimate does not establish a server speedup or its confidence
+interval.
+
+**Decision.** Retain the original 25% fraction threshold and 1.5x measured-latency target. Passing
+the fraction threshold alone cannot justify engine work. If even an optimistic estimate is below
+1.5x, do not claim feasibility for the original performance target: report the shortfall and
+consider a explicitly smaller engineering contribution. If only G2 is promising, require a
+whitespace-quality comparison. A positive pilot authorizes completing validation on the relevant
+corpus and model-generated outputs, not an automatic full Gate 0 pass. Insufficient evidence is
+reported as **incomplete**, rather than forced into a go/no-go verdict.
+
+**Quality and draft checks.** Compare whitespace variants under the same token policy; compare
+PL and `no_forcing` under the same grammar if studying tokenization. A small pilot can reveal
+regressions but cannot establish non-inferiority. Register the accuracy margin and required sample
+size before a confirmatory quality run. Measure draft latency and memory as well as acceptance;
+high structural-token acceptance alone does not establish low marginal value for jump-forward.
+
+### 2026-09-12 — Implementation details before corpus measurements
+
+Rafael authorized Phase 0 Python scripts. The synthetic cost curve has already been observed;
+no pilot or full-corpus forced fractions have been measured. Since the measured curve is not
+monotonic, the conservative cost proxy uses the maximum measured mean through the next measured
+batch size, plus extraction/consumption overhead. The optimistic proxy uses the exact measured
+mean at measured sizes, and the smaller adjacent mean at unmeasured sizes. These are sensitivity
+estimates, not guaranteed bounds. The absolute zero-cost-for-forced-tokens ceiling is reported
+separately. Thresholds are unchanged.
+
+BFCL schema aliases are normalized only at schema nodes: `dict` to `object`, `float` to `number`,
+`tuple` to JSON `array` (flagged), and `any` to an unconstrained type. Value objects, property names
+and enum/const contents are not rewritten. Reference arguments use the first schema-valid answer
+alternative in source order. For optional arguments, the BFCL empty-string omission sentinel is
+omitted when encountered before a concrete candidate; every choice is recorded. Arguments are
+serialized in schema property order to match the grammar's documented ordering. Missing schemas,
+invalid references, ambiguity and compile/mask failures remain explicit coverage failures.
+
+The replay uses the reference's canonical token IDs without healing or silently changing them.
+An FF/reference mismatch invalidates that trace and is reported. A second matcher consumes every
+token through ordinary masks and checks singleton agreement at forced positions. This validation
+is excluded from extraction-time estimates. Each successful trace records all token IDs, forced
+flags, returned spans and grammar text; metrics count each position once. Questions with a failed
+call body are excluded from complete-question summaries but remain in coverage denominators.
+Per-call successful traces are retained for diagnosis, not substituted into question aggregates.
+
+Cost accounting processes every body token once (including the last token to obtain termination
+logits), combining a pending free token with following forced tokens into batches of at most 32.
+An initial forced prefix is charged as a separate batch rather than treated as free prompt work.
+End-to-end proxies add the measured fixed-depth prefill; they are not observed request latencies.

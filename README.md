@@ -9,7 +9,9 @@ tokenization degrades the values the model writes next.
 Proposal: [`docs/proposal.md`](docs/proposal.md). Phase 0 plan and Gate 0 definition:
 [`docs/phase0-plan.md`](docs/phase0-plan.md).
 
-**Status:** Phase 0 (prior-art verification, forced-token fraction, pass-cost curve). No code yet.
+**Status:** Phase 0. Source/prior-art audit and synthetic GPU pass-cost curve completed;
+forced-token fractions and tool-call evaluation remain pending. No project code yet.
+Preliminary evidence and outstanding work: [`docs/gate0-report.md`](docs/gate0-report.md).
 
 ## Layout
 

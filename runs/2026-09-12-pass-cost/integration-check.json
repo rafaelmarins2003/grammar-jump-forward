@@ -1,0 +1,18 @@
+{
+  "kind": "supporting_existing_test",
+  "date_utc": "2026-09-12",
+  "engine_commit": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+  "llguidance_commit": "d795912fedc7d393de740177ea9ea761e7905774",
+  "command": [
+    "/home/rafaelmarins2003/llama.cpp-jf/build-debug/bin/test-grammar-llguidance",
+    "/home/rafaelmarins2003/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf"
+  ],
+  "binary_sha256": "2ee8be30ce3569806204fd0a22b87670bf7a2a570c4a5009fc264db5f662d055",
+  "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "build": "Debug, CPU, llguidance enabled",
+  "model_load": "vocabulary only",
+  "exit_code": 0,
+  "completion_message": "All tests passed.",
+  "output_capture": "Tool execution transcript; complete stdout/stderr was not saved to a local file.",
+  "scope": "Existing grammar integration fixtures and sampler-chain test; no new batching implementation or BFCL/Hermes evaluation."
+}

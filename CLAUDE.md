@@ -1,5 +1,11 @@
 # Grammar Jump-Forward — Claude Code Operating Manual
 
+## Session exception — 2026-09-12
+
+Rafael explicitly authorized the assistant to create the Phase 0 Python measurement scripts and
+their validation tests in the project-review conversation. This exception covers the feasibility
+investigation and its reports. It does not authorize engine C++ changes before Gate 0.
+
 ## Ground rule: Claude does not write code in this project
 
 Rafael writes every line of code by hand, in this repo and in the llama.cpp worktree. The project is

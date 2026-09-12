@@ -1,0 +1,48 @@
+{
+  "run_id": "2026-09-12-pass-cost",
+  "registered_at_utc": "2026-09-12T03:46:23Z",
+  "purpose": "P0.4 synthetic batch-cost curve; not a tool-call latency benchmark",
+  "status": "completed",
+  "finished_at_utc": "2026-09-12T03:49:54Z",
+  "exit_codes": {"batch_cost": 0, "prefill": 0},
+  "output_sha256": {
+    "batch-cost.jsonl": "2ee50f0580eeac3eee98168cdff7b548a90931083d8200168437da3d87276bd2",
+    "prefill.jsonl": "043e857f0fdc048f886bf418ebf744b2cdd43b7718e40d6ba7db6f9f1be9aff6"
+  },
+  "engine_commit": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+  "engine_worktree_clean": true,
+  "engine_path": "/home/rafaelmarins2003/llama.cpp",
+  "binary": "/home/rafaelmarins2003/llama.cpp/build/bin/llama-bench",
+  "binary_sha256": "3a040129592a674e8e45dd777f98512ed17324672951a1419c9358dd5e3da910",
+  "model": "/home/rafaelmarins2003/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf",
+  "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "model_hash_verified_locally": true,
+  "plan_sha256": "e9e6493a194aa15986876765f0fc502d29262db1d400312d646ed42329651a23",
+  "raw_manifest_sha256": "df5dc0c5c33bc8509abbf05a0ae5be3b28d65791269fe044a653d3fafd24b669",
+  "build": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "GGML_CUDA": true,
+    "LLAMA_LLGUIDANCE": false,
+    "GGML_CUDA_GRAPHS": true,
+    "GGML_CUDA_FORCE_MMQ": false,
+    "GGML_CUDA_FORCE_CUBLAS": false
+  },
+  "grammar_backend": null,
+  "grammar_text_sha256": null,
+  "tokenizer_revision": null,
+  "seed": null,
+  "seed_note": "Stock llama-bench uses std::rand for synthetic token IDs and exposes no seed flag; no task sampling is performed.",
+  "device": "NVIDIA GeForce RTX 2080 Ti",
+  "commands": {
+    "batch_cost": ["/home/rafaelmarins2003/llama.cpp/build/bin/llama-bench", "-m", "/home/rafaelmarins2003/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf", "-p", "1,2,4,8,16,32", "-n", "0", "-d", "1024,4096", "-ngl", "99", "-fa", "on", "-r", "5", "-o", "jsonl"],
+    "prefill": ["/home/rafaelmarins2003/llama.cpp/build/bin/llama-bench", "-m", "/home/rafaelmarins2003/models/qwen3-8b-q4_k_m/Qwen3-8B-Q4_K_M.gguf", "-p", "1024,4096", "-n", "0", "-d", "0", "-ngl", "99", "-fa", "on", "-r", "5", "-o", "jsonl"]
+  },
+  "outputs": ["batch-cost.jsonl", "batch-cost.stderr.log", "prefill.jsonl", "prefill.stderr.log"],
+  "limitations": [
+    "Microbenchmark token IDs are synthetic; task quality and grammar overhead are not measured.",
+    "Depth prefill/restoration is outside the timed interval.",
+    "Same-process repetitions are not independent workload samples.",
+    "Benchmarks run sequentially, in the binary's parameter order, without randomized order.",
+    "The desktop shares the GPU; this is a local feasibility measurement."
+  ]
+}
