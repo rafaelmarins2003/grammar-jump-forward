@@ -5,6 +5,7 @@ The goal is to reduce tool-call latency without an auxiliary model or a loss in 
 
 This repository contains the Python experiments, results, and patches. The C++ implementation
 lives in a separate worktree at `~/scripts/llama.cpp-jf`.
+Published source: [llama.cpp-jf, branch grammar-jump-forward](https://github.com/rafaelmarins2003/llama.cpp-jf/tree/grammar-jump-forward).
 
 ## Implementation
 
@@ -41,6 +42,7 @@ The repositories sit side by side on the development machine:
 The worktree is on the `grammar-jump-forward` branch, based on commit
 `95ef7fc16054e63b427a3ef00188e055ef7586d8`. The scripts read its location from the
 `worktree` field in [`config/llama_cpp.json`](config/llama_cpp.json).
+The measured C++ changes are recorded in [commit b949b34f1](https://github.com/rafaelmarins2003/llama.cpp-jf/commit/b949b34f1).
 
 Key files changed in the engine:
 
@@ -114,30 +116,30 @@ baseline, not superiority over the best available method.
 
 ## Patches and distribution
 
-The engine source is represented by a base commit and patches:
+The measured engine changes are preserved as a base commit and patches:
 
 - [C++ prototype](patches/2026-09-12-grammar-prototype.patch).
 - [Rust fix for llguidance's fast-forward buffer](patches/2026-09-12-llguidance-ffi-bound.patch).
 
-To reconstruct the source in a fresh installation, run from this project's root.
+To clone the published fork, run from this project's root.
 The directory `../llama.cpp-jf` must not already exist; do not run this over the existing worktree.
 
 ```bash
-git clone https://github.com/ggml-org/llama.cpp.git ../llama.cpp-jf
-git -C ../llama.cpp-jf checkout -b grammar-jump-forward 95ef7fc16054e63b427a3ef00188e055ef7586d8
-git -C ../llama.cpp-jf apply --check "$PWD/patches/2026-09-12-grammar-prototype.patch"
-git -C ../llama.cpp-jf apply "$PWD/patches/2026-09-12-grammar-prototype.patch"
+git clone --branch grammar-jump-forward --single-branch https://github.com/rafaelmarins2003/llama.cpp-jf.git ../llama.cpp-jf
 ```
 
-These commands reconstruct only the C++ source. Before running the proposer, apply the safety
-patch to each build's llguidance checkout and rebuild the library. CMake does not apply this
-fix automatically. See [prototype reproduction](docs/prototype-reproduction.md) for the
-procedure. Do not reapply patches to already corrected checkouts.
+The engine changes are already committed in this branch; do not apply the C++ patch again.
+Before running the proposer, apply the safety patch to each build's llguidance checkout and
+rebuild the library. CMake does not apply this fix automatically. The fork includes the patch
+and fresh-build commands in [README.jump-forward.md](https://github.com/rafaelmarins2003/llama.cpp-jf/blob/grammar-jump-forward/README.jump-forward.md).
+Historical reproduction details are in [prototype reproduction](docs/prototype-reproduction.md).
+Do not reapply the dependency patch to already corrected checkouts.
 
 The patches capture the measured version; they do not automatically track later worktree
-edits. The local C++ changes are still uncommitted. To publish the complete source, use a
-separate llama.cpp fork containing the prototype commits and link it here.
-There is no need to copy the entire llama.cpp repository into this one.
+edits. The personal fork publishes the same C++ implementation, with separate documentation
+and a copy of the required dependency patch. No upstream PR, issue, or message was submitted.
+Builds, models, and binaries were not uploaded. Historical evaluation seals remain unchanged;
+new commits or builds require a new run rather than resuming a sealed evaluation.
 
 ## Environment and documents
 

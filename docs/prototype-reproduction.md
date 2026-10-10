@@ -1,6 +1,6 @@
 # Reproducing the bounded prototype
 
-This is a private experimental patch, not a production integration or upstream submission.
+This is a personal experimental patch, not a production integration or upstream submission.
 The [prospective protocol](prototype-plan.md) fixes the decision criteria. The earlier baseline
 report must be read with its [metadata corrections](notes/baseline-audit-corrections.md).
 
@@ -53,9 +53,14 @@ ctest --test-dir /home/rafaelmarins2003/scripts/llama.cpp-jf/build \
 PYTHONPATH=src .venv/bin/python -m pytest -q
 ```
 
-The published engine/dependency diffs are uncommitted patch exports. No commit, push or PR was
-created. Existing user changes in the Python project and the separate reference engine were
-preserved. The prototype remains off by default.
+The original engine/dependency diffs were exported from uncommitted changes during the experiment.
+On 2026-10-10, the unchanged C++ implementation was committed as
+[b949b34f1](https://github.com/rafaelmarins2003/llama.cpp-jf/commit/b949b34f1) and published in the
+[personal fork](https://github.com/rafaelmarins2003/llama.cpp-jf/tree/grammar-jump-forward), with
+separate fork documentation and the required dependency patch. The measured binaries and
+historical seals were not changed. New commits change Git provenance even when code is identical;
+use a new run rather than resuming a sealed evaluation. No upstream PR, issue, or message was
+submitted. The prototype remains off by default.
 
 ## Data, development checks and evaluation
 

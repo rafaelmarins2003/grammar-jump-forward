@@ -24,12 +24,16 @@ Os metadados antigos dos builds ficaram em `.cache/path-migration-2026-10-09`.
 ```bash
 cd /home/rafaelmarins2003/scripts/llama.cpp-jf
 git status --short
-git diff -- common/speculative.cpp common/llguidance.cpp common/sampling.cpp
+git show b949b34f1 -- common/speculative.cpp common/llguidance.cpp common/sampling.cpp
 ```
 
-O diff do worktree corresponde ao exportado no primeiro experimento. A comparação foi feita
+O diff C++ desse commit corresponde ao exportado no primeiro experimento. A comparação foi feita
 com o mesmo formato de prefixos e abreviação dos objetos Git usado no arquivo preservado.
-O worktree permanece sem novos commits para você poder inspecionar cada alteração.
+As alterações C++ medidas foram registradas no commit
+[b949b34f1](https://github.com/rafaelmarins2003/llama.cpp-jf/commit/b949b34f1) e publicadas no
+[fork pessoal](https://github.com/rafaelmarins2003/llama.cpp-jf/tree/grammar-jump-forward).
+Use `git show b949b34f1` para inspecioná-las. A documentação do fork foi adicionada separadamente;
+nenhum PR, issue ou mensagem foi enviado ao upstream.
 
 ## Ordem de leitura
 
