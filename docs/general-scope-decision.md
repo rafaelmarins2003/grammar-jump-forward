@@ -1,10 +1,38 @@
-# General-scope decision: stop after the bounded prototype
+# General-scope decision and separately authorized continuation
+
+## Completed continuation
+
+The separately authorized [replication report](../runs/2026-09-12-replication/report.md)
+finds a positive, smaller speed gain on the second local model. Its preservation screen still
+fails despite valid completed outputs. The original divergences include an improvement,
+a likely regression, and changes between answers that were already inadequate; they must not
+be counted wholesale as demonstrated accuracy losses. This post-hoc review does not establish
+quality non-inferiority.
+
+Normal replays reproduce the original outputs. Disabling proposals reproduces the baseline;
+matched physical-microbatch-one controls remove the token disagreements despite accepting
+grammar drafts. Together with independent forcing-mask replay, this supports dependence on
+execution shape, but not a proven logit-level cause or a guarantee of bug-free integration.
+
+The mechanism is useful in both measured models, but its gain is not constant and its quality
+impact remains the main open question. This supports targeted investigation of preservation
+and task quality, not production integration or a broad fastest-method claim. This stage is
+finished without engine tuning. Further work requires a new explicit decision and protocol.
+
+## Subsequent user authorization
+
+After the first report, Rafael judged the measured gain worth a limited follow-up and explicitly
+authorized divergence diagnosis and reproduction on another model. The
+[new protocol](replication-plan.md) governs that stage. The old STOP remains the outcome of its
+registered experiment; it is not a universal impossibility claim or a prohibition on this new
+user decision. No old metric or gate is changed. Performance and preservation are reported
+separately, and superiority to every existing inference system has not been established.
 
 The user explicitly retains general tool-calling scope. Selecting varied benchmark cases to test
 the mechanism is not specializing the product. Requiring a favorable application niche would be
 a change of scope and is no longer the recommended next step.
 
-## Current measured decision (2026-09-12)
+## First measured decision (2026-09-12)
 
 Rafael's "Certo, então faça" explicitly authorized the private, minimal C++ prototype. The
 [prospective protocol](prototype-plan.md) was registered before implementation and evaluation;

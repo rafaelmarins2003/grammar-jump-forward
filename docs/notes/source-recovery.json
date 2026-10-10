@@ -1,0 +1,27 @@
+{
+  "created_at_utc": "2026-10-09T18:48:23.276014+00:00",
+  "scope": "Recovered editable historical C++ sources for personal development; no build or benchmark rerun",
+  "checkout": "/home/rafaelmarins2003/llama.cpp-jf",
+  "base_commit": "95ef7fc16054e63b427a3ef00188e055ef7586d8",
+  "branch": "grammar-jump-forward",
+  "independent_shallow_checkout": true,
+  "canonical_diff_sha256": "850e4040a24a76dab234f90d32ea5147989fa7278652757553b875dc3c17bd6e",
+  "matches_historical_engine_diff": true,
+  "reverse_patch_check_passed": true,
+  "files_sha256": {
+    "common/common.h": "8b6c1d68889919fce6e5db95e4a3ae965f7e68ffcce95062931f941341e2cd3e",
+    "common/llguidance.cpp": "f9315c0f8694f81300991597ba19973538ebb74474deac9b4015a38daccbe46d",
+    "common/sampling.cpp": "6bb612d5abc11fa4a512530e0d4b638c4268d6462df987758543111a06d4d2d4",
+    "common/sampling.h": "17b23fc92a9c31cb2ab3ec88e657ac09cf0748935b258779155b907494a079c4",
+    "common/speculative.cpp": "460cd96b94aa9349a31f867892df18a5e5474171c9f8d74d8468daffd37bade2",
+    "common/speculative.h": "62ba2c8bf705ac8c8c72c9b4485c0c0f25a2ee495e3b58a8be53243e691f87f2",
+    "tests/CMakeLists.txt": "500ecbd0a6281490a13cbbe09ff3ac85cbe0121215f46f1bc7399529b9a30eb9",
+    "tests/test-grammar-llguidance.cpp": "3649b14aee78661048e3401e7c5ce5a4847bdb278baa91d7402aff2f7ac12ae4",
+    "tools/server/server-common.cpp": "c5bd1f23ae4e3beb3304440527e8b854284b5078f96f3ab8bbd5ba9e9ab02bb8",
+    "tools/server/server-context.cpp": "e8dd4e48335eba92dad8098432d2819e1f1bf64940a6ec94827789c99d52283a"
+  },
+  "builds_restored": false,
+  "llguidance_dependency_restored": false,
+  "new_commits_created": false,
+  "public_submission_created": false
+}

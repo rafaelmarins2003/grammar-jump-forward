@@ -8,8 +8,17 @@ from llguidance import LLMatcher, LLTokenizer
 from jumpforward.corpus import adapt_bfcl_arguments, normalize_schema, schema_order, tool_union
 from jumpforward.cost import batch_schedule, project_cost, quantiles
 from jumpforward.generation import server_grammar
-from jumpforward.phase0 import aggregate, question_summary
+from jumpforward.phase0 import aggregate, engine_worktree, question_summary
 from jumpforward.spans import TraceError, characterization, trace_call, trace_text
+
+
+@pytest.mark.parametrize("configured", ["~/scripts/llama.cpp-jf", "../llama.cpp-jf"])
+def test_engine_location_comes_from_config(tmp_path, monkeypatch, configured):
+    (tmp_path / "config").mkdir()
+    (tmp_path / "config/llama_cpp.json").write_text(json.dumps({"worktree": configured}))
+    monkeypatch.setattr("jumpforward.phase0.ROOT", tmp_path)
+    path = Path(configured).expanduser()
+    assert engine_worktree() == (path if path.is_absolute() else tmp_path / path)
 
 
 @pytest.fixture(scope="module")

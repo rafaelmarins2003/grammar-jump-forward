@@ -16,7 +16,7 @@ import httpx
 from llguidance import LLTokenizer
 
 from .corpus import SEED, digest, read_jsonl
-from .phase0 import ROOT, provenance, write_json
+from .phase0 import ROOT, engine_worktree, provenance, write_json
 from .spans import SERIALIZATIONS
 
 
@@ -43,18 +43,27 @@ def assert_gpu_idle():
 
 @contextmanager
 def owned_server(
-    run: Path, gpu: bool = False, speculation: str = "none", build_dir: Path | None = None
+    run: Path,
+    gpu: bool = False,
+    speculation: str = "none",
+    build_dir: Path | None = None,
+    *,
+    model_key: str = "qwen3-8b-q4_k_m",
+    grammar_cap: int = 32,
+    ubatch_size: int | None = None,
 ):
     if speculation not in ("none", "draft-simple", "ngram-simple", "grammar"):
         raise ValueError("unsupported fixed speculation configuration")
     if gpu:
         assert_gpu_idle()
-    config = json.loads((ROOT / "config/models.json").read_text())["targets"]["qwen3-8b-q4_k_m"]
+    if grammar_cap < 0 or (ubatch_size is not None and ubatch_size < 1):
+        raise ValueError("invalid grammar cap or physical batch size")
+    config = json.loads((ROOT / "config/models.json").read_text())["targets"][model_key]
     model = Path(config["path"]).expanduser()
     actual_hash = file_hash(model)
     if actual_hash != config["sha256"]:
         raise ValueError("GGUF content does not match the pinned model")
-    engine = Path.home() / "llama.cpp-jf"
+    engine = engine_worktree()
     build_dir = build_dir or engine / "build"
     binary = build_dir / "bin/llama-server"
     with socket.socket() as sock:
@@ -82,6 +91,8 @@ def owned_server(
         "--spec-type",
         speculation,
     ]
+    if ubatch_size is not None:
+        command.extend(["--ubatch-size", str(ubatch_size)])
     draft_identity = None
     if speculation == "draft-simple":
         draft_identity = json.loads((ROOT / "config/models.json").read_text())["drafts"][
@@ -105,7 +116,7 @@ def owned_server(
     elif speculation == "ngram-simple":
         command.extend(["--spec-draft-n-max", "8"])
     elif speculation == "grammar":
-        command.extend(["--spec-draft-n-max", "32"])
+        command.extend(["--spec-draft-n-max", str(grammar_cap)])
     # Linux: stop the owned server even if Python is interrupted before finally runs.
     # setpriv is used only to set the parent-death signal, not to change privileges.
     launcher = shutil.which("setpriv") if sys.platform == "linux" else None
@@ -114,6 +125,8 @@ def owned_server(
         run / "server-manifest.json",
         {
             **provenance(),
+            "model_key": model_key,
+            "model_config": config,
             "server_command": command,
             "launched_command": launched_command,
             "binary_sha256": file_hash(binary),

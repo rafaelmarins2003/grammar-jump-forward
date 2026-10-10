@@ -47,7 +47,7 @@ asyncio_mode = "auto"
 markers = [
     "gpu: needs the GPU and a local GGUF",
     "server: needs a running llama-server",
-    "engine: needs the patched build in ~/llama.cpp-jf",
+    "engine: needs the patched build in ~/scripts/llama.cpp-jf",
 ]
 
 [tool.coverage.run]

@@ -4,6 +4,12 @@ Verified 2026-09-10 on the development machine. Machine-readable pins live in
 `config/llama_cpp.json`, `config/models.json` and `data/raw/MANIFEST.json`. This file explains
 how to rebuild the environment from those pins.
 
+Path relocation verified 2026-10-09: the original engine repositories now live under
+`~/scripts`. The worktree Git link was repaired and Debug/Release CMake metadata regenerated
+without rebuilding the measured binaries. Existing llguidance checkouts and their bounded-copy
+fix were preserved. Python launchers use the `worktree` field of `config/llama_cpp.json`.
+Historical protocols and run manifests retain their original paths and hashes.
+
 ## Hardware and system
 
 | Item | Value |
@@ -30,22 +36,22 @@ Two checkouts at the same base commit, `95ef7fc16` (b10791):
 
 | Path | Role |
 |---|---|
-| `~/llama.cpp` (branch `master`) | Untouched reference. Shared with other projects. `LLAMA_LLGUIDANCE=OFF`. No-patch baseline binaries |
-| `~/llama.cpp-jf` (branch `grammar-jump-forward`) | Git worktree of the same repo. All C++ changes for this project go here |
+| `~/scripts/llama.cpp` (branch `master`) | Untouched reference. Shared with other projects. `LLAMA_LLGUIDANCE=OFF`. No-patch baseline binaries |
+| `~/scripts/llama.cpp-jf` (branch `grammar-jump-forward`) | Git worktree of the same repo. All C++ changes for this project go here |
 
-The worktree was created with:
+For a fresh environment only, create the worktree with (it already exists on this machine):
 
 ```bash
-git -C ~/llama.cpp worktree add -b grammar-jump-forward ~/llama.cpp-jf 95ef7fc16054e63b427a3ef00188e055ef7586d8
+git -C ~/scripts/llama.cpp worktree add -b grammar-jump-forward ~/scripts/llama.cpp-jf 95ef7fc16054e63b427a3ef00188e055ef7586d8
 ```
 
-### Builds in `~/llama.cpp-jf`
+### Builds in `~/scripts/llama.cpp-jf`
 
 Both builds fetch and compile llguidance v1.0.1 (`d795912f`) with cargo, so run them under mise.
 Both export `compile_commands.json` for clangd.
 
 ```bash
-cd ~/llama.cpp-jf
+cd ~/scripts/llama.cpp-jf
 
 # Release, CUDA sm_75: benchmarks and GPU runs
 mise exec rust@1.98.1 ninja@1.13.2 ccache@4.14 -- cmake -S . -B build -G Ninja \
@@ -63,11 +69,11 @@ mise exec rust@1.98.1 ninja@1.13.2 ccache@4.14 -- cmake -S . -B build-debug -G N
 mise exec rust@1.98.1 ninja@1.13.2 ccache@4.14 -- cmake --build build-debug -j 14
 ```
 
-Logs from the initial build: `~/llama.cpp-jf/build-release.log`, `~/llama.cpp-jf/build-debug.log`.
+Logs from the initial build: `~/scripts/llama.cpp-jf/build-release.log`, `~/scripts/llama.cpp-jf/build-debug.log`.
 
-For clangd, `~/llama.cpp-jf/compile_commands.json` is a symlink to `build/compile_commands.json`.
+For clangd, `~/scripts/llama.cpp-jf/compile_commands.json` is a symlink to `build/compile_commands.json`.
 llama.cpp's `.gitignore` doesn't cover it, so it's excluded in the shared
-`~/llama.cpp/.git/info/exclude` and can't slip into a patch.
+`~/scripts/llama.cpp/.git/info/exclude` and can't slip into a patch.
 
 Release build verified 2026-09-10:
 - `llama-server --version` reports `build 10791, commit 95ef7fc16`
@@ -84,7 +90,7 @@ The branch lives in the llama.cpp repository. At each milestone, export it so th
 exactly what was measured:
 
 ```bash
-git -C ~/llama.cpp-jf format-patch 95ef7fc16..HEAD -o ~/scripts/adaptation-toolkit/patches/<milestone>/
+git -C ~/scripts/llama.cpp-jf format-patch 95ef7fc16..HEAD -o ~/scripts/grammar-jump-forward/patches/<milestone>/
 ```
 
 Run manifests must record the branch HEAD commit, not only the base commit.

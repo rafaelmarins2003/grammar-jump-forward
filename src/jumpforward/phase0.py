@@ -19,6 +19,12 @@ from .spans import SERIALIZATIONS, characterization, trace_call
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def engine_worktree() -> Path:
+    config = json.loads((ROOT / "config/llama_cpp.json").read_text())
+    path = Path(config["worktree"]).expanduser()
+    return path if path.is_absolute() else ROOT / path
+
+
 def write_json(path: Path, data) -> None:
     with path.open("x") as stream:
         json.dump(data, stream, ensure_ascii=False, indent=2, allow_nan=False)

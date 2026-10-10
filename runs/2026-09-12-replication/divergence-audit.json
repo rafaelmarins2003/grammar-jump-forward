@@ -1,0 +1,1022 @@
+[
+  {
+    "subset": "multiple",
+    "id": "multiple_175",
+    "parsed_changed": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Who is ranked as the top player in woman tennis?"
+      }
+    ],
+    "tools": [
+      {
+        "name": "find_instrument",
+        "description": "Search for a musical instrument within specified budget and of specific type.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "budget": {
+              "type": "number",
+              "description": "Your budget for the instrument."
+            },
+            "type": {
+              "type": "string",
+              "description": "Type of the instrument"
+            },
+            "make": {
+              "type": "string",
+              "description": "Maker of the instrument, Optional parameter. Default is ''"
+            }
+          },
+          "required": [
+            "budget",
+            "type"
+          ]
+        }
+      },
+      {
+        "name": "calculate_binomial_probability",
+        "description": "Calculates the binomial probability given the number of trials, successes and the probability of success on an individual trial.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "number_of_trials": {
+              "type": "integer",
+              "description": "The total number of trials."
+            },
+            "number_of_successes": {
+              "type": "integer",
+              "description": "The desired number of successful outcomes."
+            },
+            "probability_of_success": {
+              "type": "number",
+              "description": "The probability of a successful outcome on any given trial.",
+              "default": 0.5
+            }
+          },
+          "required": [
+            "number_of_trials",
+            "number_of_successes"
+          ]
+        }
+      },
+      {
+        "name": "electromagnetic_force",
+        "description": "Calculate the electromagnetic force between two charges placed at a certain distance.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "charge1": {
+              "type": "number",
+              "description": "The magnitude of the first charge in coulombs."
+            },
+            "charge2": {
+              "type": "number",
+              "description": "The magnitude of the second charge in coulombs."
+            },
+            "distance": {
+              "type": "number",
+              "description": "The distance between the two charges in meters."
+            },
+            "medium_permittivity": {
+              "type": "number",
+              "description": "The relative permittivity of the medium in which the charges are present. Default is 8.854 x 10^-12 F/m (vacuum permittivity)."
+            }
+          },
+          "required": [
+            "charge1",
+            "charge2",
+            "distance"
+          ]
+        }
+      },
+      {
+        "name": "sports_ranking.get_top_player",
+        "description": "Get the top player in a specific sport.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "sport": {
+              "type": "string",
+              "description": "The type of sport."
+            },
+            "gender": {
+              "type": "string",
+              "description": "The gender of the sport category. Optional.",
+              "default": "men"
+            }
+          },
+          "required": [
+            "sport"
+          ]
+        }
+      }
+    ],
+    "reference": {
+      "name": "sports_ranking.get_top_player",
+      "arguments": {
+        "sport": "tennis",
+        "gender": "women"
+      }
+    },
+    "off": {
+      "name": "find_instrument",
+      "arguments": {
+        "budget": 1000,
+        "type": "tennis"
+      }
+    },
+    "on": {
+      "name": "find_instrument",
+      "arguments": {
+        "budget": 1000,
+        "type": "piano"
+      }
+    },
+    "assessment": {
+      "classification": "both_inadequate",
+      "reason": "The user asks for women's tennis rankings. Both outputs select the musical instrument tool instead of the supplied sports ranking tool."
+    },
+    "first_divergence": {
+      "token_offset": 19,
+      "shared_prefix": "{\"name\":\"find_instrument\",\"arguments\":{\"budget\":1000,\"type\":\"",
+      "tokens": {
+        "none": 1960,
+        "grammar": 79
+      },
+      "pieces": {
+        "none": "ten",
+        "grammar": "p"
+      },
+      "both_legal": true,
+      "allowed_token_count": 147039,
+      "ff_tokens": []
+    },
+    "native_forcing_replay": {
+      "none": {
+        "singleton_agreement": true,
+        "n_tokens": 22,
+        "n_forced": 10,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 4,
+            "length": 7,
+            "bytes": 36,
+            "available_forced_bytes": 38
+          },
+          {
+            "start": 17,
+            "length": 1,
+            "bytes": 4,
+            "available_forced_bytes": 7
+          }
+        ]
+      },
+      "grammar": {
+        "singleton_agreement": true,
+        "n_tokens": 22,
+        "n_forced": 10,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 4,
+            "length": 7,
+            "bytes": 36,
+            "available_forced_bytes": 38
+          },
+          {
+            "start": 17,
+            "length": 1,
+            "bytes": 4,
+            "available_forced_bytes": 7
+          }
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_simple",
+    "id": "live_simple_237-125-0",
+    "parsed_changed": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "play wrecking ball by Miley Cyrus"
+      }
+    ],
+    "tools": [
+      {
+        "name": "play_spotify_song",
+        "description": "This function searches for a song on Spotify using a specified query and plays it.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "query"
+          ],
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The search query for the song. It should be formatted as 'track:Song Name artist:Artist Name' for specific searches, or just 'Song Name' if the artist is unknown."
+            },
+            "device_id": {
+              "type": "string",
+              "description": "The unique identifier for the device on which the song should be played.",
+              "default": "null"
+            },
+            "play": {
+              "type": "boolean",
+              "description": "A flag that indicates whether to start playing the song immediately after it is found. Defaults to true.",
+              "default": true
+            }
+          }
+        }
+      }
+    ],
+    "reference": {
+      "name": "play_spotify_song",
+      "arguments": {
+        "query": "track:Wrecking Ball artist:Miley Cyrus"
+      }
+    },
+    "off": {
+      "name": "play_spotify_song",
+      "arguments": {
+        "query": "track:Wrecking Ball artist:Miley Cyrus"
+      }
+    },
+    "on": {
+      "name": "play_spotify_song",
+      "arguments": {
+        "query": "track:Wrecking Ball artist:Miley Cyrus",
+        "device_id": ":null",
+        "play": true
+      }
+    },
+    "assessment": {
+      "classification": "likely_regression",
+      "reason": "Both identify the requested song. Only batching adds device_id=':null', an unsupported device identifier, distinct from the documented default 'null'. Explicit play=true alone is consistent with the documented default. No Spotify tool was executed."
+    },
+    "first_divergence": {
+      "token_offset": 22,
+      "shared_prefix": "{\"name\":\"play_spotify_song\",\"arguments\":{\"query\":\"track:Wrecking Ball artist:Miley Cyrus",
+      "tokens": {
+        "none": 30975,
+        "grammar": 2198
+      },
+      "pieces": {
+        "none": "\"}}",
+        "grammar": "\",\""
+      },
+      "both_legal": true,
+      "allowed_token_count": 147039,
+      "ff_tokens": []
+    },
+    "native_forcing_replay": {
+      "none": {
+        "singleton_agreement": true,
+        "n_tokens": 23,
+        "n_forced": 11,
+        "spans": [
+          {
+            "start": 0,
+            "length": 11,
+            "bytes": 47,
+            "available_forced_bytes": 50
+          }
+        ]
+      },
+      "grammar": {
+        "singleton_agreement": true,
+        "n_tokens": 33,
+        "n_forced": 11,
+        "spans": [
+          {
+            "start": 0,
+            "length": 11,
+            "bytes": 47,
+            "available_forced_bytes": 50
+          }
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_221-95-0",
+    "parsed_changed": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Segment all objects in an image at './yoha.jpg'"
+      }
+    ],
+    "tools": [
+      {
+        "name": "uber.ride",
+        "description": "Find a suitable Uber ride for customers based on their starting location, preferred type of ride, and maximum wait time.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "loc",
+            "type",
+            "time"
+          ],
+          "properties": {
+            "loc": {
+              "type": "string",
+              "description": "Location of the starting point for the Uber ride, in the format of 'City, State', such as 'Berkeley, CA' or 'New York, NY'."
+            },
+            "type": {
+              "type": "string",
+              "description": "Type of Uber ride the user is requesting.",
+              "enum": [
+                "plus",
+                "comfort",
+                "black"
+              ]
+            },
+            "time": {
+              "type": "integer",
+              "description": "The maximum amount of time the customer is willing to wait for the ride, in minutes."
+            }
+          }
+        }
+      },
+      {
+        "name": "segment",
+        "description": "Segments all objects within a provided image and identifies distinct elements for further analysis.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "img_path"
+          ],
+          "properties": {
+            "img_path": {
+              "type": "string",
+              "description": "The file system path to the image to be segmented, in the format of '/path/to/image.jpg'."
+            }
+          }
+        }
+      }
+    ],
+    "reference": {
+      "name": "segment",
+      "arguments": {
+        "img_path": "./yoha.jpg"
+      }
+    },
+    "off": {
+      "name": "segment",
+      "arguments": {
+        "img_path": "/home/ubuntu/yoha.jpg"
+      }
+    },
+    "on": {
+      "name": "segment",
+      "arguments": {
+        "img_path": "/path/to/yoha.jpg"
+      }
+    },
+    "assessment": {
+      "classification": "both_inadequate",
+      "reason": "Both select segment but replace the explicit relative path './yoha.jpg' with unsupported absolute paths. The provided context establishes neither replacement."
+    },
+    "first_divergence": {
+      "token_offset": 11,
+      "shared_prefix": "{\"name\":\"segment\",\"arguments\":{\"img_path\":\"/",
+      "tokens": {
+        "none": 5117,
+        "grammar": 2343
+      },
+      "pieces": {
+        "none": "home",
+        "grammar": "path"
+      },
+      "both_legal": true,
+      "allowed_token_count": 147039,
+      "ff_tokens": []
+    },
+    "native_forcing_replay": {
+      "none": {
+        "singleton_agreement": true,
+        "n_tokens": 17,
+        "n_forced": 8,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 4,
+            "length": 6,
+            "bytes": 30,
+            "available_forced_bytes": 33
+          }
+        ]
+      },
+      "grammar": {
+        "singleton_agreement": true,
+        "n_tokens": 17,
+        "n_forced": 8,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 4,
+            "length": 6,
+            "bytes": 30,
+            "available_forced_bytes": 33
+          }
+        ]
+      }
+    }
+  },
+  {
+    "subset": "live_multiple",
+    "id": "live_multiple_749-169-4",
+    "parsed_changed": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "It's such a dreary day out today, I think i'll just stay in and watch some movies. Find a good Offbeat movie to watch?"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Media_3_FindMovies",
+        "description": "Explore a selection of movies online based on specified genre and actors.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "genre"
+          ],
+          "properties": {
+            "genre": {
+              "type": "string",
+              "description": "The genre of the movies to search for.",
+              "enum": [
+                "World",
+                "Fantasy",
+                "Offbeat",
+                "Mystery",
+                "Musical",
+                "Thriller",
+                "Comedy",
+                "Comedy-drama",
+                "Horror",
+                "Animation",
+                "Cult",
+                "Sci-fi",
+                "War",
+                "Drama",
+                "Anime",
+                "Family",
+                "Action"
+              ]
+            },
+            "starring": {
+              "type": "string",
+              "description": "The name of a specific actor or actress to filter the movies by. Use 'Any' for no specific preference.",
+              "default": "Any"
+            }
+          }
+        }
+      },
+      {
+        "name": "Media_3_PlayMovie",
+        "description": "Streams a movie instantly online with the option to select preferred subtitles.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "title"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "The title of the movie to be streamed."
+            },
+            "subtitle_language": {
+              "type": "string",
+              "description": "The language of the subtitles to accompany the movie.",
+              "enum": [
+                "English",
+                "Spanish",
+                "Hindi",
+                "French"
+              ],
+              "default": "English"
+            }
+          }
+        }
+      },
+      {
+        "name": "Music_3_PlayMedia",
+        "description": "Plays the specified music track on a designated media player device.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "track"
+          ],
+          "properties": {
+            "track": {
+              "type": "string",
+              "description": "The title of the song to be played."
+            },
+            "artist": {
+              "type": "string",
+              "description": "The name of the artist performing the song. If unspecified, any artist will be considered.",
+              "default": "any"
+            },
+            "device": {
+              "type": "string",
+              "description": "The name of the device or location where the music will be played.",
+              "enum": [
+                "Living room",
+                "Kitchen",
+                "Patio"
+              ],
+              "default": "Living room"
+            },
+            "album": {
+              "type": "string",
+              "description": "The name of the album from which the song is taken. If unspecified, any album will be considered.",
+              "default": "any"
+            }
+          }
+        }
+      },
+      {
+        "name": "Music_3_LookupMusic",
+        "description": "Discover songs that align with your musical preferences by specifying the artist, album, genre, and release year.",
+        "parameters": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "artist": {
+              "type": "string",
+              "description": "The first and last name of the artist or the name of the band you are interested in. Use 'dontcare' if you have no preference.",
+              "default": "dontcare"
+            },
+            "album": {
+              "type": "string",
+              "description": "The album title that contains the songs you are looking for. Use 'dontcare' if you have no preference.",
+              "default": "dontcare"
+            },
+            "genre": {
+              "type": "string",
+              "description": "The music genre of the songs you want to find. Use 'dontcare' to include all genres.",
+              "default": "dontcare",
+              "enum": [
+                "Reggae",
+                "Holiday",
+                "Electropop",
+                "Pop",
+                "Asia",
+                "House",
+                "Electronica",
+                "Funk",
+                "Rock",
+                "Metal",
+                "Dubstep",
+                "Country",
+                "dontcare"
+              ]
+            },
+            "year": {
+              "type": "string",
+              "description": "The year of release for the music you're searching for, formatted as 'YYYY'. Use 'dontcare' if the release year is not a concern.",
+              "default": "dontcare",
+              "enum": [
+                "2010",
+                "2011",
+                "2012",
+                "2013",
+                "2014",
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "dontcare"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "name": "Travel_1_FindAttractions",
+        "description": "Browse attractions in a given city, filtering by free entry status, attraction category, and suitability for children.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "location"
+          ],
+          "properties": {
+            "location": {
+              "type": "string",
+              "description": "The city or town where the attraction is located, in the format of 'City, State' or 'City, Country' if the city does not locate in the United States, such as 'Orlando, FL' or 'Paris, FR'."
+            },
+            "free_entry": {
+              "type": "string",
+              "description": "Flag indicating whether the entrance to the attraction is free. If set to 'dontcare', it will include all attractions regardless of their entry fee status.",
+              "enum": [
+                "True",
+                "False",
+                "dontcare"
+              ],
+              "default": "dontcare"
+            },
+            "category": {
+              "type": "string",
+              "description": "The category to which the attraction belongs. If set to 'dontcare', it will include attractions from all categories.",
+              "enum": [
+                "Place of Worship",
+                "Theme Park",
+                "Museum",
+                "Historical Landmark",
+                "Park",
+                "Tourist Attraction",
+                "Sports Venue",
+                "Shopping Area",
+                "Performing Arts Venue",
+                "Nature Preserve",
+                "dontcare"
+              ],
+              "default": "dontcare"
+            },
+            "good_for_kids": {
+              "type": "string",
+              "description": "Flag indicating whether the attraction is suitable for children. If set to 'dontcare', it will include attractions regardless of their suitability for children.",
+              "enum": [
+                "True",
+                "False",
+                "dontcare"
+              ],
+              "default": "dontcare"
+            }
+          }
+        }
+      }
+    ],
+    "reference": {
+      "name": "Media_3_FindMovies",
+      "arguments": {
+        "genre": "Offbeat"
+      }
+    },
+    "off": {
+      "name": "Media_3_FindMovies",
+      "arguments": {
+        "genre": "Offbeat",
+        "starring": "Any"
+      }
+    },
+    "on": {
+      "name": "Media_3_FindMovies",
+      "arguments": {
+        "genre": "Offbeat",
+        "starring": "Any"
+      }
+    },
+    "assessment": {
+      "classification": "same_bytes_tokenization_control",
+      "reason": "Parsed output and bytes are identical; token IDs differ."
+    },
+    "first_divergence": {
+      "token_offset": 3,
+      "shared_prefix": "{\"name\":",
+      "tokens": {
+        "none": 73527,
+        "grammar": 1
+      },
+      "pieces": {
+        "none": "\"M",
+        "grammar": "\""
+      },
+      "both_legal": true,
+      "allowed_token_count": 3,
+      "ff_tokens": []
+    },
+    "native_forcing_replay": {
+      "none": {
+        "singleton_agreement": true,
+        "n_tokens": 22,
+        "n_forced": 10,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 5,
+            "length": 2,
+            "bytes": 2,
+            "available_forced_bytes": 3
+          },
+          {
+            "start": 8,
+            "length": 5,
+            "bytes": 27,
+            "available_forced_bytes": 30
+          },
+          {
+            "start": 15,
+            "length": 1,
+            "bytes": 4,
+            "available_forced_bytes": 5
+          }
+        ]
+      },
+      "grammar": {
+        "singleton_agreement": true,
+        "n_tokens": 22,
+        "n_forced": 10,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 5,
+            "length": 2,
+            "bytes": 2,
+            "available_forced_bytes": 3
+          },
+          {
+            "start": 8,
+            "length": 5,
+            "bytes": 27,
+            "available_forced_bytes": 30
+          },
+          {
+            "start": 15,
+            "length": 1,
+            "bytes": 4,
+            "available_forced_bytes": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "subset": "hermes",
+    "id": "f595b8d5-531a-4699-85bc-02620d4e1de8",
+    "parsed_changed": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "I would like to create a new skill for Microsoft Cortana to help users effortlessly book taxis from their Windows devices. The skill should allow users to specify their location for pickup, such as \"500 5th Avenue, New York, NY 10110,\" along with their desired destination, like \"John F. Kennedy International Airport.\" It should enable users to set their preferred pickup time, for example, \"2023-06-15T08:00:00Z,\" and allow them to choose a car type from available options such as Sedan, SUV, or Luxury. Can you utilize the 'createTaxiBookingSkill' function to set up this skill, with the exact details I've provided, and confirm the initiation of the taxi booking process?"
+      }
+    ],
+    "tools": [
+      {
+        "name": "createTaxiBookingSkill",
+        "description": "Creates a new Cortana skill for booking a taxi with user-specified details.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "pickupLocation": {
+              "type": "string",
+              "description": "The address or location where the user will be picked up."
+            },
+            "dropoffLocation": {
+              "type": "string",
+              "description": "The address or location where the user wishes to be dropped off."
+            },
+            "pickupTime": {
+              "type": "string",
+              "description": "The desired time for pickup in ISO 8601 format."
+            },
+            "carType": {
+              "type": "string",
+              "description": "The type of car the user prefers for the ride.",
+              "enum": [
+                "Sedan",
+                "SUV",
+                "Luxury"
+              ]
+            }
+          },
+          "required": [
+            "pickupLocation",
+            "dropoffLocation",
+            "pickupTime",
+            "carType"
+          ]
+        }
+      },
+      {
+        "name": "getAvailableCarTypes",
+        "description": "Retrieves a list of available car types that users can choose from when booking a taxi.",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      },
+      {
+        "name": "scheduleTaxiPickup",
+        "description": "Schedules a taxi pickup based on user input and confirms the booking details.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "bookingId": {
+              "type": "string",
+              "description": "The unique identifier for the taxi booking."
+            },
+            "pickupTime": {
+              "type": "string",
+              "description": "The confirmed time for pickup in ISO 8601 format."
+            }
+          },
+          "required": [
+            "bookingId",
+            "pickupTime"
+          ]
+        }
+      },
+      {
+        "name": "cancelTaxiBooking",
+        "description": "Cancels an existing taxi booking.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "bookingId": {
+              "type": "string",
+              "description": "The unique identifier for the taxi booking to be canceled."
+            }
+          },
+          "required": [
+            "bookingId"
+          ]
+        }
+      },
+      {
+        "name": "updateTaxiBooking",
+        "description": "Updates an existing taxi booking with new details provided by the user.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "bookingId": {
+              "type": "string",
+              "description": "The unique identifier for the taxi booking to be updated."
+            },
+            "newPickupLocation": {
+              "type": "string",
+              "description": "The new pickup location, if the user wants to change it."
+            },
+            "newDropoffLocation": {
+              "type": "string",
+              "description": "The new drop-off location, if the user wants to change it."
+            },
+            "newPickupTime": {
+              "type": "string",
+              "description": "The new pickup time, if the user wants to change it."
+            },
+            "newCarType": {
+              "type": "string",
+              "description": "The new car type, if the user wants to change it."
+            }
+          },
+          "required": [
+            "bookingId"
+          ]
+        }
+      }
+    ],
+    "reference": {
+      "name": "createTaxiBookingSkill",
+      "arguments": {
+        "pickupLocation": "500 5th Avenue, New York, NY 10110",
+        "dropoffLocation": "John F. Kennedy International Airport",
+        "pickupTime": "2023-06-15T08:00:00Z",
+        "carType": "Sedan"
+      }
+    },
+    "off": {
+      "name": "cancelTaxiBooking",
+      "arguments": {
+        "bookingId": "12345"
+      }
+    },
+    "on": {
+      "name": "createTaxiBookingSkill",
+      "arguments": {
+        "pickupLocation": "500 5th Avenue, New York, NY 10110",
+        "dropoffLocation": "John F. Kennedy International Airport",
+        "pickupTime": "2023-06-15T08:00:00Z",
+        "carType": "Sedan"
+      }
+    },
+    "assessment": {
+      "classification": "improvement",
+      "reason": "The user explicitly requests createTaxiBookingSkill with the supplied details. Batching follows that request; the baseline instead cancels an invented booking."
+    },
+    "first_divergence": {
+      "token_offset": 3,
+      "shared_prefix": "{\"name\":",
+      "tokens": {
+        "none": 96946,
+        "grammar": 1
+      },
+      "pieces": {
+        "none": "\"c",
+        "grammar": "\""
+      },
+      "both_legal": true,
+      "allowed_token_count": 4,
+      "ff_tokens": []
+    },
+    "native_forcing_replay": {
+      "none": {
+        "singleton_agreement": true,
+        "n_tokens": 21,
+        "n_forced": 11,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 5,
+            "length": 9,
+            "bytes": 38,
+            "available_forced_bytes": 41
+          }
+        ]
+      },
+      "grammar": {
+        "singleton_agreement": true,
+        "n_tokens": 76,
+        "n_forced": 19,
+        "spans": [
+          {
+            "start": 0,
+            "length": 2,
+            "bytes": 6,
+            "available_forced_bytes": 9
+          },
+          {
+            "start": 5,
+            "length": 9,
+            "bytes": 46,
+            "available_forced_bytes": 49
+          },
+          {
+            "start": 34,
+            "length": 3,
+            "bytes": 15,
+            "available_forced_bytes": 18
+          },
+          {
+            "start": 45,
+            "length": 2,
+            "bytes": 10,
+            "available_forced_bytes": 13
+          },
+          {
+            "start": 69,
+            "length": 2,
+            "bytes": 7,
+            "available_forced_bytes": 10
+          },
+          {
+            "start": 74,
+            "length": 1,
+            "bytes": 2,
+            "available_forced_bytes": 3
+          }
+        ]
+      }
+    }
+  }
+]

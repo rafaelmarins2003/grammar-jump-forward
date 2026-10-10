@@ -1,0 +1,554 @@
+{
+  "requests": 50,
+  "failed_requests": 0,
+  "failures": [],
+  "cases": [
+    {
+      "id": "multiple_175",
+      "subset": "multiple",
+      "normal_off_matches_original": true,
+      "normal_on_matches_original": true,
+      "normal_arms_same_tokens": false,
+      "zero_cap_matches_off": true,
+      "micro_one_arms_same_tokens": true,
+      "configurations": {
+        "normal-off": {
+          "parsed": [
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "tennis"
+              }
+            },
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "tennis"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "normal-on": {
+          "parsed": [
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "piano"
+              }
+            },
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "piano"
+              }
+            }
+          ],
+          "drafted": 18,
+          "accepted": 18
+        },
+        "zero-cap": {
+          "parsed": [
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "tennis"
+              }
+            },
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "tennis"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-off": {
+          "parsed": [
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "piano"
+              }
+            },
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "piano"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-on": {
+          "parsed": [
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "piano"
+              }
+            },
+            {
+              "name": "find_instrument",
+              "arguments": {
+                "budget": 1000,
+                "type": "piano"
+              }
+            }
+          ],
+          "drafted": 18,
+          "accepted": 18
+        }
+      }
+    },
+    {
+      "id": "live_simple_237-125-0",
+      "subset": "live_simple",
+      "normal_off_matches_original": true,
+      "normal_on_matches_original": true,
+      "normal_arms_same_tokens": false,
+      "zero_cap_matches_off": true,
+      "micro_one_arms_same_tokens": true,
+      "configurations": {
+        "normal-off": {
+          "parsed": [
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            },
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "normal-on": {
+          "parsed": [
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus",
+                "device_id": ":null",
+                "play": true
+              }
+            },
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus",
+                "device_id": ":null",
+                "play": true
+              }
+            }
+          ],
+          "drafted": 20,
+          "accepted": 20
+        },
+        "zero-cap": {
+          "parsed": [
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            },
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-off": {
+          "parsed": [
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            },
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-on": {
+          "parsed": [
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            },
+            {
+              "name": "play_spotify_song",
+              "arguments": {
+                "query": "track:Wrecking Ball artist:Miley Cyrus"
+              }
+            }
+          ],
+          "drafted": 20,
+          "accepted": 20
+        }
+      }
+    },
+    {
+      "id": "live_multiple_221-95-0",
+      "subset": "live_multiple",
+      "normal_off_matches_original": true,
+      "normal_on_matches_original": true,
+      "normal_arms_same_tokens": false,
+      "zero_cap_matches_off": true,
+      "micro_one_arms_same_tokens": true,
+      "configurations": {
+        "normal-off": {
+          "parsed": [
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            },
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "normal-on": {
+          "parsed": [
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/path/to/yoha.jpg"
+              }
+            },
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/path/to/yoha.jpg"
+              }
+            }
+          ],
+          "drafted": 14,
+          "accepted": 14
+        },
+        "zero-cap": {
+          "parsed": [
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            },
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-off": {
+          "parsed": [
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            },
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-on": {
+          "parsed": [
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            },
+            {
+              "name": "segment",
+              "arguments": {
+                "img_path": "/home/ubuntu/yoha.jpg"
+              }
+            }
+          ],
+          "drafted": 14,
+          "accepted": 14
+        }
+      }
+    },
+    {
+      "id": "live_multiple_749-169-4",
+      "subset": "live_multiple",
+      "normal_off_matches_original": true,
+      "normal_on_matches_original": true,
+      "normal_arms_same_tokens": false,
+      "zero_cap_matches_off": true,
+      "micro_one_arms_same_tokens": true,
+      "configurations": {
+        "normal-off": {
+          "parsed": [
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            },
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "normal-on": {
+          "parsed": [
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            },
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            }
+          ],
+          "drafted": 18,
+          "accepted": 18
+        },
+        "zero-cap": {
+          "parsed": [
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            },
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-off": {
+          "parsed": [
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            },
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-on": {
+          "parsed": [
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            },
+            {
+              "name": "Media_3_FindMovies",
+              "arguments": {
+                "genre": "Offbeat",
+                "starring": "Any"
+              }
+            }
+          ],
+          "drafted": 18,
+          "accepted": 18
+        }
+      }
+    },
+    {
+      "id": "f595b8d5-531a-4699-85bc-02620d4e1de8",
+      "subset": "hermes",
+      "normal_off_matches_original": true,
+      "normal_on_matches_original": true,
+      "normal_arms_same_tokens": false,
+      "zero_cap_matches_off": true,
+      "micro_one_arms_same_tokens": true,
+      "configurations": {
+        "normal-off": {
+          "parsed": [
+            {
+              "name": "cancelTaxiBooking",
+              "arguments": {
+                "bookingId": "12345"
+              }
+            },
+            {
+              "name": "cancelTaxiBooking",
+              "arguments": {
+                "bookingId": "12345"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "normal-on": {
+          "parsed": [
+            {
+              "name": "createTaxiBookingSkill",
+              "arguments": {
+                "pickupLocation": "500 5th Avenue, New York, NY 10110",
+                "dropoffLocation": "John F. Kennedy International Airport",
+                "pickupTime": "2023-06-15T08:00:00Z",
+                "carType": "Sedan"
+              }
+            },
+            {
+              "name": "createTaxiBookingSkill",
+              "arguments": {
+                "pickupLocation": "500 5th Avenue, New York, NY 10110",
+                "dropoffLocation": "John F. Kennedy International Airport",
+                "pickupTime": "2023-06-15T08:00:00Z",
+                "carType": "Sedan"
+              }
+            }
+          ],
+          "drafted": 36,
+          "accepted": 36
+        },
+        "zero-cap": {
+          "parsed": [
+            {
+              "name": "cancelTaxiBooking",
+              "arguments": {
+                "bookingId": "12345"
+              }
+            },
+            {
+              "name": "cancelTaxiBooking",
+              "arguments": {
+                "bookingId": "12345"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-off": {
+          "parsed": [
+            {
+              "name": "createTaxiBookingSkill",
+              "arguments": {
+                "pickupLocation": "500 5th Avenue, New York, NY 10110",
+                "dropoffLocation": "John F. Kennedy International Airport",
+                "pickupTime": "2023-06-15T08:00:00Z",
+                "carType": "Sedan"
+              }
+            },
+            {
+              "name": "createTaxiBookingSkill",
+              "arguments": {
+                "pickupLocation": "500 5th Avenue, New York, NY 10110",
+                "dropoffLocation": "John F. Kennedy International Airport",
+                "pickupTime": "2023-06-15T08:00:00Z",
+                "carType": "Sedan"
+              }
+            }
+          ],
+          "drafted": 0,
+          "accepted": 0
+        },
+        "micro-one-on": {
+          "parsed": [
+            {
+              "name": "createTaxiBookingSkill",
+              "arguments": {
+                "pickupLocation": "500 5th Avenue, New York, NY 10110",
+                "dropoffLocation": "John F. Kennedy International Airport",
+                "pickupTime": "2023-06-15T08:00:00Z",
+                "carType": "Sedan"
+              }
+            },
+            {
+              "name": "createTaxiBookingSkill",
+              "arguments": {
+                "pickupLocation": "500 5th Avenue, New York, NY 10110",
+                "dropoffLocation": "John F. Kennedy International Airport",
+                "pickupTime": "2023-06-15T08:00:00Z",
+                "carType": "Sedan"
+              }
+            }
+          ],
+          "drafted": 36,
+          "accepted": 36
+        }
+      }
+    }
+  ]
+}

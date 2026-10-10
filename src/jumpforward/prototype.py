@@ -15,7 +15,7 @@ from .baselines import bootstrap_median, check_output_bytes, grammar_request, me
 from .corpus import SEED, digest, read_jsonl
 from .cost import quantiles
 from .parity import assert_gpu_idle, file_hash, owned_server
-from .phase0 import ROOT, provenance, write_json
+from .phase0 import ROOT, engine_worktree, provenance, write_json
 
 SUBSETS = ("simple", "multiple", "live_simple", "live_multiple", "hermes")
 BLOCKS = (("none", 0), ("grammar", 0), ("grammar", 1), ("none", 1))
@@ -87,7 +87,7 @@ def messages_for(case):
 
 
 def runtime_identity():
-    engine = Path.home() / "llama.cpp-jf"
+    engine = engine_worktree()
     paths = [engine / "build/bin/llama-server"]
     paths.extend(p for p in (engine / "build/bin").glob("*.so*") if not p.is_symlink())
     return {
@@ -148,12 +148,17 @@ def validate_response(case, output, tok, cold=True):
     return parsed
 
 
-def collect(args):
+def collect(
+    args,
+    *,
+    model_key="qwen3-8b-q4_k_m",
+    protocol_path=ROOT / "docs/prototype-plan.md",
+):
     assert_gpu_idle()
     manifest = json.loads((args.run / "evaluation-seal.json").read_text())
     if digest((args.run / "cases.json").read_bytes()) != manifest["cases_sha256"]:
         raise ValueError("frozen selection changed")
-    if digest((ROOT / "docs/prototype-plan.md").read_bytes()) != manifest["protocol_sha256"]:
+    if digest(protocol_path.read_bytes()) != manifest["protocol_sha256"]:
         raise ValueError("registered protocol changed")
     if runtime_identity() != manifest["runtime"]:
         raise ValueError("engine changed after the evaluation seal")
@@ -182,7 +187,7 @@ def collect(args):
         raise ValueError("duplicate prior trials")
     tok = tokenizer()
     with (
-        owned_server(runtime, gpu=True, speculation=strategy) as client,
+        owned_server(runtime, gpu=True, speculation=strategy, model_key=model_key) as client,
         (block / "outputs.jsonl").open("a" if args.resume else "x") as stream,
     ):
         pid = json.loads((runtime / "server-process.json").read_text())["pid"]
@@ -361,7 +366,7 @@ def smoke(args):
     results = defaultdict(dict)
     errors = []
     tok = tokenizer()
-    engine = Path.home() / "llama.cpp-jf"
+    engine = engine_worktree()
     for name, strategy, build in (
         ("original", "none", engine / "build-pre-grammar"),
         ("off", "none", engine / "build"),

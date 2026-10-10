@@ -1,0 +1,46 @@
+{
+  "created_at_utc": "2026-09-12T21:19:11.947140+00:00",
+  "scope": "read-only final artifact and runtime audit; no new benchmark requests",
+  "checks": {
+    "runtime_still_matches_seal": true,
+    "engine_patch_matches_sealed_diff": true,
+    "dependency_patch_matches_sealed_diff": true,
+    "protocol_matches_seal": true,
+    "protocol_snapshot_matches_seal": true,
+    "summary_matches_report_manifest": true,
+    "report_matches_manifest": true,
+    "raw_outputs_match_report_manifest": true,
+    "all_200_questions_have_four_identical_requests_including_failures": true,
+    "all_800_requests_have_cold_cache": true,
+    "no_repeat_cache_run_created": true,
+    "reference_engine_clean": true,
+    "gpu_compute_apps_empty_at_close": true,
+    "python_tests_passed": true,
+    "both_ctest_builds_passed_two_tests": true
+  },
+  "all_passed": true,
+  "python_tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "51",
+    "time": "2.811",
+    "timestamp": "2026-09-12T13:41:58.290081-03:00",
+    "hostname": "rafaelmarins2003"
+  },
+  "ctest_pass_counts": {
+    "release": 2,
+    "debug": 2
+  },
+  "files_sha256": {
+    "docs/general-scope-decision.md": "0ccc203c93d7bb1c4c99241c434ce369cd95cf8b4b64ace6e377500746ccad96",
+    "docs/prototype-reproduction.md": "92b60cb2b48b231d0761b93462f7b6500687aeed74300e0d4966ec3092b8ca58",
+    "src/jumpforward/prototype.py": "21b2ea17d0b8a0d1f3d29bf4c0a432dc382e44595b162eb4f8539c0753563932",
+    "src/jumpforward/baselines.py": "c547a9a6aedc38aab85935add710753a542890ffc842af07bb89073a29710ec7",
+    "src/jumpforward/parity.py": "376c185848ee91e809527aa246c41a3088128b741d7991be286dd6764b1a2583",
+    "tests/test_prototype.py": "2df7e74a0cc35bad8232b74a25b32ef9fdcbfbc8bb0301ba810bfbc2575089fa",
+    "runs/2026-09-12-prototype/final-tests.xml": "2e647af33b32332c5e76736ae75d10b46d4d98d1e6e78beb2c947561911c84e9"
+  },
+  "analysis_note": "After sealing, reporting-only additions include failed-request p95, failure attribution and counter-derived work counts. Unit fixtures and historical baseline renderer labels were corrected. Engine, dependency, protocol, selected questions, collection settings and recorded requests were not tuned."
+}

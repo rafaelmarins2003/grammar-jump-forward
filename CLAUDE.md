@@ -2,6 +2,12 @@
 
 ## Session exception — 2026-09-12
 
+After the completed prototype, Rafael authorized a separate bounded continuation with
+"Certo, siga com essa etapa então": investigate the observed divergences and reproduce the
+unchanged engine's gain on a second local model. This covers the necessary Python driver,
+tests, reports, and isolated GPU checks in `docs/replication-plan.md`. It does not authorize
+changing the old protocol/results, engine tuning, public submissions, or commits.
+
 After reviewing the measured baseline screen and the proposed bounded prototype, Rafael said
 "Certo, então faça". This authorizes the assistant to implement and test the minimal experimental
 C++ grammar proposer in the private llama.cpp-jf worktree, plus the Python evaluation and reports.
@@ -64,7 +70,7 @@ Engine C++ starts only after the Gate 0 report says go.
     `reset` and `clone`.
   - The reasoning budget forces tokens by masking logits, one forward pass per token
     (`common/reasoning-budget.cpp:178`). That makes it a second consumer of a jump-forward path.
-- **llguidance v1.0.1 C API** (`~/llama.cpp-jf/build/llguidance/source/parser/llguidance.h`):
+- **llguidance v1.0.1 C API** (`~/scripts/llama.cpp-jf/build/llguidance/source/parser/llguidance.h`):
   - `llg_matcher_compute_ff_tokens` (forced tokens)
   - `llg_matcher_consume_tokens` (multiple tokens)
   - `llg_matcher_validate_tokens` (how many of a draft are grammar-valid)
@@ -106,8 +112,8 @@ scripts/                 numbered pipeline steps (Rafael writes)
 tests/                   pytest; markers gpu, server, engine
 runs/                    versioned run manifests
 patches/<milestone>/     git format-patch exports of the llama.cpp branch
-~/llama.cpp-jf           llama.cpp worktree, branch grammar-jump-forward; builds: build/ (Release, CUDA sm_75, llguidance), build-debug/ (Debug, CPU, llguidance)
-~/llama.cpp              untouched reference at the same commit, shared with other projects; no-patch baseline
+~/scripts/llama.cpp-jf           llama.cpp worktree, branch grammar-jump-forward; builds: build/ (Release, CUDA sm_75, llguidance), build-debug/ (Debug, CPU, llguidance)
+~/scripts/llama.cpp              untouched reference at the same commit, shared with other projects; no-patch baseline
 ```
 
 Toolchain: `mise.toml` pins rust 1.98.1, ninja 1.13.2, ccache 4.14. Run llama.cpp builds under
@@ -120,7 +126,7 @@ Hardware: RTX 2080 Ti 11 GB (`sm_75`), i9-9900K, 23 GB RAM.
   - Gate 0 and RQ2/RQ3 analysis (llguidance Python + HF tokenizers)
   - RQ1 emulation through llama-server token-id prompts
   - benchmark orchestration, statistics, reports
-- **C++:** the engine patch in `~/llama.cpp-jf`, only after Gate 0 passes. Keep it small, behind a
+- **C++:** the engine patch in `~/scripts/llama.cpp-jf`, only after Gate 0 passes. Keep it small, behind a
   flag, default off, and inside the speculative framework, with no parallel decode path.
 - **Tokenizer parity:** HF tokenizers and llama.cpp's GGUF tokenizer can disagree. Check with
   llama-server `/tokenize` before trusting offline numbers for a tokenizer.

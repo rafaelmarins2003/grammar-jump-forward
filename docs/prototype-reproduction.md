@@ -11,6 +11,11 @@ The [decision record](general-scope-decision.md) explains why this ends the boun
 
 ## Runtime and safety prerequisite
 
+The active original worktree is `~/scripts/llama.cpp-jf`; Python launchers resolve it from
+`config/llama_cpp.json`. Its engine patch, fixed dependencies and original binaries are already
+present. The patch-application steps below are for fresh checkouts, not this existing worktree.
+Historical protocols and run manifests retain the paths used during their evaluations.
+
 The engine diff is `patches/2026-09-12-grammar-prototype.patch`, against the pinned engine commit
 in `config/llama_cpp.json`. It adds a default-off grammar proposer to the existing speculative
 framework. It does not skip target verification, create another decode loop, or supply synthetic
@@ -26,7 +31,7 @@ automatically installed by CMake. Both measured arms use the same corrected libr
 
 On a fresh private checkout at the pinned commits, use `git apply --check` before applying each
 diff. Do not reapply patches to the already modified working copy. The unmodified runtime used
-for the development off-switch check was preserved in `llama.cpp-jf/build-pre-grammar/bin`,
+for the development off-switch check was preserved in `~/scripts/llama.cpp-jf/build-pre-grammar/bin`,
 including its shared libraries, before any source change. The launcher explicitly selects those
 libraries with `LD_LIBRARY_PATH`; copying the executable alone would not preserve the runtime.
 
@@ -34,16 +39,16 @@ From this project's root, after applying the diffs to the configured engine/depe
 
 ```bash
 mise exec -- cargo build --release --package llguidance \
-  --manifest-path /home/rafaelmarins2003/llama.cpp-jf/build/llguidance/source/Cargo.toml
+  --manifest-path /home/rafaelmarins2003/scripts/llama.cpp-jf/build/llguidance/source/Cargo.toml
 mise exec -- cargo build --release --package llguidance \
-  --manifest-path /home/rafaelmarins2003/llama.cpp-jf/build-debug/llguidance/source/Cargo.toml
-mise exec -- cmake --build /home/rafaelmarins2003/llama.cpp-jf/build \
+  --manifest-path /home/rafaelmarins2003/scripts/llama.cpp-jf/build-debug/llguidance/source/Cargo.toml
+mise exec -- cmake --build /home/rafaelmarins2003/scripts/llama.cpp-jf/build \
   --target llama-server test-grammar-llguidance test-sampling -j 4
-mise exec -- cmake --build /home/rafaelmarins2003/llama.cpp-jf/build-debug \
+mise exec -- cmake --build /home/rafaelmarins2003/scripts/llama.cpp-jf/build-debug \
   --target test-grammar-llguidance test-sampling -j 4
-ctest --test-dir /home/rafaelmarins2003/llama.cpp-jf/build-debug \
+ctest --test-dir /home/rafaelmarins2003/scripts/llama.cpp-jf/build-debug \
   -R '^(test-grammar-llguidance|test-sampling)$' --output-on-failure
-ctest --test-dir /home/rafaelmarins2003/llama.cpp-jf/build \
+ctest --test-dir /home/rafaelmarins2003/scripts/llama.cpp-jf/build \
   -R '^(test-grammar-llguidance|test-sampling)$' --output-on-failure
 PYTHONPATH=src .venv/bin/python -m pytest -q
 ```
